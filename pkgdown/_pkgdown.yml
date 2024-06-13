@@ -1,0 +1,41 @@
+url: ~
+template:
+  bootstrap: 5
+reference:
+  - title: Main Functions
+    contents:
+    - phenology
+    - model
+    - model_combine
+    - list_models
+    - params
+    - bso_phenology
+    - bso_translate_phenology
+    - save_phenology
+    - load_phenology
+  - title: Plots
+    contents:
+    - starts_with('plot_')
+    - starts_with('bso_plot_')
+  - title: Results
+    contents:
+    - starts_with('prop_')
+    - starts_with('get_')
+    - starts_with('bso_get_')
+    - categorize_generations_rst
+  - title: Create data
+    contents:
+    - starts_with('create_')
+  - title: Stations handling
+    contents:
+    - starts_with('stations_')
+  - title: Data
+    contents:
+    - barrks_data
+    - barrks_colors
+    - barrks_labels
+    - phenips_clim_get_dev_rates
+  - title: internal
+    contents:
+    - starts_with('model.')
+    - starts_with('analyse.')

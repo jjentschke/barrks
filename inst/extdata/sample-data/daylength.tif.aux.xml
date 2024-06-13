@@ -1,0 +1,3317 @@
+<PAMDataset>
+  <PAMRasterBand band="1">
+    <Description>daylengths-2015-01-01</Description>
+    <Histograms>
+      <HistItem>
+        <HistMin>8.339946652984597</HistMin>
+        <HistMax>8.496478174591102</HistMax>
+        <BucketCount>625</BucketCount>
+        <IncludeOutOfRange>0</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|1|2|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|1|2|1|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|1|2|1|2|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|2|2|2|2|1|2|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|2|2|1|2|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|2|2|1|2|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|2|2|2|2|1|2|1|2|1|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|3|2|1|2|2|1|2|1|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|0|1|3|2|2|2|1|2|1|2|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|2|2|3|1|2|2|1|2|1|2|1|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|3|2|2|2|2|1|2|1|2|1|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|1|3|2|2|2|1|2|1|2|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|1|3|3|2|2|1|2|2|1|2|1|1|1|1|0|0|0|0|0|0|0|0|0|0|0|0|3|2|3|2|2|1|2|1|2|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|1|3|3|2|2|2|1|2|1|2|1|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|3|3|1|1|2|2|1|2|1|1|2|1|1|1|0|0|0|0|0|0|0|0|0|0|0|3|3|2|0|1|2|2|1|2|1|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|2|3|2|0|0|1|2|2|1|2|1|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|2|2|2|1|2|1|2|1|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|2|0|0|2|1|0|1|1</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.4963531494141</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.3400716781616</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="2">
+    <Description>daylengths-2015-01-02</Description>
+    <Histograms>
+      <HistItem>
+        <HistMin>8.356045302581828</HistMin>
+        <HistMax>8.511791649627671</HistMax>
+        <BucketCount>625</BucketCount>
+        <IncludeOutOfRange>0</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|1|2|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|1|2|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|1|2|1|2|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|2|2|2|2|1|2|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|2|2|1|2|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|2|2|1|2|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|2|2|2|2|1|2|1|2|1|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|3|2|1|2|2|1|2|1|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|0|1|3|2|2|2|1|2|2|1|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|2|2|3|1|2|2|1|2|1|2|1|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|3|2|2|2|2|1|2|1|2|1|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|1|3|2|2|2|1|2|1|2|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|1|3|3|2|2|1|2|2|1|2|1|1|1|1|0|0|0|0|0|0|0|0|0|0|0|0|3|2|3|2|2|1|2|1|2|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|1|3|3|2|2|2|1|2|1|2|1|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|3|3|1|1|2|2|1|2|1|1|2|1|1|1|0|0|0|0|0|0|0|0|0|0|0|3|3|2|0|1|2|2|1|2|1|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|2|3|2|0|0|2|1|2|1|2|1|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|2|2|2|1|2|1|2|1|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|2|0|0|2|1|0|1|1</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.5116672515869</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.3561697006226</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="3">
+    <Description>daylengths-2015-01-03</Description>
+    <Histograms>
+      <HistItem>
+        <HistMin>8.373632694244378</HistMin>
+        <HistMax>8.528523181915322</HistMax>
+        <BucketCount>625</BucketCount>
+        <IncludeOutOfRange>0</IncludeOutOfRange>
+        <Approximate>0</Approximate>
+        <HistCounts>1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|1|2|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|0|1|2|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|1|2|1|2|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|2|2|2|2|1|2|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|2|2|1|2|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|2|2|2|1|2|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|2|2|2|2|1|2|1|2|1|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|1|3|2|1|2|2|1|2|1|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|0|1|3|2|2|2|1|2|2|1|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|2|2|3|1|2|2|1|2|1|2|1|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|3|2|2|2|2|1|2|1|2|1|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|1|3|2|2|2|1|2|2|1|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|1|3|3|2|2|1|2|2|1|2|1|1|1|1|0|0|0|0|0|0|0|0|0|0|0|0|3|2|3|2|2|1|2|1|2|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|0|1|3|3|2|2|2|1|2|1|2|1|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|3|3|1|1|2|2|1|2|1|1|2|1|1|1|0|0|0|0|0|0|0|0|0|0|0|3|3|2|0|1|2|2|1|2|1|1|2|1|1|0|0|0|0|0|0|0|0|0|0|0|2|3|2|0|0|2|1|2|1|2|1|1|2|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|2|2|2|1|2|1|2|1|1|1|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|0|2|0|0|2|1|0|1|1</HistCounts>
+      </HistItem>
+    </Histograms>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.5283994674683</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.3737564086914</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="4">
+    <Description>daylengths-2015-01-04</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.5465316772461</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.3928127288818</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="5">
+    <Description>daylengths-2015-01-05</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.5660438537598</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.4133157730103</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="6">
+    <Description>daylengths-2015-01-06</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.5869159698486</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.435245513916</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="7">
+    <Description>daylengths-2015-01-07</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.6091251373291</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.4585771560669</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="8">
+    <Description>daylengths-2015-01-08</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.6326503753662</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.483286857605</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="9">
+    <Description>daylengths-2015-01-09</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.6574659347534</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.5093479156494</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="10">
+    <Description>daylengths-2015-01-10</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.6835479736328</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.5367345809937</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="11">
+    <Description>daylengths-2015-01-11</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.7108697891235</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.5654191970825</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="12">
+    <Description>daylengths-2015-01-12</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.739405632019</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.5953731536865</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="13">
+    <Description>daylengths-2015-01-13</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.7691287994385</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.6265668869019</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="14">
+    <Description>daylengths-2015-01-14</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.8000116348267</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.658971786499</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="15">
+    <Description>daylengths-2015-01-15</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.8320245742798</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.6925573348999</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="16">
+    <Description>daylengths-2015-01-16</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.865140914917</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.7272920608521</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="17">
+    <Description>daylengths-2015-01-17</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.8993301391602</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.7631464004517</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="18">
+    <Description>daylengths-2015-01-18</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.9345636367798</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.800087928772</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="19">
+    <Description>daylengths-2015-01-19</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.9708127975464</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.8380861282349</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="20">
+    <Description>daylengths-2015-01-20</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.0080461502075</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.8771104812622</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="21">
+    <Description>daylengths-2015-01-21</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.046236038208</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.9171276092529</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="22">
+    <Description>daylengths-2015-01-22</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.0853519439697</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.9581069946289</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="23">
+    <Description>daylengths-2015-01-23</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.1253652572632</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.0000171661377</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="24">
+    <Description>daylengths-2015-01-24</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.1662464141846</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.0428276062012</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="25">
+    <Description>daylengths-2015-01-25</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.2079658508301</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.0865077972412</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="26">
+    <Description>daylengths-2015-01-26</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.2504949569702</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.1310262680054</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="27">
+    <Description>daylengths-2015-01-27</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.2938060760498</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.1763534545898</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="28">
+    <Description>daylengths-2015-01-28</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.337869644165</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.2224597930908</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="29">
+    <Description>daylengths-2015-01-29</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.3826599121094</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.2693157196045</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="30">
+    <Description>daylengths-2015-01-30</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.428147315979</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.3168916702271</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="31">
+    <Description>daylengths-2015-01-31</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.4743061065674</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.3651609420776</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="32">
+    <Description>daylengths-2015-02-01</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.521110534668</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.4140939712524</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="33">
+    <Description>daylengths-2015-02-02</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.5685338973999</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.4636659622192</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="34">
+    <Description>daylengths-2015-02-03</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.6165504455566</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.5138483047485</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="35">
+    <Description>daylengths-2015-02-04</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.6651372909546</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.5646152496338</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="36">
+    <Description>daylengths-2015-02-05</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.7142686843872</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.6159429550171</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="37">
+    <Description>daylengths-2015-02-06</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.7639217376709</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.6678056716919</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="38">
+    <Description>daylengths-2015-02-07</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.8140735626221</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.720178604126</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="39">
+    <Description>daylengths-2015-02-08</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.8647012710571</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.7730407714844</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="40">
+    <Description>daylengths-2015-02-09</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.9157838821411</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.8263673782349</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="41">
+    <Description>daylengths-2015-02-10</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.9672994613647</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.8801374435425</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="42">
+    <Description>daylengths-2015-02-11</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.019228935242</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.9343290328979</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="43">
+    <Description>daylengths-2015-02-12</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.071551322937</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.9889221191406</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="44">
+    <Description>daylengths-2015-02-13</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.124247550964</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.043897628784</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="45">
+    <Description>daylengths-2015-02-14</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.177299499512</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.099233627319</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="46">
+    <Description>daylengths-2015-02-15</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.230688095093</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.154914855957</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="47">
+    <Description>daylengths-2015-02-16</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.284398078918</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.210920333862</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="48">
+    <Description>daylengths-2015-02-17</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.338411331177</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.267234802246</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="49">
+    <Description>daylengths-2015-02-18</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.392711639404</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.323840141296</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="50">
+    <Description>daylengths-2015-02-19</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.447282791138</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.380721092224</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="51">
+    <Description>daylengths-2015-02-20</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.502111434937</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.43786239624</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="52">
+    <Description>daylengths-2015-02-21</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.557182312012</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.495247840881</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="53">
+    <Description>daylengths-2015-02-22</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.612481117249</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.552865028381</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="54">
+    <Description>daylengths-2015-02-23</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.667994499207</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.610698699951</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="55">
+    <Description>daylengths-2015-02-24</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.72371006012</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.66873550415</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="56">
+    <Description>daylengths-2015-02-25</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.779614448547</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.726963043213</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="57">
+    <Description>daylengths-2015-02-26</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.835697174072</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.785369873047</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="58">
+    <Description>daylengths-2015-02-27</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.891944885254</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.843943595886</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="59">
+    <Description>daylengths-2015-02-28</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.948348045349</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.902672767639</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="60">
+    <Description>daylengths-2015-03-01</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.004895210266</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.961546897888</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="61">
+    <Description>daylengths-2015-03-02</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.061576843262</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.020555496216</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="62">
+    <Description>daylengths-2015-03-03</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.118382453918</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.079688072205</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="63">
+    <Description>daylengths-2015-03-04</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.175302505493</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.138936042786</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="64">
+    <Description>daylengths-2015-03-05</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.232327461243</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.198288917542</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="65">
+    <Description>daylengths-2015-03-06</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.289449691772</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.257738113403</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="66">
+    <Description>daylengths-2015-03-07</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.346659660339</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.317276000977</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="67">
+    <Description>daylengths-2015-03-08</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.403950691223</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.376893043518</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="68">
+    <Description>daylengths-2015-03-09</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.461313247681</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.436582565308</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="69">
+    <Description>daylengths-2015-03-10</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.518739700317</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.496335983276</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="70">
+    <Description>daylengths-2015-03-11</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.576223373413</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.55614566803</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="71">
+    <Description>daylengths-2015-03-12</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.633757591248</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.616004943848</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="72">
+    <Description>daylengths-2015-03-13</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.691333770752</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.67590713501</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="73">
+    <Description>daylengths-2015-03-14</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.74894618988</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.735843658447</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="74">
+    <Description>daylengths-2015-03-15</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.806588172913</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.795810699463</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="75">
+    <Description>daylengths-2015-03-16</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.864253044128</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.855799674988</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="76">
+    <Description>daylengths-2015-03-17</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.921934127808</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.915803909302</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="77">
+    <Description>daylengths-2015-03-18</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.979625701904</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.975819587708</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="78">
+    <Description>daylengths-2015-03-19</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.037321090698</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.035838127136</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="79">
+    <Description>daylengths-2015-03-20</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.095854759216</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.095014572144</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="80">
+    <Description>daylengths-2015-03-21</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.155863761902</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.152700424194</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="81">
+    <Description>daylengths-2015-03-22</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.215858459473</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.21037197113</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="82">
+    <Description>daylengths-2015-03-23</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.275832176208</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.26802444458</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="83">
+    <Description>daylengths-2015-03-24</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.335781097412</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.325650215149</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="84">
+    <Description>daylengths-2015-03-25</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.395698547363</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.383244514465</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="85">
+    <Description>daylengths-2015-03-26</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.455577850342</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.440801620483</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="86">
+    <Description>daylengths-2015-03-27</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.515413284302</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.498314857483</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="87">
+    <Description>daylengths-2015-03-28</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.575200080872</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.555778503418</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="88">
+    <Description>daylengths-2015-03-29</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.634930610657</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.613185882568</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="89">
+    <Description>daylengths-2015-03-30</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.694600105286</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.670532226563</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="90">
+    <Description>daylengths-2015-03-31</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.754199981689</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.727809906006</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="91">
+    <Description>daylengths-2015-04-01</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.813726425171</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.785012245178</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="92">
+    <Description>daylengths-2015-04-02</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.873171806335</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.842134475708</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="93">
+    <Description>daylengths-2015-04-03</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.932529449463</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.899168014526</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="94">
+    <Description>daylengths-2015-04-04</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.991791725159</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.956106185913</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="95">
+    <Description>daylengths-2015-04-05</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.050952911377</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.012943267822</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="96">
+    <Description>daylengths-2015-04-06</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.110004425049</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.069670677185</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="97">
+    <Description>daylengths-2015-04-07</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.168939590454</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.126281738281</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="98">
+    <Description>daylengths-2015-04-08</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.227749824524</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.182767868042</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="99">
+    <Description>daylengths-2015-04-09</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.286428451538</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.239122390747</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="100">
+    <Description>daylengths-2015-04-10</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.344965934753</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.295335769653</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="101">
+    <Description>daylengths-2015-04-11</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.403353691101</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.351399421692</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="102">
+    <Description>daylengths-2015-04-12</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.461583137512</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.407305717468</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="103">
+    <Description>daylengths-2015-04-13</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.519645690918</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.463045120239</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="104">
+    <Description>daylengths-2015-04-14</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.577529907227</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.518608093262</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="105">
+    <Description>daylengths-2015-04-15</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.635227203369</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.573984146118</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="106">
+    <Description>daylengths-2015-04-16</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.692728042603</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.629163742065</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="107">
+    <Description>daylengths-2015-04-17</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.750019073486</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.684136390686</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="108">
+    <Description>daylengths-2015-04-18</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.807091712952</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.738891601563</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="109">
+    <Description>daylengths-2015-04-19</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.863933563232</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.793417930603</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="110">
+    <Description>daylengths-2015-04-20</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.920531272888</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.847702980042</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="111">
+    <Description>daylengths-2015-04-21</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.976875305176</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.901735305786</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="112">
+    <Description>daylengths-2015-04-22</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.032950401306</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.955501556396</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="113">
+    <Description>daylengths-2015-04-23</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.088743209839</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.008990287781</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="114">
+    <Description>daylengths-2015-04-24</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.144241333008</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.062187194824</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="115">
+    <Description>daylengths-2015-04-25</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.199430465698</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.115078926086</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="116">
+    <Description>daylengths-2015-04-26</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.254294395447</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.167650222778</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="117">
+    <Description>daylengths-2015-04-27</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.308817863464</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.219886779785</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="118">
+    <Description>daylengths-2015-04-28</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.362986564636</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.271773338318</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="119">
+    <Description>daylengths-2015-04-29</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.416783332825</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.323294639587</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="120">
+    <Description>daylengths-2015-04-30</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.470190048218</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.374433517456</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="121">
+    <Description>daylengths-2015-05-01</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.523191452026</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.42517375946</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="122">
+    <Description>daylengths-2015-05-02</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.575768470764</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.475497245789</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="123">
+    <Description>daylengths-2015-05-03</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.627902030945</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.525387763977</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="124">
+    <Description>daylengths-2015-05-04</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.679574012756</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.57482624054</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="125">
+    <Description>daylengths-2015-05-05</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.730764389038</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.62379360199</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="126">
+    <Description>daylengths-2015-05-06</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.781453132629</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.672271728516</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="127">
+    <Description>daylengths-2015-05-07</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.831619262695</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.720239639282</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="128">
+    <Description>daylengths-2015-05-08</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.881241798401</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.767677307129</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="129">
+    <Description>daylengths-2015-05-09</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.930299758911</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.814564704895</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="130">
+    <Description>daylengths-2015-05-10</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.978769302368</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.860880851746</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="131">
+    <Description>daylengths-2015-05-11</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.026629447937</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.906602859497</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="132">
+    <Description>daylengths-2015-05-12</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.07385635376</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.951710700989</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="133">
+    <Description>daylengths-2015-05-13</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.120425224304</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.996180534363</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="134">
+    <Description>daylengths-2015-05-14</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.166314125061</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.039989471436</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="135">
+    <Description>daylengths-2015-05-15</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.211496353149</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.083115577698</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="136">
+    <Description>daylengths-2015-05-16</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.255949020386</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.125534057617</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="137">
+    <Description>daylengths-2015-05-17</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.299645423889</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.16722202301</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="138">
+    <Description>daylengths-2015-05-18</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.342559814453</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.208155632019</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="139">
+    <Description>daylengths-2015-05-19</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.384667396545</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.248309135437</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="140">
+    <Description>daylengths-2015-05-20</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.425942420959</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.287658691406</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="141">
+    <Description>daylengths-2015-05-21</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.46635723114</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.326180458069</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="142">
+    <Description>daylengths-2015-05-22</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.505886077881</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.363848686218</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="143">
+    <Description>daylengths-2015-05-23</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.544501304626</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.400638580322</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="144">
+    <Description>daylengths-2015-05-24</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.582178115845</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.436524391174</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="145">
+    <Description>daylengths-2015-05-25</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.618887901306</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.471483230591</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="146">
+    <Description>daylengths-2015-05-26</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.654604911804</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.505488395691</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="147">
+    <Description>daylengths-2015-05-27</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.689302444458</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.538515090942</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="148">
+    <Description>daylengths-2015-05-28</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.722954750061</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.570539474487</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="149">
+    <Description>daylengths-2015-05-29</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.755534172058</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.601537704468</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="150">
+    <Description>daylengths-2015-05-30</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.787015914917</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.631484031677</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="151">
+    <Description>daylengths-2015-05-31</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.817373275757</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.660355567932</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="152">
+    <Description>daylengths-2015-06-01</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.84658241272</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.688129425049</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="153">
+    <Description>daylengths-2015-06-02</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.874617576599</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.714781761169</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="154">
+    <Description>daylengths-2015-06-03</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.901454925537</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.740290641785</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="155">
+    <Description>daylengths-2015-06-04</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.92707157135</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.764634132385</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="156">
+    <Description>daylengths-2015-06-05</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.95144367218</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.787791252136</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="157">
+    <Description>daylengths-2015-06-06</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.974550247192</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.809741973877</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="158">
+    <Description>daylengths-2015-06-07</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.996369361877</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.830466270447</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="159">
+    <Description>daylengths-2015-06-08</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.0168800354</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.849945068359</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="160">
+    <Description>daylengths-2015-06-09</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.036066055298</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.868162155151</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="161">
+    <Description>daylengths-2015-06-10</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.053905487061</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.885099411011</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="162">
+    <Description>daylengths-2015-06-11</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.070383071899</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.900740623474</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="163">
+    <Description>daylengths-2015-06-12</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.085481643677</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.915072441101</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="164">
+    <Description>daylengths-2015-06-13</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.099187850952</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.928080558777</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="165">
+    <Description>daylengths-2015-06-14</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.111486434937</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.939752578735</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="166">
+    <Description>daylengths-2015-06-15</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.122367858887</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.950078010559</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="167">
+    <Description>daylengths-2015-06-16</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.131820678711</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.959045410156</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="168">
+    <Description>daylengths-2015-06-17</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.139833450317</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.966648101807</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="169">
+    <Description>daylengths-2015-06-18</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.146398544312</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.972877502441</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="170">
+    <Description>daylengths-2015-06-19</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.151512145996</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.977728843689</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="171">
+    <Description>daylengths-2015-06-20</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.155168533325</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.981196403503</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="172">
+    <Description>daylengths-2015-06-21</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.157363891602</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.983278274536</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="173">
+    <Description>daylengths-2015-06-22</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.158094406128</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.983972549438</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="174">
+    <Description>daylengths-2015-06-23</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.157363891602</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.983278274536</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="175">
+    <Description>daylengths-2015-06-24</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.155170440674</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.981198310852</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="176">
+    <Description>daylengths-2015-06-25</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.151517868042</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.977732658386</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="177">
+    <Description>daylengths-2015-06-26</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.146409988403</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.972887992859</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="178">
+    <Description>daylengths-2015-06-27</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.139854431152</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.966669082642</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="179">
+    <Description>daylengths-2015-06-28</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.131858825684</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.959082603455</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="180">
+    <Description>daylengths-2015-06-29</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.122428894043</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.950135231018</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="181">
+    <Description>daylengths-2015-06-30</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.111577987671</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.939839363098</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="182">
+    <Description>daylengths-2015-07-01</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.099315643311</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.928203582764</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="183">
+    <Description>daylengths-2015-07-02</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.085657119751</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.915240287781</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="184">
+    <Description>daylengths-2015-07-03</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.070615768433</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.90096282959</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="185">
+    <Description>daylengths-2015-07-04</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.054206848145</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.88538646698</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="186">
+    <Description>daylengths-2015-07-05</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.036447525024</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.868525505066</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="187">
+    <Description>daylengths-2015-07-06</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">16.017356872559</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.850397109985</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="188">
+    <Description>daylengths-2015-07-07</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.99695110321</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.831018447876</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="189">
+    <Description>daylengths-2015-07-08</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.975252151489</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.810408592224</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="190">
+    <Description>daylengths-2015-07-09</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.95228099823</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.788586616516</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="191">
+    <Description>daylengths-2015-07-10</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.928058624268</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.765571594238</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="192">
+    <Description>daylengths-2015-07-11</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.902607917786</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.741386413574</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="193">
+    <Description>daylengths-2015-07-12</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.875952720642</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.716051101685</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="194">
+    <Description>daylengths-2015-07-13</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.848115921021</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.689587593079</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="195">
+    <Description>daylengths-2015-07-14</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.819123268127</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.662019729614</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="196">
+    <Description>daylengths-2015-07-15</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.788998603821</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.633370399475</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="197">
+    <Description>daylengths-2015-07-16</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.757768630981</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.603662490845</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="198">
+    <Description>daylengths-2015-07-17</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.725457191467</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.57292175293</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="199">
+    <Description>daylengths-2015-07-18</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.692092895508</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.541171073914</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="200">
+    <Description>daylengths-2015-07-19</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.657700538635</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.508434295654</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="201">
+    <Description>daylengths-2015-07-20</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.62230682373</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.474738121033</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="202">
+    <Description>daylengths-2015-07-21</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.585938453674</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.440106391907</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="203">
+    <Description>daylengths-2015-07-22</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.548623085022</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.404563903809</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="204">
+    <Description>daylengths-2015-07-23</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.51038646698</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.368136405945</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="205">
+    <Description>daylengths-2015-07-24</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.471254348755</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.330847740173</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="206">
+    <Description>daylengths-2015-07-25</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.431255340576</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.292723655701</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="207">
+    <Description>daylengths-2015-07-26</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.390414237976</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.253787994385</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="208">
+    <Description>daylengths-2015-07-27</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.34875869751</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.214066505432</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="209">
+    <Description>daylengths-2015-07-28</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.306312561035</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.173582077026</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="210">
+    <Description>daylengths-2015-07-29</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.263103485107</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.132360458374</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="211">
+    <Description>daylengths-2015-07-30</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.219155311584</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.090424537659</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="212">
+    <Description>daylengths-2015-07-31</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.174493789673</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.047798156738</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="213">
+    <Description>daylengths-2015-08-01</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.129143714905</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">15.004504203796</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="214">
+    <Description>daylengths-2015-08-02</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.083128929138</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.960565567017</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="215">
+    <Description>daylengths-2015-08-03</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">15.036472320557</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.916005134583</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="216">
+    <Description>daylengths-2015-08-04</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.989199638367</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.870844841003</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="217">
+    <Description>daylengths-2015-08-05</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.941330909729</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.825106620789</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="218">
+    <Description>daylengths-2015-08-06</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.892889976501</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.778810501099</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="219">
+    <Description>daylengths-2015-08-07</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.843898773193</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.731979370117</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="220">
+    <Description>daylengths-2015-08-08</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.79437828064</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.684631347656</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="221">
+    <Description>daylengths-2015-08-09</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.744349479675</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.636786460876</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="222">
+    <Description>daylengths-2015-08-10</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.693831443787</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.588465690613</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="223">
+    <Description>daylengths-2015-08-11</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.642846107483</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.539687156677</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="224">
+    <Description>daylengths-2015-08-12</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.591410636902</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.490468025208</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="225">
+    <Description>daylengths-2015-08-13</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.539545059204</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.44082736969</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="226">
+    <Description>daylengths-2015-08-14</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.487267494202</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.390782356262</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="227">
+    <Description>daylengths-2015-08-15</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.434594154358</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.340350151062</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="228">
+    <Description>daylengths-2015-08-16</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.381543159485</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.289546012878</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="229">
+    <Description>daylengths-2015-08-17</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.328130722046</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.238386154175</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="230">
+    <Description>daylengths-2015-08-18</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.27437210083</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.186886787415</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="231">
+    <Description>daylengths-2015-08-19</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.220284461975</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.135062217712</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="232">
+    <Description>daylengths-2015-08-20</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.165881156921</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.082926750183</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="233">
+    <Description>daylengths-2015-08-21</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.111176490784</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">14.030494689941</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="234">
+    <Description>daylengths-2015-08-22</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.056185722351</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.977779388428</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="235">
+    <Description>daylengths-2015-08-23</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">14.00092124939</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.924793243408</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="236">
+    <Description>daylengths-2015-08-24</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.945397377014</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.871549606323</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="237">
+    <Description>daylengths-2015-08-25</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.889624595642</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.818059921265</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="238">
+    <Description>daylengths-2015-08-26</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.83361530304</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.764335632324</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="239">
+    <Description>daylengths-2015-08-27</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.777382850647</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.710390090942</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="240">
+    <Description>daylengths-2015-08-28</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.720935821533</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.656231880188</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="241">
+    <Description>daylengths-2015-08-29</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.664287567139</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.601872444153</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="242">
+    <Description>daylengths-2015-08-30</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.607446670532</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.54732131958</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="243">
+    <Description>daylengths-2015-08-31</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.550423622131</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.492589950562</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="244">
+    <Description>daylengths-2015-09-01</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.493227958679</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.437685966492</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="245">
+    <Description>daylengths-2015-09-02</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.435869216919</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.382618904114</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="246">
+    <Description>daylengths-2015-09-03</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.378355979919</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.327397346497</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="247">
+    <Description>daylengths-2015-09-04</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.320695877075</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.272029876709</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="248">
+    <Description>daylengths-2015-09-05</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.262899398804</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.216526031494</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="249">
+    <Description>daylengths-2015-09-06</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.204972267151</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.160891532898</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="250">
+    <Description>daylengths-2015-09-07</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.14692401886</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.105134963989</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="251">
+    <Description>daylengths-2015-09-08</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.088760375977</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">13.049263954163</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="252">
+    <Description>daylengths-2015-09-09</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">13.03048992157</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.993284225464</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="253">
+    <Description>daylengths-2015-09-10</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.972118377686</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.937205314636</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="254">
+    <Description>daylengths-2015-09-11</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.913653373718</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.881031036377</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="255">
+    <Description>daylengths-2015-09-12</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.855100631714</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.824769973755</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="256">
+    <Description>daylengths-2015-09-13</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.796466827393</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.768426895142</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="257">
+    <Description>daylengths-2015-09-14</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.737758636475</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.712009429932</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="258">
+    <Description>daylengths-2015-09-15</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.678981781006</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.655522346497</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="259">
+    <Description>daylengths-2015-09-16</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.620141983032</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.598973274231</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="260">
+    <Description>daylengths-2015-09-17</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.5612449646</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.542366027832</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="261">
+    <Description>daylengths-2015-09-18</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.502296447754</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.48570728302</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="262">
+    <Description>daylengths-2015-09-19</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.443302154541</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.429001808167</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="263">
+    <Description>daylengths-2015-09-20</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.384266853333</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.372256278992</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="264">
+    <Description>daylengths-2015-09-21</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.325196266174</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.315475463867</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="265">
+    <Description>daylengths-2015-09-22</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.266097068787</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.258666038513</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="266">
+    <Description>daylengths-2015-09-23</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.206973075867</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.201830863953</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="267">
+    <Description>daylengths-2015-09-24</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.14783000946</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.144978523254</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="268">
+    <Description>daylengths-2015-09-25</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.088674545288</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.088111877441</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="269">
+    <Description>daylengths-2015-09-26</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">12.031237602234</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">12.029509544373</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="270">
+    <Description>daylengths-2015-09-27</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.974361419678</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.970343589783</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="271">
+    <Description>daylengths-2015-09-28</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.917488098145</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.911179542542</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="272">
+    <Description>daylengths-2015-09-29</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.860624313354</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.852024078369</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="273">
+    <Description>daylengths-2015-09-30</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.803774833679</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.792882919312</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="274">
+    <Description>daylengths-2015-10-01</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.746945381165</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.733762741089</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="275">
+    <Description>daylengths-2015-10-02</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.690143585205</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.674668312073</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="276">
+    <Description>daylengths-2015-10-03</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.633373260498</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.615605354309</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="277">
+    <Description>daylengths-2015-10-04</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.576642990112</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.556581497192</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="278">
+    <Description>daylengths-2015-10-05</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.519957542419</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.497603416443</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="279">
+    <Description>daylengths-2015-10-06</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.463324546814</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.438675880432</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="280">
+    <Description>daylengths-2015-10-07</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.406750679016</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.379807472229</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="281">
+    <Description>daylengths-2015-10-08</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.35024356842</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.321004867554</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="282">
+    <Description>daylengths-2015-10-09</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.293808937073</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.262274742126</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="283">
+    <Description>daylengths-2015-10-10</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.237456321716</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.20362663269</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="284">
+    <Description>daylengths-2015-10-11</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.181192398071</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.145066261292</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="285">
+    <Description>daylengths-2015-10-12</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.125025749207</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.086603164673</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="286">
+    <Description>daylengths-2015-10-13</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.068964958191</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">11.028245925903</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="287">
+    <Description>daylengths-2015-10-14</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">11.013018608093</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.970004081726</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="288">
+    <Description>daylengths-2015-10-15</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.957196235657</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.91188621521</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="289">
+    <Description>daylengths-2015-10-16</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.901508331299</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.853901863098</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="290">
+    <Description>daylengths-2015-10-17</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.845963478088</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.796061515808</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="291">
+    <Description>daylengths-2015-10-18</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.790572166443</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.738375663757</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="292">
+    <Description>daylengths-2015-10-19</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.735345840454</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.680855751038</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="293">
+    <Description>daylengths-2015-10-20</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.680295944214</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.623513221741</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="294">
+    <Description>daylengths-2015-10-21</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.625433921814</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.566359519958</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="295">
+    <Description>daylengths-2015-10-22</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.570771217346</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.509407997131</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="296">
+    <Description>daylengths-2015-10-23</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.516322135925</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.452671051025</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="297">
+    <Description>daylengths-2015-10-24</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.462098121643</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.396162033081</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="298">
+    <Description>daylengths-2015-10-25</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.408114433289</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.339895248413</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="299">
+    <Description>daylengths-2015-10-26</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.354384422302</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.283886909485</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="300">
+    <Description>daylengths-2015-10-27</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.300922393799</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.228149414063</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="301">
+    <Description>daylengths-2015-10-28</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.247744560242</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.172700881958</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="302">
+    <Description>daylengths-2015-10-29</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.194867134094</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.11755657196</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="303">
+    <Description>daylengths-2015-10-30</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.14230632782</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.062734603882</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="304">
+    <Description>daylengths-2015-10-31</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.090078353882</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">10.00825214386</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="305">
+    <Description>daylengths-2015-11-01</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">10.038202285767</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.9541273117065</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="306">
+    <Description>daylengths-2015-11-02</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.9866962432861</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.9003791809082</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="307">
+    <Description>daylengths-2015-11-03</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.9355783462524</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.8470287322998</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="308">
+    <Description>daylengths-2015-11-04</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.8848686218262</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.7940950393677</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="309">
+    <Description>daylengths-2015-11-05</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.834587097168</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.7415990829468</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="310">
+    <Description>daylengths-2015-11-06</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.7847557067871</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.6895627975464</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="311">
+    <Description>daylengths-2015-11-07</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.7353944778442</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.6380100250244</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="312">
+    <Description>daylengths-2015-11-08</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.6865262985229</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.5869617462158</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="313">
+    <Description>daylengths-2015-11-09</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.6381740570068</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.5364427566528</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="314">
+    <Description>daylengths-2015-11-10</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.5903596878052</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.4864768981934</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="315">
+    <Description>daylengths-2015-11-11</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.5431089401245</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.4370908737183</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="316">
+    <Description>daylengths-2015-11-12</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.4964456558228</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.3883085250854</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="317">
+    <Description>daylengths-2015-11-13</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.4503946304321</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.3401575088501</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="318">
+    <Description>daylengths-2015-11-14</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.4049816131592</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.2926635742188</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="319">
+    <Description>daylengths-2015-11-15</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.3602333068848</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.2458553314209</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="320">
+    <Description>daylengths-2015-11-16</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.3161754608154</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.1997604370117</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="321">
+    <Description>daylengths-2015-11-17</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.2728357315063</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.1544075012207</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="322">
+    <Description>daylengths-2015-11-18</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.2302408218384</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.1098260879517</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="323">
+    <Description>daylengths-2015-11-19</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.1884202957153</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.0660448074341</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="324">
+    <Description>daylengths-2015-11-20</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.1474018096924</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">9.0230951309204</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="325">
+    <Description>daylengths-2015-11-21</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.107213973999</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.9810056686401</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="326">
+    <Description>daylengths-2015-11-22</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.0678853988647</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.93980884552</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="327">
+    <Description>daylengths-2015-11-23</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">9.0294456481934</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.8995342254639</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="328">
+    <Description>daylengths-2015-11-24</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.9919242858887</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.8602142333984</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="329">
+    <Description>daylengths-2015-11-25</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.9553499221802</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.8218784332275</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="330">
+    <Description>daylengths-2015-11-26</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.919753074646</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.7845602035522</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="331">
+    <Description>daylengths-2015-11-27</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.8851633071899</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.7482900619507</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="332">
+    <Description>daylengths-2015-11-28</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.8516082763672</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.713098526001</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="333">
+    <Description>daylengths-2015-11-29</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.8191194534302</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.6790189743042</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="334">
+    <Description>daylengths-2015-11-30</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.7877244949341</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.6460800170898</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="335">
+    <Description>daylengths-2015-12-01</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.7574520111084</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.6143131256104</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="336">
+    <Description>daylengths-2015-12-02</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.7283315658569</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.5837488174438</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="337">
+    <Description>daylengths-2015-12-03</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.7003889083862</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.5544166564941</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="338">
+    <Description>daylengths-2015-12-04</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.6736536026001</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.526346206665</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="339">
+    <Description>daylengths-2015-12-05</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.6481504440308</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.499566078186</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="340">
+    <Description>daylengths-2015-12-06</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.6239070892334</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.4741039276123</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="341">
+    <Description>daylengths-2015-12-07</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.6009464263916</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.4499855041504</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="342">
+    <Description>daylengths-2015-12-08</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.5792942047119</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.4272384643555</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="343">
+    <Description>daylengths-2015-12-09</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.5589733123779</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.4058866500854</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="344">
+    <Description>daylengths-2015-12-10</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.5400066375732</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.3859548568726</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="345">
+    <Description>daylengths-2015-12-11</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.5224132537842</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.3674650192261</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="346">
+    <Description>daylengths-2015-12-12</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.50621509552</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.350438117981</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="347">
+    <Description>daylengths-2015-12-13</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.4914283752441</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.3348951339722</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="348">
+    <Description>daylengths-2015-12-14</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.4780721664429</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.3208522796631</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="349">
+    <Description>daylengths-2015-12-15</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.466160774231</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.30832862854</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="350">
+    <Description>daylengths-2015-12-16</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.4557094573975</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.2973394393921</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="351">
+    <Description>daylengths-2015-12-17</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.4467296600342</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.287896156311</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="352">
+    <Description>daylengths-2015-12-18</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.4392328262329</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.2800130844116</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="353">
+    <Description>daylengths-2015-12-19</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.4332284927368</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.2736978530884</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="354">
+    <Description>daylengths-2015-12-20</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.4287242889404</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.2689599990845</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="355">
+    <Description>daylengths-2015-12-21</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.4257249832153</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.2658061981201</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="356">
+    <Description>daylengths-2015-12-22</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.4242362976074</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.2642402648926</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="357">
+    <Description>daylengths-2015-12-23</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.424259185791</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.2642650604248</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="358">
+    <Description>daylengths-2015-12-24</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.4257946014404</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.2658796310425</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="359">
+    <Description>daylengths-2015-12-25</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.4288425445557</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.2690849304199</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="360">
+    <Description>daylengths-2015-12-26</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.4333972930908</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.2738761901855</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="361">
+    <Description>daylengths-2015-12-27</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.4394569396973</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.2802486419678</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="362">
+    <Description>daylengths-2015-12-28</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.4470129013062</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.2881946563721</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="363">
+    <Description>daylengths-2015-12-29</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.4560575485229</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.2977056503296</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="364">
+    <Description>daylengths-2015-12-30</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.4665813446045</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.3087711334229</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+  <PAMRasterBand band="365">
+    <Description>daylengths-2015-12-31</Description>
+    <Metadata>
+      <MDI key="STATISTICS_MAXIMUM">8.4785718917847</MDI>
+      <MDI key="STATISTICS_MEAN">-9999</MDI>
+      <MDI key="STATISTICS_MINIMUM">8.3213787078857</MDI>
+      <MDI key="STATISTICS_STDDEV">-9999</MDI>
+    </Metadata>
+  </PAMRasterBand>
+</PAMDataset>

@@ -1,0 +1,249 @@
+---
+title: "Example: Model comparison"
+output: rmarkdown::html_vignette
+bibliography: REFERENCES.bib
+vignette: >
+  %\VignetteIndexEntry{Example: Model comparison}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+Sys.setlocale("LC_ALL", "English")
+
+```
+
+
+```{r setup, warning = FALSE, message = FALSE}
+
+library(barrks)
+library(tidyverse)
+library(terra)
+
+
+# function to unify the appearance of raster plots
+my_rst_plot <- function(rst, ...) {
+  plot(rst, mar = c(0.2, 0.1, 2, 5),
+       axes = FALSE, box = TRUE, nr = 1,
+       cex.main = 1.9, plg = list(cex = 1.8), ...)
+}
+
+```
+
+# Calculate phenology
+
+In this vignette, the sample data delivered with `barrks` is used to calculate the
+phenology with all models available in the package. Note that the daylength threshold
+for diapause initiation of the Jönsson model is adapted to Central Europe from @Baier2007.
+
+```{r warning = FALSE, message = FALSE}
+
+data <- barrks_data()
+
+# calculate phenology
+phenos <- list('phenips-clim' = phenology('phenips-clim', data),
+               'phenips' = phenology('phenips', data),
+               'rity' = phenology('rity', data),
+               'lange' = phenology('lange', data),
+               # customize the Jönsson model for Central Europe
+               'joensson' = phenology(model('joensson', daylength_dia = 14.5), data),
+               'bso' = bso_phenology(.data = data) %>% bso_translate_phenology(),
+               'chapy' = phenology('chapy', data))
+
+```
+
+
+# Spatial outputs
+
+`barrks` provides different functions to examine the results of the phenology
+calculations. This section describes the application of the basic functions that
+return spatial outputs.
+
+
+## Day-of-year-rasters
+
+The onset of infestation, initiation of diapause and the frost-induced mortality
+are described as the corresponding day of year. That data can be attained via
+`get_onset_rst()`, `get_diapause_rst()` or `get_mortality_rst()`.
+As some models have not all submodels implemented and `terra::panel()` does not
+allow adding empty rasters, a workaround-function is defined to plot the
+the respective submodel outputs.
+Additionally it draws the borders of the area of interest.
+
+```{r warning = FALSE, message = FALSE, eval = FALSE}
+
+
+plot_doy_panel <- function(x) {
+
+  aoi <- as.polygons(data[[1]][[1]] * 0)
+
+  draw_aoi_borders <- function(i) {
+
+    if(empty[i]) polys(aoi, lwd = 2, col = 'white')
+    else polys(aoi, lwd = 2)
+  }
+
+  # Replace NULL by a raster with values in the overall range to not affect the legend.
+  # The raster will be overplotted by `draw_aoi_borders()`
+  rst_tmp <- data[[1]][[1]] * 0 + min(minmax(rast(discard(x, is.null)))[1,])
+  empty <- map_lgl(x, \(y) is.null(y))
+  walk(which(empty), \(i) x[[i]] <<- rst_tmp)
+
+  panel(rast(x),
+        names(x),
+        col = viridisLite::viridis(100, direction = -1),
+        axes = FALSE,
+        box = TRUE,
+        loc.main = 'topright',
+        fun = draw_aoi_borders,
+        cex.main = 1.9,
+        plg = list(cex = 1.8))
+}
+
+plot_doy_panel(map(phenos, \(p) get_onset_rst(p)))
+plot_doy_panel(map(phenos, \(p) get_diapause_rst(p)))
+plot_doy_panel(map(phenos, \(p) get_mortality_rst(p)[[1]]))
+
+```
+
+```{r model-comparison-onset, echo = FALSE, out.width = "100%", fig.dim=c(14, 9), fig.cap = "Day of year when the infestation begins"}
+
+plot_doy_panel <- function(x) {
+
+  aoi <- as.polygons(data[[1]][[1]] * 0)
+
+  draw_aoi_borders <- function(i) {
+
+    if(empty[i]) polys(aoi, lwd = 2, col = 'white')
+    else polys(aoi, lwd = 2)
+  }
+
+  # Replace NULL by a raster with values in the overall range to not affect the legend.
+  # The raster will be overplotted by `draw_aoi_borders()`
+  rst_tmp <- data[[1]][[1]] * 0 + min(minmax(rast(discard(x, is.null)))[1,])
+  empty <- map_lgl(x, \(y) is.null(y))
+  walk(which(empty), \(i) x[[i]] <<- rst_tmp)
+
+  panel(rast(x),
+        names(x),
+        col = viridisLite::viridis(100, direction = -1),
+        axes = FALSE,
+        box = TRUE,
+        loc.main = 'topright',
+        fun = draw_aoi_borders,
+        cex.main = 1.9,
+        plg = list(cex = 1.8))
+}
+
+plot_doy_panel(map(phenos, \(p) get_onset_rst(p)))
+```
+```{r model-comparison-diapause, echo = FALSE, out.width = "100%", fig.dim=c(14, 9), fig.cap = "Day of year when the diapause begins (in white cells no diapause was induced)"}
+plot_doy_panel(map(phenos, \(p) get_diapause_rst(p)))
+```
+```{r model-comparison-mortality, echo = FALSE, out.width = "100%", fig.dim=c(14, 9), fig.cap = "Day of year of the first frost-induced mortality event in autumn (in white cells no mortality happened)"}
+autumn <- seq(as.Date('2015-09-01'), as.Date('2015-12-31'), by = 'day')
+plot_doy_panel(map(phenos, \(p) get_mortality_rst(p, dates = autumn)[[1]]))
+```
+
+
+## Generations
+
+To get an overview of the establishment of generations, it is possible
+to plot the prevailing generations on different dates using
+`get_generations_rst()` and `my_rst_plot()`.
+
+```{r fig.show='hide'}
+
+# dates to plot
+dates <- c('2015-04-15', '2015-06-15', '2015-08-15', '2015-10-15')
+
+# walk through all phenology models
+walk(names(phenos), \(key) {
+
+  p <- phenos[[key]]
+
+  # plot generations of current model
+  get_generations_rst(p, dates) %>% my_rst_plot(main = paste0(key, '-', dates))
+})
+
+```
+
+```{r model-comparison-gens-phenips-clim, echo = FALSE, out.width = "100%", fig.dim=c(14, 3), fig.cap = "Generations calculated by PHENIPS-CLIM"}
+get_generations_rst(phenos[['phenips-clim']], dates) %>% my_rst_plot(main = paste0('phenips-clim-', dates))
+```
+```{r model-comparison-gens-phenips, echo = FALSE, out.width = "100%", fig.dim=c(14, 3), fig.cap = "Generations calculated by PHENIPS"}
+get_generations_rst(phenos[['phenips']], dates) %>% my_rst_plot(main = paste0('phenips-', dates))
+```
+```{r model-comparison-gens-rity, echo = FALSE, out.width = "100%", fig.dim=c(14, 3), fig.cap = "Generations calculated by RITY"}
+get_generations_rst(phenos[['rity']], dates) %>% my_rst_plot(main = paste0('rity-', dates))
+```
+```{r model-comparison-gens-lange, echo = FALSE, out.width = "100%", fig.dim=c(14, 3), fig.cap = "Generations calculated by the Lange model"}
+get_generations_rst(phenos[['lange']], dates) %>% my_rst_plot(main = paste0('lange-', dates))
+```
+```{r model-comparison-gens-joensson, echo = FALSE, out.width = "100%", fig.dim=c(14, 3), fig.cap = "Generations calculated by the Jönsson model"}
+get_generations_rst(phenos[['joensson']], dates) %>% my_rst_plot(main = paste0('joensson-', dates))
+```
+```{r model-comparison-gens-bso, echo = FALSE, out.width = "100%", fig.dim=c(14, 3), fig.cap = "Generations calculated by the BSO model"}
+get_generations_rst(phenos[['bso']], dates) %>% my_rst_plot(main = paste0('bso-', dates))
+```
+```{r model-comparison-gens-chapy, echo = FALSE, out.width = "100%", fig.dim=c(14, 3), fig.cap = "Generations calculated by CHAPY"}
+get_generations_rst(phenos[['chapy']], dates) %>% my_rst_plot(main = paste0('chapy-', dates))
+```
+
+
+# Stationwise outputs
+
+To plot the development diagrams of particular raster cells, stations can be
+defined by specifying their cell numbers.
+To get the stations' coordinates, `terra::xyFromCell` can be used.
+
+
+```{r fig.show='hide'}
+
+# plot the locations of the stations
+
+rst_aoi <- data[[1]][[1]] * 0
+stations <- c(Station_1 = 234, Station_2 = 345)
+station_coords <- vect(xyFromCell(rst_aoi, stations))
+
+plot(rst_aoi,  col = '#AAAAAA', legend = FALSE, axes = FALSE, box = TRUE)
+plot(station_coords, col = 'red', pch = 4, add = TRUE)
+text(station_coords, names(stations), col = 'black', pos = 2)
+```
+```{r model-comparison-stations-map, echo = FALSE, fig.dim=c(14, 6), out.width = "100%", fig.cap = "Stations map"}
+plot(rst_aoi,  col = '#AAAAAA', legend = FALSE, axes = FALSE, box = TRUE)
+plot(station_coords, col = 'red', pch = 4, add = TRUE)
+text(station_coords, names(stations), col = 'black', pos = 2)
+```
+
+The stations should be passed to `plot_development_diagram()` to get the desired plots.
+Here, only the models PHENIPS-Clim and PHENIPS are plotted to reduce the complexity
+of the diagrams.
+
+```{r fig.show='hide'}
+# plot the development diagrams
+
+limits <- as.Date(c('2015-04-01', '2015-12-31'))
+
+models <- c('phenips-clim', 'phenips')
+
+walk(1:length(stations), \(i) {
+  plot_development_diagram(phenos[models],
+                           stations[i],
+                           .lty = 1:length(models),
+                           xlim = limits)
+})
+
+```
+```{r model-comparison-dev-s1, echo = FALSE, out.width = "100%", fig.dim=c(12,6), fig.cap = "Development diagram for station 1"}
+plot_development_diagram(phenos[models], stations[1], .lty = 1:length(models), xlim = limits)
+```
+```{r model-comparison-dev-s2, echo = FALSE, out.width = "100%", fig.dim=c(12,6), fig.cap = "Development diagram for station 2"}
+plot_development_diagram(phenos[models], stations[2], .lty = 1:length(models), xlim = limits)
+```
+

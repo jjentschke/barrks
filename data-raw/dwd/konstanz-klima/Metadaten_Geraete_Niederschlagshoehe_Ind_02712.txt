@@ -1,0 +1,7 @@
+Stations_ID;Stationsname;Geo. Laenge [Grad];Geo. Breite [Grad];Stationshoehe [m];Geberhoehe ueber Grund [m];Von_Datum;Bis_Datum;Geraetetyp Name;Messverfahren;eor;
+2712;Konstanz;9.19;47.68;443;1;19921103;20021028;NG 200;Niederschlagsdauer, -menge, elektr.;eor;
+2712;Konstanz;9.19;47.68;443;1;19930816;20070306;Niederschlags-Detektor;Niederschlagsdauer, elektr.;eor;
+2712;Konstanz;9.19;47.68;442.5;1;20070307;20090930;Niederschlags-Detektor;Niederschlagsdauer, elektr.;eor;
+2712;Konstanz;9.19;47.68;442.5;1;20140924;20201019;Niederschlagswächter;Niederschlagsdauer, elektr.;eor;
+2712;Konstanz;9.13;47.7;428.06;1;20201021;20230426;Niederschlagswächter;Niederschlagsdauer, elektr.;eor;
+generiert: 08.05.2023 --  Deutscher Wetterdienst  --

@@ -1,0 +1,7 @@
+Stations_ID;Stationsname;Geo. Laenge [Grad];Geo. Breite [Grad];Stationshoehe [m];Geberhoehe ueber Grund [m];Von_Datum;Bis_Datum;Geraetetyp Name;Messverfahren;eor;
+2712;Konstanz;9.19;47.68;443;;19721101;20070306;Schneepegel;Schneehöhenmessung, manuell;eor;
+2712;Konstanz;9.19;47.68;442.5;;20070307;20180926;Schneepegel;Schneehöhenmessung, manuell;eor;
+2712;Konstanz;9.19;47.68;442.5;2.3;20140924;20201019;Schneehöhensensor SHM 30;Schneehöhenmessung, elektr.;eor;
+2712;Konstanz;9.13;47.7;428.06;2.2;20201021;20210809;Schneehöhensensor SHM 30;Schneehöhenmessung, elektr.;eor;
+2712;Konstanz;9.13;47.7;428.06;2;20210810;20230426;Schneehöhensensor SHM 30;Schneehöhenmessung, elektr.;eor;
+generiert: 08.05.2023 --  Deutscher Wetterdienst  --

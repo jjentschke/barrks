@@ -1,0 +1,71 @@
+Package: barrks
+Type: Package
+Title: Calculate Bark Beetle Phenology
+Version: 0.9.0.0
+Author: Jakob Jentschke
+Maintainer: Jakob Jentschke <jakob.jentschke@forst.bwl.de>
+Description: The package provides several models (e.g. PHENIPS-Clim, PHENIPS, RITY...) to
+    calculate the bark beetle phenology based on raster data. It is possible to
+    customize and combine the models.
+License: GPL (>= 3)
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.3.1
+Roxygen: list(markdown = TRUE)
+RdMacros: Rdpack
+Imports: 
+    dplyr,
+    purrr,
+    terra (>= 1.7-18),
+    Rdpack,
+    base,
+    lubridate,
+    readr,
+    stringr,
+    cli,
+    rlang
+Collate: 
+    'appearance.R'
+    'barrks.R'
+    'bso-phenology-results.R'
+    'bso-phenology.R'
+    'utils.R'
+    'bso-plot.R'
+    'create-daylengths.R'
+    'create-events.R'
+    'create-suntimes.R'
+    'data.R'
+    'utils-model-functions.R'
+    'model.R'
+    'model-bso.R'
+    'model-phenips.R'
+    'model-rity.R'
+    'model-chapy.R'
+    'model-combine.R'
+    'model-joensson.R'
+    'model-lange.R'
+    'model-phenips-clim.R'
+    'phenology-properties.R'
+    'phenology-results.R'
+    'phenology.R'
+    'plot-development-diagram.R'
+    'stations.R'
+    'utils-doc.R'
+    'utils-log.R'
+    'utils-storage.R'
+VignetteBuilder: knitr
+Depends: 
+    R (>= 4.3.1)
+Suggests: 
+    devtools,
+    geosphere,
+    graphics,
+    knitr,
+    mnormt,
+    ncdf4,
+    rmarkdown,
+    suncalc,
+    tidyverse,
+    tinytest,
+    utils,
+    viridisLite

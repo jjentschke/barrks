@@ -1,0 +1,7 @@
+Stations_ID;Stationsname;Von_Datum;Bis_Datum
+  2712;Konstanz;19370201;
+
+Stations_ID;Betreibername;Von_Datum;Bis_Datum
+  2712;Wetterdienst;19370201;19521110
+  2712;DWD;19521111;
+generiert: 08.05.2023 --  Deutscher Wetterdienst  --

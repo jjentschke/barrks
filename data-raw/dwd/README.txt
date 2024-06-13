@@ -1,0 +1,1 @@
+station data from https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily

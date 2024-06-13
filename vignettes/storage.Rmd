@@ -1,0 +1,55 @@
+---
+title: "Use a storage"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Use a storage}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  eval = FALSE
+)
+
+Sys.setlocale("LC_ALL", "English")
+
+```
+
+```{r eval=FALSE, message=FALSE, warning = FALSE}
+
+library(barrks)
+
+```
+
+A typical application of `barrks` is to repeatedly calculate a phenology with data
+on a daily basis. Depending on the model and the number of raster cells, these
+calculations can be quite time-consuming. As most of the calculations are redundant
+to earlier versions, the use of a storage can greatly reduce the computation time.
+A storage can be used by passing a directory as `.storage` parameter to `phenology()`.
+A phenology can be recovered from a storage by
+calling `phenology` with `.storage` parameter and without model inputs.
+
+Note that the use of a storage is neither available for station data nor for the `onset`
+and the `development` submodels of the BSO model. As saving and loading from
+the storage takes time as well, the calculation of a phenology might occasionally be slower,
+especially for small rasters.
+
+```{r, eval=FALSE}
+
+# call phenology with a storage path
+pheno <- phenology('phenips-clim',
+                   barrks_data(),
+                   .storage = 'path/to/storage')
+
+# recover phenology from a storage path
+pheno_recovered <- phenology('phenips-clim', .storage = 'path/to/storage')
+
+```
+
+The functions `save_phenology()` and `load_phenology()` provide a faster way for
+saving and loading phenology objects, but they do not allow successive calculations.
+
+

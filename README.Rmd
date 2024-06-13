@@ -1,0 +1,110 @@
+---
+output: github_document
+bibliography: vignettes/REFERENCES.bib
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%",
+  eval = TRUE
+)
+
+Sys.setlocale("LC_ALL", "English")
+
+```
+
+# barrks
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+The goal of `barrks` (**bar**k beetle **r**aster **k**it for **s**easonal
+development) is to calculate the phenological development of bark beetles. Rather
+than implementing one specific model, the package provides a collection of
+different models that can be chosen. Additionally, the models can be customized
+and combined to create an individual model. The calculations can be done
+spatially explicit by using raster inputs, or based on station inputs that are
+available as data frames. Even though most of the implemented models describe
+the phenology of *Ips typographus*, the package is not limited to particular
+bark beetle species and may be extended by additional models.
+
+The following table lists the models that are implemented in the package.
+
+| Model | Publication | Species | Help |
+| ----- | ----------- | ------- | ---- |
+| BSO | @Jakoby2019 | *Ips typographus* | `?model.bso.apply` <br/> `?model.bso.customize` |
+| Lange | @Lange2006 | *Ips typographus* | `?model.lange.apply` <br/> `?model.lange.customize` |
+| Jönsson | @Jonsson2011 | *Ips typographus* | `?model.joensson.apply` <br/> `?model.joensson.customize` |
+| PHENIPS | @Baier2007 | *Ips typographus* | `?model.phenips.apply` <br/> `?model.phenips.customize` |
+| PHENIPS-Clim | - | *Ips typographus* | `?model.phenips_clim.apply` <br/> `?model.phenips_clim.customize` |
+| RITY | @Ogris2019 | *Ips typographus* | `?model.rity.apply` <br/> `?model.rity.customize` |
+| CHAPY | @Ogris2020 | *Pityogenes chalcographus* | `?model.chapy.apply` <br/> `?model.chapy.customize` |
+
+
+## Installation
+
+<!--You can install the latest released version of `barrks` from CRAN from within R:
+
+```{r eval = FALSE}
+install.packages('barrks')
+```
+-->
+The development version of `barrks` can be installed from [GitHub](https://github.com/):
+
+```{r eval = FALSE}
+devtools::install_github("jjentschke/barrks")
+```
+
+`barrks` will be published on CRAN soon.
+
+## Basic Example
+
+`barrks` comes with sample data that will be used below.
+The phenology is calculated with `phenology()` which takes all necessary inputs
+as arguments. Subsequently, the rasters of emerged generations by date can be retrieved
+with `get_generations_rst()`. `terra::plot()` can be used to visualize these rasters.
+
+
+
+```{r generations-plot, message=FALSE, warning = FALSE, out.width = "100%", fig.dim=c(7,2), out.width = "100%", fig.cap = "Generations plot"}
+
+library(barrks)
+library(tidyverse)
+library(terra)
+
+
+# calculate phenology
+pheno <- phenology('phenips-clim', barrks_data())
+
+# plot number of prevailing generations on 4 different dates
+dates <- c('2015-04-15', '2015-06-15', '2015-08-15', '2015-10-15')
+get_generations_rst(pheno, dates) %>% plot(mar = c(0.2, 0.1, 2, 5),
+                                           axes = FALSE, box = TRUE, nr = 1,
+                                           cex.main = 1.9, plg = list(cex = 1.8))
+
+```
+
+
+`barrks` makes it easy to plot the development of the individual generations.
+To illustrate that, a "shaded" variant of the phenology above is calculated and
+the development diagram for a specific cell (called "station" in `barrks`) is
+plotted for bith phenology variants.
+
+```{r development-diagram, message=FALSE, out.width = "100%", fig.dim=c(7,4), fig.cap = "Development diagram"}
+
+pheno_shaded <- phenology('phenips-clim', barrks_data(), exposure = 'shaded')
+
+plot_development_diagram(list(pheno, pheno_shaded),
+                         stations_create('Example', 234),
+                         .legend_lty = FALSE,
+                         xlim = as.Date(c('2015-04-01', '2015-12-31')))
+
+```
+
+
+
+# References
+

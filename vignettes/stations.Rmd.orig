@@ -1,0 +1,67 @@
+---
+title: "Station data"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Station data}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+
+Sys.setlocale("LC_ALL", "English")
+
+```
+
+
+```{r setup, warning=FALSE, message=FALSE}
+
+library(barrks)
+
+```
+
+To calculate the phenology based on station data, `phenology()` should be called
+with a data frame as input. It should have a `date` column whose values need
+to be interpretable by `as.Date()`, and a `station` column that specifies the
+name of the respective station. Additional columns provide the actual
+parameters used by the model. This vignette uses the station data provided by
+barrks as sample data.
+
+```{r message=FALSE}
+
+station_data <- barrks_data('stations')
+
+head(station_data, 10)
+
+```
+
+To illustrate the beetle development at a specific station, `plot_development_diagram()`
+is used. It is possible to add several phenology objects to the plot that will be
+displayed as lines. The area between the lines of the particular generations
+will be filled if the respective generation appears in all phenology objects.
+
+
+```{r stations-diagram, message = FALSE, out.width = "100%", fig.dim=c(12,6), fig.cap = "Development diagram with different variants of PHENIPS-Clim"}
+
+# calculate phenology with different parameters
+pheno_sunny <- phenology('phenips-clim', station_data, exposure = 'sunny')
+pheno_shaded <- phenology('phenips-clim', station_data, exposure = 'shaded')
+pheno_last <- phenology('phenips-clim', station_data, exposure = 'shaded',
+                        onset_mode = 0.9)
+
+# plot development diagram
+plot_development_diagram(list('sunny' = pheno_sunny,
+                              'shaded' = pheno_shaded,
+                              'shaded + late onset' = pheno_last),
+                         xlim = as.Date(c('2011-03-15', '2011-12-31')),
+                         .lty = 1:3)
+
+```
+
+
+
+
