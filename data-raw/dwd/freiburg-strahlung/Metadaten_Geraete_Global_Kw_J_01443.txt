@@ -1,4 +1,0 @@
-Stations_ID;Stationsname;Geo. Laenge [Grad];Geo. Breite [Grad];Stationshoehe [m];Geberhoehe ueber Grund [m];Von_Datum;Bis_Datum;Geraetetyp Name;Messverfahren;eor;
-1443;Freiburg;7.85;48;269;;19760508;19851105;Pyranometer CM5;Strahlungsmessung, elektr.;eor;
-1443;Freiburg;7.85;48;269;38.45;19851106;20061122;Pyranometer CM11;Strahlungsmessung, elektr.;eor;
-generiert: 24.05.2023 --  Deutscher Wetterdienst  --

@@ -400,7 +400,7 @@ phenips_clim_calc_mortality <- function(.params,
   year <- lubridate::year(dates)
   end_lyr <- which(dates == paste0(year, '-', .params$model_end_date))
 
-  res[[end_lyr]] <- as.logical(res[[end_lyr]] * 0 + 1)
+  if(length(end_lyr) > 0) res[[end_lyr]] <- as.logical(res[[end_lyr]] * 0 + 1)
 
   return(res)
 }

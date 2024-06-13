@@ -1,8 +1,0 @@
-Stations_ID;Stationsname;Geo. Laenge [Grad];Geo. Breite [Grad];Stationshoehe [m];Geberhoehe ueber Grund [m];Von_Datum;Bis_Datum;Geraetetyp Name;Messverfahren;eor;
-5906;Mannheim;8.5;49.53;96;.05;19471021;19500331;Minimumthermometer;Temperaturmessung, konv.;eor;
-5906;Mannheim;8.5;49.53;96;.05;19500401;19750813;Minimumthermometer;Temperaturmessung, konv.;eor;
-5906;Mannheim;8.55;49.51;96;.05;19750814;20060530;Minimumthermometer;Temperaturmessung, konv.;eor;
-5906;Mannheim;8.55;49.51;96.1;.05;20060531;20060606;PT 100 (Luft);Temperaturmessung, elektr.;eor;
-5906;Mannheim;8.55;49.51;96.1;.05;20060607;20180402;PT 100 (Luft);Temperaturmessung, elektr.;eor;
-5906;Mannheim;8.56;49.51;97.95;.05;20180403;20230426;PT 100 (Luft);Temperaturmessung, elektr.;eor;
-generiert: 08.05.2023 --  Deutscher Wetterdienst  --
