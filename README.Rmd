@@ -29,20 +29,22 @@ and combined to create an individual model. The calculations can be done
 spatially explicit by using raster inputs, or based on station inputs that are
 available as data frames. Even though most of the implemented models describe
 the phenology of *Ips typographus*, the package is not limited to particular
-bark beetle species and may be extended by additional models.
+bark beetle species. For instance, CHAPY models the phenology of
+*Pityogenes chalcographus* and the package may be extended by models for additional
+bark beetle species.
 The full documentation of `barrks` can be found [here](https://jjentschke.github.io/barrks).
 
 The following table lists the models that are implemented in the package.
 
 | Model | Publication | Species | Help |
 | ----- | ----------- | ------- | ---- |
-| BSO | @Jakoby2019 | *Ips typographus* | `?model.bso.apply` <br/> `?model.bso.customize` |
-| Lange | @Lange2006 | *Ips typographus* | `?model.lange.apply` <br/> `?model.lange.customize` |
-| Jönsson | @Jonsson2011 | *Ips typographus* | `?model.joensson.apply` <br/> `?model.joensson.customize` |
-| PHENIPS | @Baier2007 | *Ips typographus* | `?model.phenips.apply` <br/> `?model.phenips.customize` |
-| PHENIPS&#x2011;Clim | - | *Ips typographus* | `?model.phenips_clim.apply` <br/> `?model.phenips_clim.customize` |
-| RITY | @Ogris2019 | *Ips typographus* | `?model.rity.apply` <br/> `?model.rity.customize` |
-| CHAPY | @Ogris2020 | *Pityogenes chalcographus* | `?model.chapy.apply` <br/> `?model.chapy.customize` |
+| BSO | @Jakoby2019 | *I.&nbsp;typographus* | `?model.bso.apply` <br/> `?model.bso.customize` |
+| Lange | @Lange2006 | *I.&nbsp;typographus* | `?model.lange.apply` <br/> `?model.lange.customize` |
+| Jönsson | @Jonsson2011 | *I.&nbsp;typographus* | `?model.joensson.apply` <br/> `?model.joensson.customize` |
+| PHENIPS | @Baier2007 | *I.&nbsp;typographus* | `?model.phenips.apply` <br/> `?model.phenips.customize` |
+| PHENIPS&#x2011;Clim | - | *I.&nbsp;typographus* | `?model.phenips_clim.apply` <br/> `?model.phenips_clim.customize` |
+| RITY | @Ogris2019 | *I.&nbsp;typographus* | `?model.rity.apply` <br/> `?model.rity.customize` |
+| CHAPY | @Ogris2020 | *P.&nbsp;chalcographus* | `?model.chapy.apply` <br/> `?model.chapy.customize` |
 
 
 ## Installation
