@@ -13,7 +13,9 @@ individual model. The calculations can be done spatially explicit by
 using raster inputs, or based on station inputs that are available as
 data frames. Even though most of the implemented models describe the
 phenology of *Ips typographus*, the package is not limited to particular
-bark beetle species and may be extended by additional models.
+bark beetle species and may be extended by additional models. The full
+documentation of `barrks` can be found
+[here](https://jjentschke.github.io/barrks).
 
 The following table lists the models that are implemented in the
 package.
@@ -24,7 +26,7 @@ package.
 | Lange        | Lange, Oekland, and Krokene (2006)      | *Ips typographus*          | `?model.lange.apply` <br/> `?model.lange.customize`               |
 | Jönsson      | Jönsson et al. (2011)                   | *Ips typographus*          | `?model.joensson.apply` <br/> `?model.joensson.customize`         |
 | PHENIPS      | Baier, Pennerstorfer, and Schopf (2007) | *Ips typographus*          | `?model.phenips.apply` <br/> `?model.phenips.customize`           |
-| PHENIPS-Clim | \-                                      | *Ips typographus*          | `?model.phenips_clim.apply` <br/> `?model.phenips_clim.customize` |
+| PHENIPS‑Clim | \-                                      | *Ips typographus*          | `?model.phenips_clim.apply` <br/> `?model.phenips_clim.customize` |
 | RITY         | Ogris et al. (2019)                     | *Ips typographus*          | `?model.rity.apply` <br/> `?model.rity.customize`                 |
 | CHAPY        | Ogris et al. (2020)                     | *Pityogenes chalcographus* | `?model.chapy.apply` <br/> `?model.chapy.customize`               |
 
