@@ -66,14 +66,14 @@
 </h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>The goal of <code>barrks</code> (<strong>bar</strong>k beetle <strong>r</strong>aster <strong>k</strong>it for <strong>s</strong>easonal development) is to calculate the phenological development of bark beetles. Rather than implementing one specific model, the package provides a collection of different models that can be chosen. Additionally, the models can be customized and combined to create an individual model. The calculations can be done spatially explicit by using raster inputs, or based on station inputs that are available as data frames. Even though most of the implemented models describe the phenology of <em>Ips typographus</em>, the package is not limited to particular bark beetle species and may be extended by additional models. The full documentation of <code>barrks</code> can be found <a href="https://jjentschke.github.io/barrks" class="external-link">here</a>.</p>
+<p>The goal of <code>barrks</code> (<strong>bar</strong>k beetle <strong>r</strong>aster <strong>k</strong>it for <strong>s</strong>easonal development) is to calculate the phenological development of bark beetles. Rather than implementing one specific model, the package provides a collection of different models that can be chosen. Additionally, the models can be customized and combined to create an individual model. The calculations can be done spatially explicit by using raster inputs, or based on station inputs that are available as data frames. Even though most of the implemented models describe the phenology of <em>Ips typographus</em>, the package is not limited to particular bark beetle species. For instance, CHAPY models the phenology of <em>Pityogenes chalcographus</em> and the package may be extended by models for additional bark beetle species. The full documentation of <code>barrks</code> can be found <a href="https://jjentschke.github.io/barrks" class="external-link">here</a>.</p>
 <p>The following table lists the models that are implemented in the package.</p>
 <table class="table">
 <colgroup>
 <col width="9%">
-<col width="27%">
-<col width="18%">
-<col width="44%">
+<col width="28%">
+<col width="14%">
+<col width="47%">
 </colgroup>
 <thead><tr class="header">
 <th>Model</th>
@@ -85,7 +85,7 @@
 <tr class="odd">
 <td>BSO</td>
 <td>Jakoby, Lischke, and Wermelinger (2019)</td>
-<td><em>Ips typographus</em></td>
+<td><em>I. typographus</em></td>
 <td>
 <code><a href="reference/model.bso.apply.html">?model.bso.apply</a></code> <br><code><a href="reference/model.bso.customize.html">?model.bso.customize</a></code>
 </td>
@@ -93,7 +93,7 @@
 <tr class="even">
 <td>Lange</td>
 <td>Lange, Oekland, and Krokene (2006)</td>
-<td><em>Ips typographus</em></td>
+<td><em>I. typographus</em></td>
 <td>
 <code><a href="reference/model.lange.apply.html">?model.lange.apply</a></code> <br><code><a href="reference/model.lange.customize.html">?model.lange.customize</a></code>
 </td>
@@ -101,7 +101,7 @@
 <tr class="odd">
 <td>Jönsson</td>
 <td>Jönsson et al. (2011)</td>
-<td><em>Ips typographus</em></td>
+<td><em>I. typographus</em></td>
 <td>
 <code><a href="reference/model.joensson.apply.html">?model.joensson.apply</a></code> <br><code><a href="reference/model.joensson.customize.html">?model.joensson.customize</a></code>
 </td>
@@ -109,7 +109,7 @@
 <tr class="even">
 <td>PHENIPS</td>
 <td>Baier, Pennerstorfer, and Schopf (2007)</td>
-<td><em>Ips typographus</em></td>
+<td><em>I. typographus</em></td>
 <td>
 <code><a href="reference/model.phenips.apply.html">?model.phenips.apply</a></code> <br><code><a href="reference/model.phenips.customize.html">?model.phenips.customize</a></code>
 </td>
@@ -117,7 +117,7 @@
 <tr class="odd">
 <td>PHENIPS‑Clim</td>
 <td>-</td>
-<td><em>Ips typographus</em></td>
+<td><em>I. typographus</em></td>
 <td>
 <code><a href="reference/model.phenips_clim.apply.html">?model.phenips_clim.apply</a></code> <br><code><a href="reference/model.phenips_clim.customize.html">?model.phenips_clim.customize</a></code>
 </td>
@@ -125,7 +125,7 @@
 <tr class="even">
 <td>RITY</td>
 <td>Ogris et al. (2019)</td>
-<td><em>Ips typographus</em></td>
+<td><em>I. typographus</em></td>
 <td>
 <code><a href="reference/model.rity.apply.html">?model.rity.apply</a></code> <br><code><a href="reference/model.rity.customize.html">?model.rity.customize</a></code>
 </td>
@@ -133,7 +133,7 @@
 <tr class="odd">
 <td>CHAPY</td>
 <td>Ogris et al. (2020)</td>
-<td><em>Pityogenes chalcographus</em></td>
+<td><em>P. chalcographus</em></td>
 <td>
 <code><a href="reference/model.chapy.apply.html">?model.chapy.apply</a></code> <br><code><a href="reference/model.chapy.customize.html">?model.chapy.customize</a></code>
 </td>
