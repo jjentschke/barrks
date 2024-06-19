@@ -18,8 +18,11 @@ plot_development_diagram(
   .fun_bg = NULL,
   .lty = "solid",
   .lwd = 2,
-  .split_date = NULL,
+  .date_split = NULL,
+  .date_stop = NULL,
   .lty2 = "dotted",
+  .lwd2 = 2,
+  .fill2 = NA,
   ...
 )
 }
@@ -53,8 +56,11 @@ line will be plotted.}
 Vectors of the same length as \code{.phenos} will assign the values to the
 respective phenology.}
 
-\item{.split_date, lty2}{When \code{.split_date} is reached, the line type will
-change to \code{lty2} and the area between the lines will not be filled anymore.}
+\item{.date_split, .lty2, .lwd2, .fill2}{When \code{.date_split} is reached, the
+appearance of the plot will change according to the respective values.}
+
+\item{.date_stop}{If specified, no data will be plotted after the respective
+date.}
 
 \item{...}{Parameters passed to \code{\link[base:plot]{base::plot()}}.}
 }

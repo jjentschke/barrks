@@ -29,7 +29,7 @@ model("phenips-clim",
                           '0.5' = 0.15,
                           '0.9' = 0.26),
 
-      dev_mortal_min = 0,
+      dev_mortal_min = NULL,
       dev_mortal_max = 0.6,
 
       topt = 30.4,

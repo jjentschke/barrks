@@ -70,7 +70,7 @@ Look \link[=model.bso.customize]{here} to find out how the model parameters affe
 \seealso{
 \code{\link[=model]{model()}}, \code{\link[=bso_phenology]{bso_phenology()}}, \code{\link{model.bso.customize}}
 
-Other {phenology applications}:
+Other {phenology applications}: 
 \code{\link{model.chapy.apply}},
 \code{\link{model.joensson.apply}},
 \code{\link{model.lange.apply}},

@@ -21,6 +21,9 @@ bso_get_flight_df(
 
 \item{generation}{Generation of interest. For sister broods, 0.5 should be added.}
 
+\item{flight}{Specifies which flight of the respective generation should be
+returned. Can be \code{1} (first flight) or \code{2} (second flight).}
+
 \item{dates}{Select dates that should be present in the output.}
 
 \item{stations}{Pass a character vector to choose stations assigned to \code{pheno} by

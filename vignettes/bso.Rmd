@@ -86,8 +86,8 @@ get_generations_rst(pheno_translated, dates) %>% my_rst_plot()
 ```
 
 <div class="figure">
-<img src="figure/bso-gens-1.png" alt="Generations calculated by the BSO model'" width="100%" />
-<p class="caption">Generations calculated by the BSO model'</p>
+<img src="figure/bso-gens-1.png" alt="Generations calculated by the BSO model" width="100%" />
+<p class="caption">Generations calculated by the BSO model</p>
 </div>
 
 

@@ -3,7 +3,6 @@
 
 ## General
 
-- [ ] Unify status messages (print temporary only?)
 - [ ] Implement argument checks
 - [ ] Add examples to function documentations (e.g. for `model_combine()`)
 - [ ] `create_daylength_...()`: switch from suncalc to geosphere (less dependencies...)
@@ -12,7 +11,9 @@
 - [ ] `phenology()`: All rasters from `.storage` are used even though `.dates` are not `NULL`
 - [ ] Further customization options for `plot_development_diagram()`:
   - [ ] fill incomplete generations: yes/no
-  - [ ] customize fill after .split_date
+  - [x] customize fill after .split_date
+- [ ] Unify status messages (print temporary only?)
+- [ ] Make storage messages optional 
 
 
 ## Models

@@ -39,30 +39,38 @@ purrr::walk(seq(1, 4.5, 0.5), function(generation) {
 })
 
 
+# ---------------------------------------------------------------------------- #
+#                                                                              #
+# TODO: Results in shaded areas not equal the test data                        #
+#                                                                              #
+# No correction of the linear development was performed in the original data   #
+# for shaded areas.                                                            #
+#                                                                              #
+# The test is disabled...                                                      #
+#                                                                              #
+# ---------------------------------------------------------------------------- #
 
-# Abweichung bei im Schatten!?
+if(FALSE) {
 
-# pheno_shaded <- phenology('phenips', test_input_phenips, exposure = 'shaded', .quiet = TRUE)
-#
-# df_dev <- get_development_df(pheno_shaded)
-#
-# df_test <- dplyr::full_join(test_output_phenips,
-#                      df_dev,
-#                      by = c('date', 'station'))
-#
-# data.frame(a = df_test$dev_shade_1 - df_test$gen_1, date = df_test$date) %>% View()
-#
-#
-# purrr::walk(seq(1, 5, 0.5), function(generation) {
-#   if(paste0('dev_shade_', generation) %in% names(df_test)) {
-#     val.x <- df_test[[paste0('dev_shade_', generation)]]
-#     val.y <- df_test[[paste0('gen_', generation)]]
-#
-#     print(max(abs(val.x - val.y)))
-#
-#     #print(all(abs(val.x - val.y) < 0.015 | val.y > 0.985))
-#   }
-# })
+  pheno_shaded <- phenology('phenips', test_input_phenips, exposure = 'shaded', .quiet = TRUE)
+
+  df_dev <- get_development_df(pheno_shaded)
+
+  df_test <- dplyr::full_join(test_output_phenips,
+                              df_dev,
+                              by = c('date', 'station'))
+
+
+  purrr::walk(seq(1, 5, 0.5), function(generation) {
+    if(paste0('dev_shade_', generation) %in% names(df_test)) {
+      val.x <- df_test[[paste0('dev_shade_', generation)]]
+      val.y <- df_test[[paste0('gen_', generation)]]
+      val.y <- ifelse(val.y < 0, 0, val.y)
+
+      expect_true(all(abs(val.x - val.y) < 0.00001 | val.x > 0.99999))
+    }
+  })
+}
 
 
 

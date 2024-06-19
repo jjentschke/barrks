@@ -113,8 +113,10 @@ bso_get_individuals_df <- function(pheno,
 #'
 #' @param pheno `r .doc_pheno('BSO', 'bso_phenology')`
 #' @param generation `r .doc_generation()`
-#' @param dates `r .doc_dates()`
 #' @param stations `r .doc_stations()`
+#' @param flight Specifies which flight of the respective generation should be
+#' returned. Can be `1` (first flight) or `2` (second flight).
+#' @param dates `r .doc_dates()`
 #'
 #' @name bso_get_flight
 NULL
