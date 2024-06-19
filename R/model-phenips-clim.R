@@ -34,7 +34,7 @@ NULL
 #'                           '0.5' = 0.15,
 #'                           '0.9' = 0.26),
 #'
-#'       dev_mortal_min = 0,
+#'       dev_mortal_min = NULL,
 #'       dev_mortal_max = 0.6,
 #'
 #'       topt = 30.4,
@@ -422,8 +422,10 @@ phenips_clim_calc_development <- function(.params,
 
   .params$dev_start <- .params$dev_oviposition[as.character(oviposition_mode)]
   .params$dev_end <- .params$dev_start + 1
-  .params$dev_mortal_min <- .params$dev_start + (.params$dev_end - .params$dev_start) * .params$dev_mortal_min
-  .params$dev_mortal_max <- .params$dev_start + (.params$dev_end - .params$dev_start) * .params$dev_mortal_max
+  if(!is.null(.params$dev_mortal_min))
+     .params$dev_mortal_min <- .params$dev_start + (.params$dev_end - .params$dev_start) * .params$dev_mortal_min
+  if(!is.null(.params$dev_mortal_max))
+    .params$dev_mortal_max <- .params$dev_start + (.params$dev_end - .params$dev_start) * .params$dev_mortal_max
 
   phenips_calc_development(.params,
                            .onset,
@@ -475,7 +477,7 @@ phenips_clim_get_dev_rates <- function() {
                                       '0.9' = 0.26),
                   dev_end = 1,
                   dev_sister_brood = 0.3,
-                  dev_mortal_min = 0,
+                  dev_mortal_min = NULL,
                   dev_mortal_max = 0.6,
 
                   tfly = 16.5,
