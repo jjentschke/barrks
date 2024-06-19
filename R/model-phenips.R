@@ -198,7 +198,7 @@ phenips_calc_teff <- function(.params,
                               .quiet = FALSE,
                               btmean,
                               btmax,
-                              exposure = 'semi-shaded') {
+                              exposure = 'sunny') {
 
   # use storage if requested
   if(is.character(.storage)) return(.use_storage())
@@ -284,6 +284,7 @@ phenips_develop_generation <- function(.params,
   # use storage if requested
   if(is.character(.storage)) return(.use_storage(.skip = c('period')))
 
+
   if(!is.null(.params$model_end_date)) {
 
     end_date <- .get_date_of_year(teff, .params$model_end_date)
@@ -326,6 +327,7 @@ phenips_develop_generation <- function(.params,
       dev <- terra::ifel(trigger_kill, 0, dev)
 
       new_period <- .trigger_rst((!.diapause) & fly & c(trigger_kill[[1]] & FALSE, trigger_kill)[[1:terra::nlyr(trigger_kill)]])
+      dev <- terra::ifel((!new_period) & trigger_kill, NA, dev)
       dev <- dev + cumsum(new_period * teff / .params$dd_total_dev)
 
       kill <- terra::app(c(lyr, kill), \(x) {
@@ -357,9 +359,13 @@ phenips_calc_development <- function(.params,
   if(is.null(.diapause)) .diapause <- as.logical(.template_rst(teff))
 
 
+  # TODO: use minimal dates only for all inputs
+  .diapause <- .diapause[[terra::time(.diapause) %in% terra::time(.onset)]]
+
 
   # only temperatures after onset and before hibernation account for development
   period_gen <- .onset
+  dates <- terra::time(period_gen)
 
   # init variables
   out <- list()
@@ -376,12 +382,14 @@ phenips_calc_development <- function(.params,
 
     # calculate development of current generation
     dev_raw <- phenips_develop_generation(.params, .onset, .diapause, .mortality, teff, fly, period_gen, NULL,
-                              .storage = storage_gen, .quiet = .quiet)
+                                          .storage = storage_gen, .quiet = .quiet)
 
 
     # calculate development of sister brood(s)
     dev_sis <- purrr::map(sister_broods, \(sis) {
+
       period_sis <- .trigger_rst(fly * (dev_raw > sis) * (!.diapause))
+      terra::time(period_sis) <- dates
 
       if(is.null(.storage)) storage_sis <- NULL
       else storage_sis <- file.path(.storage, paste0('gen_', generation + 0.5))
@@ -414,6 +422,7 @@ phenips_calc_development <- function(.params,
 
     # only account for temperatures after development of last generation is finished
     period_gen <- .trigger_rst(fly * (dev >= 1) * (!.diapause))
+    terra::time(period_gen) <- dates
 
     # break if no development will happen
     if(sum(terra::values(period_gen), na.rm = TRUE) == 0) break
