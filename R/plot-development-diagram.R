@@ -26,8 +26,10 @@
 #' @param .lty,.lwd Use specific line types and line widths.
 #' Vectors of the same length as `.phenos` will assign the values to the
 #' respective phenology.
-#' @param .split_date,lty2 When `.split_date` is reached, the line type will
-#' change to `lty2` and the area between the lines will not be filled anymore.
+#' @param .date_split,.lty2,.lwd2,.fill2 When `.date_split` is reached, the
+#' appearance of the plot will change according to the respective values.
+#' @param .date_stop If specified, no data will be plotted after the respective
+#' date.
 #' @param ... Parameters passed to [base::plot()].
 #'
 #' @export
@@ -47,8 +49,11 @@ plot_development_diagram <- function(.phenos,
                                      .fun_bg = NULL,
                                      .lty = 'solid',
                                      .lwd = 2,
-                                     .split_date = NULL,
+                                     .date_split = NULL,
+                                     .date_stop = NULL,
                                      .lty2 = 'dotted',
+                                     .lwd2 = 2,
+                                     .fill2 = NA,
                                      ...) {
 
   n_vals <- min(length(.labels), length(.colors), length(.fill))
@@ -91,7 +96,7 @@ plot_development_diagram <- function(.phenos,
   if(is.list(.station)) main <- names(.station[[1]][1])
   else main <- names(.station[1])
 
-  args <- list(xlab = 'date', ylab = 'dev', xaxs = 'i', yaxs = 'i', xaxt = 'n', main = paste(main, year))
+  args <- list(xlab = NA, ylab = 'development', xaxs = 'i', yaxs = 'i', xaxt = 'n', main = paste(main, year))
   fun_args <- list(...)
 
   xaxt <- 's'
@@ -103,11 +108,10 @@ plot_development_diagram <- function(.phenos,
 
   if(!is.null(args$xlim)) {
     dates <- dates[dates >= args$xlim[1] & dates <= args$xlim[2]]
-    dates_full <- seq(args$xlim[1], args$xlim[2], by = 'days')
-  }
-  else dates_full <- dates
+    dates_full <- seq(as.Date(args$xlim[1]), as.Date(args$xlim[2]), by = 'day')
+  } else dates_full <- dates
 
-  args$x <- c(min(dates), max(dates))
+  args$x <- c(min(dates_full), max(dates_full))
   args$y <- c(0, 1)
   args$type <- 'n'
 
@@ -115,6 +119,10 @@ plot_development_diagram <- function(.phenos,
   if(xaxt != 'n') .add_date_axis(dates_full)
 
   if(is.function(.fun_bg)) .fun_bg()
+
+
+  if(!is.null(.date_stop)) dates <- dates[dates <= .date_stop]
+
 
 
   # fetch development
@@ -136,6 +144,7 @@ plot_development_diagram <- function(.phenos,
     cols <- colnames(df)
     cols <- cols[stringr::str_detect(cols, '^gen_')]
 
+    return(df)
     purrr::walk(cols, \(col) {
 
       vec <- df[[col]]
@@ -145,9 +154,10 @@ plot_development_diagram <- function(.phenos,
         if(vec[i - 1] < 0 & vec[i] > 0) return(TRUE)
         return(FALSE)
       })
+
       y <- purrr::map_lgl(2:length(vec), \(i) {
         if(is.na(vec[i - 1]) | is.na(vec[i])) return(FALSE)
-        if(vec[i] < 0 & vec[i - 1] > 0) return(TRUE)
+        if(vec[i - 1] > 0 & vec[i] < 0) return(TRUE)
         return(FALSE)
       })
 
@@ -165,112 +175,72 @@ plot_development_diagram <- function(.phenos,
   generations <- generations[generations >= 1]
 
 
-  purrr::walk(generations, \(generation) {
+  plot_content <- function(generation,
+                           gen_devs,
+                           dates,
+                           .lwd,
+                           .lty,
+                           .fill) {
 
-    has_gen <- purrr::map_lgl(devs, \(dev) {
-      key <- paste0('gen_', generation)
-      return(key %in% names(dev) & any(dev[[key]] >= 0, na.rm = TRUE))
+    gen_key <- paste0('gen_', generation)
+
+    if(length(.fill) > 1) .fill <- .fill[[gen_key]]
+
+
+    has_gen_date <- purrr::map(devs, \(dev) {
+      return(!is.na(dev[[gen_key]]))
+      # dev[[gen_key]][is.na(dev[[gen_key]])] <- -1
+      # return(dev[[gen_key]] >= 0)
     })
+    has_gen <- purrr::map_lgl(has_gen_date, \(x) any(x))
 
+    gen_devs <- gen_devs[has_gen]
 
-    if(!any(has_gen)) {
-      generations <<- generations[generations != generation]
-      return()
-    }
+    if(!isFALSE(.group)) {
 
-    gen_devs <- purrr::map(devs[has_gen], \(dev) dev[[paste0('gen_', generation)]])
+      has_gen_date_group <- purrr::reduce(has_gen_date[names(has_gen_date) %in% .group], \(a, b) a & b)
 
-
-    if(length(gen_devs) == 0) return()
-
-    if(!is.null(.split_date)) {
-      dates1 <- dates[dates <= .split_date]
-      dates2 <- dates[dates >= .split_date]
-    }
-    else {
-      dates1 <- dates
-      dates2 <- c()
-    }
-
-    if(any(names(gen_devs) %in% .group)) {
-      g <- .group[.group %in% names(gen_devs)]
-      gen_dev_min <- purrr::map(1:length(gen_devs[[1]]), \(i) {
-        min(purrr::map_dbl(gen_devs[g], \(gen_dev) gen_dev[i]))
+      dev_min_group <- purrr::map_dbl(1:length(gen_devs[[1]]), \(i) {
+        min(purrr::map_dbl(gen_devs[names(gen_devs) %in% .group], \(gen_dev) gen_dev[i]), na.rm = FALSE)
       })
-      gen_dev_max <- purrr::map(1:length(gen_devs[[1]]), \(i) {
-        x <- purrr::map_dbl(gen_devs[g], \(gen_dev) gen_dev[i])
+      dev_min_group1 <- ifelse(has_gen_date_group, dev_min_group, NA)
+
+      dev_max_group <- purrr::map_dbl(1:length(gen_devs[[1]]), \(i) {
+
+        x <- purrr::map_dbl(gen_devs[names(gen_devs) %in% .group], \(gen_dev) gen_dev[i])
         if(all(is.na(x))) return(NA)
+
         max(x, na.rm = TRUE)
       })
+      dev_max_group1 <- ifelse(has_gen_date_group, dev_max_group, NA)
 
-      dates_group_min <- dates[!is.na(gen_dev_min)]
-      dates_group_max <- dates[!is.na(gen_dev_max)]
-      gen_dev_min <- gen_dev_min[!is.na(gen_dev_min)]
-      gen_dev_max <- gen_dev_max[!is.na(gen_dev_max)]
-      keys_min1 <- dates_group_min %in% dates1
-      keys_min2 <- dates_group_min %in% dates2
-      keys_max1 <- dates_group_max %in% dates1
-      keys_max2 <- dates_group_max %in% dates2
+      if(all(has_gen) & !is.na(.fill)) {
 
-      keys_max3 <- which(purrr::map_lgl(gen_dev_min[keys_min1], \(x) !is.null(x)))
-
-      if(all(has_gen)) {
-        polygon(c(dates_group_max[keys_max3], rev(dates_group_min[keys_max3])),
-                unlist(c(gen_dev_max[keys_max3], rev(gen_dev_min[keys_max3]))),
-                col = .fill[[paste0('gen_', generation)]],
-                border = NA)
-      }
-
-
-      if(.minmax_only) {
-
-        if(all(has_gen)) {
-          lines(dates_group_min[keys_min1],
-                gen_dev_min[keys_min1],
-                col = .colors[[paste0('gen_', generation)]],
-                lwd = .lwd,
-                lty = .lty)
-
-          lines(dates_group_min[keys_min2],
-                gen_dev_min[keys_min2],
-                col = .colors[[paste0('gen_', generation)]],
-                lwd = .lwd,
-                lty = .lty2)
-
-          k <- which(gen_dev_min >= 0)[1]
-          if(k < length(gen_dev_min)) k <- (k-1):(k+1)
-          else k <- (k-1):k
-
-          lines(c(dates_group_min[k - 1], dates_group_min[k]),
-                c(gen_dev_min[k - 1], gen_dev_min[k]),
-                col = .colors[[paste0('gen_', generation)]],
-                lwd = .lwd)
-        }
-
-        lines(dates_group_max[keys_max1],
-              gen_dev_max[keys_max1],
-              col = .colors[[paste0('gen_', generation)]],
-              lwd = .lwd,
-              lty = .lty)
-        lines(dates_group_max[keys_max2],
-              gen_dev_max[keys_max2],
-              col = .colors[[paste0('gen_', generation)]],
-              lwd = .lwd,
-              lty = .lty2)
-
-        k <- which(gen_dev_max >= 0)[1]
-        if(k < length(gen_dev_max)) k <- (k-1):(k+1)
-        else k <- (k-1):k
-
-        lines(c(dates_group_max[k - 1], dates_group_max[k]),
-              c(gen_dev_max[k - 1], gen_dev_max[k]),
-              col = .colors[[paste0('gen_', generation)]],
-              lwd = .lwd)
+        purrr::walk(2:length(dev_min_group), \(i) {
+          polygon(c(dates[i - 1], dates[i], dates[i], dates[i - 1]),
+                  c(dev_min_group1[i - 1], dev_min_group1[i], dev_max_group1[i], dev_max_group1[i - 1]),
+                  col = .fill,
+                  border = NA)
+        })
       }
     }
 
 
-    if(!.minmax_only) {
+    if(.minmax_only) {
+
+      lines(dates,
+            ifelse(dev_min_group < 0, NA, dev_min_group),
+            col = .colors[[paste0('gen_', generation)]],
+            lwd = .lwd,
+            lty = .lty)
+
+      lines(dates,
+            ifelse(dev_max_group < 0, NA, dev_max_group),
+            col = .colors[[paste0('gen_', generation)]],
+            lwd = .lwd,
+            lty = .lty)
+    } else  {
+
       purrr::walk(names(gen_devs), \(name_pheno) {
         gen_dev <- gen_devs[[name_pheno]]
 
@@ -283,10 +253,43 @@ plot_development_diagram <- function(.phenos,
 
         lines(dates,
               gen_dev,
-              col = .colors[[paste0('gen_', generation)]],
+              col = .colors[[gen_key]],
               lwd = lwd_i,
               lty = lty_i)
       })
+    }
+  }
+
+
+  purrr::walk(generations, \(generation) {
+
+    gen_key <- paste0('gen_', generation)
+
+    gen_devs <- purrr::map(devs, \(x) x[[gen_key]])
+
+    has_gen_date <- purrr::map(devs, \(dev) {
+      ifelse(is.na(dev[[gen_key]]), FALSE, dev[[gen_key]] >= 0)
+      # return(!is.na(dev[[gen_key]]))
+      # dev[[gen_key]][is.na(dev[[gen_key]])] <- -1
+      # return(dev[[gen_key]] >= 0)
+    })
+    has_gen <- purrr::map_lgl(has_gen_date, \(x) any(x))
+    #has_gen_date_group <- purrr::reduce(has_gen_date[names(has_gen_date) %in% .group], \(a, b) a & b)
+
+    if(!any(has_gen)) {
+      generations <<- generations[generations != generation]
+      return()
+    }
+
+
+
+    if(!is.null(.date_split)) {
+      gen_devs1 <- purrr::map(gen_devs, \(x) x[dates <= .date_split])
+      gen_devs2 <- purrr::map(gen_devs, \(x) x[dates >= .date_split])
+      plot_content(generation, gen_devs1, dates[dates <= .date_split], .lwd, .lty, .fill)
+      plot_content(generation, gen_devs2, dates[dates >= .date_split], .lwd2, .lty2, .fill2)
+    } else {
+      plot_content(generation, gen_devs, dates, .lwd, .lty, .fill)
     }
   })
 
