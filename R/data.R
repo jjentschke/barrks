@@ -26,6 +26,14 @@ barrks_data <- function(dataset = 'raster') {
   if(dataset == 'raster') {
 
     path <- system.file('extdata/sample-data', package = 'barrks')
+
+    out <- .process_data(path, .ext = 'nc')
+
+    out$tmin <- out$tmin / 10
+    out$tmean <- out$tmean / 10
+    out$tmax <- out$tmax / 10
+    out$daylength <- out$daylength / 100
+
     return(.process_data(path))
   }
 
