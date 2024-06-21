@@ -6,6 +6,7 @@
 - [ ] Implement argument checks
 - [ ] Add examples to function documentations (e.g. for `model_combine()`)
 - [ ] `create_daylength_...()`: switch from suncalc to geosphere (less dependencies...)
+- [ ] Make output of `create_suntimes_...()` and `create_daylength_...()` consistent (minutes OR hours)
 - [ ] Define a `BarrksPheno` (or similar) class
 - [ ] Make order of input raster layers irrelevant (use the date)
 - [ ] `phenology()`: All rasters from `.storage` are used even though `.dates` are not `NULL`
