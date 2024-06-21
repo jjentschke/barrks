@@ -34,7 +34,7 @@ barrks_data <- function(dataset = 'raster') {
     out$tmax <- out$tmax / 10
     out$daylength <- out$daylength / 100
 
-    return(.process_data(path))
+    return(out)
   }
 
   if(dataset == 'stations') return(station_data)
