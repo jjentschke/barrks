@@ -7,53 +7,7 @@ NULL
 #'
 #' `r .doc_customize_description('CHAPY', 'chapy', 'Ogris2020')`
 #'
-#' @usage
-#' model("chapy",
-#'
-#'       # ==== onset ====
-#'
-#'       dd_onset_start_date = '03-09',
-#'       dd_onset_base = 7.4,
-#'       dd_onset_threshold = 216.5,
-#'
-#'       # ==== onset + development ====
-#'
-#'       tfly = 15.6,
-#'
-#'       # ==== development ====
-#'
-#'       dd_development_base = 7.4,
-#'       dd_total_dev = 635.4,
-#'       dev_start = 0,
-#'       dev_end = 1,
-#'       dev_sister_brood = 0.5,
-#'       dev_mortal_min = NULL,
-#'       dev_mortal_max = 0.8,
-#'
-#'       func_ftmin = function(tmin) { 1.44 + 0.82 * tmin },
-#'       func_ftmean = function(tmean) { 0.50 + 0.81 * tmean },
-#'       func_ftmax = function(tmax) { 1.03 + 0.86 * tmax },
-#'
-#'       func_btmin = function(atmin) { 0.56 + 0.99 * atmin },
-#'       func_btmean = function(atmean) { -0.48 + 1.03 * atmean },
-#'       func_btmax = function(atmax) { 0.03 + 0.99 * atmax },
-#'
-#'       dt_low = 7.4,
-#'       dt_up = 39.4,
-#'       topt = 30,
-#'       tmax = 41.97,
-#'       alpha = 0.031,
-#'       beta = 5.3,
-#'       gamma = 1.25,
-#'
-#'       # ==== diapause ====
-#'
-#'       daylength_dia = 13.6,
-#'
-#'       # ==== mortality ====
-#'
-#'       model_end_date = '12-31'
-#' )
+#' `r .doc_customize_call('CHAPY', 'chapy')`
 #'
 #' @param dd_onset_start_date The date, when the degree days start to sum up ('MM-DD').
 #' @param dd_onset_base Base temperature to calculate degree days to trigger the onset.
@@ -72,7 +26,7 @@ NULL
 #' development of white stages (egg, larva, pupa). During these stages, the
 #' beetles could die caused by a mortality event.
 #'
-#' @param func_ftmean,func_ftmax,func_atdiff Functions to caclulate the
+#' @param func_ftmin,func_ftmean,func_ftmax Functions to caclulate the
 #' air temperature in forest stands (see \insertCite{Ogris2019;nobrackets}{barrks},
 #' equations 1 - 3). Each parameter will be passed as SpatRaster:
 #'
@@ -80,7 +34,7 @@ NULL
 #' - `tmean`: mean air temperature
 #' - `tmax`: maximum air temperature
 #'
-#' @param func_btmean,func_btmax,func_btdiff Functions to caclulate the
+#' @param func_btmin,func_btmean,func_btmax Functions to caclulate the
 #' bark temperature (see \insertCite{Ogris2019;nobrackets}{barrks},
 #' equations 4 - 6). Each parameter will be passed as SpatRaster:
 #'
@@ -115,13 +69,11 @@ NULL
 #' CHAPY was published by \insertCite{Ogris2020;textual}{barrks} and
 #' parametrized for *Pityogenes chalcographus* in Slovenia.
 #'
-#' @section Functioning:
+#' In `barrks`, [phenology()] is used to apply a model. The following code
+#' illustrates which inputs are required to apply CHAPY and which additional
+#' parameters are available.
 #'
-#' The functioning of CHAPY is identical to [RITY][model.rity.apply] but it is
-#' has a different [parametrization][model.chapy.customize].
-#'
-#' @usage
-#'
+#' ```
 #' phenology("chapy", ..., tmin = NULL, tmean = NULL, tmax, daylength, mode = 'max')
 #'
 #' # calculate submodels separately
@@ -131,6 +83,12 @@ NULL
 #' phenology("chapy", ..., .submodels = 'development',
 #'           .onset, .diapause = NULL, .mortality = NULL,
 #'           tmin = NULL, tmean = NULL, tmax = NULL, mode = 'max')
+#' ```
+#'
+#' @section Functioning:
+#'
+#' The functioning of CHAPY is identical to [RITY][model.rity.apply] but it is
+#' has a different [parametrization][model.chapy.customize].
 #'
 #'
 #' @param tmin,tmean,tmax Daily minimum/mean/maximum air temperatures in °C.
@@ -141,8 +99,6 @@ NULL
 #' @param mode Specifies which temperature should be used to calculate the
 #' development. Can be `min`, `mean` or `max`.
 #' @param .submodels,.onset,.diapause,.mortality,... `r .doc_phenology_dots()`
-#'
-#' @return `r .doc_return_pheno()`
 #'
 #' @references
 #' \insertAllCited{}
@@ -164,11 +120,26 @@ NULL
                params = list(
                  dd_onset_start_date = '03-09',
                  dd_onset_base = 7.4,
-                 dd_development_base = 7.4,
                  dd_onset_threshold = 216.5,
-                 dd_total_dev = 635.4,
 
                  tfly = 15.6,
+
+                 dd_development_base = 7.4,
+                 dd_total_dev = 635.4,
+                 dev_start = 0,
+                 dev_end = 1,
+                 dev_sister_brood = 0.5,
+                 dev_mortal_min = NULL,
+                 dev_mortal_max = 0.8,
+
+                 func_ftmin = function(tmin) { 1.44 + 0.82 * tmin },
+                 func_ftmean = function(tmean) { 0.50 + 0.81 * tmean },
+                 func_ftmax = function(tmax) { 1.03 + 0.86 * tmax },
+
+                 func_btmin = function(atmin) { 0.56 + 0.99 * atmin },
+                 func_btmean = function(atmean) { -0.48 + 1.03 * atmean },
+                 func_btmax = function(atmax) { 0.03 + 0.99 * atmax },
+
                  dt_low = 7.4,
                  dt_up = 39.4,
                  topt = 30,
@@ -177,24 +148,9 @@ NULL
                  beta = 5.3,
                  gamma = 1.25,
 
-                 dev_start = 0,
-                 dev_end = 1,
-                 dev_sister_brood = 0.5,
-                 dev_mortal_min = NULL,
-                 dev_mortal_max = 0.8,
-                 model_end_date = '12-31',
-
-
                  daylength_dia = 13.6,
 
-
-                 func_ftmin = function(tmin) { 1.44 + 0.82 * tmin },
-                 func_ftmean = function(tmean) { 0.50 + 0.81 * tmean },
-                 func_ftmax = function(tmax) { 1.03 + 0.86 * tmax },
-
-                 func_btmin = function(atmin) { 0.56 + 0.99 * atmin },
-                 func_btmean = function(atmean) { -0.48 + 1.03 * atmean },
-                 func_btmax = function(atmax) { 0.03 + 0.99 * atmax }
+                 model_end_date = '12-31'
                ),
 
                onset = model('rity')$onset,

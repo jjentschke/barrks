@@ -62,10 +62,37 @@
 }
 
 .doc_customize_description <- function(m, abbr, cite_key) {
-  paste0('In barrks, [model()] is used to customize a model. Here, the parameters are
-          described that can be used to customize ', m, '. The model was developed by
+  paste0('This page describes the parameters
+          that can be used to customize ', m, '. The model was developed by
           \\insertCite{', cite_key, ';textual}{barrks}. Look [here][model.', abbr, '.customize] to find
           out how to apply the model.')
+}
+
+.doc_customize_call <- function(n, m) {
+  p <- params(m)
+
+  out <- paste(purrr::map(names(p), \(key) {
+
+    val <- p[[key]]
+
+    if(typeof(val) == 'character') val <- paste0("'", val, "'")
+    if(typeof(val) == 'closure') val <- paste(stringr::str_trim(deparse(val)), collapse = " ")
+
+    paste(key, '=', val)
+  }), collapse = ',\n      ')
+
+  paste0("
+
+In `barrks`, [model()] is used to customize a model. The following code
+illustrates which parameters are available for ", n, " and specifies their
+default values.
+
+```
+model('", m,"',
+
+      ", out, "
+)
+```")
 }
 
 .doc_dev_start_end <- function() {

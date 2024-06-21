@@ -4,19 +4,6 @@
 \name{model.bso.apply}
 \alias{model.bso.apply}
 \title{Use the BSO model}
-\usage{
-bso_phenology("bso", ..., tmin, tmax, sunrise, sunset,
-              n = 1e+09, max_generations = 4)
-
-# calculate submodels separately
-bso_phenology("bso", ..., .submodels = 'onset',
-              tmin, tmax, sunrise, sunset, n = 1e+09)
-bso_phenology("bso", ..., .submodels = 'diapause', tmin, tmax)
-bso_phenology("bso", ..., .submodels = 'development',
-              .onset, .diapause = NULL, .mortality = NULL,
-              tmin, tmax, sunrise, sunset,
-              max_generations = 4)
-}
 \arguments{
 \item{...}{See \code{\link[=bso_phenology]{bso_phenology()}} for a detailled description of the function.}
 
@@ -39,6 +26,24 @@ The BSO model was published by \insertCite{Jakoby2019;textual}{barrks} and
 parametrized for \emph{Ips typographus} in Switzerland. Note that the onset and
 the development submodel do not support the usage of a storage (except for
 some precalculations).
+}
+\details{
+In \code{barrks}, \code{\link[=phenology]{phenology()}} is used to apply a model. The following code
+illustrates which inputs are required to apply the BSO model and which additional
+parameters are available.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{bso_phenology("bso", ..., tmin, tmax, sunrise, sunset,
+              n = 1e+09, max_generations = 4)
+
+# calculate submodels separately
+bso_phenology("bso", ..., .submodels = 'onset',
+              tmin, tmax, sunrise, sunset, n = 1e+09)
+bso_phenology("bso", ..., .submodels = 'diapause', tmin, tmax)
+bso_phenology("bso", ..., .submodels = 'development',
+              .onset, .diapause = NULL, .mortality = NULL,
+              tmin, tmax, sunrise, sunset,
+              max_generations = 4)
+}\if{html}{\out{</div>}}
 }
 \section{Functioning of the BSO}{
 

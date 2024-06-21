@@ -6,6 +6,10 @@
 \usage{
 stations_names(stations)
 }
+\arguments{
+\item{stations}{Stations created with \code{\link[=stations_create]{stations_create()}} or obtained by
+\code{\link[=prop_stations]{prop_stations()}}.}
+}
 \description{
 Get the names of stations.
 }

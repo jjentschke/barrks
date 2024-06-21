@@ -2,58 +2,12 @@
 NULL
 
 
-
 #' Customize RITY
 #'
 #' `r .doc_customize_description('RITY (also called RITY-2)', 'rity', 'Ogris2019')`
 #'
-#' @usage
-#' model("rity",
+#' `r .doc_customize_call('RITY', 'rity')`
 #'
-#'       # ==== onset ====
-#'
-#'       dd_onset_start_date = '03-07',
-#'       dd_onset_base = 8.3,
-#'       dd_onset_threshold = 155.6,
-#'
-#'       # ==== onset + development ====
-#'
-#'       tfly = 14.5,
-#'
-#'       # ==== development ====
-#'
-#'       dd_development_base = 8.3,
-#'       dd_total_dev = 557,
-#'       dev_start = 0,
-#'       dev_end = 1,
-#'       dev_sister_brood = 0.5,
-#'       dev_mortal_min = NULL,
-#'       dev_mortal_max = 0.8,
-#'
-#'       func_ftmin = function(tmin) { 1.44 + 0.82 * tmin },
-#'       func_ftmean = function(tmean) { 0.50 + 0.81 * tmean },
-#'       func_ftmax = function(tmax) { 1.03 + 0.86 * tmax },
-#'
-#'       func_btmin = function(ftmin) { 0.56 + 0.99 * ftmin },
-#'       func_btmean = function(ftmean) { -0.48 + 1.03 * ftmean },
-#'       func_btmax = function(ftmax) { 0.03 + 0.99 * ftmax },
-#'
-#'       dt_low = 8.3,
-#'       dt_up = 38.9,
-#'       topt = 30.4,
-#'       tmax = 40.9958913,
-#'       alpha = 0.02876507,
-#'       beta = 3.5922336,
-#'       gamma = 1.24657367,
-#'
-#'       # ==== diapause ====
-#'
-#'       daylength_dia = 14.5,
-#'
-#'       # ==== mortality ====
-#'
-#'       model_end_date = '10-31'
-#' )
 #'
 #' @param dd_onset_start_date The date, when the degree days start to sum up ('MM-DD').
 #' @param dd_onset_base Base temperature to calculate degree days to trigger the onset.
@@ -115,6 +69,22 @@ NULL
 #' RITY (also called RITY-2) was published by \insertCite{Ogris2019;textual}{barrks} and
 #' parametrized for *Ips typographus* in Slovenia.
 #'
+#' In `barrks`, [phenology()] is used to apply a model. The following code
+#' illustrates which inputs are required to apply RITY and which additional
+#' parameters are available.
+#'
+#' ```
+#' phenology("rity", ..., tmin = NULL, tmean = NULL, tmax, daylength, mode = 'max')
+#'
+#' # calculate submodels separately
+#' phenology("rity", ..., .submodels = 'onset', tmax)
+#' phenology("rity", ..., .submodels = 'diapause', daylength)
+#' phenology("rity", ..., .submodels = 'mortality', tmax)
+#' phenology("rity", ..., .submodels = 'development',
+#'           .onset, .diapause = NULL, .mortality = NULL,
+#'           tmin = NULL, tmean = NULL, tmax = NULL, mode = 'max')
+#' ```
+#'
 #' @section Functioning:
 #'
 #' `r .doc_functioning_pre('rity', 'RITY')`
@@ -130,18 +100,6 @@ NULL
 #' - **Mortality**: See [PHENIPS][model.phenips.apply].
 #'
 #' `r .doc_functioning_post('rity')`
-#'
-#' @usage
-#'
-#' phenology("rity", ..., tmin = NULL, tmean = NULL, tmax, daylength, mode = 'max')
-#'
-#' # calculate submodels separately
-#' phenology("rity", ..., .submodels = 'onset', tmax)
-#' phenology("rity", ..., .submodels = 'diapause', daylength)
-#' phenology("rity", ..., .submodels = 'mortality', tmax)
-#' phenology("rity", ..., .submodels = 'development',
-#'           .onset, .diapause = NULL, .mortality = NULL,
-#'           tmin = NULL, tmean = NULL, tmax = NULL, mode = 'max')
 #'
 #' @param tmin,tmean,tmax Daily minimum/mean/maximum temperatures in °C.
 #' For the `development` submodel, the parameter that is obligatory depends on
@@ -204,40 +162,40 @@ rity_calc_teff <- function(.params,
 .create_model('rity',
              list(params = list(
 
-                    dd_onset_start_date = '03-07',
-                    dd_onset_base = 8.3,
-                    dd_development_base = 8.3,
-                    dd_total_dev = 557,
-                    dd_onset_threshold = 155.6,
+               dd_onset_start_date = '03-07',
+               dd_onset_base = 8.3,
+               dd_onset_threshold = 155.6,
 
-                    dev_start = 0,
-                    dev_end = 1,
-                    dev_sister_brood = 0.5,
-                    dev_mortal_min = NULL,
-                    dev_mortal_max = 0.6,
+               tfly = 14.5,
 
-                    model_end_date = '10-31',
+               dd_development_base = 8.3,
+               dd_total_dev = 557,
 
-                    tfly = 14.5,
+               dev_start = 0,
+               dev_end = 1,
+               dev_sister_brood = 0.5,
+               dev_mortal_min = NULL,
+               dev_mortal_max = 0.6,
 
-                    daylength_dia = 14.5,
+               func_ftmin = function(tmin) { 1.44 + 0.82 * tmin },
+               func_ftmean = function(tmean) { 0.50 + 0.81 * tmean },
+               func_ftmax = function(tmax) { 1.03 + 0.86 * tmax },
 
-                    dt_low = 8.3,
-                    dt_up = 38.9,
-                    topt = 30.4,
-                    tmax = 40.9958913,
-                    alpha = 0.02876507,
-                    beta = 3.5922336,
-                    gamma = 1.24657367,
+               func_btmin = function(atmin) { 0.56 + 0.99 * atmin },
+               func_btmean = function(atmean) { -0.48 + 1.03 * atmean },
+               func_btmax = function(atmax) { 0.03 + 0.99 * atmax },
 
-                    func_ftmin = function(tmin) { 1.44 + 0.82 * tmin },
-                    func_ftmean = function(tmean) { 0.50 + 0.81 * tmean },
-                    func_ftmax = function(tmax) { 1.03 + 0.86 * tmax },
+               dt_low = 8.3,
+               dt_up = 38.9,
+               topt = 30.4,
+               tmax = 40.9958913,
+               alpha = 0.02876507,
+               beta = 3.5922336,
+               gamma = 1.24657367,
 
-                    func_btmin = function(atmin) { 0.56 + 0.99 * atmin },
-                    func_btmean = function(atmean) { -0.48 + 1.03 * atmean },
-                    func_btmax = function(atmax) { 0.03 + 0.99 * atmax }
-                  ),
+               daylength_dia = 14.5,
+               model_end_date = '10-31'
+             ),
 
                   onset = model('phenips')$onset,
 

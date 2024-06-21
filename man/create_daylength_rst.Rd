@@ -29,7 +29,7 @@ Returns a multi-layer SpatRaster. Each layer represents one date.
 }
 \description{
 Generate a multi-layer SpatRaster of daylengths for a given template.
-The package \link{geosphere} is required to use this function.
+The package \code{geosphere} is required to use this function.
 }
 \seealso{
 \code{\link[=create_daylength_df]{create_daylength_df()}}

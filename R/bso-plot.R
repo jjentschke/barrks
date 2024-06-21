@@ -20,18 +20,23 @@ NULL
 #' @param .colors,.labels Vectors of colors/labels starting from the hibernating
 #' generation followed consecutively by elements for the filial generations
 #' (not including sisterbroods).
+#' @param .legend_col,.legend_lty Manipulate the appearance of the legends for
+#' colors and line types. Pass `TRUE`/`FALSE` to enable/disable the respective legend.
+#' For the customization of the respective legend, a list of parameters for
+#' [graphics::legend] can be passed.
 #' @param ... arguments passed to [base::plot()].
 #'
 #' @export
 
 bso_plot_stage_diagram <- function(.pheno,
-                                   .station = prop_stations(pheno)[1],
+                                   .station = prop_stations(.pheno)[1],
                                    .stages = list('white', 'brown'),
                                    .lty = c('dashed', 'solid'),
                                    .lwd = 2,
                                    .colors = barrks_colors('bso_stages'),
                                    .labels = barrks_labels('bso_stages'),
-                                   .legend = c('col', 'lty'),
+                                   .legend_col = TRUE,
+                                   .legend_lty = TRUE,
                                    ...) {
 
   year <- prop_year(.pheno)
@@ -62,32 +67,50 @@ bso_plot_stage_diagram <- function(.pheno,
       if(length(.lwd) == 1) lwdi <- .lwd
       else lwdi <- .lwd[[j]]
 
-      lines(df$date, df$individuals / .pheno$meta$n, lty = ltyi, lwd = lwdi, col = color)
+      graphics::lines(df$date, df$individuals / .pheno$meta$n, lty = ltyi, lwd = lwdi, col = color)
     })
 
   })
 
   # TODO: find another solution to hide '0'-values
-  lines(c(min(dates), max(dates)), c(0,0), col = 'black', lwd = max(.lwd))
+  graphics::lines(c(min(dates), max(dates)), c(0,0), col = 'black', lwd = max(.lwd))
 
 
-  if('col' %in% .legend) {
-    legend('topleft',
-           legend = .labels[keys_available],
-           col = .colors[keys_available],
-           lty = 1,
-           lwd = 2,
-           xjust = 0.05,
-           yjust = 0.95)
+  if(isTRUE(.legend_col) | is.list(.legend_col)) {
+
+    args_legend <- list(
+      x = 'topleft',
+      col = .colors[keys_available],
+      lty = 1,
+      lwd = 2,
+      xjust = 0.05,
+      yjust = 0.95
+    )
+
+    if(is.list(.legend_col)) {
+      for(k in names(.legend_col)) {
+        args_legend[[k]] <- .legend_col[[k]]
+      }
+    }
+    do.call(graphics::legend, c(list(.labels[keys_available]), args_legend))
   }
 
-  if('lty' %in% .legend) {
-    legend('bottomleft',
-           legend = .stages,
-           lty = .lty,
-           lwd = .lwd,
-           xjust = 0.05,
-           yjust = 0.95)
+  if(isTRUE(.legend_lty) | is.list(.legend_lty)) {
+
+    args_legend <- list(
+      x = 'bottomright',
+      lty = .lty,
+      lwd = .lwd,
+      xjust = 0.05,
+      yjust = 0.95
+    )
+
+    if(is.list(.legend_lty)) {
+      for(k in names(.legend_lty)) {
+        args_legend[[k]] <- .legend_lty[[k]]
+      }
+    }
+    do.call(graphics::legend, c(list(.stages), args_legend))
   }
 }
 
@@ -172,13 +195,13 @@ bso_plot_flight_diagram <- function(.pheno ,
 
   do.call(graphics::barplot, c(list(height = flight), plot_args))
 
-  axis(1, at = c(0, lubridate::yday(max(dates)) - offset) , labels = FALSE, lwd.ticks = 0, pos = 0)
-  axis(1, at = c(first_doys, last_doy) - offset - 1, labels = FALSE, pos = 0)
-  axis(1, at = mid_doys - offset - 1, labels = names(mid_doys), pos = 0, tick = FALSE)
-  axis(2, pos = 0)
+  graphics::axis(1, at = c(0, lubridate::yday(max(dates)) - offset) , labels = FALSE, lwd.ticks = 0, pos = 0)
+  graphics::axis(1, at = c(first_doys, last_doy) - offset - 1, labels = FALSE, pos = 0)
+  graphics::axis(1, at = mid_doys - offset - 1, labels = names(mid_doys), pos = 0, tick = FALSE)
+  graphics::axis(2, pos = 0)
 
   if(.legend != FALSE & length(keys_available)) {
-    legend(.legend,
+    graphics::legend(.legend,
            inset = 0.01,
            .labels[keys_available],
            pt.bg = .colors[keys_available],

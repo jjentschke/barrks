@@ -19,7 +19,7 @@ A data frame with the columns \code{date}, \code{station} and \code{daylength}.
 }
 \description{
 Generate a data frame of daylengths for given latitudes.
-The package \link{geosphere} is required to use this function.
+The package \code{geosphere} is required to use this function.
 }
 \seealso{
 \code{\link[=create_daylength_rst]{create_daylength_rst()}}

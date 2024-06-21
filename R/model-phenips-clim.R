@@ -1,6 +1,7 @@
 #' @include model-phenips.R
 NULL
 
+
 #' Customize PHENIPS-Clim
 #'
 #' In barrks, [model()] is used to customize a model. Here, the parameters are
@@ -9,53 +10,7 @@ NULL
 #' publication is available. Look [here][model.phenips_clim.customize] to find
 #' out how to apply the model.
 #'
-#' @usage
-#' model("phenips-clim",
-#'
-#'       # ==== onset ====
-#'
-#'       dd_onset_start_date = '03-01',
-#'       dd_onset_base = 12,
-#'       onset_func = \(tmax, dd_tmax) 0.564071 * tmax + 0.006434 * dd_tmax - 12.37046 > 0,
-#'       onset_add_dd = c('0.1' = 0, '0.5' = 90, '0.9' = 190),
-#'
-#'       # ==== development ====
-#'
-#'       model_end_date = '12-31',
-#'       tfly = 16.5,
-#'
-#'       dd_total_dev = 557,
-#'
-#'       dev_start = 0.15,
-#'       dev_end = 1,
-#'       dev_sister_brood = 0.5,
-#'       dev_oviposition = c('0' = 0,
-#'                           '0.1' = 0.1,
-#'                           '0.5' = 0.15,
-#'                           '0.9' = 0.26),
-#'
-#'       dev_mortal_min = NULL,
-#'       dev_mortal_max = 0.6,
-#'
-#'       topt = 30.4,
-#'
-#'       func_btmean = function(tmean, rad) { -0.173 + 0.0008518 * rad + 1.054 * tmean},
-#'       func_btmax = function(tmax, rad) { 1.656 + 0.002955 * rad + 0.534 * tmax + 0.01884 * tmax ^ 2 },
-#'       func_btdiff = function(tmax) { (-310.667 + 9.603 * tmax) / 24 },
-#'
-#'       dev_rates = phenips_clim_get_dev_rates(),
-#'
-#'       # ==== diapause ====
-#'
-#'       first_diapause_date = '08-12',
-#'       diapause_thermal_func = \(daylength, tmax) 0.8619156 * daylength + 0.5081128 * tmax - 23.63691 > 0,
-#'       daylength_dia = 14.5,
-#'
-#'       # ==== mortality ====
-#'
-#'       tlethal = -5
-#'
-#' )
+#' `r .doc_customize_call('PHENIPS-Clim', 'phenips-clim')`
 #'
 #' @param dd_onset_start_date The date, when the degree days start to sum up ('MM-DD').
 #' @param dd_onset_base Base temperature to calculate degree days to trigger the onset.
@@ -68,21 +23,22 @@ NULL
 #' already started breeding when the onset is triggered (choose an option via
 #' `phenology(..., onset_mode = [option])` when applying the
 #' model). The values specify the degree days that are required starting at the
-#'
-#'
+#' first positive return value of `onset_func`.
 #' @param model_end_date Date when the model ends.
 #' @param tfly Minimum temperature that beetles need to fly.
 #' @param dd_total_dev Degree days that are required for a generation to fully
 #' develop
-#' @param dev_start,dev_end `r .doc_dev_start_end()`
-#' @param dev_sister_brood Share in the total development, when a sister brood
-#' will be established.
-#'
 #' @param dev_oviposition Named numeric vector of shares in the total development
 #' when the oviposition is finished. The vector should be named after the share
 #' of beetles that should be taken into account (choose an option via
 #' `phenology(..., oviposition_mode = [option])` when applying the
 #' model).
+#' @param dev_end Share in total development when the juvenile beetle's
+#' development ends. Usable if the development above this threshold should
+#' account for mating, oviposition etc.
+#' @param dev_sister_brood Share in the total development, when a sister brood
+#' will be established.
+#'
 #' @param dev_mortal_min,dev_mortal_max Minimum/maximum share in the total
 #' development of white stages (egg, larva, pupa). During these stages, the
 #' beetles could die caused by a mortality event.
@@ -136,6 +92,25 @@ NULL
 #' PHENIPS-Clim is not published yet. This manual will be updated when a
 #' publication is available. It was parametrized for *Ips typographus* in southern Germany.
 #'
+#' In `barrks`, [phenology()] is used to apply a model. The following code
+#' illustrates which inputs are required to apply PHENIPS-Clim and which additional
+#' parameters are available.
+#'
+#' ```
+#' phenology("phenips-clim", ..., tmin, tmean, tmax, rad, daylength,
+#'           sister_broods = TRUE, scenario = 'max', exposure = NULL,
+#'           onset_mode = NULL, oviposition_mode = NULL, diapause_mode = NULL)
+#'
+#' # calculate submodels separately
+#' phenology("phenips-clim", ..., .submodels = 'onset', tmax, scenario = 'max', onset_mode = NULL)
+#' phenology("phenips-clim", ..., .submodels = 'diapause', tmax, daylength, scenario = 'max', diapause_mode = NULL)
+#' phenology("phenips-clim", ..., .submodels = 'mortality', tmin)
+#' phenology("phenips-clim", ..., .submodels = 'development',
+#'           .onset, .diapause = NULL, .mortality = NULL,
+#'           tmin, tmean, tmax, rad, sister_broods = TRUE,
+#'           scenario = 'max', exposure = NULL, oviposition_mode = NULL)
+#' ```
+#'
 #' @section Functioning:
 #'
 #' `r .doc_functioning_pre('phenips-clim', 'PHENIPS-Clim')`
@@ -163,21 +138,6 @@ NULL
 #' falls below a specific threshold.
 #'
 #' `r .doc_functioning_post('phenips_clim')`
-#'
-#' @usage
-#'
-#' phenology("phenips-clim", ..., tmin, tmean, tmax, rad, daylength,
-#'           sister_broods = TRUE, scenario = 'max', exposure = NULL,
-#'           onset_mode = NULL, oviposition_mode = NULL, diapause_mode = NULL)
-#'
-#' # calculate submodels separately
-#' phenology("phenips-clim", ..., .submodels = 'onset', tmax, scenario = 'max', onset_mode = NULL)
-#' phenology("phenips-clim", ..., .submodels = 'diapause', tmax, daylength, scenario = 'max', diapause_mode = NULL)
-#' phenology("phenips-clim", ..., .submodels = 'mortality', tmin)
-#' phenology("phenips-clim", ..., .submodels = 'development',
-#'           .onset, .diapause = NULL, .mortality = NULL,
-#'           tmin, tmean, tmax, rad, sister_broods = TRUE,
-#'           scenario = 'max', exposure = NULL, oviposition_mode = NULL)
 #'
 #' @param ... `r .doc_phenology_dots()`
 #' See [phenology()] for details.
@@ -258,7 +218,7 @@ phenips_clim_calc_teff <- function(.params,
 
   # calculate temperature amplitude (use tmin if available)
   .msg(4, .quiet, 'calculate amplitude')
-  if(is.null(tmin)) amplitude <- btmax - tmean
+  if(is.null(tmin)) amplitude <- btmax - btmean
   else amplitude <- (btmax - tmin) / 2
 
   minrow <- min(as.numeric(rownames(teffs)))
@@ -470,6 +430,13 @@ phenips_clim_get_dev_rates <- function() {
 
                   dd_onset_start_date = '03-01',
                   dd_onset_base = 12,
+
+                  onset_func = \(tmax, dd_tmax) 0.564071 * tmax + 0.006434 * dd_tmax - 12.37046 > 0,
+                  onset_add_dd = c('0.1' = 0, '0.5' = 90, '0.9' = 190),
+
+                  model_end_date = '12-31',
+
+                  tfly = 16.5,
                   dd_total_dev = 557,
 
                   dev_oviposition = c('0.1' = 0.1,
@@ -480,25 +447,19 @@ phenips_clim_get_dev_rates <- function() {
                   dev_mortal_min = NULL,
                   dev_mortal_max = 0.6,
 
-                  tfly = 16.5,
                   topt = 30.4,
 
-                  dev_rates = phenips_clim_get_dev_rates(),
+                  func_btmean = function(tmean, rad) { -0.173 + 0.0008518 * rad + 1.054 * tmean},
+                  func_btmax = function(tmax, rad) { 1.656 + 0.002955 * rad + 0.534 * tmax + 0.01884 * tmax ^ 2 },
+                  func_btdiff = function(tmax) { (-310.667 + 9.603 * tmax) / 24 },
 
-                  onset_func = \(tmax, dd_tmax) 0.564071 * tmax + 0.006434 * dd_tmax - 12.37046 > 0,
-                  onset_add_dd = c('0.1' = 0, '0.5' = 90, '0.9' = 190),
+                  dev_rates = phenips_clim_get_dev_rates(),
 
                   first_diapause_date = '08-12',
                   diapause_thermal_func = \(daylength, tmax) 0.8619156 * daylength + 0.5081128 * tmax - 23.63691 > 0,
                   daylength_dia = 14.5,
 
-                  tlethal = -5,
-
-                  model_end_date = '12-31',
-
-                  func_btmean = function(tmean, rad) { -0.173 + 0.0008518 * rad + 1.054 * tmean},
-                  func_btmax = function(tmax, rad) { 1.656 + 0.002955 * rad + 0.534 * tmax + 0.01884 * tmax ^ 2 },
-                  func_btdiff = function(tmax) { (-310.667 + 9.603 * tmax) / 24 }
+                  tlethal = -5
                 ),
 
 

@@ -2,41 +2,11 @@
 NULL
 
 
-
 #' Customize the Jönsson model
 #'
 #' `r .doc_customize_description('Jönsson', 'joensson', 'Jonsson2011')`
 #'
-#' @usage
-#' model("joensson",
-#'
-#'       # ==== onset ====
-#'
-#'       dd_onset_start_date = '01-01',
-#'       dd_onset_base = 5,
-#'       dd_onset_threshold = 120,
-#'
-#'       # ==== onset + development ====
-#'
-#'       tfly = 20,
-#'
-#'       # ==== development ====
-#'
-#'       model_end_date = '12-31',
-#'
-#'       dd_development_base = 5,
-#'       dd_total_dev_lower = 625,
-#'       dd_total_dev_upper = 750,
-#'       dev_start = 0,
-#'       dev_end = 1,
-#'       dev_mortal_min = NULL,
-#'       dev_mortal_max = NULL,
-#'
-#'       # ==== diapause ====
-#'
-#'       daylength_dia = 19.3,
-#'       tdia_min = 15
-#' )
+#' `r .doc_customize_call('Jönsson', 'joensson')`
 #'
 #' @param dd_onset_start_date The date, when the degree days start to sum up ('MM-DD').
 #' @param dd_onset_base Base temperature to calculate degree days to trigger the onset.
@@ -81,6 +51,21 @@ NULL
 #' The Jönsson model was published by \insertCite{Jonsson2011;textual}{barrks} and
 #' parametrized for *Ips typographus* in southern Sweden.
 #'
+#' In `barrks`, [phenology()] is used to apply a model. The following code
+#' illustrates which inputs are required to apply the Jönsson model and which additional
+#' parameters are available.
+#'
+#' ```
+#' phenology("joensson", ..., tmean, tmax, daylength, mode = 'fast')
+#'
+#' # calculate submodels separately
+#' phenology("joensson", ..., .submodels = 'onset', tmax)
+#' phenology("joensson", ..., .submodels = 'diapause', tmax, daylength)
+#' phenology("joensson", ..., .submodels = 'development',
+#'           .onset, .diapause = NULL, .mortality = NULL,
+#'           tmean, mode = 'fast')
+#' ```
+#'
 #' @section Functioning:
 #'
 #' `r .doc_functioning_pre('joensson', 'the Jönsson model')`
@@ -103,16 +88,6 @@ NULL
 #'
 #' `r .doc_functioning_post('joensson')`
 #'
-#' @usage
-#'
-#' phenology("joensson", ..., tmean, tmax, daylength, mode = 'fast')
-#'
-#' # calculate submodels separately
-#' phenology("joensson", ..., .submodels = 'onset', tmax)
-#' phenology("joensson", ..., .submodels = 'diapause', tmax, daylength)
-#' phenology("joensson", ..., .submodels = 'development',
-#'           .onset, .diapause = NULL, .mortality = NULL,
-#'           tmean, mode = 'fast')
 #'
 #' @param ... `r .doc_phenology_dots()`
 #' @param tmean,tmax Daily mean/maximum temperatures in °C.
@@ -284,41 +259,42 @@ joensson_calc_development <- function(.params,
 
 # register model with default parameters
 .create_model('joensson',
-             list(
-               params = list(
-                 model_end_date = '12-31',
+              list(
+                params = list(
+                  dd_onset_start_date = '01-01',
+                  dd_onset_base = 5,
+                  dd_onset_threshold = 120,
 
-                 dd_total_dev_lower = 625,
-                 dd_total_dev_upper = 750,
-                 dd_onset_base = 5,
-                 dd_development_base = 5,
-                 dev_start = 0,
-                 dev_end = 1,
-                 dev_mortal_min = NULL,
-                 dev_mortal_max = NULL,
+                  tfly = 20,
 
-                 dd_onset_start_date = '01-01',
-                 tfly = 20,
-                 dd_onset_threshold = 120,
+                  model_end_date = '12-31',
 
-                 daylength_dia = 19.3,
-                 tdia_min = 15
-               ),
+                  dd_development_base = 5,
+                  dd_total_dev_lower = 625,
+                  dd_total_dev_upper = 750,
+                  dev_start = 0,
+                  dev_end = 1,
+                  dev_mortal_min = NULL,
+                  dev_mortal_max = NULL,
 
-               onset = list(
-                 setup = list(dd_onset = .calc_dd_onset_tmax,
-                              fly = .calc_fly),
-                 compute = joensson_calc_onset
-               ),
+                  daylength_dia = 19.3,
+                  tdia_min = 15
+                ),
 
-               development = list(
-                 setup = list(teff = joensson_calc_teff,
-                              fly = .calc_fly),
-                 compute = joensson_calc_development
-               ),
+                onset = list(
+                  setup = list(dd_onset = .calc_dd_onset_tmax,
+                               fly = .calc_fly),
+                  compute = joensson_calc_onset
+                ),
 
-               diapause = list(
-                 compute = joensson_calc_diapause
-               )
-             )
+                development = list(
+                  setup = list(teff = joensson_calc_teff,
+                               fly = .calc_fly),
+                  compute = joensson_calc_development
+                ),
+
+                diapause = list(
+                  compute = joensson_calc_diapause
+                )
+              )
 )

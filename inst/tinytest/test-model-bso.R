@@ -5,18 +5,11 @@ if(at_home()) {
   suppressWarnings(suppressMessages(library(tidyverse)))
   suppressWarnings(suppressMessages(library(terra)))
 
-
-# init -------------------------------------------------------------------------
+# prepare input data -----------------------------------------------------------
 
   load('data/test-data-bso.rda')
 
-  path <- system.file('extdata/sample-data', package = 'barrks')
-
-
-
-# prepare input data -----------------------------------------------------------
-
-  data <- .process_data(path)
+  data <- barrks_data()
   dates <- terra::time(data$sunrise)
 
   # use same sunrise/sunset as original BSO

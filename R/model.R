@@ -43,16 +43,15 @@ model <- function(m, ...) {
 
 #' Get model parameters
 #'
-#' Returns the parameters of a model as list.
-#'
-#' @param m A phenology model
+#' @param m Name of the model or the return value of another `model()`-call.
+#' @param ... List of parameters to customize the model.
 #'
 #'
 #' @export
 
-params <- function(m) {
+params <- function(m, ...) {
 
-  return(model(m)$params)
+  return(model(m, ...)$params)
 }
 
 

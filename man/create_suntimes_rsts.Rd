@@ -35,7 +35,7 @@ minutes. Each layer represents one date.
 \description{
 Generate a list of two multi-layer SpatRasters for a given template that
 indicate sunrise and sunset for the respective cells.
-The package \link{suncalc} is required to use this function.
+The package \code{suncalc} is required to use this function.
 }
 \seealso{
 \code{\link[=create_suntimes_df]{create_suntimes_df()}}

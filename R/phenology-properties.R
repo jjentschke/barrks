@@ -49,16 +49,16 @@ prop_year <- function(pheno) return(as.numeric(format(prop_dates(pheno)[1], '%Y'
 prop_dates <- function(pheno) return(pheno$dates)
 
 #' @export
-prop_first_date <- function(pheno) return(head(prop_dates(pheno), 1))
+prop_first_date <- function(pheno) return(utils::head(prop_dates(pheno), 1))
 
 #' @export
-prop_last_date <- function(pheno) return(tail(prop_dates(pheno), 1))
+prop_last_date <- function(pheno) return(utils::tail(prop_dates(pheno), 1))
 
 #' @export
 prop_hatched_generations <- function(pheno) {
 
   match <- stringr::str_extract(names(pheno$development), 'gen_([\\d.]*)$', 1)
-  generations <- as.numeric(na.omit(match))
+  generations <- as.numeric(stats::na.omit(match))
 
   return(sort(generations[generations >= 0]))
 }

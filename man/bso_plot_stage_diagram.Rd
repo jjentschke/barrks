@@ -6,13 +6,14 @@
 \usage{
 bso_plot_stage_diagram(
   .pheno,
-  .station = prop_stations(pheno)[1],
+  .station = prop_stations(.pheno)[1],
   .stages = list("white", "brown"),
   .lty = c("dashed", "solid"),
   .lwd = 2,
   .colors = barrks_colors("bso_stages"),
   .labels = barrks_labels("bso_stages"),
-  .legend = c("col", "lty"),
+  .legend_col = TRUE,
+  .legend_lty = TRUE,
   ...
 )
 }
@@ -30,6 +31,11 @@ the different stages. Should have the same length as \code{.stages} or 1.}
 \item{.colors, .labels}{Vectors of colors/labels starting from the hibernating
 generation followed consecutively by elements for the filial generations
 (not including sisterbroods).}
+
+\item{.legend_col, .legend_lty}{Manipulate the appearance of the legends for
+colors and line types. Pass \code{TRUE}/\code{FALSE} to enable/disable the respective legend.
+For the customization of the respective legend, a list of parameters for
+\link[graphics:legend]{graphics::legend} can be passed.}
 
 \item{...}{arguments passed to \code{\link[base:plot]{base::plot()}}.}
 }

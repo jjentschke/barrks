@@ -13,7 +13,7 @@
 #' @param .colors,.fill,.labels Character vectors. Change the line colors, fill
 #' or labels of the generations starting from the first generation followed
 #' consecutively by elements for the other generations (including sister broods).
-#' @param .legend_col,legend_lty Manipulate the appearance of the legends for
+#' @param .legend_col,.legend_lty Manipulate the appearance of the legends for
 #' colors and line types. Pass `TRUE`/`FALSE` to enable/disable the respective legend.
 #' For the customization of the respective legend, a list of parameters for
 #' [graphics::legend] can be passed.
@@ -217,10 +217,10 @@ plot_development_diagram <- function(.phenos,
       if(all(has_gen) & !is.na(.fill)) {
 
         purrr::walk(2:length(dev_min_group), \(i) {
-          polygon(c(dates[i - 1], dates[i], dates[i], dates[i - 1]),
-                  c(dev_min_group1[i - 1], dev_min_group1[i], dev_max_group1[i], dev_max_group1[i - 1]),
-                  col = .fill,
-                  border = NA)
+          graphics::polygon(c(dates[i - 1], dates[i], dates[i], dates[i - 1]),
+                            c(dev_min_group1[i - 1], dev_min_group1[i], dev_max_group1[i], dev_max_group1[i - 1]),
+                            col = .fill,
+                            border = NA)
         })
       }
     }
@@ -228,17 +228,17 @@ plot_development_diagram <- function(.phenos,
 
     if(.minmax_only) {
 
-      lines(dates,
-            ifelse(dev_min_group < 0, NA, dev_min_group),
-            col = .colors[[paste0('gen_', generation)]],
-            lwd = .lwd,
-            lty = .lty)
+      graphics::lines(dates,
+                      ifelse(dev_min_group < 0, NA, dev_min_group),
+                      col = .colors[[paste0('gen_', generation)]],
+                      lwd = .lwd,
+                      lty = .lty)
 
-      lines(dates,
-            ifelse(dev_max_group < 0, NA, dev_max_group),
-            col = .colors[[paste0('gen_', generation)]],
-            lwd = .lwd,
-            lty = .lty)
+      graphics::lines(dates,
+                      ifelse(dev_max_group < 0, NA, dev_max_group),
+                      col = .colors[[paste0('gen_', generation)]],
+                      lwd = .lwd,
+                      lty = .lty)
     } else  {
 
       purrr::walk(names(gen_devs), \(name_pheno) {
@@ -251,11 +251,11 @@ plot_development_diagram <- function(.phenos,
         if(length(.lwd) == 1) lwd_i <- .lwd
         else lwd_i <- .lwd[[name_pheno]]
 
-        lines(dates,
-              gen_dev,
-              col = .colors[[gen_key]],
-              lwd = lwd_i,
-              lty = lty_i)
+        graphics::lines(dates,
+                        gen_dev,
+                        col = .colors[[gen_key]],
+                        lwd = lwd_i,
+                        lty = lty_i)
       })
     }
   }
@@ -315,7 +315,7 @@ plot_development_diagram <- function(.phenos,
           args_legend[[k]] <- .legend_col[[k]]
         }
       }
-      do.call(legend, c(list(.labels[keys]), args_legend))
+      do.call(graphics::legend, c(list(.labels[keys]), args_legend))
     }
   }
 
@@ -332,7 +332,7 @@ plot_development_diagram <- function(.phenos,
         args_legend[[k]] <- .legend_lty[[k]]
       }
     }
-    do.call(legend, c(list(names(.phenos)), args_legend))
+    do.call(graphics::legend, c(list(names(.phenos)), args_legend))
   }
 
 }
@@ -348,9 +348,9 @@ plot_development_diagram <- function(.phenos,
   days_in_month <- lubridate::days_in_month(first_dates)
   mid_dates <- first_dates + days_in_month / 2
 
-  axis(1, at = c(0, max(dates)) , labels = FALSE, lwd.ticks = 0, pos = 0)
-  axis(1, at = first_dates, labels = FALSE, pos = 0)
-  axis(1, at = mid_dates, labels = month_names, pos = 0, tick = FALSE)
+  graphics::axis(1, at = c(0, max(dates)) , labels = FALSE, lwd.ticks = 0, pos = 0)
+  graphics::axis(1, at = first_dates, labels = FALSE, pos = 0)
+  graphics::axis(1, at = mid_dates, labels = month_names, pos = 0, tick = FALSE)
 }
 
 

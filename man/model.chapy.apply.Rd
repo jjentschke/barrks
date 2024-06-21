@@ -4,17 +4,6 @@
 \name{model.chapy.apply}
 \alias{model.chapy.apply}
 \title{Use CHAPY}
-\usage{
-phenology("chapy", ..., tmin = NULL, tmean = NULL, tmax, daylength, mode = 'max')
-
-# calculate submodels separately
-phenology("chapy", ..., .submodels = 'onset', tmax)
-phenology("chapy", ..., .submodels = 'diapause', daylength)
-phenology("chapy", ..., .submodels = 'mortality', tmax)
-phenology("chapy", ..., .submodels = 'development',
-          .onset, .diapause = NULL, .mortality = NULL,
-          tmin = NULL, tmean = NULL, tmax = NULL, mode = 'max')
-}
 \arguments{
 \item{tmin, tmean, tmax}{Daily minimum/mean/maximum air temperatures in °C.
 For the \code{development} submodel, the parameter that is obligatory depends on
@@ -28,14 +17,27 @@ development. Can be \code{min}, \code{mean} or \code{max}.}
 
 \item{.submodels, .onset, .diapause, .mortality, ...}{See \code{\link[=phenology]{phenology()}} for a detailled description of the function.}
 }
-\value{
-The function returns a phenology. Look \link[=analyse.phenology]{here} to find out how it can be analysed.
-}
 \description{
 This page describes the usage of CHAPY with \code{\link[=phenology]{phenology()}}.
 The model specific inputs are listed and its basic functionality is explained.
 CHAPY was published by \insertCite{Ogris2020;textual}{barrks} and
 parametrized for \emph{Pityogenes chalcographus} in Slovenia.
+}
+\details{
+In \code{barrks}, \code{\link[=phenology]{phenology()}} is used to apply a model. The following code
+illustrates which inputs are required to apply CHAPY and which additional
+parameters are available.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{phenology("chapy", ..., tmin = NULL, tmean = NULL, tmax, daylength, mode = 'max')
+
+# calculate submodels separately
+phenology("chapy", ..., .submodels = 'onset', tmax)
+phenology("chapy", ..., .submodels = 'diapause', daylength)
+phenology("chapy", ..., .submodels = 'mortality', tmax)
+phenology("chapy", ..., .submodels = 'development',
+          .onset, .diapause = NULL, .mortality = NULL,
+          tmin = NULL, tmean = NULL, tmax = NULL, mode = 'max')
+}\if{html}{\out{</div>}}
 }
 \section{Functioning}{
 

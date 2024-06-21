@@ -68,7 +68,7 @@ plot_development_diagram(list('sunny' = pheno_sunny,
 ```
 
 <div class="figure">
-<img src="figure/stations-diagram-1.png" alt="Development diagram with different variants of PHENIPS-Clim" width="100%" />
+<img src="figures/stations-diagram-1.png" alt="Development diagram with different variants of PHENIPS-Clim" width="100%" />
 <p class="caption">Development diagram with different variants of PHENIPS-Clim</p>
 </div>
 

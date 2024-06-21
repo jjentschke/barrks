@@ -7,45 +7,7 @@ NULL
 #'
 #' `r .doc_customize_description('PHENIPS', 'phenips', 'Baier2007')`
 #'
-#' @usage
-#' model("phenips",
-#'
-#'       # ==== onset ====
-#'
-#'       dd_onset_start_date = '04-01',
-#'       dd_onset_base = 8.3,
-#'       dd_onset_threshold = 140,
-#'
-#'       # ==== onset + development ====
-#'
-#'       tfly = 16.5,
-#'
-#'       # ==== development ====
-#'
-#'       dd_development_base = 8.3,
-#'       dd_total_dev = 557,
-#'       dev_start = 0,
-#'       dev_end = 1,
-#'       dev_sister_brood = 0.5,
-#'       dev_mortal_min = NULL,
-#'       dev_mortal_max = 0.6,
-#'
-#'       topt = 30.4,
-#'       tlow = 8.3,
-#'       tup = 38.9,
-#'
-#'       func_btmean = \(tmean, rad) { -0.173 + 0.0008518 * rad + 1.054 * tmean},
-#'       func_btmax = \(tmax, rad) { 1.656 + 0.002955 * rad + 0.534 * tmax + 0.01884 * tmax ^ 2 },
-#'       func_btdiff = \(btmax) { (-310.667 + 9.603 * btmax) / 24 },
-#'
-#'       # ==== diapause ====
-#'
-#'       daylength_dia = 14.5,
-#'
-#'       # ==== mortality ====
-#'
-#'       model_end_date = '10-31'
-#' )
+#' `r .doc_customize_call('PHENIPS', 'chapy')`
 #'
 #' @param dd_onset_start_date The date, when the degree days start to sum up ('MM-DD').
 #' @param dd_onset_base Base temperature to calculate degree days to trigger the onset.
@@ -54,7 +16,7 @@ NULL
 #'
 #' @param tfly Minimum temperature that beetles need to fly.
 #'
-#' @param dd_onset_base Base temperature to calculate degree days for calculating
+#' @param dd_development_base Base temperature to calculate degree days for calculating
 #' the beetles development.
 #' @param dd_total_dev Degree days that are required for a generation to fully
 #' develop
@@ -101,6 +63,24 @@ NULL
 #' PHENIPS was published by \insertCite{Baier2007;textual}{barrks} and
 #' parametrized at the Kalkalpen National Park in Austria for *Ips typographus*.
 #'
+#' In `barrks`, [phenology()] is used to apply a model. The following code
+#' illustrates which inputs are required to apply PHENIPS and which additional
+#' parameters are available.
+#'
+#' ```
+#' phenology("phenips", ..., tmean, tmax, rad, daylength,
+#'           exposure = 'sunny', sister_broods = TRUE)
+#'
+#' # calculate submodels separately
+#' phenology("phenips", ..., .submodels = 'onset', tmax)
+#' phenology("phenips", ..., .submodels = 'diapause', daylength)
+#' phenology("phenips", ..., .submodels = 'mortality', tmax)
+#' phenology("phenips", ..., .submodels = 'development',
+#'           .onset, .diapause = NULL, .mortality = NULL,
+#'           tmean, tmax, rad,
+#'           exposure = 'sunny', sister_broods = TRUE)
+#' ```
+#'
 #' @section Functioning:
 #'
 #' `r .doc_functioning_pre('phenips', 'PHENIPS')`
@@ -117,20 +97,6 @@ NULL
 #' - **Mortality**: White stages (egg to pupa) die on a fixed date.
 #'
 #' `r .doc_functioning_post('phenips')`
-#'
-#' @usage
-#'
-#' phenology("phenips", ..., tmean, tmax, rad, daylength,
-#'           exposure = 'sunny', sister_broods = TRUE)
-#'
-#' # calculate submodels separately
-#' phenology("phenips", ..., .submodels = 'onset', tmax)
-#' phenology("phenips", ..., .submodels = 'diapause', daylength)
-#' phenology("phenips", ..., .submodels = 'mortality', tmax)
-#' phenology("phenips", ..., .submodels = 'development',
-#'           .onset, .diapause = NULL, .mortality = NULL,
-#'           tmean, tmax, rad,
-#'           exposure = 'sunny', sister_broods = TRUE)
 #'
 #' @param ... `r .doc_phenology_dots()`
 #' @param tmean,tmax Daily mean/maximum temperatures in °C.
@@ -441,26 +407,29 @@ phenips_calc_development <- function(.params,
                params = list(
                  dd_onset_start_date = '04-01',
                  dd_onset_base = 8.3,
-                 dd_development_base = 8.3,
-                 dd_total_dev = 557,
                  dd_onset_threshold = 140,
 
-                 topt = 30.4,
-                 tlow = 8.3,
-                 tup = 38.9,
                  tfly = 16.5,
+
+                 dd_development_base = 8.3,
+                 dd_total_dev = 557,
 
                  dev_start = 0,
                  dev_end = 1,
                  dev_sister_brood = 0.5,
                  dev_mortal_min = NULL,
                  dev_mortal_max = 0.6,
-                 daylength_dia = 14.5,
-                 model_end_date = '10-31',
 
                  func_btmean = \(tmean, rad) { -0.173 + 0.0008518 * rad + 1.054 * tmean},
                  func_btmax = \(tmax, rad) { 1.656 + 0.002955 * rad + 0.534 * tmax + 0.01884 * tmax ^ 2 },
-                 func_btdiff = \(btmax) { (-310.667 + 9.603 * btmax) / 24 }
+                 func_btdiff = \(btmax) { (-310.667 + 9.603 * btmax) / 24 },
+
+                 topt = 30.4,
+                 tlow = 8.3,
+                 tup = 38.9,
+
+                 daylength_dia = 14.5,
+                 model_end_date = '10-31'
                ),
 
                onset = list(

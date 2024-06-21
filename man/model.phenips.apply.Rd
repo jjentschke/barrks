@@ -4,19 +4,6 @@
 \name{model.phenips.apply}
 \alias{model.phenips.apply}
 \title{Use PHENIPS}
-\usage{
-phenology("phenips", ..., tmean, tmax, rad, daylength,
-          exposure = 'sunny', sister_broods = TRUE)
-
-# calculate submodels separately
-phenology("phenips", ..., .submodels = 'onset', tmax)
-phenology("phenips", ..., .submodels = 'diapause', daylength)
-phenology("phenips", ..., .submodels = 'mortality', tmax)
-phenology("phenips", ..., .submodels = 'development',
-          .onset, .diapause = NULL, .mortality = NULL,
-          tmean, tmax, rad,
-          exposure = 'sunny', sister_broods = TRUE)
-}
 \arguments{
 \item{...}{See \code{\link[=phenology]{phenology()}} for a detailled description of the function.}
 
@@ -39,6 +26,24 @@ This page describes the usage of PHENIPS with \code{\link[=phenology]{phenology(
 The model specific inputs are listed and its basic functionality is explained.
 PHENIPS was published by \insertCite{Baier2007;textual}{barrks} and
 parametrized at the Kalkalpen National Park in Austria for \emph{Ips typographus}.
+}
+\details{
+In \code{barrks}, \code{\link[=phenology]{phenology()}} is used to apply a model. The following code
+illustrates which inputs are required to apply PHENIPS and which additional
+parameters are available.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{phenology("phenips", ..., tmean, tmax, rad, daylength,
+          exposure = 'sunny', sister_broods = TRUE)
+
+# calculate submodels separately
+phenology("phenips", ..., .submodels = 'onset', tmax)
+phenology("phenips", ..., .submodels = 'diapause', daylength)
+phenology("phenips", ..., .submodels = 'mortality', tmax)
+phenology("phenips", ..., .submodels = 'development',
+          .onset, .diapause = NULL, .mortality = NULL,
+          tmean, tmax, rad,
+          exposure = 'sunny', sister_broods = TRUE)
+}\if{html}{\out{</div>}}
 }
 \section{Functioning}{
 

@@ -24,7 +24,7 @@ minutes.
 \description{
 Generate a data frame that specifies sunrises and sunsets for different
 coordinates and dates.
-The package \link{suncalc} is required to use this function.
+The package \code{suncalc} is required to use this function.
 }
 \seealso{
 \code{\link[=create_suntimes_rsts]{create_suntimes_rsts()}}

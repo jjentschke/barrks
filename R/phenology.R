@@ -56,6 +56,7 @@
 #'
 #' @seealso `r .doc_apply_models()`
 #'
+#' @order 1
 #' @export
 
 

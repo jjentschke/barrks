@@ -4,16 +4,6 @@
 \name{model.joensson.apply}
 \alias{model.joensson.apply}
 \title{Use the Jönnson model}
-\usage{
-phenology("joensson", ..., tmean, tmax, daylength, mode = 'fast')
-
-# calculate submodels separately
-phenology("joensson", ..., .submodels = 'onset', tmax)
-phenology("joensson", ..., .submodels = 'diapause', tmax, daylength)
-phenology("joensson", ..., .submodels = 'development',
-          .onset, .diapause = NULL, .mortality = NULL,
-          tmean, mode = 'fast')
-}
 \arguments{
 \item{...}{See \code{\link[=phenology]{phenology()}} for a detailled description of the function.}
 
@@ -34,6 +24,21 @@ This page describes the usage of the the Jönsson model with \code{\link[=phenol
 The model specific inputs are listed and its basic functionality is explained.
 The Jönsson model was published by \insertCite{Jonsson2011;textual}{barrks} and
 parametrized for \emph{Ips typographus} in southern Sweden.
+}
+\details{
+In \code{barrks}, \code{\link[=phenology]{phenology()}} is used to apply a model. The following code
+illustrates which inputs are required to apply the Jönsson model and which additional
+parameters are available.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{phenology("joensson", ..., tmean, tmax, daylength, mode = 'fast')
+
+# calculate submodels separately
+phenology("joensson", ..., .submodels = 'onset', tmax)
+phenology("joensson", ..., .submodels = 'diapause', tmax, daylength)
+phenology("joensson", ..., .submodels = 'development',
+          .onset, .diapause = NULL, .mortality = NULL,
+          tmean, mode = 'fast')
+}\if{html}{\out{</div>}}
 }
 \section{Functioning}{
 

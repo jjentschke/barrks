@@ -115,8 +115,8 @@ env_barrks <- new.env(parent = emptyenv())
   })
 
   df <- purrr::reduce(dfs, dplyr::full_join, by = c('station', 'date', 'doy'))
-  if(all(is.na(df$date))) df <- dplyr::select(df, -date)
-  if(all(is.na(df$doy))) df <- dplyr::select(df, -doy)
+  if(all(is.na(df$date))) df <- dplyr::select(df, - 'date')
+  if(all(is.na(df$doy))) df <- dplyr::select(df, - 'doy')
 
   return(df)
 }

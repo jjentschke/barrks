@@ -1,25 +1,36 @@
 
 
 
-#' Calculate phenology with the BSO model
-#'
-#' As the BSO model works a bit different than the other models, a seperate
+# ' Calculate phenology with the BSO model
+# '
+# ' As the BSO model works a bit different than the other models, a seperate
+# ' phenology function is implemented for this model. Note that while the
+# ' onset and the development submodels are needed to be taken from the BSO model,
+# ' the diapause and the mortality submodels are compatible with other models.
+# ' The usage of the function corresponds to [phenology()]. Look there for more
+# ' details.
+# '
+# ' @param .onset Note that it is not possible to pass an onset generate with
+# ' [create_onset()] to `bso_phenology`. Only onsets from an other BSO phenology
+# ' (returned from [`get_onset_rst(..., as_doy = FALSE)`][get_onset_rst]) can be
+# ' used here.
+# '
+# ' @return Returns a BSO phenology as a list. Look [here][analyse.phenology.bso] to find out how
+# ' a BSO phenology can be analysed. It is not recommended to access the list elements directly.
+# ' To be able to use the functions that are
+# ' available for phenology objects returned by [phenology()], call [bso_translate_phenology()].
+
+
+#' @describeIn phenology As the BSO model works a bit different than the other models, a seperate
 #' phenology function is implemented for this model. Note that while the
 #' onset and the development submodels are needed to be taken from the BSO model,
 #' the diapause and the mortality submodels are compatible with other models.
-#' The usage of the function corresponds to [phenology()]. Look there for more
-#' details.
 #'
-#' @param .onset Note that it is not possible to pass an onset generate with
-#' [create_onset()] to `bso_phenology`. Only onsets from an other BSO phenology
-#' (returned from [`get_onset_rst(..., as_doy = FALSE)`][get_onset_rst]) can be
-#' used here.
-#'
-#' @return Returns a BSO phenology as a list. Look [here][analyse.phenology.bso] to find out how
+#' Returns a BSO phenology as a list. Look [here][analyse.phenology.bso] to find out how
 #' a BSO phenology can be analysed. It is not recommended to access the list elements directly.
 #' To be able to use the functions that are
 #' available for phenology objects returned by [phenology()], call [bso_translate_phenology()].
-#'
+#' @order 2
 #' @export
 
 bso_phenology <- function(.model = 'bso',

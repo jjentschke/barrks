@@ -4,7 +4,7 @@
 #'
 #' Generate a list of two multi-layer SpatRasters for a given template that
 #' indicate sunrise and sunset for the respective cells.
-#' The package [suncalc] is required to use this function.
+#' The package `suncalc` is required to use this function.
 #'
 #' @param template (Multi-layer) SpatRaster that determines the
 #' spatial extent of the result.
@@ -73,7 +73,7 @@ create_suntimes_rsts <- function(template,
 #'
 #' Generate a data frame that specifies sunrises and sunsets for different
 #' coordinates and dates.
-#' The package [suncalc] is required to use this function.
+#' The package `suncalc` is required to use this function.
 #'
 #' @param coords Data frame with the fields `station`, `lat` and `lon`. Defines
 #' the latitude and longitude for the respective stations.
@@ -99,8 +99,8 @@ create_suntimes_df <- function(coords,
   purrr::map_dfr(as.Date(dates), .progress = .get_pb(.quiet), \(date) {
     purrr::map_dfr(coords$station, \(stat) {
       sun_times <- suncalc::getSunlightTimes(date = date,
-                                             lat = filter(coords, station == stat)$lat,
-                                             lon = filter(coords, station == stat)$lon,
+                                             lat = dplyr::filter(coords, coords$station == stat)$lat,
+                                             lon = dplyr::filter(coords, coords$station == stat)$lon,
                                              tz = tz)
 
       sunrise <- sun_times$sunrise

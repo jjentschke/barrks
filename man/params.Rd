@@ -4,11 +4,13 @@
 \alias{params}
 \title{Get model parameters}
 \usage{
-params(m)
+params(m, ...)
 }
 \arguments{
-\item{m}{A phenology model}
+\item{m}{Name of the model or the return value of another \code{model()}-call.}
+
+\item{...}{List of parameters to customize the model.}
 }
 \description{
-Returns the parameters of a model as list.
+Get model parameters
 }

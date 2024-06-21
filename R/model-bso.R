@@ -6,49 +6,8 @@ NULL
 #'
 #' `r .doc_customize_description('the BSO model', 'bso', 'Jakoby2019')`
 #'
-#' @usage
-#' model("bso",
+#' `r .doc_customize_call('the BSO model', 'bso')`
 #'
-#'       # ==== onset ====
-#'
-#'       dd_onset_start_date = '01-01',
-#'       dd_onset_base = 5.124198,
-#'       dd_onset_threshold = 100,
-#'       slot_dia = 6,
-#'
-#'       # ==== onset + development ====
-#'
-#'       k = 2.853738e-02,
-#'       alpha = c(0.0000789, 1.009450e-05, 2.549060e-05),
-#'       tlo = c(4.760089e+00, -4.424628e+00, -1.297644e+01),
-#'       tup = c(4.002483e+01, 3.999390e+01, 3.600070e+01),
-#'       tfly_min = 16.1064,
-#'       tfly_max = 31.2901,
-#'       pfly_max = 9.863263e-03,
-#'       beta = 1.363763,
-#'
-#'       num_slots = c(
-#'         'reproduction' = 11,
-#'         'egg' = 18,
-#'         'larva' = 45,
-#'         'pupa' = 8,
-#'         'maturation' = 8,
-#'         'preflight' = 1
-#'       ),
-#'
-#'       # ==== development ====
-#'
-#'       model_end_date = '12-30',
-#'
-#'       psis = 2.994450e-01,
-#'       slot_sis = 4,
-#'
-#'       # ==== diapause ====
-#'
-#'       diapause_first = 210,
-#'       diapause_last = 232,
-#'       tdia_min = 1.645209e+01
-#' )
 #'
 #' @param dd_onset_start_date The date, when the degree days start to sum up ('MM-DD').
 #' @param dd_onset_base Base temperature to calculate degree days to trigger the onset.
@@ -99,6 +58,24 @@ NULL
 #' the development submodel do not support the usage of a storage (except for
 #' some precalculations).
 #'
+#' In `barrks`, [phenology()] is used to apply a model. The following code
+#' illustrates which inputs are required to apply the BSO model and which additional
+#' parameters are available.
+#'
+#' ```
+#' bso_phenology("bso", ..., tmin, tmax, sunrise, sunset,
+#'               n = 1e+09, max_generations = 4)
+#'
+#' # calculate submodels separately
+#' bso_phenology("bso", ..., .submodels = 'onset',
+#'               tmin, tmax, sunrise, sunset, n = 1e+09)
+#' bso_phenology("bso", ..., .submodels = 'diapause', tmin, tmax)
+#' bso_phenology("bso", ..., .submodels = 'development',
+#'               .onset, .diapause = NULL, .mortality = NULL,
+#'               tmin, tmax, sunrise, sunset,
+#'               max_generations = 4)
+#' ```
+#'
 #' @section Functioning of the BSO:
 #'
 #' `r .doc_functioning_pre('bso', 'the BSO model')`
@@ -119,20 +96,6 @@ NULL
 #' - **Mortality**: The BSO model does not have a mortality submodel implemented.
 #'
 #' `r .doc_functioning_post('bso')`
-#'
-#' @usage
-#'
-#' bso_phenology("bso", ..., tmin, tmax, sunrise, sunset,
-#'               n = 1e+09, max_generations = 4)
-#'
-#' # calculate submodels separately
-#' bso_phenology("bso", ..., .submodels = 'onset',
-#'               tmin, tmax, sunrise, sunset, n = 1e+09)
-#' bso_phenology("bso", ..., .submodels = 'diapause', tmin, tmax)
-#' bso_phenology("bso", ..., .submodels = 'development',
-#'               .onset, .diapause = NULL, .mortality = NULL,
-#'               tmin, tmax, sunrise, sunset,
-#'               max_generations = 4)
 #'
 #' @param ... `r .doc_phenology_dots_bso()`
 #' @param tmin,tmax Daily minimum/maximum air temperatures in °C.
@@ -335,7 +298,7 @@ bso_calc_onset <- function(.params,
 
   # generate regeneration start rasters
   start_steps <- unique(terra::values(sum_reached, FALSE))
-  start_steps <- na.omit(start_steps)
+  start_steps <- stats::na.omit(start_steps)
   start_regeneration <- dd * 0
   purrr::walk(start_steps, \(step) {
     start_regeneration[[step]] <<- terra::ifel(sum_reached == step, n, 0)
@@ -522,7 +485,7 @@ bso_develop_generation <- function(.params,
     transition_probs_sb <- transition_probs_sb[slot_permutation_sb]
 
     # calculate the number of beetles that are changing the slot
-    div <- rbinom(length(to_process), population[to_process], transition_probs[to_process])
+    div <- stats::rbinom(length(to_process), population[to_process], transition_probs[to_process])
 
     # update population
     population[to_process] <<- population[to_process] - div
@@ -537,11 +500,11 @@ bso_develop_generation <- function(.params,
     cells_before_dev_process <- to_process[x]
 
 
-    n_sister_breeders <- rbinom(length(x), div[x], .params$psis / (1 + .params$psis))
+    n_sister_breeders <- stats::rbinom(length(x), div[x], .params$psis / (1 + .params$psis))
 
     population[cells_before_dev_process + ncells] <<- population[cells_before_dev_process + ncells] - n_sister_breeders
 
-    div_sb <- rbinom(length(to_process_sb), population_sb[to_process_sb], transition_probs_sb[to_process_sb]) # ?
+    div_sb <- stats::rbinom(length(to_process_sb), population_sb[to_process_sb], transition_probs_sb[to_process_sb]) # ?
 
     population_sb[to_process_sb] <<- population_sb[to_process_sb] - div_sb
     population_sb[to_process_sb + ncells] <<- population_sb[to_process_sb + ncells] + div_sb
@@ -725,7 +688,11 @@ bso_calc_development <- function(.params,
              list(
                params = list(
 
-                 model_end_date = '12-30',
+                 dd_onset_start_date = '01-01',
+                 dd_onset_base = 5.124198e+00,
+                 dd_onset_threshold = 100,
+
+                 slot_dia = 6,
 
                  k = 2.853738e-02,
 
@@ -733,6 +700,10 @@ bso_calc_development <- function(.params,
                  tlo = c(-1.297644e+01, 4.760089e+00, -4.424628e+00),
                  tup = c(3.600070e+01, 4.002483e+01, 3.999390e+01),
 
+                 tfly_min = 1.610640e+01,
+                 tfly_max = 3.129010e+01,
+                 pfly_max = 9.863263e-03,
+                 beta = 1.363763e+00,
 
                  num_slots = c(
                    'reproduction' = 11,
@@ -743,20 +714,11 @@ bso_calc_development <- function(.params,
                    'preflight' = 1
                  ),
 
-                 dd_onset_start_date = '01-01',
-                 dd_onset_base = 5.124198e+00,
-
-                 tfly_min = 1.610640e+01,
-                 tfly_max = 3.129010e+01,
-                 pfly_max = 9.863263e-03,
-                 beta = 1.363763e+00,
-
-                 dd_onset_threshold = 100,
+                 model_end_date = '12-30',
 
                  psis = 2.994450e-01,
                  slot_sis = 4,
 
-                 slot_dia = 6,
                  diapause_first = 210,
                  diapause_last = 232,
                  tdia_min = 1.645209e+01

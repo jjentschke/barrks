@@ -2,36 +2,11 @@
 NULL
 
 
-
 #' Customize the Lange model
 #'
 #' `r .doc_customize_description('Lange', 'lange', 'Lange2006')`
 #'
-#' @usage
-#' model("lange",
-#'
-#'       # ==== onset ==== #
-#'
-#'       dd_onset_start_date = '01-01',
-#'       dd_onset_base = 5,
-#'       dd_onset_threshold = 110,
-#'
-#'       # ==== onset + development ====
-#'
-#'       tfly = 19.5,
-#'
-#'       # ==== development ==== #
-#'
-#'       model_end_date = '12-31',
-#'
-#'       dd_base_stages = c(10.6, 8.2, 9.9, 3.2),
-#'       dd_threshold_stages = c(51.8, 204.4, 57.7, 238.5),
-#'
-#'       # ==== mortality ==== #
-#'
-#'       first_lethal_date = '09-01',
-#'       tlethal = 0
-#' )
+#' `r .doc_customize_call('CHAPY', 'chapy')`
 #'
 #' @param dd_onset_start_date The date, when the degree days start to sum up ('MM-DD').
 #' @param dd_onset_base Base temperature to calculate degree days to trigger the onset.
@@ -68,6 +43,21 @@ NULL
 #' The model was published by \insertCite{Lange2006;textual}{barrks} for
 #' *Ips typographus*.
 #'
+#' In `barrks`, [phenology()] is used to apply a model. The following code
+#' illustrates which inputs are required to apply the Lange model and which additional
+#' parameters are available.
+#'
+#' ```
+#' phenology("lange", ..., tmin, tmean, tmax)
+#'
+#' # calculate submodels separately
+#' phenology("lange", ..., .submodels = 'onset', tmean, tmax)
+#' phenology("lange", ..., .submodels = 'mortality', tmin)
+#' phenology("lange", ..., .submodels = 'development',
+#'           .onset, .diapause = NULL, .mortality = NULL,
+#'           tmean, tmax)
+#' ```
+#'
 #' @section Functioning:
 #'
 #' `r .doc_functioning_pre('lange', 'the Lange model')`
@@ -85,16 +75,6 @@ NULL
 #'
 #' `r .doc_functioning_post('lange')`
 #'
-#' @usage
-#'
-#' phenology("lange", ..., tmin, tmean, tmax)
-#'
-#' # calculate submodels separately
-#' phenology("lange", ..., .submodels = 'onset', tmean, tmax)
-#' phenology("lange", ..., .submodels = 'mortality', tmin)
-#' phenology("lange", ..., .submodels = 'development',
-#'           .onset, .diapause = NULL, .mortality = NULL,
-#'           tmean, tmax)
 #'
 #' @param tmin,tmean,tmax Daily minimum/mean/maximum temperatures in °C.
 #' @param .submodels,.onset,.diapause,.mortality,... `r .doc_phenology_dots()`
@@ -279,21 +259,15 @@ NULL
              list(
                params = list(
 
-                 model_end_date = '12-31',
-                 tfly = 19.5,
-
-                 # ==== onset ==== #
-
                  dd_onset_start_date = '01-01',
                  dd_onset_base = 5,
                  dd_onset_threshold = 110,
 
-                 # ==== development ==== #
+                 tfly = 19.5,
+                 model_end_date = '12-31',
 
                  dd_base_stages = c(10.6, 8.2, 9.9, 3.2),
                  dd_threshold_stages = c(51.8, 204.4, 57.7, 238.5),
-
-                 # ==== mortality ==== #
 
                  first_lethal_date = '09-01',
                  tlethal = 0

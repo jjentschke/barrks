@@ -48,10 +48,11 @@ at a specific developmental stage.
 
 ``` r
 bso_plot_stage_diagram(pheno_bso, 234)
+#> Error in (function (x, y = NULL, legend, fill = NULL, col = par("col"), : argument "legend" is missing, with no default
 ```
 
 <div class="figure">
-<img src="figure/bso-stage-diagram-1.png" alt="BSO stage diagram (generation '0' represents the hibernating beetles)" width="100%" />
+<img src="figures/bso-stage-diagram-1.png" alt="BSO stage diagram (generation '0' represents the hibernating beetles)" width="100%" />
 <p class="caption">BSO stage diagram (generation '0' represents the hibernating beetles)</p>
 </div>
 
@@ -63,7 +64,7 @@ bso_plot_flight_diagram(pheno_bso, 234)
 ```
 
 <div class="figure">
-<img src="figure/bso-flight-diagram-1.png" alt="BSO flight diagram (the colors describe which generation flies to establish a new filial generation or a sister brood respectively)" width="100%" />
+<img src="figures/bso-flight-diagram-1.png" alt="BSO flight diagram (the colors describe which generation flies to establish a new filial generation or a sister brood respectively)" width="100%" />
 <p class="caption">BSO flight diagram (the colors describe which generation flies to establish a new filial generation or a sister brood respectively)</p>
 </div>
 
@@ -86,7 +87,7 @@ get_generations_rst(pheno_translated, dates) %>% my_rst_plot()
 ```
 
 <div class="figure">
-<img src="figure/bso-gens-1.png" alt="Generations calculated by the BSO model" width="100%" />
+<img src="figures/bso-gens-1.png" alt="Generations calculated by the BSO model" width="100%" />
 <p class="caption">Generations calculated by the BSO model</p>
 </div>
 

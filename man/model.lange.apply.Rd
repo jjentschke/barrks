@@ -4,16 +4,6 @@
 \name{model.lange.apply}
 \alias{model.lange.apply}
 \title{Use the Lange model}
-\usage{
-phenology("lange", ..., tmin, tmean, tmax)
-
-# calculate submodels separately
-phenology("lange", ..., .submodels = 'onset', tmean, tmax)
-phenology("lange", ..., .submodels = 'mortality', tmin)
-phenology("lange", ..., .submodels = 'development',
-          .onset, .diapause = NULL, .mortality = NULL,
-          tmean, tmax)
-}
 \arguments{
 \item{tmin, tmean, tmax}{Daily minimum/mean/maximum temperatures in °C.}
 
@@ -27,6 +17,21 @@ This page describes the usage of the the Lange model with \code{\link[=phenology
 The model specific inputs are listed and its basic functionality is explained.
 The model was published by \insertCite{Lange2006;textual}{barrks} for
 \emph{Ips typographus}.
+}
+\details{
+In \code{barrks}, \code{\link[=phenology]{phenology()}} is used to apply a model. The following code
+illustrates which inputs are required to apply the Lange model and which additional
+parameters are available.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{phenology("lange", ..., tmin, tmean, tmax)
+
+# calculate submodels separately
+phenology("lange", ..., .submodels = 'onset', tmean, tmax)
+phenology("lange", ..., .submodels = 'mortality', tmin)
+phenology("lange", ..., .submodels = 'development',
+          .onset, .diapause = NULL, .mortality = NULL,
+          tmean, tmax)
+}\if{html}{\out{</div>}}
 }
 \section{Functioning}{
 

@@ -2,7 +2,7 @@
 #' Create daylength rasters
 #'
 #' Generate a multi-layer SpatRaster of daylengths for a given template.
-#' The package [geosphere] is required to use this function.
+#' The package `geosphere` is required to use this function.
 #'
 #' @param template (Multi-layer) SpatRaster that determines the
 #' spatial extent of the result.
@@ -54,7 +54,7 @@ create_daylength_rst <- function(template,
 #' Create a data frame of daylengths
 #'
 #' Generate a data frame of daylengths for given latitudes.
-#' The package [geosphere] is required to use this function.
+#' The package `geosphere` is required to use this function.
 #'
 #' @param lat (Named) vector of latitudes. The names of the vector indicate the
 #' respective stations. If no names are provided, numbers are used instead.

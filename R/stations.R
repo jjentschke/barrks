@@ -44,6 +44,9 @@ stations_create <- function(station_names, cells) {
 #'
 #' Get the names of stations.
 #'
+#' @param stations Stations created with [stations_create()] or obtained by
+#' [prop_stations()].
+#'
 #' @export
 stations_names <- function(stations) {
   return(names(stations))
@@ -52,6 +55,9 @@ stations_names <- function(stations) {
 #' Get the raster cells of stations
 #'
 #' Get the raster cells of stations.
+#'
+#' @param stations Stations created with [stations_create()] or obtained by
+#' [prop_stations()].
 #'
 #' @export
 stations_cells <- function(stations) {

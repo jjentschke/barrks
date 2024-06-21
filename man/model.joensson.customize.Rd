@@ -4,37 +4,6 @@
 \name{model.joensson.customize}
 \alias{model.joensson.customize}
 \title{Customize the Jönsson model}
-\usage{
-model("joensson",
-
-      # ==== onset ====
-
-      dd_onset_start_date = '01-01',
-      dd_onset_base = 5,
-      dd_onset_threshold = 120,
-
-      # ==== onset + development ====
-
-      tfly = 20,
-
-      # ==== development ====
-
-      model_end_date = '12-31',
-
-      dd_development_base = 5,
-      dd_total_dev_lower = 625,
-      dd_total_dev_upper = 750,
-      dev_start = 0,
-      dev_end = 1,
-      dev_mortal_min = NULL,
-      dev_mortal_max = NULL,
-
-      # ==== diapause ====
-
-      daylength_dia = 19.3,
-      tdia_min = 15
-)
-}
 \arguments{
 \item{dd_onset_start_date}{The date, when the degree days start to sum up ('MM-DD').}
 
@@ -68,10 +37,34 @@ examined the photoperiodic diapause induction in Sweden. If the model is used
 for other regions, this value should be adjusted.}
 }
 \description{
-In barrks, \code{\link[=model]{model()}} is used to customize a model. Here, the parameters are
-described that can be used to customize Jönsson. The model was developed by
+This page describes the parameters
+that can be used to customize Jönsson. The model was developed by
 \insertCite{Jonsson2011;textual}{barrks}. Look \link[=model.joensson.customize]{here} to find
 out how to apply the model.
+}
+\details{
+In \code{barrks}, \code{\link[=model]{model()}} is used to customize a model. The following code
+illustrates which parameters are available for Jönsson and specifies their
+default values.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{model('joensson',
+
+      dd_onset_start_date = '01-01',
+      dd_onset_base = 5,
+      dd_onset_threshold = 120,
+      tfly = 20,
+      model_end_date = '12-31',
+      dd_development_base = 5,
+      dd_total_dev_lower = 625,
+      dd_total_dev_upper = 750,
+      dev_start = 0,
+      dev_end = 1,
+      dev_mortal_min = ,
+      dev_mortal_max = ,
+      daylength_dia = 19.3,
+      tdia_min = 15
+)
+}\if{html}{\out{</div>}}
 }
 \references{
 \insertAllCited{}

@@ -21,9 +21,7 @@ Imports:
     base,
     lubridate,
     readr,
-    stringr,
-    cli,
-    rlang
+    stringr
 Collate: 
     'appearance.R'
     'barrks.R'
@@ -55,7 +53,7 @@ Collate:
     'utils-storage.R'
 VignetteBuilder: knitr
 Depends: 
-    R (>= 4.3.1)
+    R (>= 4.3.0)
 Suggests: 
     devtools,
     geosphere,

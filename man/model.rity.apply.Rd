@@ -4,17 +4,6 @@
 \name{model.rity.apply}
 \alias{model.rity.apply}
 \title{Use RITY}
-\usage{
-phenology("rity", ..., tmin = NULL, tmean = NULL, tmax, daylength, mode = 'max')
-
-# calculate submodels separately
-phenology("rity", ..., .submodels = 'onset', tmax)
-phenology("rity", ..., .submodels = 'diapause', daylength)
-phenology("rity", ..., .submodels = 'mortality', tmax)
-phenology("rity", ..., .submodels = 'development',
-          .onset, .diapause = NULL, .mortality = NULL,
-          tmin = NULL, tmean = NULL, tmax = NULL, mode = 'max')
-}
 \arguments{
 \item{tmin, tmean, tmax}{Daily minimum/mean/maximum temperatures in °C.
 For the \code{development} submodel, the parameter that is obligatory depends on
@@ -36,6 +25,22 @@ This page describes the usage of RITY with \code{\link[=phenology]{phenology()}}
 The model specific inputs are listed and its basic functionality is explained.
 RITY (also called RITY-2) was published by \insertCite{Ogris2019;textual}{barrks} and
 parametrized for \emph{Ips typographus} in Slovenia.
+}
+\details{
+In \code{barrks}, \code{\link[=phenology]{phenology()}} is used to apply a model. The following code
+illustrates which inputs are required to apply RITY and which additional
+parameters are available.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{phenology("rity", ..., tmin = NULL, tmean = NULL, tmax, daylength, mode = 'max')
+
+# calculate submodels separately
+phenology("rity", ..., .submodels = 'onset', tmax)
+phenology("rity", ..., .submodels = 'diapause', daylength)
+phenology("rity", ..., .submodels = 'mortality', tmax)
+phenology("rity", ..., .submodels = 'development',
+          .onset, .diapause = NULL, .mortality = NULL,
+          tmin = NULL, tmean = NULL, tmax = NULL, mode = 'max')
+}\if{html}{\out{</div>}}
 }
 \section{Functioning}{
 

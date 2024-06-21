@@ -4,54 +4,6 @@
 \name{model.chapy.customize}
 \alias{model.chapy.customize}
 \title{Customize CHAPY}
-\usage{
-model("chapy",
-
-      # ==== onset ====
-
-      dd_onset_start_date = '03-09',
-      dd_onset_base = 7.4,
-      dd_onset_threshold = 216.5,
-
-      # ==== onset + development ====
-
-      tfly = 15.6,
-
-      # ==== development ====
-
-      dd_development_base = 7.4,
-      dd_total_dev = 635.4,
-      dev_start = 0,
-      dev_end = 1,
-      dev_sister_brood = 0.5,
-      dev_mortal_min = NULL,
-      dev_mortal_max = 0.8,
-
-      func_ftmin = function(tmin) { 1.44 + 0.82 * tmin },
-      func_ftmean = function(tmean) { 0.50 + 0.81 * tmean },
-      func_ftmax = function(tmax) { 1.03 + 0.86 * tmax },
-
-      func_btmin = function(atmin) { 0.56 + 0.99 * atmin },
-      func_btmean = function(atmean) { -0.48 + 1.03 * atmean },
-      func_btmax = function(atmax) { 0.03 + 0.99 * atmax },
-
-      dt_low = 7.4,
-      dt_up = 39.4,
-      topt = 30,
-      tmax = 41.97,
-      alpha = 0.031,
-      beta = 5.3,
-      gamma = 1.25,
-
-      # ==== diapause ====
-
-      daylength_dia = 13.6,
-
-      # ==== mortality ====
-
-      model_end_date = '12-31'
-)
-}
 \arguments{
 \item{dd_onset_start_date}{The date, when the degree days start to sum up ('MM-DD').}
 
@@ -78,7 +30,7 @@ will be established.}
 development of white stages (egg, larva, pupa). During these stages, the
 beetles could die caused by a mortality event.}
 
-\item{func_ftmean, func_ftmax, func_atdiff}{Functions to caclulate the
+\item{func_ftmin, func_ftmean, func_ftmax}{Functions to caclulate the
 air temperature in forest stands (see \insertCite{Ogris2019;nobrackets}{barrks},
 equations 1 - 3). Each parameter will be passed as SpatRaster:
 \itemize{
@@ -87,7 +39,7 @@ equations 1 - 3). Each parameter will be passed as SpatRaster:
 \item \code{tmax}: maximum air temperature
 }}
 
-\item{func_btmean, func_btmax, func_btdiff}{Functions to caclulate the
+\item{func_btmin, func_btmean, func_btmax}{Functions to caclulate the
 bark temperature (see \insertCite{Ogris2019;nobrackets}{barrks},
 equations 4 - 6). Each parameter will be passed as SpatRaster:
 \itemize{
@@ -106,10 +58,46 @@ will be initiated.}
 \item{model_end_date}{Date when the model ends and all white stages (egg, larva, pupa) die.}
 }
 \description{
-In barrks, \code{\link[=model]{model()}} is used to customize a model. Here, the parameters are
-described that can be used to customize CHAPY. The model was developed by
+This page describes the parameters
+that can be used to customize CHAPY. The model was developed by
 \insertCite{Ogris2020;textual}{barrks}. Look \link[=model.chapy.customize]{here} to find
 out how to apply the model.
+}
+\details{
+In \code{barrks}, \code{\link[=model]{model()}} is used to customize a model. The following code
+illustrates which parameters are available for CHAPY and specifies their
+default values.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{model('chapy',
+
+      dd_onset_start_date = '03-09',
+      dd_onset_base = 7.4,
+      dd_onset_threshold = 216.5,
+      tfly = 15.6,
+      dd_development_base = 7.4,
+      dd_total_dev = 635.4,
+      dev_start = 0,
+      dev_end = 1,
+      dev_sister_brood = 0.5,
+      dev_mortal_min = ,
+      dev_mortal_max = 0.8,
+      func_ftmin = function (tmin) \{ 1.44 + 0.82 * tmin \},
+      func_ftmean = function (tmean) \{ 0.5 + 0.81 * tmean \},
+      func_ftmax = function (tmax) \{ 1.03 + 0.86 * tmax \},
+      func_btmin = function (atmin) \{ 0.56 + 0.99 * atmin \},
+      func_btmean = function (atmean) \{ -0.48 + 1.03 * atmean \},
+      func_btmax = function (atmax) \{ 0.03 + 0.99 * atmax \},
+      dt_low = 7.4,
+      dt_up = 39.4,
+      topt = 30,
+      tmax = 41.97,
+      alpha = 0.031,
+      beta = 5.3,
+      gamma = 1.25,
+      daylength_dia = 13.6,
+      model_end_date = '12-31'
+)
+}\if{html}{\out{</div>}}
 }
 \references{
 \insertAllCited{}

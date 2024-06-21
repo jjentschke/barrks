@@ -105,15 +105,15 @@ plot_doy_panel(map(phenos, \(p) get_mortality_rst(p)[[1]]))
 ```
 
 <div class="figure">
-<img src="figure/model-comparison-onset-1.png" alt="Day of year when the infestation begins" width="100%" />
+<img src="figures/model-comparison-onset-1.png" alt="Day of year when the infestation begins" width="100%" />
 <p class="caption">Day of year when the infestation begins</p>
 </div>
 <div class="figure">
-<img src="figure/model-comparison-diapause-1.png" alt="Day of year when the diapause begins (in white cells no diapause was induced)" width="100%" />
+<img src="figures/model-comparison-diapause-1.png" alt="Day of year when the diapause begins (in white cells no diapause was induced)" width="100%" />
 <p class="caption">Day of year when the diapause begins (in white cells no diapause was induced)</p>
 </div>
 <div class="figure">
-<img src="figure/model-comparison-mortality-1.png" alt="Day of year of the first frost-induced mortality event in autumn (in white cells no mortality happened)" width="100%" />
+<img src="figures/model-comparison-mortality-1.png" alt="Day of year of the first frost-induced mortality event in autumn (in white cells no mortality happened)" width="100%" />
 <p class="caption">Day of year of the first frost-induced mortality event in autumn (in white cells no mortality happened)</p>
 </div>
 
@@ -141,31 +141,31 @@ walk(names(phenos), \(key) {
 ```
 
 <div class="figure">
-<img src="figure/model-comparison-gens-phenips-clim-1.png" alt="Generations calculated by PHENIPS-CLIM" width="100%" />
+<img src="figures/model-comparison-gens-phenips-clim-1.png" alt="Generations calculated by PHENIPS-CLIM" width="100%" />
 <p class="caption">Generations calculated by PHENIPS-CLIM</p>
 </div>
 <div class="figure">
-<img src="figure/model-comparison-gens-phenips-1.png" alt="Generations calculated by PHENIPS" width="100%" />
+<img src="figures/model-comparison-gens-phenips-1.png" alt="Generations calculated by PHENIPS" width="100%" />
 <p class="caption">Generations calculated by PHENIPS</p>
 </div>
 <div class="figure">
-<img src="figure/model-comparison-gens-rity-1.png" alt="Generations calculated by RITY" width="100%" />
+<img src="figures/model-comparison-gens-rity-1.png" alt="Generations calculated by RITY" width="100%" />
 <p class="caption">Generations calculated by RITY</p>
 </div>
 <div class="figure">
-<img src="figure/model-comparison-gens-lange-1.png" alt="Generations calculated by the Lange model" width="100%" />
+<img src="figures/model-comparison-gens-lange-1.png" alt="Generations calculated by the Lange model" width="100%" />
 <p class="caption">Generations calculated by the Lange model</p>
 </div>
 <div class="figure">
-<img src="figure/model-comparison-gens-joensson-1.png" alt="Generations calculated by the Jönsson model" width="100%" />
+<img src="figures/model-comparison-gens-joensson-1.png" alt="Generations calculated by the Jönsson model" width="100%" />
 <p class="caption">Generations calculated by the Jönsson model</p>
 </div>
 <div class="figure">
-<img src="figure/model-comparison-gens-bso-1.png" alt="Generations calculated by the BSO model" width="100%" />
+<img src="figures/model-comparison-gens-bso-1.png" alt="Generations calculated by the BSO model" width="100%" />
 <p class="caption">Generations calculated by the BSO model</p>
 </div>
 <div class="figure">
-<img src="figure/model-comparison-gens-chapy-1.png" alt="Generations calculated by CHAPY" width="100%" />
+<img src="figures/model-comparison-gens-chapy-1.png" alt="Generations calculated by CHAPY" width="100%" />
 <p class="caption">Generations calculated by CHAPY</p>
 </div>
 
@@ -191,7 +191,7 @@ plot(station_coords, col = 'red', pch = 4, add = TRUE)
 text(station_coords, names(stations), col = 'black', pos = 2)
 ```
 <div class="figure">
-<img src="figure/model-comparison-stations-map-1.png" alt="Stations map" width="100%" />
+<img src="figures/model-comparison-stations-map-1.png" alt="Stations map" width="100%" />
 <p class="caption">Stations map</p>
 </div>
 
@@ -215,11 +215,11 @@ walk(1:length(stations), \(i) {
 })
 ```
 <div class="figure">
-<img src="figure/model-comparison-dev-s1-1.png" alt="Development diagram for station 1" width="100%" />
+<img src="figures/model-comparison-dev-s1-1.png" alt="Development diagram for station 1" width="100%" />
 <p class="caption">Development diagram for station 1</p>
 </div>
 <div class="figure">
-<img src="figure/model-comparison-dev-s2-1.png" alt="Development diagram for station 2" width="100%" />
+<img src="figures/model-comparison-dev-s2-1.png" alt="Development diagram for station 2" width="100%" />
 <p class="caption">Development diagram for station 2</p>
 </div>
 

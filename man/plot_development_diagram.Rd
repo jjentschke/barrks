@@ -38,7 +38,7 @@ plotted (see \code{\link[=phenology]{phenology()}}).}
 or labels of the generations starting from the first generation followed
 consecutively by elements for the other generations (including sister broods).}
 
-\item{.legend_col, legend_lty}{Manipulate the appearance of the legends for
+\item{.legend_col, .legend_lty}{Manipulate the appearance of the legends for
 colors and line types. Pass \code{TRUE}/\code{FALSE} to enable/disable the respective legend.
 For the customization of the respective legend, a list of parameters for
 \link[graphics:legend]{graphics::legend} can be passed.}

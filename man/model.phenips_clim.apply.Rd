@@ -4,20 +4,6 @@
 \name{model.phenips_clim.apply}
 \alias{model.phenips_clim.apply}
 \title{Use PHENIPS-Clim}
-\usage{
-phenology("phenips-clim", ..., tmin, tmean, tmax, rad, daylength,
-          sister_broods = TRUE, scenario = 'max', exposure = NULL,
-          onset_mode = NULL, oviposition_mode = NULL, diapause_mode = NULL)
-
-# calculate submodels separately
-phenology("phenips-clim", ..., .submodels = 'onset', tmax, scenario = 'max', onset_mode = NULL)
-phenology("phenips-clim", ..., .submodels = 'diapause', tmax, daylength, scenario = 'max', diapause_mode = NULL)
-phenology("phenips-clim", ..., .submodels = 'mortality', tmin)
-phenology("phenips-clim", ..., .submodels = 'development',
-          .onset, .diapause = NULL, .mortality = NULL,
-          tmin, tmean, tmax, rad, sister_broods = TRUE,
-          scenario = 'max', exposure = NULL, oviposition_mode = NULL)
-}
 \arguments{
 \item{...}{See \code{\link[=phenology]{phenology()}} for a detailled description of the function.
 See \code{\link[=phenology]{phenology()}} for details.}
@@ -70,6 +56,25 @@ This page describes the usage of PHENIPS-Clim with \code{\link[=phenology]{pheno
 The model specific inputs are listed and its basic functionality is explained.
 PHENIPS-Clim is not published yet. This manual will be updated when a
 publication is available. It was parametrized for \emph{Ips typographus} in southern Germany.
+}
+\details{
+In \code{barrks}, \code{\link[=phenology]{phenology()}} is used to apply a model. The following code
+illustrates which inputs are required to apply PHENIPS-Clim and which additional
+parameters are available.
+
+\if{html}{\out{<div class="sourceCode">}}\preformatted{phenology("phenips-clim", ..., tmin, tmean, tmax, rad, daylength,
+          sister_broods = TRUE, scenario = 'max', exposure = NULL,
+          onset_mode = NULL, oviposition_mode = NULL, diapause_mode = NULL)
+
+# calculate submodels separately
+phenology("phenips-clim", ..., .submodels = 'onset', tmax, scenario = 'max', onset_mode = NULL)
+phenology("phenips-clim", ..., .submodels = 'diapause', tmax, daylength, scenario = 'max', diapause_mode = NULL)
+phenology("phenips-clim", ..., .submodels = 'mortality', tmin)
+phenology("phenips-clim", ..., .submodels = 'development',
+          .onset, .diapause = NULL, .mortality = NULL,
+          tmin, tmean, tmax, rad, sister_broods = TRUE,
+          scenario = 'max', exposure = NULL, oviposition_mode = NULL)
+}\if{html}{\out{</div>}}
 }
 \section{Functioning}{
 
