@@ -1,6 +1,6 @@
 
 
-path <- system.file('extdata/sample-data', package = 'barrks')
+data <- barrks_data()
 
 m <- model_combine('phenips',
                    list(model = 'rity', submodels = 'onset'),
@@ -8,13 +8,13 @@ m <- model_combine('phenips',
                    list(model = 'phenips-clim', submodels = 'mortality'))
 
 
-pheno <- phenology(m, path, .quiet = TRUE)
+pheno <- phenology(m, data, .quiet = TRUE)
 
 
-onset <- get_onset_rst(phenology('rity', path, .submodels = 'onset', .quiet = TRUE), FALSE)
-diapause <- get_diapause_rst(phenology('joensson', path, .submodels = 'diapause', .quiet = TRUE), FALSE)
-mortality <- get_mortality_rst(phenology('phenips-clim', path, .submodels = 'mortality', .quiet = TRUE), FALSE)
-pheno2 <- phenology('phenips', .onset = onset, .diapause = diapause, .mortality = mortality, path, .quiet = TRUE)
+onset <- get_onset_rst(phenology('rity', data, .submodels = 'onset', .quiet = TRUE), FALSE)
+diapause <- get_diapause_rst(phenology('joensson', data, .submodels = 'diapause', .quiet = TRUE), FALSE)
+mortality <- get_mortality_rst(phenology('phenips-clim', data, .submodels = 'mortality', .quiet = TRUE), FALSE)
+pheno2 <- phenology('phenips', .onset = onset, .diapause = diapause, .mortality = mortality, data, .quiet = TRUE)
 
 
 expect_true(all(terra::values(get_onset_rst(pheno, FALSE) == onset), na.rm = TRUE))
