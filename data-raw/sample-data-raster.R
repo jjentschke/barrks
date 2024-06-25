@@ -77,8 +77,7 @@ terra::writeCDF(suntimes$sunset[[keys]],
                 overwrite = TRUE)
 
 
-rst_epsg4258 <- terra::project(rsts_tmean_fr, 'EPSG:4258')
-rsts_daylength <- create_daylength_rst(rst_epsg4258)
+rsts_daylength <- create_daylength_rst(rsts_tmean_fr)
 
 terra::writeCDF(round(rsts_daylength * 100),
                 'inst/extdata/sample-data/daylength.nc',
