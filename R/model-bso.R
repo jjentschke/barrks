@@ -8,6 +8,51 @@ NULL
 #'
 #' `r .doc_customize_call('the BSO model', 'bso')`
 #'
+#' ```{r, eval = FALSE}
+#'
+#' model("bso",
+#'
+#'       # ==== onset ====
+#'
+#'       dd_onset_start_date = '01-01',
+#'       dd_onset_base = 5.124198,
+#'       dd_onset_threshold = 100,
+#'       slot_dia = 6,
+#'
+#'       # ==== onset + development ====
+#'
+#'       k = 2.853738e-02,
+#'       alpha = c(2.549060e-05, 0.0000789, 1.009450e-05),
+#'       tlo = c(-1.297644e+01, 4.760089e+00, -4.424628e+00),
+#'       tup = c(3.600070e+01, 4.002483e+01, 3.999390e+01),
+#'       tfly_min = 16.1064,
+#'       tfly_max = 31.2901,
+#'       pfly_max = 9.863263e-03,
+#'       beta = 1.363763,
+#'
+#'       num_slots = c(
+#'         'reproduction' = 11,
+#'         'egg' = 18,
+#'         'larva' = 45,
+#'         'pupa' = 8,
+#'         'maturation' = 8,
+#'         'preflight' = 1
+#'       ),
+#'
+#'       # ==== development ====
+#'
+#'       model_end_date = '12-30',
+#'
+#'       psis = 2.994450e-01,
+#'       slot_sis = 4,
+#'
+#'       # ==== diapause ====
+#'
+#'       diapause_first = 210,
+#'       diapause_last = 232,
+#'       tdia_min = 1.645209e+01
+#' )
+#' ```
 #'
 #' @param dd_onset_start_date The date, when the degree days start to sum up ('MM-DD').
 #' @param dd_onset_base Base temperature to calculate degree days to trigger the onset.
@@ -62,7 +107,7 @@ NULL
 #' illustrates which inputs are required to apply the BSO model and which additional
 #' parameters are available.
 #'
-#' ```
+#' ```{r, eval = FALSE}
 #' bso_phenology("bso", ..., tmin, tmax, sunrise, sunset,
 #'               n = 1e+09, max_generations = 4)
 #'

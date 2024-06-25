@@ -55,27 +55,48 @@ In \code{barrks}, \code{\link[=model]{model()}} is used to customize a model. Th
 illustrates which parameters are available for the BSO model and specifies their
 default values.
 
-\if{html}{\out{<div class="sourceCode">}}\preformatted{model('bso',
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{
+model("bso",
+
+      # ==== onset ====
 
       dd_onset_start_date = '01-01',
       dd_onset_base = 5.124198,
       dd_onset_threshold = 100,
       slot_dia = 6,
-      k = 0.02853738,
-      c("alpha = 2.54906e-05", "alpha = 7.89e-05", "alpha = 1.00945e-05"),
-      c("tlo = -12.97644", "tlo = 4.760089", "tlo = -4.424628"),
-      c("tup = 36.0007", "tup = 40.02483", "tup = 39.9939"),
+
+      # ==== onset + development ====
+
+      k = 2.853738e-02,
+      alpha = c(2.549060e-05, 0.0000789, 1.009450e-05),
+      tlo = c(-1.297644e+01, 4.760089e+00, -4.424628e+00),
+      tup = c(3.600070e+01, 4.002483e+01, 3.999390e+01),
       tfly_min = 16.1064,
       tfly_max = 31.2901,
-      pfly_max = 0.009863263,
+      pfly_max = 9.863263e-03,
       beta = 1.363763,
-      c("num_slots = 11", "num_slots = 18", "num_slots = 45", "num_slots = 8", "num_slots = 8", "num_slots = 1"),
+
+      num_slots = c(
+        'reproduction' = 11,
+        'egg' = 18,
+        'larva' = 45,
+        'pupa' = 8,
+        'maturation' = 8,
+        'preflight' = 1
+      ),
+
+      # ==== development ====
+
       model_end_date = '12-30',
-      psis = 0.299445,
+
+      psis = 2.994450e-01,
       slot_sis = 4,
+
+      # ==== diapause ====
+
       diapause_first = 210,
       diapause_last = 232,
-      tdia_min = 16.45209
+      tdia_min = 1.645209e+01
 )
 }\if{html}{\out{</div>}}
 }

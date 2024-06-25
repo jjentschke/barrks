@@ -32,7 +32,7 @@ In \code{barrks}, \code{\link[=phenology]{phenology()}} is used to apply a model
 illustrates which inputs are required to apply PHENIPS and which additional
 parameters are available.
 
-\if{html}{\out{<div class="sourceCode">}}\preformatted{phenology("phenips", ..., tmean, tmax, rad, daylength,
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{phenology("phenips", ..., tmean, tmax, rad, daylength,
           exposure = 'sunny', sister_broods = TRUE)
 
 # calculate submodels separately

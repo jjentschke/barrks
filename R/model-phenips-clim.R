@@ -12,6 +12,52 @@ NULL
 #'
 #' `r .doc_customize_call('PHENIPS-Clim', 'phenips-clim')`
 #'
+#' ```{r, eval = FALSE}
+#' model("phenips-clim",
+#'
+#'       # ==== onset ====
+#'
+#'       dd_onset_start_date = '03-01',
+#'       dd_onset_base = 12,
+#'       onset_func = function(tmax, dd_tmax) 0.564071 * tmax + 0.006434 * dd_tmax - 12.37046 > 0,
+#'       onset_add_dd = c('0.1' = 0, '0.5' = 90, '0.9' = 190),
+#'
+#'       # ==== development ====
+#'
+#'       model_end_date = '12-31',
+#'       tfly = 16.5,
+#'
+#'       dd_total_dev = 557,
+#'
+#'       dev_oviposition = c('0.1' = 0.1,
+#'                           '0.5' = 0.15,
+#'                           '0.9' = 0.26),
+#'       dev_end = 1,
+#'       dev_sister_brood = 0.3,
+#'
+#'       dev_mortal_min = NULL,
+#'       dev_mortal_max = 0.6,
+#'
+#'       topt = 30.4,
+#'
+#'       func_btmean = function(tmean, rad) { -0.173 + 0.0008518 * rad + 1.054 * tmean},
+#'       func_btmax = function(tmax, rad) { 1.656 + 0.002955 * rad + 0.534 * tmax + 0.01884 * tmax ^ 2 },
+#'       func_btdiff = function(tmax) { (-310.667 + 9.603 * tmax) / 24 },
+#'
+#'       dev_rates = phenips_clim_get_dev_rates(),
+#'
+#'       # ==== diapause ====
+#'
+#'       first_diapause_date = '08-12',
+#'       diapause_thermal_func = function(daylength, tmax) 0.8619156 * daylength + 0.5081128 * tmax - 23.63691 > 0,
+#'       daylength_dia = 14.5,
+#'
+#'       # ==== mortality ====
+#'
+#'       tlethal = -5
+#' )
+#' ```
+#'
 #' @param dd_onset_start_date The date, when the degree days start to sum up ('MM-DD').
 #' @param dd_onset_base Base temperature to calculate degree days to trigger the onset.
 #' @param onset_func Function with the SpatRasters `tmax` (maximum temperature)
@@ -96,7 +142,7 @@ NULL
 #' illustrates which inputs are required to apply PHENIPS-Clim and which additional
 #' parameters are available.
 #'
-#' ```
+#' ```{r, eval = FALSE}
 #' phenology("phenips-clim", ..., tmin, tmean, tmax, rad, daylength,
 #'           sister_broods = TRUE, scenario = 'max', exposure = NULL,
 #'           onset_mode = NULL, oviposition_mode = NULL, diapause_mode = NULL)

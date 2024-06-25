@@ -4,9 +4,41 @@ NULL
 
 #' Customize the Jönsson model
 #'
-#' `r .doc_customize_description('Jönsson', 'joensson', 'Jonsson2011')`
+#' `r .doc_customize_description('the Jönsson model', 'joensson', 'Jonsson2011')`
 #'
-#' `r .doc_customize_call('Jönsson', 'joensson')`
+#' `r .doc_customize_call('the Jönsson model', 'joensson')`
+#'
+#' ```{r, eval = FALSE}
+#' model("joensson",
+#'
+#'       # ==== onset ====
+#'
+#'       dd_onset_start_date = '01-01',
+#'       dd_onset_base = 5,
+#'       dd_onset_threshold = 120,
+#'
+#'       # ==== onset + development ====
+#'
+#'       tfly = 20,
+#'
+#'       # ==== development ====
+#'
+#'       model_end_date = '12-31',
+#'
+#'       dd_development_base = 5,
+#'       dd_total_dev_lower = 625,
+#'       dd_total_dev_upper = 750,
+#'       dev_start = 0,
+#'       dev_end = 1,
+#'       dev_mortal_min = NULL,
+#'       dev_mortal_max = NULL,
+#'
+#'       # ==== diapause ====
+#'
+#'       daylength_dia = 19.3,
+#'       tdia_min = 15
+#' )
+#' ```
 #'
 #' @param dd_onset_start_date The date, when the degree days start to sum up ('MM-DD').
 #' @param dd_onset_base Base temperature to calculate degree days to trigger the onset.
@@ -55,7 +87,7 @@ NULL
 #' illustrates which inputs are required to apply the Jönsson model and which additional
 #' parameters are available.
 #'
-#' ```
+#' ```{r, eval = FALSE}
 #' phenology("joensson", ..., tmean, tmax, daylength, mode = 'fast')
 #'
 #' # calculate submodels separately

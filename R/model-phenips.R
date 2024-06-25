@@ -7,7 +7,50 @@ NULL
 #'
 #' `r .doc_customize_description('PHENIPS', 'phenips', 'Baier2007')`
 #'
-#' `r .doc_customize_call('PHENIPS', 'chapy')`
+#' `r .doc_customize_call('PHENIPS', 'phenips')`
+#'
+#'
+#' ```{r, eval = FALSE}
+#'
+#' model("phenips",
+#'
+#'       # ==== onset ====
+#'
+#'       dd_onset_start_date = '04-01',
+#'       dd_onset_base = 8.3,
+#'       dd_onset_threshold = 140,
+#'
+#'       # ==== onset + development ====
+#'
+#'       tfly = 16.5,
+#'
+#'       # ==== development ====
+#'
+#'       dd_development_base = 8.3,
+#'       dd_total_dev = 557,
+#'       dev_start = 0,
+#'       dev_end = 1,
+#'       dev_sister_brood = 0.5,
+#'       dev_mortal_min = NULL,
+#'       dev_mortal_max = 0.6,
+#'
+#'       topt = 30.4,
+#'       tlow = 8.3,
+#'       tup = 38.9,
+#'
+#'       func_btmean = function(tmean, rad) { -0.173 + 0.0008518 * rad + 1.054 * tmean},
+#'       func_btmax = function(tmax, rad) { 1.656 + 0.002955 * rad + 0.534 * tmax + 0.01884 * tmax ^ 2 },
+#'       func_btdiff = function(btmax) { (-310.667 + 9.603 * btmax) / 24 },
+#'
+#'       # ==== diapause ====
+#'
+#'       daylength_dia = 14.5,
+#'
+#'       # ==== mortality ====
+#'
+#'       model_end_date = '10-31'
+#' )
+#' ```
 #'
 #' @param dd_onset_start_date The date, when the degree days start to sum up ('MM-DD').
 #' @param dd_onset_base Base temperature to calculate degree days to trigger the onset.
@@ -67,7 +110,7 @@ NULL
 #' illustrates which inputs are required to apply PHENIPS and which additional
 #' parameters are available.
 #'
-#' ```
+#' ```{r, eval = FALSE}
 #' phenology("phenips", ..., tmean, tmax, rad, daylength,
 #'           exposure = 'sunny', sister_broods = TRUE)
 #'
@@ -272,7 +315,7 @@ phenips_develop_generation <- function(.params,
   # calculate cumulative development
   dev <- cumsum(teff / .params$dd_total_dev)
 
-  if(!is.null(.mortality) & !(is.null(.params$dev_mortal_min) & is.null(.params$dev_mortal_max))) {
+  if(!is.null(.mortality)) {
 
     kill <- (.mortality & period)
 

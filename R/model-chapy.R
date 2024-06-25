@@ -9,6 +9,57 @@ NULL
 #'
 #' `r .doc_customize_call('CHAPY', 'chapy')`
 #'
+#' ```{r, eval = FALSE}
+#'
+#' model("chapy",
+#'
+#'       # ==== onset ====
+#'
+#'       dd_onset_start_date = '03-09',
+#'       dd_onset_base = 7.4,
+#'       dd_onset_threshold = 216.5,
+#'
+#'       # ==== onset + development ====
+#'
+#'       tfly = 15.6,
+#'
+#'       # ==== development ====
+#'
+#'       dd_development_base = 7.4,
+#'       dd_total_dev = 635.4,
+#'       dev_start = 0,
+#'       dev_end = 1,
+#'       dev_sister_brood = 0.5,
+#'       dev_mortal_min = NULL,
+#'       dev_mortal_max = 0.8,
+#'
+#'       func_ftmin = function(tmin) { 1.44 + 0.82 * tmin },
+#'       func_ftmean = function(tmean) { 0.50 + 0.81 * tmean },
+#'       func_ftmax = function(tmax) { 1.03 + 0.86 * tmax },
+#'
+#'       func_btmin = function(atmin) { 0.56 + 0.99 * atmin },
+#'       func_btmean = function(atmean) { -0.48 + 1.03 * atmean },
+#'       func_btmax = function(atmax) { 0.03 + 0.99 * atmax },
+#'
+#'       dt_low = 7.4,
+#'       dt_up = 39.4,
+#'       topt = 30,
+#'       tmax = 41.97,
+#'       alpha = 0.031,
+#'       beta = 5.3,
+#'       gamma = 1.25,
+#'
+#'       # ==== diapause ====
+#'
+#'       daylength_dia = 13.6,
+#'
+#'       # ==== mortality ====
+#'
+#'       model_end_date = '12-31'
+#' )
+#'
+#' ```
+#'
 #' @param dd_onset_start_date The date, when the degree days start to sum up ('MM-DD').
 #' @param dd_onset_base Base temperature to calculate degree days to trigger the onset.
 #' @param dd_onset_threshold Degree days that are required to trigger the onset of
@@ -73,7 +124,7 @@ NULL
 #' illustrates which inputs are required to apply CHAPY and which additional
 #' parameters are available.
 #'
-#' ```
+#' ```{r, eval = FALSE}
 #' phenology("chapy", ..., tmin = NULL, tmean = NULL, tmax, daylength, mode = 'max')
 #'
 #' # calculate submodels separately

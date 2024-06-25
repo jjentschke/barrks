@@ -23,7 +23,7 @@ In \code{barrks}, \code{\link[=phenology]{phenology()}} is used to apply a model
 illustrates which inputs are required to apply the Lange model and which additional
 parameters are available.
 
-\if{html}{\out{<div class="sourceCode">}}\preformatted{phenology("lange", ..., tmin, tmean, tmax)
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{phenology("lange", ..., tmin, tmean, tmax)
 
 # calculate submodels separately
 phenology("lange", ..., .submodels = 'onset', tmean, tmax)

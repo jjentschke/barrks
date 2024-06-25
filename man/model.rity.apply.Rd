@@ -31,7 +31,7 @@ In \code{barrks}, \code{\link[=phenology]{phenology()}} is used to apply a model
 illustrates which inputs are required to apply RITY and which additional
 parameters are available.
 
-\if{html}{\out{<div class="sourceCode">}}\preformatted{phenology("rity", ..., tmin = NULL, tmean = NULL, tmax, daylength, mode = 'max')
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{phenology("rity", ..., tmin = NULL, tmean = NULL, tmax, daylength, mode = 'max')
 
 # calculate submodels separately
 phenology("rity", ..., .submodels = 'onset', tmax)

@@ -61,34 +61,44 @@ In \code{barrks}, \code{\link[=model]{model()}} is used to customize a model. Th
 illustrates which parameters are available for PHENIPS and specifies their
 default values.
 
-\if{html}{\out{<div class="sourceCode">}}\preformatted{model('chapy',
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{
+model("phenips",
 
-      dd_onset_start_date = '03-09',
-      dd_onset_base = 7.4,
-      dd_onset_threshold = 216.5,
-      tfly = 15.6,
-      dd_development_base = 7.4,
-      dd_total_dev = 635.4,
+      # ==== onset ====
+
+      dd_onset_start_date = '04-01',
+      dd_onset_base = 8.3,
+      dd_onset_threshold = 140,
+
+      # ==== onset + development ====
+
+      tfly = 16.5,
+
+      # ==== development ====
+
+      dd_development_base = 8.3,
+      dd_total_dev = 557,
       dev_start = 0,
       dev_end = 1,
       dev_sister_brood = 0.5,
-      dev_mortal_min = ,
-      dev_mortal_max = 0.8,
-      func_ftmin = function (tmin) \{ 1.44 + 0.82 * tmin \},
-      func_ftmean = function (tmean) \{ 0.5 + 0.81 * tmean \},
-      func_ftmax = function (tmax) \{ 1.03 + 0.86 * tmax \},
-      func_btmin = function (atmin) \{ 0.56 + 0.99 * atmin \},
-      func_btmean = function (atmean) \{ -0.48 + 1.03 * atmean \},
-      func_btmax = function (atmax) \{ 0.03 + 0.99 * atmax \},
-      dt_low = 7.4,
-      dt_up = 39.4,
-      topt = 30,
-      tmax = 41.97,
-      alpha = 0.031,
-      beta = 5.3,
-      gamma = 1.25,
-      daylength_dia = 13.6,
-      model_end_date = '12-31'
+      dev_mortal_min = NULL,
+      dev_mortal_max = 0.6,
+
+      topt = 30.4,
+      tlow = 8.3,
+      tup = 38.9,
+
+      func_btmean = function(tmean, rad) \{ -0.173 + 0.0008518 * rad + 1.054 * tmean\},
+      func_btmax = function(tmax, rad) \{ 1.656 + 0.002955 * rad + 0.534 * tmax + 0.01884 * tmax ^ 2 \},
+      func_btdiff = function(btmax) \{ (-310.667 + 9.603 * btmax) / 24 \},
+
+      # ==== diapause ====
+
+      daylength_dia = 14.5,
+
+      # ==== mortality ====
+
+      model_end_date = '10-31'
 )
 }\if{html}{\out{</div>}}
 }

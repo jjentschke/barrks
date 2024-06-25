@@ -30,7 +30,7 @@ In \code{barrks}, \code{\link[=phenology]{phenology()}} is used to apply a model
 illustrates which inputs are required to apply the Jönsson model and which additional
 parameters are available.
 
-\if{html}{\out{<div class="sourceCode">}}\preformatted{phenology("joensson", ..., tmean, tmax, daylength, mode = 'fast')
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{phenology("joensson", ..., tmean, tmax, daylength, mode = 'fast')
 
 # calculate submodels separately
 phenology("joensson", ..., .submodels = 'onset', tmax)

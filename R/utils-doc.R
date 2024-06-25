@@ -69,30 +69,10 @@
 }
 
 .doc_customize_call <- function(n, m) {
-  p <- params(m)
-
-  out <- paste(purrr::map(names(p), \(key) {
-
-    val <- p[[key]]
-
-    if(typeof(val) == 'character') val <- paste0("'", val, "'")
-    if(typeof(val) == 'closure') val <- paste(stringr::str_trim(deparse(val)), collapse = " ")
-
-    paste(key, '=', val)
-  }), collapse = ',\n      ')
-
   paste0("
-
 In `barrks`, [model()] is used to customize a model. The following code
 illustrates which parameters are available for ", n, " and specifies their
-default values.
-
-```
-model('", m,"',
-
-      ", out, "
-)
-```")
+default values.")
 }
 
 .doc_dev_start_end <- function() {

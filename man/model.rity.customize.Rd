@@ -66,25 +66,36 @@ In \code{barrks}, \code{\link[=model]{model()}} is used to customize a model. Th
 illustrates which parameters are available for RITY and specifies their
 default values.
 
-\if{html}{\out{<div class="sourceCode">}}\preformatted{model('rity',
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{model("rity",
+
+      # ==== onset ====
 
       dd_onset_start_date = '03-07',
       dd_onset_base = 8.3,
       dd_onset_threshold = 155.6,
+
+      # ==== onset + development ====
+
       tfly = 14.5,
+
+      # ==== development ====
+
       dd_development_base = 8.3,
       dd_total_dev = 557,
       dev_start = 0,
       dev_end = 1,
       dev_sister_brood = 0.5,
-      dev_mortal_min = ,
+      dev_mortal_min = NULL,
       dev_mortal_max = 0.6,
-      func_ftmin = function (tmin) \{ 1.44 + 0.82 * tmin \},
-      func_ftmean = function (tmean) \{ 0.5 + 0.81 * tmean \},
-      func_ftmax = function (tmax) \{ 1.03 + 0.86 * tmax \},
-      func_btmin = function (atmin) \{ 0.56 + 0.99 * atmin \},
-      func_btmean = function (atmean) \{ -0.48 + 1.03 * atmean \},
-      func_btmax = function (atmax) \{ 0.03 + 0.99 * atmax \},
+
+      func_ftmin = function(tmin) \{ 1.44 + 0.82 * tmin \},
+      func_ftmean = function(tmean) \{ 0.50 + 0.81 * tmean \},
+      func_ftmax = function(tmax) \{ 1.03 + 0.86 * tmax \},
+
+      func_btmin = function(ftmin) \{ 0.56 + 0.99 * ftmin \},
+      func_btmean = function(ftmean) \{ -0.48 + 1.03 * ftmean \},
+      func_btmax = function(ftmax) \{ 0.03 + 0.99 * ftmax \},
+
       dt_low = 8.3,
       dt_up = 38.9,
       topt = 30.4,
@@ -92,7 +103,13 @@ default values.
       alpha = 0.02876507,
       beta = 3.5922336,
       gamma = 1.24657367,
+
+      # ==== diapause ====
+
       daylength_dia = 14.5,
+
+      # ==== mortality ====
+
       model_end_date = '10-31'
 )
 }\if{html}{\out{</div>}}

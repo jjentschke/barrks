@@ -32,7 +32,7 @@ In \code{barrks}, \code{\link[=phenology]{phenology()}} is used to apply a model
 illustrates which inputs are required to apply the BSO model and which additional
 parameters are available.
 
-\if{html}{\out{<div class="sourceCode">}}\preformatted{bso_phenology("bso", ..., tmin, tmax, sunrise, sunset,
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{bso_phenology("bso", ..., tmin, tmax, sunrise, sunset,
               n = 1e+09, max_generations = 4)
 
 # calculate submodels separately

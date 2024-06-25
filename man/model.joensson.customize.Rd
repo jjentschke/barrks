@@ -38,29 +38,41 @@ for other regions, this value should be adjusted.}
 }
 \description{
 This page describes the parameters
-that can be used to customize Jönsson. The model was developed by
+that can be used to customize the Jönsson model. The model was developed by
 \insertCite{Jonsson2011;textual}{barrks}. Look \link[=model.joensson.customize]{here} to find
 out how to apply the model.
 }
 \details{
 In \code{barrks}, \code{\link[=model]{model()}} is used to customize a model. The following code
-illustrates which parameters are available for Jönsson and specifies their
+illustrates which parameters are available for the Jönsson model and specifies their
 default values.
 
-\if{html}{\out{<div class="sourceCode">}}\preformatted{model('joensson',
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{model("joensson",
+
+      # ==== onset ====
 
       dd_onset_start_date = '01-01',
       dd_onset_base = 5,
       dd_onset_threshold = 120,
+
+      # ==== onset + development ====
+
       tfly = 20,
+
+      # ==== development ====
+
       model_end_date = '12-31',
+
       dd_development_base = 5,
       dd_total_dev_lower = 625,
       dd_total_dev_upper = 750,
       dev_start = 0,
       dev_end = 1,
-      dev_mortal_min = ,
-      dev_mortal_max = ,
+      dev_mortal_min = NULL,
+      dev_mortal_max = NULL,
+
+      # ==== diapause ====
+
       daylength_dia = 19.3,
       tdia_min = 15
 )

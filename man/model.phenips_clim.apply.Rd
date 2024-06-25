@@ -62,7 +62,7 @@ In \code{barrks}, \code{\link[=phenology]{phenology()}} is used to apply a model
 illustrates which inputs are required to apply PHENIPS-Clim and which additional
 parameters are available.
 
-\if{html}{\out{<div class="sourceCode">}}\preformatted{phenology("phenips-clim", ..., tmin, tmean, tmax, rad, daylength,
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{phenology("phenips-clim", ..., tmin, tmean, tmax, rad, daylength,
           sister_broods = TRUE, scenario = 'max', exposure = NULL,
           onset_mode = NULL, oviposition_mode = NULL, diapause_mode = NULL)
 

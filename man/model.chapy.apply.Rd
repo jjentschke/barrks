@@ -28,7 +28,7 @@ In \code{barrks}, \code{\link[=phenology]{phenology()}} is used to apply a model
 illustrates which inputs are required to apply CHAPY and which additional
 parameters are available.
 
-\if{html}{\out{<div class="sourceCode">}}\preformatted{phenology("chapy", ..., tmin = NULL, tmean = NULL, tmax, daylength, mode = 'max')
+\if{html}{\out{<div class="sourceCode r">}}\preformatted{phenology("chapy", ..., tmin = NULL, tmean = NULL, tmax, daylength, mode = 'max')
 
 # calculate submodels separately
 phenology("chapy", ..., .submodels = 'onset', tmax)

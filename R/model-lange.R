@@ -6,7 +6,34 @@ NULL
 #'
 #' `r .doc_customize_description('Lange', 'lange', 'Lange2006')`
 #'
-#' `r .doc_customize_call('CHAPY', 'chapy')`
+#' `r .doc_customize_call('the Lange model', 'lange')`
+#'
+#' ```{r, eval = FALSE}
+#' model("lange",
+#'
+#'       # ==== onset ==== #
+#'
+#'       dd_onset_start_date = '01-01',
+#'       dd_onset_base = 5,
+#'       dd_onset_threshold = 110,
+#'
+#'       # ==== onset + development ====
+#'
+#'       tfly = 19.5,
+#'
+#'       # ==== development ==== #
+#'
+#'       model_end_date = '12-31',
+#'
+#'       dd_base_stages = c(10.6, 8.2, 9.9, 3.2),
+#'       dd_threshold_stages = c(51.8, 204.4, 57.7, 238.5),
+#'
+#'       # ==== mortality ==== #
+#'
+#'       first_lethal_date = '09-01',
+#'       tlethal = 0
+#' )
+#' ```
 #'
 #' @param dd_onset_start_date The date, when the degree days start to sum up ('MM-DD').
 #' @param dd_onset_base Base temperature to calculate degree days to trigger the onset.
@@ -47,7 +74,7 @@ NULL
 #' illustrates which inputs are required to apply the Lange model and which additional
 #' parameters are available.
 #'
-#' ```
+#' ```{r, eval = FALSE}
 #' phenology("lange", ..., tmin, tmean, tmax)
 #'
 #' # calculate submodels separately
