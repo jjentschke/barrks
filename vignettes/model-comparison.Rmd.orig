@@ -76,7 +76,7 @@ allow adding empty rasters, a workaround-function is defined to plot the
 the respective submodel outputs.
 Additionally it draws the borders of the area of interest.
 
-```{r warning = FALSE, message = FALSE, eval = FALSE}
+```{r eval = FALSE}
 
 
 plot_doy_panel <- function(x) {
@@ -158,7 +158,7 @@ To get an overview of the establishment of generations, it is possible
 to plot the prevailing generations on different dates using
 `get_generations_rst()` and `my_rst_plot()`.
 
-```{r fig.show='hide'}
+```{r eval = FALSE}
 
 # dates to plot
 dates <- c('2015-04-15', '2015-06-15', '2015-08-15', '2015-10-15')
@@ -175,6 +175,8 @@ walk(names(phenos), \(key) {
 ```
 
 ```{r model-comparison-gens-phenips-clim, echo = FALSE, out.width = "100%", fig.dim=c(14, 3), fig.cap = "Generations calculated by PHENIPS-CLIM"}
+
+dates <- c('2015-04-15', '2015-06-15', '2015-08-15', '2015-10-15')
 get_generations_rst(phenos[['phenips-clim']], dates) %>% my_rst_plot(main = paste0('phenips-clim-', dates))
 ```
 ```{r model-comparison-gens-phenips, echo = FALSE, out.width = "100%", fig.dim=c(14, 3), fig.cap = "Generations calculated by PHENIPS"}
@@ -204,7 +206,7 @@ defined by specifying their cell numbers.
 To get the stations' coordinates, `terra::xyFromCell` can be used.
 
 
-```{r fig.show='hide'}
+```{r eval = FALSE}
 
 # plot the locations of the stations
 
@@ -217,6 +219,13 @@ plot(station_coords, col = 'red', pch = 4, add = TRUE)
 text(station_coords, names(stations), col = 'black', pos = 2)
 ```
 ```{r model-comparison-stations-map, echo = FALSE, fig.dim=c(14, 6), out.width = "100%", fig.cap = "Stations map"}
+
+# plot the locations of the stations
+
+rst_aoi <- data[[1]][[1]] * 0
+stations <- c(Station_1 = 234, Station_2 = 345)
+station_coords <- vect(xyFromCell(rst_aoi, stations))
+
 plot(rst_aoi,  col = '#AAAAAA', legend = FALSE, axes = FALSE, box = TRUE)
 plot(station_coords, col = 'red', pch = 4, add = TRUE)
 text(station_coords, names(stations), col = 'black', pos = 2)
@@ -226,7 +235,7 @@ The stations should be passed to `plot_development_diagram()` to get the desired
 Here, only the models PHENIPS-Clim and PHENIPS are plotted to reduce the complexity
 of the diagrams.
 
-```{r fig.show='hide'}
+```{r eval = FALSE}
 # plot the development diagrams
 
 limits <- as.Date(c('2015-04-01', '2015-12-31'))
@@ -242,6 +251,12 @@ walk(1:length(stations), \(i) {
 
 ```
 ```{r model-comparison-dev-s1, echo = FALSE, out.width = "100%", fig.dim=c(12,6), fig.cap = "Development diagram for station 1"}
+# plot the development diagrams
+
+limits <- as.Date(c('2015-04-01', '2015-12-31'))
+
+models <- c('phenips-clim', 'phenips')
+
 plot_development_diagram(phenos[models], stations[1], .lty = 1:length(models), xlim = limits)
 ```
 ```{r model-comparison-dev-s2, echo = FALSE, out.width = "100%", fig.dim=c(12,6), fig.cap = "Development diagram for station 2"}

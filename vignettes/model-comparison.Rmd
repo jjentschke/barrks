@@ -138,6 +138,7 @@ walk(names(phenos), \(key) {
   # plot generations of current model
   get_generations_rst(p, dates) %>% my_rst_plot(main = paste0(key, '-', dates))
 })
+
 ```
 
 <div class="figure">
@@ -213,6 +214,7 @@ walk(1:length(stations), \(i) {
                            .lty = 1:length(models),
                            xlim = limits)
 })
+
 ```
 <div class="figure">
 <img src="figures/model-comparison-dev-s1-1.png" alt="Development diagram for station 1" width="100%" />
