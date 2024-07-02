@@ -93,7 +93,7 @@ df2 <- purrr::map_dfr(stations, function(station) {
 
 dates <- unique(df1$date)
 
-coords <- purrr::map_dfr(stations, function(station) {
+station_coords <- purrr::map_dfr(stations, function(station) {
   file <- list.files(paste0('data-raw/dwd/', stringr::str_to_lower(station), '-klima/'),
                      'Metadaten_Geographie',
                      full.names = TRUE)[1]
@@ -103,7 +103,7 @@ coords <- purrr::map_dfr(stations, function(station) {
   tibble(station = station, lon = x$lon[[length(x$lon)]], lat = x$lat[[length(x$lat)]])
 })
 
-df3 <- create_suntimes_df(coords, dates)
+df3 <- create_suntimes_df(station_coords, dates)
 
 
 station_data <- full_join(df1, df2) %>%
@@ -137,6 +137,7 @@ usethis::use_data(dev_rates_phenips_clim,
                   bso_default_colors_stages,
                   bso_default_labels_stages,
                   station_data,
+                  station_coords,
                   internal = TRUE, overwrite = TRUE)
 
 
