@@ -103,7 +103,7 @@ bso_plot_stage_diagram <- function(.pheno,
         args_legend[[k]] <- .legend_col[[k]]
       }
     }
-    do.call(graphics::legend, c(list(.labels[keys_available]), args_legend))
+    do.call(graphics::legend, c(list(legend = .labels[keys_available]), args_legend))
   }
 
   if(isTRUE(.legend_lty) | is.list(.legend_lty)) {
@@ -121,7 +121,7 @@ bso_plot_stage_diagram <- function(.pheno,
         args_legend[[k]] <- .legend_lty[[k]]
       }
     }
-    do.call(graphics::legend, c(list(.stages), args_legend))
+    do.call(graphics::legend, c(legend = list(.stages), args_legend))
   }
 
   return(invisible(NULL))
