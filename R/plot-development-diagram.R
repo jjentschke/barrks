@@ -155,14 +155,14 @@ plot_development_diagram <- function(.phenos,
     cols <- colnames(df)
     cols <- cols[stringr::str_detect(cols, '^gen_')]
 
-    return(df)
+    #return(df)
     purrr::walk(cols, \(col) {
 
       vec <- df[[col]]
 
-      x <- purrr::map_lgl(2:length(vec), \(i) {
-        if(is.na(vec[i - 1]) | is.na(vec[i])) return(FALSE)
-        if(vec[i - 1] < 0 & vec[i] > 0) return(TRUE)
+      x <- purrr::map_lgl(1:(length(vec) - 1), \(i) {
+        if(is.na(vec[i]) | is.na(vec[i + 1])) return(FALSE)
+        if(vec[i] < 0 & vec[i + 1] >= 0) return(TRUE)
         return(FALSE)
       })
 
