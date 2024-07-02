@@ -13,8 +13,27 @@ model_combine(...)
 model. If multiple models are supplied for the same submodel, the last one
 overwrites all others.}
 }
+\value{
+A phenology model. Can be passed to \code{\link[=phenology]{phenology()}}.
+}
 \description{
 Combine different (sub-)models.
+}
+\examples{
+\donttest{
+# combine PHENIPS with the diapause submodel of PHENIPS-Clim
+m <- model_combine('phenips',
+                   list(model = 'phenips-clim', submodels = 'diapause'))
+
+# calculate phenology
+p <- phenology(m, barrks_data(), .quiet = TRUE)
+
+# plot calculated generations
+gens <- get_generations_rst(p)
+terra::plot(gens)
+}
+
+
 }
 \seealso{
 \itemize{

@@ -22,7 +22,8 @@ get_generations_df(
   pheno,
   stations = prop_stations(pheno),
   dates = prop_dates(pheno),
-  threshold = 0
+  threshold = 0,
+  generations = prop_hatched_generations(pheno)
 )
 
 get_hibernating_generations_rst(
@@ -53,20 +54,29 @@ consecutively by elements for the respective generations (including sister brood
 \item{stations}{Pass a character vector to choose stations assigned to \code{pheno} by
 their names, or pass different stations. See \code{\link[=stations_create]{stations_create()}} for details.}
 }
+\value{
+\itemize{
+\item \code{get_generations_rst()}: A multi-layer SpatRaster.
+\item \code{get_hibernating_generations_rst()}: A SpatRaster. Only available
+if the model's end date has been reached. Otherwise all values will be \code{NA}.
+\item \code{get_generations_df()}: A data frame.
+\item \code{get_hibernating_generations_df()}: A data frame. Only available if the
+model's end date has been reached. Otherwise all values will be \code{NA}.
+}
+}
 \description{
 Find out how many generations are present (or have reached a development
 threshold).
 }
-\section{Functions}{
-\itemize{
-\item \code{get_generations_rst()}: Returns a multi-layer SpatRaster of generations.
+\examples{
+\donttest{
+# calculate phenology
+p <- phenology('phenips-clim', barrks_data(), .quiet = TRUE)
 
-\item \code{get_generations_df()}: Returns a data frame of generations.
+# get the generations raster
+gens <- get_generations_rst(p)
 
-\item \code{get_hibernating_generations_rst()}: Returns a SpatRaster of the generations that are
-able to hibernate (only available if the model's end date has been reached).
-
-\item \code{get_hibernating_generations_df()}: Returns a data frame of the generations that are
-able to hibernate (only available if the model's end date has been reached).
-
-}}
+# plot the generations raster
+terra::plot(gens)
+}
+}

@@ -21,8 +21,6 @@ already started breeding when the onset is triggered (choose an option via
 model). The values specify the degree days that are required starting at the
 first positive return value of \code{onset_func}.}
 
-\item{model_end_date}{Date when the model ends.}
-
 \item{tfly}{Minimum temperature that beetles need to fly.}
 
 \item{dd_total_dev}{Degree days that are required for a generation to fully
@@ -41,9 +39,11 @@ account for mating, oviposition etc.}
 \item{dev_sister_brood}{Share in the total development, when a sister brood
 will be established.}
 
-\item{dev_mortal_min, dev_mortal_max}{Minimum/maximum share in the total
-development of white stages (egg, larva, pupa). During these stages, the
-beetles could die caused by a mortality event.}
+\item{dev_mortal_min, dev_mortal_max}{The beetles are considered to be in
+white stages (egg, larva, pupa) if their development exceeds \code{dev_mortal_min}
+and subceeds \code{dev_mortal_max}. During these stages, the beetles could die
+caused by a mortality event. \code{NULL} means that no lower/upper threshold is
+defined.}
 
 \item{topt}{Temperature for optimal development.}
 
@@ -62,6 +62,9 @@ on the mean temperature and the temperature amplitude. Column names are the
 mean temperatures and row names the temperature amplitudes both with one
 decimal place.
 base onset (see \code{onset_func}) to trigger the actual onset.}
+
+\item{model_end_date}{Date when the model ends (no further development will
+be modeled).}
 
 \item{first_diapause_date}{Date before which an initiation of the diapause is
 impossible ('MM-DD').}
@@ -94,12 +97,13 @@ default values.
 
       dd_onset_start_date = '03-01',
       dd_onset_base = 12,
-      onset_func = function(tmax, dd_tmax) 0.564071 * tmax + 0.006434 * dd_tmax - 12.37046 > 0,
+      onset_func = function(tmax, dd_tmax) \{
+        0.564071 * tmax + 0.006434 * dd_tmax - 12.37046 > 0
+      \},
       onset_add_dd = c('0.1' = 0, '0.5' = 90, '0.9' = 190),
 
       # ==== development ====
 
-      model_end_date = '12-31',
       tfly = 16.5,
 
       dd_total_dev = 557,
@@ -115,16 +119,28 @@ default values.
 
       topt = 30.4,
 
-      func_btmean = function(tmean, rad) \{ -0.173 + 0.0008518 * rad + 1.054 * tmean\},
-      func_btmax = function(tmax, rad) \{ 1.656 + 0.002955 * rad + 0.534 * tmax + 0.01884 * tmax ^ 2 \},
-      func_btdiff = function(tmax) \{ (-310.667 + 9.603 * tmax) / 24 \},
+      func_btmean = function(tmean, rad) \{
+        -0.173 + 0.0008518 * rad + 1.054 * tmean
+      \},
+      func_btmax = function(tmax, rad) \{
+        1.656 + 0.002955 * rad + 0.534 * tmax + 0.01884 * tmax ^ 2
+      \},
+      func_btdiff = function(tmax) \{
+        (-310.667 + 9.603 * tmax) / 24
+      \},
 
-      dev_rates = phenips_clim_get_dev_rates(),
+      # dev_rates too large to show here, type `params('phenips-clim')$dev_rates`
+      # to get the dev_rates that are used by default
+      # dev_rates = matrix(...),
+
+      model_end_date = '12-31',
 
       # ==== diapause ====
 
       first_diapause_date = '08-12',
-      diapause_thermal_func = function(daylength, tmax) 0.8619156 * daylength + 0.5081128 * tmax - 23.63691 > 0,
+      diapause_thermal_func = function(daylength, tmax) \{
+        0.8619156 * daylength + 0.5081128 * tmax - 23.63691 > 0
+      \},
       daylength_dia = 14.5,
 
       # ==== mortality ====

@@ -26,6 +26,17 @@ NULL
 #' [graphics::legend] can be passed.
 #' @param ... arguments passed to [base::plot()].
 #'
+#' @returns None
+#'
+#' @examples
+#' \donttest{
+#' # This may take a few minutes...
+#'
+#' # calculate phenology
+#' p <- bso_phenology('bso', barrks_data('stations'), .quiet = TRUE)
+#'
+#' bso_plot_stage_diagram(p)
+#' }
 #' @export
 
 bso_plot_stage_diagram <- function(.pheno,
@@ -112,6 +123,8 @@ bso_plot_stage_diagram <- function(.pheno,
     }
     do.call(graphics::legend, c(list(.stages), args_legend))
   }
+
+  return(invisible(NULL))
 }
 
 
@@ -131,6 +144,17 @@ bso_plot_stage_diagram <- function(.pheno,
 #' information.
 #' @param ... arguments passed to `graphics::barplot()`.
 #'
+#' @returns None
+#'
+#' @examplesIf rlang::is_installed("graphics")
+#' \donttest{
+#' # This may take a few minutes...
+#'
+#' # calculate phenology
+#' p <- bso_phenology('bso', barrks_data('stations'), .quiet = TRUE)
+#'
+#' bso_plot_flight_diagram(p)
+#' }
 #' @export
 
 bso_plot_flight_diagram <- function(.pheno ,
@@ -142,7 +166,6 @@ bso_plot_flight_diagram <- function(.pheno ,
                                     ...) {
 
   if(!requireNamespace('graphics', quietly = TRUE)) stop('package graphics required!')
-  if(!requireNamespace('lubridate', quietly = TRUE)) stop('package lubridate required!')
 
   year <- prop_year(.pheno)
   dates <- prop_dates(.pheno)
@@ -212,4 +235,6 @@ bso_plot_flight_diagram <- function(.pheno ,
            xjust = 0.05,
            yjust = 0.95)
   }
+
+  return(invisible(NULL))
 }

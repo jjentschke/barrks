@@ -1,29 +1,6 @@
 
 
 
-#' Analyse a BSO generated phenology
-#'
-#' Here, all functions are listed that are available to analyse the results of
-#' a [bso_phenology()] call.
-#'
-#' @details
-#'
-#' Get BSO phenology properties:
-#'
-#' `r paste0(' - [', lsf.str('package:barrks', pattern = '^prop_'), '()]', collapse = '\n')`
-#'
-#' Get BSO phenology results:
-#'
-#' `r paste0(' - [', lsf.str('package:barrks', pattern = '^bso_get_'), '()]', collapse = '\n')`
-#'
-#' Plot BSO phenology results:
-#'
-#' `r paste0(' - [', lsf.str('package:barrks', pattern = '^bso_plot_'), '()]', collapse = '\n')`
-#'
-#' @name analyse.phenology.bso
-NULL
-
-
 .bso_generation_data <- function(pheno, generation) return(pheno$development[[paste0('gen_', generation)]])
 
 
@@ -42,12 +19,26 @@ NULL
 #' @param dates `r .doc_dates()`
 #' @param stations `r .doc_stations()`
 #'
+#' @returns
+#' * `bso_get_individuals_rst()`: a multi-layer SpatRaster.
+#' * `bso_get_individuals()`: a data frame.
+#'
+#' @examples
+#' \donttest{
+#' # This may take a few minutes...
+#'
+#' # calculate phenology
+#' p <- bso_phenology('bso', barrks_data('stations'), .quiet = TRUE)
+#'
+#' # get the number of individuals of the hibernating generation that are waiting to fly
+#' bso_get_individuals_df(p, 0, stage = 'preflight')
+#' }
 #' @name bso_get_individuals
 NULL
 
 
 
-#' @describeIn bso_get_individuals Returns a multi-layer SpatRaster.
+#' @rdname bso_get_individuals
 #' @order 1
 #' @export
 
@@ -87,7 +78,7 @@ bso_get_individuals_rst <- function(pheno,
 }
 
 
-#' @describeIn bso_get_individuals Returns a data frame.
+#' @rdname bso_get_individuals
 #' @order 2
 #' @export
 
@@ -118,10 +109,24 @@ bso_get_individuals_df <- function(pheno,
 #' returned. Can be `1` (first flight) or `2` (second flight).
 #' @param dates `r .doc_dates()`
 #'
+#' @returns
+#' * `bso_get_flight_rst`: a multi-layer SpatRaster.
+#' * `bso_get_flight_df`: a data frame.
+#'
+#' @examples
+#' \donttest{
+#' # This may take a few minutes...
+#'
+#' # calculate phenology
+#' p <- bso_phenology('bso', barrks_data('stations'), .quiet = TRUE)
+#'
+#' # get the number of individuals of the hibernating generation on their first flight
+#' bso_get_flight_df(p, 0, flight = 1)
+#' }
 #' @name bso_get_flight
 NULL
 
-#' @describeIn bso_get_flight Returns a multi-layer SpatRaster.
+#' @rdname bso_get_flight
 #' @order 1
 #' @export
 
@@ -139,7 +144,7 @@ bso_get_flight_rst <- function(pheno,
 
 
 
-#' @describeIn bso_get_flight Returns a data frame.
+#' @rdname bso_get_flight
 #' @order 2
 #' @export
 

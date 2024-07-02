@@ -26,6 +26,20 @@ Generate a data frame that specifies sunrises and sunsets for different
 coordinates and dates.
 The package \code{suncalc} is required to use this function.
 }
+\examples{
+\dontshow{if (rlang::is_installed("suncalc")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\donttest{
+date_start <- as.Date('2020-01-01')
+date_end <- as.Date('2020-12-31')
+
+st <- create_suntimes_df(barrks_data('station_coords'),
+                         seq(date_start, date_end, by = 'day'))
+
+# print results of station 'Freiburg'
+head(st[st$station == 'Freiburg',], 10)
+}
+\dontshow{\}) # examplesIf}
+}
 \seealso{
 \code{\link[=create_suntimes_rsts]{create_suntimes_rsts()}}
 }

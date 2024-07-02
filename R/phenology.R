@@ -51,9 +51,19 @@
 #' @param ... Parameters that will be passed to the model. Must be named according
 #' to the model inputs. See `.data` for alternative ways to pass data to the model.
 #'
-#' @return Returns a phenology as a list. Look [here][analyse.phenology] to find out how
+#' @returns A phenology as a list. Look [here][analyse.phenology] to find out how
 #' a phenology can be analysed. It is not recommended to access the list elements directly.
 #'
+#'
+#' @examples
+#' \donttest{
+#' # calculate phenology
+#' p <- phenology('phenips-clim', barrks_data())
+#'
+#' # plot calculated generations
+#' gens <- get_generations_rst(p)
+#' terra::plot(gens)
+#' }
 #' @seealso `r .doc_apply_models()`
 #'
 #' @order 1
@@ -133,17 +143,79 @@ phenology <- function(.model,
 }
 
 
-#' Save a phenology
+
+#' Analyse a phenology
 #'
-#' Saves a phenology to a path.
+#' Here, all functions are listed that are available to analyse the results of
+#' a [phenology()]-call.
+#'
+#' @details
+#'
+#' Get phenology properties:
+#'
+#' `r paste0(' - [', lsf.str('package:barrks', pattern = '^prop_'), '()]', collapse = '\n')`
+#'
+#' Get phenology results (raster-based):
+#'
+#' `r paste0(' - [', lsf.str('package:barrks', pattern = '^get_.*_rst'), '()]', collapse = '\n')`
+#'
+#' Get phenology results (station-based):
+#'
+#' `r paste0(' - [', lsf.str('package:barrks', pattern = '^get_.*_df'), '()]', collapse = '\n')`
+#'
+#' Plot phenology results (station-based):
+#'
+#' `r paste0(' - [', lsf.str('package:barrks', pattern = '^plot_'), '()]', collapse = '\n')`
+#'
+#' @seealso [analyse.phenology.bso]
+#' @name analyse.phenology
+NULL
+
+
+#' Save/load a phenology
+#'
+#' Saves/loads a phenology to/from a path.
 #'
 #' @param pheno A phenology, calculated with [phenology()].
-#' @param .storage Path that defines where to save the phenology.
-#' @param .submodels Which submodels should be saved.
-#' @param .overwrite Should the overwirte an existing storage?
+#' @param .storage Path to save/load the phenology.
+#' @param .submodels Which submodels should be saved/loaded.
+#' @param .overwrite Should an existing storage be overwritten?
 #' @param .ext Extension for raster files.
 #' @param .quiet `r .doc_quiet()`
 #'
+#' @returns
+#'
+#' * `save_phenology()`: None
+#' * `load_phenology()`: A phenology as a list. Look [here][analyse.phenology] to find out how
+#'   a phenology can be analysed. It is not recommended to access the list elements directly.
+#'
+#' @examples
+#' \donttest{
+#' # calculate phenology
+#' p <- phenology('phenips-clim', barrks_data(), .quiet = TRUE)
+#'
+#' # choose path to save the phenology
+#' path <- file.path(tempdir(), 'pheno')
+#'
+#' # save phenology
+#' save_phenology(p, path)
+#'
+#'
+#' ###
+#'
+#' # load phenology from path
+#' p2 <- load_phenology(path)
+#'
+#' # plot generations
+#' gens <- get_generations_rst(p2)
+#' terra::plot(gens)
+#' }
+#' @name save_load_phenology
+NULL
+
+
+#' @describeIn save_load_phenology Saves a phenology to a path.
+#' @order 1
 #' @export
 
 save_phenology <- function(pheno,
@@ -195,18 +267,13 @@ save_phenology <- function(pheno,
       })
     }
   })
+
+  return(invisible())
 }
 
 
-#' Load a phenology
-#'
-#' Loads a phenology from a path.
-#'
-#' @param .storage Path where the phenology should be loaded from.
-#' @param .submodels Which submodels should be loaded.
-#' @param .ext Extension of the raster files.
-#' @param .quiet `r .doc_quiet()`
-#'
+#' @describeIn save_load_phenology Loads a phenology from a path.
+#' @order 1
 #' @export
 
 load_phenology <- function(.storage,

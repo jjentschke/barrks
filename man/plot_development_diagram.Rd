@@ -64,7 +64,22 @@ date.}
 
 \item{...}{Parameters passed to \code{\link[base:plot]{base::plot()}}.}
 }
+\value{
+None
+}
 \description{
 A development diagram illustrates the beetles' development of all appearing
 generations within a year.
+}
+\examples{
+\donttest{
+# calculate phenology
+p <- phenology('phenips-clim', barrks_data('stations'), .quiet = TRUE)
+
+# plot development diagram of the station 'Mannheim'
+plot_development_diagram(p, 'Mannheim')
+}
+}
+\seealso{
+\link{stations}
 }

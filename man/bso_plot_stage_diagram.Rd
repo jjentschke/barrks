@@ -39,7 +39,20 @@ For the customization of the respective legend, a list of parameters for
 
 \item{...}{arguments passed to \code{\link[base:plot]{base::plot()}}.}
 }
+\value{
+None
+}
 \description{
 A stage diagram illustrates the share of individuals are in a specific
 developmental stage over time.
+}
+\examples{
+\donttest{
+# This may take a few minutes...
+
+# calculate phenology
+p <- bso_phenology('bso', barrks_data('stations'), .quiet = TRUE)
+
+bso_plot_stage_diagram(p)
+}
 }

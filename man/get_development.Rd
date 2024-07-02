@@ -18,24 +18,32 @@ get_development_df(
 \arguments{
 \item{pheno}{A  phenology (see \code{\link[=phenology]{phenology()}})}
 
-\item{generation}{Generation of interest. For sister broods, 0.5 should be added.}
+\item{generation}{Generation of interest. For sister broods, 0.5 should be added. \code{get_development_df()} allows
+multiple generations here.}
 
 \item{dates}{Select dates that should be present in the output.}
 
 \item{stations}{Pass a character vector to choose stations assigned to \code{pheno} by
 their names, or pass different stations. See \code{\link[=stations_create]{stations_create()}} for details.}
 }
-\description{
-Get the beetles development of specific generations.
-}
-\section{Functions}{
+\value{
 \itemize{
-\item \code{get_development_rst()}: Returns a multi-layer SpatRaster. A value of -1
+\item \code{get_development_rst()}: A multi-layer SpatRaster.
+\item \code{get_development_df()}: A data frame which contains a field for
+each generation  (\code{gen_1}, \code{gen_1.5}, \code{gen_2}, \code{gen_2.5}, ...) requested.
+}
+}
+\description{
+Get the beetles development of specific generations.A value of -1
 implies that the generation is not present yet.
+}
+\examples{
+\donttest{
+# calculate station-based phenology
+p <- phenology('phenips-clim', barrks_data('stations'), .quiet = TRUE)
 
-\item \code{get_development_df()}: Multiple generations are allowed as value for
-\code{generation}. Returns a data frame which contains a field for
-each generation  (\code{gen_1}, \code{gen_1.5}, \code{gen_2}, \code{gen_2.5}, ...). A value of -1
-implies that the generation is not present yet.
-
-}}
+# print the first rows of the development data frame
+df <- get_development_df(p)
+head(df, 10)
+}
+}

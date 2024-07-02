@@ -21,5 +21,29 @@ consecutively by elements for the respective generations (including sister brood
 A categorical SpatRaster.
 }
 \description{
-Make a numeric generations raster categorical.
+Make a numeric generations raster categorical. Useful when mathematical
+operations were performed with generations rasters (use
+\code{\link[=get_generations_rst]{get_generations_rst(..., categorical = FALSE)}} to get numeric generations
+rasters).
+}
+\examples{
+\donttest{
+# calculate phenology with different models
+p1 <- phenology('phenips-clim', barrks_data(), .quiet = TRUE)
+p2 <- phenology('phenips', barrks_data(), .quiet = TRUE)
+
+# get the generation as numerical rasters to allow mathematical operations
+gens1 <- get_generations_rst(p1, categorical = FALSE)
+gens2 <- get_generations_rst(p2, categorical = FALSE)
+
+# calculate the maximum generations from the 2 models
+gens_max <- max(gens1, gens2)
+# categorize the results
+gens_max_cat <- categorize_generations_rst(gens_max)
+
+# plot the uncategorized raster
+terra::plot(gens_max)
+# plot the categorized raster
+terra::plot(gens_max_cat)
+}
 }

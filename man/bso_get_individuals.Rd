@@ -38,13 +38,23 @@ reproduction)}
 \item{stations}{Pass a character vector to choose stations assigned to \code{pheno} by
 their names, or pass different stations. See \code{\link[=stations_create]{stations_create()}} for details.}
 }
+\value{
+\itemize{
+\item \code{bso_get_individuals_rst()}: a multi-layer SpatRaster.
+\item \code{bso_get_individuals()}: a data frame.
+}
+}
 \description{
 Get the number of individuals of a generation that are in a specific development stage.
 }
-\section{Functions}{
-\itemize{
-\item \code{bso_get_individuals_rst()}: Returns a multi-layer SpatRaster.
+\examples{
+\donttest{
+# This may take a few minutes...
 
-\item \code{bso_get_individuals_df()}: Returns a data frame.
+# calculate phenology
+p <- bso_phenology('bso', barrks_data('stations'), .quiet = TRUE)
 
-}}
+# get the number of individuals of the hibernating generation that are waiting to fly
+bso_get_individuals_df(p, 0, stage = 'preflight')
+}
+}

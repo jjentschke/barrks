@@ -11,6 +11,17 @@ barrks_colors(type = "raster")
 for particular purposes. Allowed values are \code{'raster'}, \code{'diagram_lines'},
 \code{'diagram_fill'}, \code{'bso_flight'} and \code{'bso_stages'}.}
 }
+\value{
+A character vector of hex colors.
+}
 \description{
 Get barrks default color palettes
+}
+\examples{
+colors <- barrks_colors()
+
+# use the colors of 'barrks' for your individual plot...
+}
+\seealso{
+\code{\link[=barrks_labels]{barrks_labels()}}
 }

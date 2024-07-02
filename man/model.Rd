@@ -11,8 +11,24 @@ model(m, ...)
 
 \item{...}{List of parameters to customize the model.}
 }
+\value{
+A phenology model. Can be passed to \code{\link[=phenology]{phenology()}}.
+}
 \description{
 Returns a (customized) phenology model.
+}
+\examples{
+\donttest{
+# customize the temperature beetles need to fly for PHENIPS-Clim
+m <- model('phenips-clim', tfly = 16)
+
+# calculate phenology
+phenology(m, barrks_data(), .quiet = TRUE)
+
+# plot generations
+gens <- get_generations_rst(p)
+terra::plot(gens)
+}
 }
 \seealso{
 Look at the customization manuals, to find out which parameters

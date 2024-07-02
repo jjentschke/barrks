@@ -27,12 +27,16 @@
   return('Select dates that should be present in the output.')
 }
 
-.doc_phenology_dots <- function() {
-  return('See [phenology()] for a detailled description of the function.')
+.doc_param_dev_mortal <- function() {
+  return('The beetles are considered to be in
+white stages (egg, larva, pupa) if their development exceeds `dev_mortal_min`
+and subceeds `dev_mortal_max`. During these stages, the beetles could die
+caused by a mortality event. `NULL` means that no lower/upper threshold is
+defined.')
 }
 
-.doc_phenology_dots_bso <- function() {
-  return('See [bso_phenology()] for a detailled description of the function.')
+.doc_phenology_dots <- function() {
+  return('See [phenology()] for a detailled description of the function.')
 }
 
 .doc_apply_models <- function() {
@@ -45,10 +49,6 @@
 
 .doc_return_pheno <- function() {
   return('The function returns a phenology. Look [here][analyse.phenology] to find out how it can be analysed.')
-}
-
-.doc_return_pheno_bso <- function() {
-  return('The function returns a BSO phenology. Look [here][analyse.phenology.bso] to find out how it can be analysed.')
 }
 
 .doc_functioning_pre <- function(m, n) {

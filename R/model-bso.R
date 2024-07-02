@@ -41,10 +41,10 @@ NULL
 #'
 #'       # ==== development ====
 #'
-#'       model_end_date = '12-30',
-#'
 #'       psis = 2.994450e-01,
 #'       slot_sis = 4,
+#'
+#'       model_end_date = '12-30',
 #'
 #'       # ==== diapause ====
 #'
@@ -71,10 +71,11 @@ NULL
 #' @param num_slots Named vector that defines the number of slots for each stage.
 #' The development stage is subdivided into the stages `egg`, `larva` and `pupa`.
 #'
-#' @param model_end_date Date when the model ends.
 #' @param psis Probability that a sister brood will be established.
 #' @param slot_sis Maturation feeding slot where the individuals start regeneration feeding before
 #' they establish a sister brood.
+#' @param model_end_date Date when the model ends (no further development will
+#' be modeled).
 #'
 #' @param diapause_first The day of year when the diapause could start at the
 #' earliest.
@@ -142,14 +143,15 @@ NULL
 #'
 #' `r .doc_functioning_post('bso')`
 #'
-#' @param ... `r .doc_phenology_dots_bso()`
+#' @param ... `r .doc_phenology_dots()`
 #' @param tmin,tmax Daily minimum/maximum air temperatures in °C.
 #' @param sunrise,sunset Time of sunrise/sunset in minutes from midnight. Can
 #' be created with [create_suntimes_rsts()] or [create_suntimes_df()].
 #' @param n number of individuals to simulate.
 #' @param max_generations maximum number of generations to calculate.
 #'
-#' @return `r .doc_return_pheno_bso()`
+#' @returns The function returns a BSO phenology. Look
+#' [here][analyse.phenology.bso] to find out how it can be analysed.
 #'
 #' @references
 #' \insertAllCited{}
@@ -172,27 +174,15 @@ bso_calc_thourly <- function(.params,
   # use storage if requested
   if(is.character(.storage)) return(.use_storage())
 
-  thourly <- terra::app(c(tmin, tmax), \(x) {
 
-    tmn <- x[1:terra::nlyr(tmin)]
-    tmx <- x[(terra::nlyr(tmin) + 1):(terra::nlyr(tmin) +terra::nlyr(tmax))]
-    tmn2 <- c(tmn[2:length(tmn)], 0)
+  alternate <- rep(tmin[[1]] * 0 + c(TRUE, FALSE), each = 12, terra::nlyr(tmin))
 
-    out <- unlist(purrr::map(1:24, \(hour) {
+  tmn1 <- rep(tmin, each = 24) * alternate
+  tmn2 <- rep(c(tmin[[2:terra::nlyr(tmin)]], 0 * tmin[[1]]), each = 24) * !alternate
+  tmn <- tmn1 + tmn2
+  tmx <- rep(tmax, each = 24)
 
-      time <- hour/24
-
-      b <- ceiling(time + 0.5)
-      if(ceiling(time + 0.5) > 1) tmn_ <- tmn2
-      else tmn_ <- tmn
-
-      return((tmx + tmn_)/2 - ((tmx-tmn_)/2) * cos(2*pi*time))
-    }))
-
-    out <- out[unlist(purrr::map(1:365, \(x) x + 0:23 * 365))]
-
-    return(out)
-  })
+  thourly <- (tmx + tmn) / 2 - ((tmx - tmn) / 2) * cos(2 * pi * 1:terra::nlyr(tmn) / 24)
 
   # set metadata (time, layer names)
   dates <- terra::time(tmin)

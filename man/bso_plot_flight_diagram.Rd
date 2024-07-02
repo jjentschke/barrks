@@ -31,6 +31,21 @@ information.}
 
 \item{...}{arguments passed to \code{graphics::barplot()}.}
 }
+\value{
+None
+}
 \description{
 A flight diagram illustrates the daily share of flying individuals over time.
+}
+\examples{
+\dontshow{if (rlang::is_installed("graphics")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\donttest{
+# This may take a few minutes...
+
+# calculate phenology
+p <- bso_phenology('bso', barrks_data('stations'), .quiet = TRUE)
+
+bso_plot_flight_diagram(p)
+}
+\dontshow{\}) # examplesIf}
 }

@@ -1,7 +1,7 @@
 
-#' Create daylength rasters
+#' Create day length rasters
 #'
-#' Generate a multi-layer SpatRaster of daylengths for a given template.
+#' Generate a multi-layer SpatRaster of day lengths for a given template.
 #' The package `geosphere` is required to use this function.
 #'
 #' @param template (Multi-layer) SpatRaster that determines the
@@ -13,8 +13,16 @@
 #' latitude.
 #' @param .quiet `r .doc_quiet()`
 #'
-#' @return Returns a multi-layer SpatRaster. Each layer represents one date.
+#' @returns A multi-layer SpatRaster. Each layer represents one date.
 #'
+#' @examplesIf rlang::is_installed("geosphere")
+#' \donttest{
+#' # calculate day length, use barrks_data()$tmin as template
+#' dl <- create_daylength_rst(barrks_data()$tmin)
+#'
+#' # plot day length on May 1st, 2015
+#' terra::plot(dl[[terra::time(dl) == '2015-05-01']])
+#' }
 #' @seealso [create_daylength_df()]
 #'
 #' @export
@@ -51,18 +59,32 @@ create_daylength_rst <- function(template,
 
 
 
-#' Create a data frame of daylengths
+#' Create a data frame of day lengths
 #'
-#' Generate a data frame of daylengths for given latitudes.
+#' Generate a data frame of day lengths for given latitudes.
 #' The package `geosphere` is required to use this function.
 #'
 #' @param lat (Named) vector of latitudes. The names of the vector indicate the
 #' respective stations. If no names are provided, numbers are used instead.
+#' @param lat Data frame with the fields `station` and `lat`. Defines
+#' the latitude for the respective stations.
 #' @param dates Dates that should be processed.
 #' @param .quiet `r .doc_quiet()`
 #'
-#' @return A data frame with the columns `date`, `station` and `daylength`.
+#' @returns A data frame with the columns `date`, `station` and `daylength`.
 #'
+#' @examplesIf rlang::is_installed("geosphere")
+#' # dates of interest
+#' date_start <- as.Date('2020-01-01')
+#' date_end <- as.Date('2020-12-31')
+#'
+#'
+#' # calculate day length
+#' dl <- create_daylength_df(barrks_data('station_coords'),
+#'                           seq(date_start, date_end, by = 'day'))
+#'
+#' # print day lengths of station 'Freiburg'
+#' head(dl[dl$station == 'Freiburg',], 10)
 #' @seealso [create_daylength_rst()]
 #'
 #' @export
@@ -79,9 +101,9 @@ create_daylength_df <- function(lat,
   # calculate daylengths for all dates
   purrr::map_dfr(as.Date(dates), .progress = .get_pb(.quiet), \(date) {
 
-    return(data.frame(date = rep(date, length(lat)),
-                      station = names(lat),
-                      daylength = as.double(geosphere::daylength(lat, date))))
+    return(data.frame(date = rep(date, nrow(lat)),
+                      station = lat$station,
+                      daylength = as.double(geosphere::daylength(lat$lat, date))))
 
   })
 }

@@ -24,9 +24,11 @@ below/above these thresholds should account for mating, oviposition etc.}
 \item{dev_sister_brood}{Share in the total development, when a sister brood
 will be established.}
 
-\item{dev_mortal_min, dev_mortal_max}{Minimum/maximum share in the total
-development of white stages (egg, larva, pupa). During these stages, the
-beetles could die caused by a mortality event.}
+\item{dev_mortal_min, dev_mortal_max}{The beetles are considered to be in
+white stages (egg, larva, pupa) if their development exceeds \code{dev_mortal_min}
+and subceeds \code{dev_mortal_max}. During these stages, the beetles could die
+caused by a mortality event. \code{NULL} means that no lower/upper threshold is
+defined.}
 
 \item{func_ftmean, func_ftmax, func_atdiff}{Functions to caclulate the
 air temperature in forest stands (see \insertCite{Ogris2019;nobrackets}{barrks},
@@ -50,10 +52,13 @@ equations 4 - 6). Each parameter will be passed as SpatRaster:
 the effective bark temperature (see \insertCite{Ogris2019;nobrackets}{barrks},
 equations 7 - 9).}
 
+\item{model_end_date}{Date when the model ends (no further development will
+be modeled).}
+
 \item{daylength_dia}{When the daylength falls below this threshold, diapause
 will be initiated.}
 
-\item{model_end_date}{Date when the model ends and all white stages (egg, larva, pupa) die.}
+\item{mortality_date}{Date when all white stages (egg, larva, pupa) die.}
 }
 \description{
 This page describes the parameters
@@ -104,13 +109,15 @@ default values.
       beta = 3.5922336,
       gamma = 1.24657367,
 
+      model_end_date = '10-31',
+
       # ==== diapause ====
 
       daylength_dia = 14.5,
 
       # ==== mortality ====
 
-      model_end_date = '10-31'
+      mortality_date = '10-31'
 )
 }\if{html}{\out{</div>}}
 }

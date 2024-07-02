@@ -21,10 +21,28 @@
 #' is a single-layer SpatRaster.
 #' @param .quiet `r .doc_quiet()`
 #'
-#' @return Logical multi-layer SpatRaster.
+#' @returns A logical multi-layer SpatRaster. Each layer represents one date.
 #'
-#' @order 1
+#' @examples
+#' \donttest{
+#' # load sample data
+#' d <- barrks_data()
+#' # use d$tmin as template
+#' tmp <- d$tmin
 #'
+#' # create onset, diapause, mortality
+#' on <- create_onset(tmp, lubridate::yday('2015-04-15'))
+#' dia <- create_diapause(tmp, lubridate::yday('2015-08-15'))
+#' mort <- create_mortality(tmp, lubridate::yday('2015-11-15'))
+#'
+#' # claculate phenologe
+#' p <- phenology('phenips-clim', d, .quiet = TRUE,
+#'                .onset = on, .diapause = dia, .mortality = mort)
+#'
+#' # plot generations
+#' gens <- get_generations_rst(p)
+#' terra::plot(gens)
+#' }
 #' @name create_events
 NULL
 

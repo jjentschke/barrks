@@ -11,6 +11,17 @@ barrks_labels(type = "raster")
 for particular purposes. Allowed values are \code{'raster'}, \code{'diagram'},
 \code{'bso_flight'} and \code{'bso_stages'}.}
 }
+\value{
+A character vector of labels.
+}
 \description{
 Get barrks default legend labels
+}
+\examples{
+labels <- barrks_labels()
+
+# use the labels of 'barrks' for your individual plot...
+}
+\seealso{
+\code{\link[=barrks_colors]{barrks_colors()}}
 }

@@ -2,41 +2,41 @@
 
 
 
-#' Analyse a phenology
-#'
-#' Here, all functions are listed that are available to analyse the results of
-#' a [phenology()]-call.
-#'
-#' @details
-#'
-#' Get phenology properties:
-#'
-#' `r paste0(' - [', lsf.str('package:barrks', pattern = '^prop_'), '()]', collapse = '\n')`
-#'
-#' Get phenology results:
-#'
-#' `r paste0(' - [', lsf.str('package:barrks', pattern = '^get_'), '()]', collapse = '\n')`
-#'
-#' Plot phenology results:
-#'
-#' `r paste0(' - [', lsf.str('package:barrks', pattern = '^plot_'), '()]', collapse = '\n')`
-#'
-#' @name analyse.phenology
-NULL
-
-
-
 #' Make a numeric generations raster categorical
 #'
-#' Make a numeric generations raster categorical.
+#' Make a numeric generations raster categorical. Useful when mathematical
+#' operations were performed with generations rasters (use
+#' [`get_generations_rst(..., categorical = FALSE)`][get_generations_rst] to get numeric generations
+#' rasters).
 #'
 #' @param rst A numeric SpatRaster that represents bark beetle generations.
 #' Sister broods are defined by adding `0.5` to the respective generation.
 #' @param colors,labels Vectors of colors/labels starting from zero generations followed
 #' consecutively by elements for the respective generations (including sister broods).
 #'
-#' @return A categorical SpatRaster.
+#' @returns A categorical SpatRaster.
 #'
+#'
+#' @examples
+#' \donttest{
+#' # calculate phenology with different models
+#' p1 <- phenology('phenips-clim', barrks_data(), .quiet = TRUE)
+#' p2 <- phenology('phenips', barrks_data(), .quiet = TRUE)
+#'
+#' # get the generation as numerical rasters to allow mathematical operations
+#' gens1 <- get_generations_rst(p1, categorical = FALSE)
+#' gens2 <- get_generations_rst(p2, categorical = FALSE)
+#'
+#' # calculate the maximum generations from the 2 models
+#' gens_max <- max(gens1, gens2)
+#' # categorize the results
+#' gens_max_cat <- categorize_generations_rst(gens_max)
+#'
+#' # plot the uncategorized raster
+#' terra::plot(gens_max)
+#' # plot the categorized raster
+#' terra::plot(gens_max_cat)
+#' }
 #' @export
 
 categorize_generations_rst <- function(rst,
@@ -109,10 +109,30 @@ categorize_generations_rst <- function(rst,
 #' @param colors,labels Vectors of colors/labels starting from zero generations followed
 #' consecutively by elements for the respective generations (including sister broods).
 #'
+#' @returns
+#'
+#' * `get_generations_rst()`: A multi-layer SpatRaster.
+#' * `get_hibernating_generations_rst()`: A SpatRaster. Only available
+#'   if the model's end date has been reached. Otherwise all values will be `NA`.
+#' * `get_generations_df()`: A data frame.
+#' * `get_hibernating_generations_df()`: A data frame. Only available if the
+#'   model's end date has been reached. Otherwise all values will be `NA`.
+#'
+#' @examples
+#' \donttest{
+#' # calculate phenology
+#' p <- phenology('phenips-clim', barrks_data(), .quiet = TRUE)
+#'
+#' # get the generations raster
+#' gens <- get_generations_rst(p)
+#'
+#' # plot the generations raster
+#' terra::plot(gens)
+#' }
 #' @name get_generations
 NULL
 
-#' @describeIn get_generations Returns a multi-layer SpatRaster of generations.
+#' @rdname get_generations
 #' @order 1
 #' @export
 
@@ -142,18 +162,19 @@ get_generations_rst <- function(pheno,
 
 
 
-#' @describeIn get_generations Returns a data frame of generations.
+#' @rdname get_generations
 #' @order 2
 #' @export
 
 get_generations_df <- function(pheno,
                                stations = prop_stations(pheno),
                                dates = prop_dates(pheno),
-                               threshold = 0) {
+                               threshold = 0,
+                               generations = prop_hatched_generations(pheno)) {
 
   if(is.character(stations)) stations <- prop_stations(pheno)[stations]
 
-  rst <- get_generations_rst(pheno, dates, threshold, categorical = FALSE)
+  rst <- get_generations_rst(pheno, dates, threshold, generations, categorical = FALSE)
   return(.rsts2df(list(generation = rst), stations))
 }
 
@@ -162,8 +183,7 @@ get_generations_df <- function(pheno,
 
 
 
-#' @describeIn get_generations Returns a SpatRaster of the generations that are
-#' able to hibernate (only available if the model's end date has been reached).
+#' @rdname get_generations
 #' @order 3
 #' @export
 
@@ -178,8 +198,7 @@ get_hibernating_generations_rst <- function(pheno,
 
 
 
-#' @describeIn get_generations Returns a data frame of the generations that are
-#' able to hibernate (only available if the model's end date has been reached).
+#' @rdname get_generations
 #' @order 4
 #' @export
 
@@ -196,18 +215,34 @@ get_hibernating_generations_df <- function(pheno,
 
 #' Get the beetles development
 #'
-#' Get the beetles development of specific generations.
+#' Get the beetles development of specific generations.A value of -1
+#' implies that the generation is not present yet.
 #'
 #' @param pheno `r .doc_pheno()`
 #' @param stations `r .doc_stations()`
 #' @param dates `r .doc_dates()`
-#' @param generation `r .doc_generation()`
+#' @param generation `r .doc_generation()` `get_development_df()` allows
+#' multiple generations here.
 #'
+#' @returns
+#'
+#' * `get_development_rst()`: A multi-layer SpatRaster.
+#' * `get_development_df()`: A data frame which contains a field for
+#'    each generation  (`gen_1`, `gen_1.5`, `gen_2`, `gen_2.5`, ...) requested.
+#'
+#' @examples
+#' \donttest{
+#' # calculate station-based phenology
+#' p <- phenology('phenips-clim', barrks_data('stations'), .quiet = TRUE)
+#'
+#' # print the first rows of the development data frame
+#' df <- get_development_df(p)
+#' head(df, 10)
+#' }
 #' @name get_development
 NULL
 
-#' @describeIn get_development Returns a multi-layer SpatRaster. A value of -1
-#' implies that the generation is not present yet.
+#' @rdname get_development
 #' @order 1
 #' @export
 
@@ -222,10 +257,7 @@ get_development_rst <- function(pheno,
   return(out[[which(terra::time(out) %in% as.Date(dates))]])
 }
 
-#' @describeIn get_development Multiple generations are allowed as value for
-#' `generation`. Returns a data frame which contains a field for
-#' each generation  (`gen_1`, `gen_1.5`, `gen_2`, `gen_2.5`, ...). A value of -1
-#' implies that the generation is not present yet.
+#' @rdname get_development
 #' @order 2
 #' @export
 
@@ -246,15 +278,35 @@ get_development_df <- function(pheno,
 
 #' Get onset, diapause or mortality
 #'
-#' Get onset, diapause or mortality as day of year or raw output.
+#' Get onset, diapause or mortality as day of year or raw output. Note that
+#' multiple mortality events are possible over the season.
 #'
 #' @param pheno `r .doc_pheno()`
 #' @param stations `r .doc_stations()`
-#' @param as_doy If `TRUE`, the day of year will be returned. If `FALSE` the
+#' @param as_doy If `TRUE`, the day(s) of year will be returned. If `FALSE` the
 #' phenological events will be returned in a raw format. Then, the return
 #' value could be used as input for [phenology()]/[bso_phenology()]
 #' (parameters `.onset`, `.diapause` and `.mortality`).
 #' @param dates `r .doc_dates()`
+#'
+#' @returns
+#'
+#' * `get_onset_rst()`, `get_diapause_rst()`, `get_mortality_rst()`: A
+#'   (multi-layer) SpatRaster.
+#' * `get_onset_df()`, `get_diapause_df()`, `get_mortality_df()`: A data frame.
+#'
+#' @examples
+#' \donttest{
+#' # calculate phenology
+#' p <- phenology('phenips-clim', barrks_data(), .quiet = TRUE)
+#'
+#' # plot onset, diapause, mortality
+#' get_onset_rst(p) |> terra::plot()
+#' get_diapause_rst(p) |> terra::plot()
+#' get_mortality_rst(p)[[1]] |> terra::plot()
+#'
+#' }
+#'
 #'
 #' @name get_events
 #' @aliases get_onset get_diapause get_mortality
@@ -376,6 +428,19 @@ get_mortality_df <- function(pheno,
 #'
 #' @param pheno `r .doc_pheno()`
 #'
+#' @returns A list of SpatRasters.
+#'
+#' @examples
+#' \donttest{
+#' # setup phenology
+#' p <- phenology('phenips-clim', barrks_data(), .setup_only = TRUE, .quiet = TRUE)
+#'
+#' # get the (preprocessed) input data
+#' inputs <- get_input_data(p)
+#'
+#' # print the names to show which input data is available
+#' names(inputs)
+#' }
 #' @export
 
 get_input_data <- function(pheno) {
@@ -405,11 +470,7 @@ get_input_data <- function(pheno) {
     if(is.null(res)) res <- doy
     else res <- c(res, doy)
 
-    z <- terra::app(c(doy, z), \(y) {
-      r <- y[-1]
-      r[y[1] - first_doy + 1] <- FALSE
-      r
-    })
+    z <- z & .trigger_rst(c(z[[1]] * 0, z)[[1:terra::nlyr(z)]])
 
     if(sum(terra::values(z), na.rm = TRUE) == 0 | first_only) break
   }

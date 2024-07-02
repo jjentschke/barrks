@@ -20,9 +20,23 @@ env_barrks$models <- list()
 #' @param m Name of the model or the return value of another `model()`-call.
 #' @param ... List of parameters to customize the model.
 #'
+#' @returns A phenology model. Can be passed to [phenology()].
+#'
 #' @seealso Look at the customization manuals, to find out which parameters
 #' can be customized for a specific model: `r .doc_customize_models()`.
 #'
+#' @examples
+#' \donttest{
+#' # customize the temperature beetles need to fly for PHENIPS-Clim
+#' m <- model('phenips-clim', tfly = 16)
+#'
+#' # calculate phenology
+#' phenology(m, barrks_data(), .quiet = TRUE)
+#'
+#' # plot generations
+#' gens <- get_generations_rst(p)
+#' terra::plot(gens)
+#' }
 #' @export
 
 model <- function(m, ...) {
@@ -46,7 +60,9 @@ model <- function(m, ...) {
 #' @param m Name of the model or the return value of another `model()`-call.
 #' @param ... List of parameters to customize the model.
 #'
-#'
+#' @examples
+#' # print the first parameters of `phenips-clim`
+#' head(params('phenips-clim'))
 #' @export
 
 params <- function(m, ...) {
@@ -59,6 +75,9 @@ params <- function(m, ...) {
 #'
 #' Get the names of all available models.
 #'
+#' @examples
+#' # print all available models
+#' list_models()
 #' @export
 
 list_models <- function() {

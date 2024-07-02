@@ -28,7 +28,7 @@ and latitude.}
 \item{.quiet}{If \code{TRUE}, messages are suppressed.}
 }
 \value{
-Returns a list with the elements \code{sunrise} and \code{sunset} which are
+A list with the elements \code{sunrise} and \code{sunset} which are
 both multi-layer SpatRasters. The values indicate the respective time in
 minutes. Each layer represents one date.
 }
@@ -36,6 +36,18 @@ minutes. Each layer represents one date.
 Generate a list of two multi-layer SpatRasters for a given template that
 indicate sunrise and sunset for the respective cells.
 The package \code{suncalc} is required to use this function.
+}
+\examples{
+\dontshow{if (rlang::is_installed("suncalc")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\donttest{
+# calculate suntimes, use barrks_data()$tmin as template
+st <- create_suntimes_rsts(barrks_data()[[1]])
+
+# plot results on May 1st, 2015
+terra::plot(st$sunrise[[terra::time(st$sunrise) == '2015-05-01']])
+terra::plot(st$sunset[[terra::time(st$sunset) == '2015-05-01']])
+}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 \code{\link[=create_suntimes_df]{create_suntimes_df()}}

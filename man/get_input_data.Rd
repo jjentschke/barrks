@@ -9,9 +9,24 @@ get_input_data(pheno)
 \arguments{
 \item{pheno}{A  phenology (see \code{\link[=phenology]{phenology()}})}
 }
+\value{
+A list of SpatRasters.
+}
 \description{
 The function returns a list that contains the input data of the phenology as
 well as some intermediate results that are needed as preprocessed inputs for the
 model. The result can be used as input for \code{phenology()} to avoid redundant
 calculations.
+}
+\examples{
+\donttest{
+# setup phenology
+p <- phenology('phenips-clim', barrks_data(), .setup_only = TRUE, .quiet = TRUE)
+
+# get the (preprocessed) input data
+inputs <- get_input_data(p)
+
+# print the names to show which input data is available
+names(inputs)
+}
 }

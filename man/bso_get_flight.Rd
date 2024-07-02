@@ -29,13 +29,23 @@ returned. Can be \code{1} (first flight) or \code{2} (second flight).}
 \item{stations}{Pass a character vector to choose stations assigned to \code{pheno} by
 their names, or pass different stations. See \code{\link[=stations_create]{stations_create()}} for details.}
 }
+\value{
+\itemize{
+\item \code{bso_get_flight_rst}: a multi-layer SpatRaster.
+\item \code{bso_get_flight_df}: a data frame.
+}
+}
 \description{
 Get the number of individuals that are flying.
 }
-\section{Functions}{
-\itemize{
-\item \code{bso_get_flight_rst()}: Returns a multi-layer SpatRaster.
+\examples{
+\donttest{
+# This may take a few minutes...
 
-\item \code{bso_get_flight_df()}: Returns a data frame.
+# calculate phenology
+p <- bso_phenology('bso', barrks_data('stations'), .quiet = TRUE)
 
-}}
+# get the number of individuals of the hibernating generation on their first flight
+bso_get_flight_df(p, 0, flight = 1)
+}
+}

@@ -43,7 +43,7 @@ get_mortality_df(
 \arguments{
 \item{pheno}{A  phenology (see \code{\link[=phenology]{phenology()}})}
 
-\item{as_doy}{If \code{TRUE}, the day of year will be returned. If \code{FALSE} the
+\item{as_doy}{If \code{TRUE}, the day(s) of year will be returned. If \code{FALSE} the
 phenological events will be returned in a raw format. Then, the return
 value could be used as input for \code{\link[=phenology]{phenology()}}/\code{\link[=bso_phenology]{bso_phenology()}}
 (parameters \code{.onset}, \code{.diapause} and \code{.mortality}).}
@@ -53,8 +53,16 @@ value could be used as input for \code{\link[=phenology]{phenology()}}/\code{\li
 \item{stations}{Pass a character vector to choose stations assigned to \code{pheno} by
 their names, or pass different stations. See \code{\link[=stations_create]{stations_create()}} for details.}
 }
+\value{
+\itemize{
+\item \code{get_onset_rst()}, \code{get_diapause_rst()}, \code{get_mortality_rst()}: A
+(multi-layer) SpatRaster.
+\item \code{get_onset_df()}, \code{get_diapause_df()}, \code{get_mortality_df()}: A data frame.
+}
+}
 \description{
-Get onset, diapause or mortality as day of year or raw output.
+Get onset, diapause or mortality as day of year or raw output. Note that
+multiple mortality events are possible over the season.
 }
 \section{Functions}{
 \itemize{
@@ -71,3 +79,17 @@ Get onset, diapause or mortality as day of year or raw output.
 \item \code{get_mortality_df()}: Returns a data frame of the mortality.
 
 }}
+\examples{
+\donttest{
+# calculate phenology
+p <- phenology('phenips-clim', barrks_data(), .quiet = TRUE)
+
+# plot onset, diapause, mortality
+get_onset_rst(p) |> terra::plot()
+get_diapause_rst(p) |> terra::plot()
+get_mortality_rst(p)[[1]] |> terra::plot()
+
+}
+
+
+}

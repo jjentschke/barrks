@@ -98,7 +98,7 @@ will be loaded from the storage.}
 to the model inputs. See \code{.data} for alternative ways to pass data to the model.}
 }
 \value{
-Returns a phenology as a list. Look \link[=analyse.phenology]{here} to find out how
+A phenology as a list. Look \link[=analyse.phenology]{here} to find out how
 a phenology can be analysed. It is not recommended to access the list elements directly.
 }
 \description{
@@ -111,12 +111,22 @@ phenology function is implemented for this model. Note that while the
 onset and the development submodels are needed to be taken from the BSO model,
 the diapause and the mortality submodels are compatible with other models.
 
-Returns a BSO phenology as a list. Look \link[=analyse.phenology.bso]{here} to find out how
+The function returns a BSO phenology as a list. Look \link[=analyse.phenology.bso]{here} to find out how
 a BSO phenology can be analysed. It is not recommended to access the list elements directly.
 To be able to use the functions that are
 available for phenology objects returned by \code{\link[=phenology]{phenology()}}, call \code{\link[=bso_translate_phenology]{bso_translate_phenology()}}.
 
 }}
+\examples{
+\donttest{
+# calculate phenology
+p <- phenology('phenips-clim', barrks_data())
+
+# plot calculated generations
+gens <- get_generations_rst(p)
+terra::plot(gens)
+}
+}
 \seealso{
 \code{\link{model.bso.apply}}, \code{\link{model.phenips.apply}}, \code{\link{model.rity.apply}}, \code{\link{model.chapy.apply}}, \code{\link{model.joensson.apply}}, \code{\link{model.lange.apply}}, \code{\link{model.phenips_clim.apply}}
 }

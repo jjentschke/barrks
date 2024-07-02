@@ -2,13 +2,13 @@
 % Please edit documentation in R/create-daylengths.R
 \name{create_daylength_df}
 \alias{create_daylength_df}
-\title{Create a data frame of daylengths}
+\title{Create a data frame of day lengths}
 \usage{
 create_daylength_df(lat, dates, .quiet = FALSE)
 }
 \arguments{
-\item{lat}{(Named) vector of latitudes. The names of the vector indicate the
-respective stations. If no names are provided, numbers are used instead.}
+\item{lat}{Data frame with the fields \code{station} and \code{lat}. Defines
+the latitude for the respective stations.}
 
 \item{dates}{Dates that should be processed.}
 
@@ -18,8 +18,23 @@ respective stations. If no names are provided, numbers are used instead.}
 A data frame with the columns \code{date}, \code{station} and \code{daylength}.
 }
 \description{
-Generate a data frame of daylengths for given latitudes.
+Generate a data frame of day lengths for given latitudes.
 The package \code{geosphere} is required to use this function.
+}
+\examples{
+\dontshow{if (rlang::is_installed("geosphere")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+# dates of interest
+date_start <- as.Date('2020-01-01')
+date_end <- as.Date('2020-12-31')
+
+
+# calculate day length
+dl <- create_daylength_df(barrks_data('station_coords'),
+                          seq(date_start, date_end, by = 'day'))
+
+# print day lengths of station 'Freiburg'
+head(dl[dl$station == 'Freiburg',], 10)
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 \code{\link[=create_daylength_rst]{create_daylength_rst()}}

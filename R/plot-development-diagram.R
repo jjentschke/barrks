@@ -32,9 +32,20 @@
 #' date.
 #' @param ... Parameters passed to [base::plot()].
 #'
+#' @returns None
+#'
+#' @examples
+#' \donttest{
+#' # calculate phenology
+#' p <- phenology('phenips-clim', barrks_data('stations'), .quiet = TRUE)
+#'
+#' # plot development diagram of the station 'Mannheim'
+#' plot_development_diagram(p, 'Mannheim')
+#' }
+#' @seealso [stations]
 #' @export
 
-# TODO: restructure function, currently a bit confusing to read
+# TODO: restructure function, currently confusing to read
 
 plot_development_diagram <- function(.phenos,
                                      .station = prop_stations(.phenos[[1]])[1],
@@ -281,13 +292,18 @@ plot_development_diagram <- function(.phenos,
       return()
     }
 
+    has_gen <- purrr::map_lgl(has_gen_date, \(x) any(x))
 
 
     if(!is.null(.date_split)) {
       gen_devs1 <- purrr::map(gen_devs, \(x) x[dates <= .date_split])
-      gen_devs2 <- purrr::map(gen_devs, \(x) x[dates >= .date_split])
       plot_content(generation, gen_devs1, dates[dates <= .date_split], .lwd, .lty, .fill)
-      plot_content(generation, gen_devs2, dates[dates >= .date_split], .lwd2, .lty2, .fill2)
+
+      has_gen2 <- purrr::map_lgl(has_gen_date, \(x) any(x[dates >= .date_split]))
+      if(any(has_gen2)) {
+        gen_devs2 <- purrr::map(gen_devs, \(x) x[dates >= .date_split])
+        plot_content(generation, gen_devs2, dates[dates >= .date_split], .lwd2, .lty2, .fill2)
+      }
     } else {
       plot_content(generation, gen_devs, dates, .lwd, .lty, .fill)
     }
@@ -335,6 +351,7 @@ plot_development_diagram <- function(.phenos,
     do.call(graphics::legend, c(list(names(.phenos)), args_legend))
   }
 
+  return(invisible())
 }
 
 

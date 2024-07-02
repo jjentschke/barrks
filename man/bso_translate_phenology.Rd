@@ -24,3 +24,15 @@ A BSO generated phenology cannot be analysed in the same way as other phenology 
 To be able to use the functions that are available for phenology objects
 returned by \code{\link[=phenology]{phenology()}}, the BSO generated phenology should be translated.
 }
+\examples{
+\donttest{
+# This may take a few minutes...
+
+# calculate and translate BSO phenology
+p <- bso_phenology('bso', barrks_data('stations'), .quiet = TRUE)
+pt <- bso_translate_phenology(p, .quiet = TRUE)
+
+# get the resulting generations
+get_generations_df(pt)
+}
+}

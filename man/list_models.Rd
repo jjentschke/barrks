@@ -9,3 +9,7 @@ list_models()
 \description{
 Get the names of all available models.
 }
+\examples{
+# print all available models
+list_models()
+}

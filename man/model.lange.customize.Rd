@@ -14,13 +14,14 @@ infestation. Additionally, the maximum temperature must exceed \code{tfly}.}
 
 \item{tfly}{Minimum temperature that beetles need to fly.}
 
-\item{model_end_date}{Date when the model ends.}
-
 \item{dd_base_stages}{Base temperatures to calculate degree days for the
 different stages in the following order: egg, larva, pupa, juvenile adult.}
 
 \item{dd_threshold_stages}{Thermal thresholds for the different stages in the
 following order: egg, larva, pupa, juvenile adult.}
+
+\item{model_end_date}{Date when the model ends (no further development will
+be modeled).}
 
 \item{first_lethal_date}{Date before which no mortality will be modeled.}
 
@@ -51,10 +52,10 @@ default values.
 
       # ==== development ==== #
 
-      model_end_date = '12-31',
-
       dd_base_stages = c(10.6, 8.2, 9.9, 3.2),
       dd_threshold_stages = c(51.8, 204.4, 57.7, 238.5),
+
+      model_end_date = '12-31',
 
       # ==== mortality ==== #
 

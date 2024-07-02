@@ -39,6 +39,18 @@ prop_stations(pheno)
 \arguments{
 \item{pheno}{A  phenology (see \code{\link[=phenology]{phenology()}})}
 }
+\value{
+The requested property.
+}
 \description{
 To examine a phenology, there are different functions to query its properties.
+}
+\examples{
+\donttest{
+# calculate phenology
+p <- phenology('phenips-clim', barrks_data(), .quiet = TRUE)
+
+# print all generations that were hatched
+prop_hatched_generations(p)
+}
 }

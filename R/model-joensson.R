@@ -23,8 +23,6 @@ NULL
 #'
 #'       # ==== development ====
 #'
-#'       model_end_date = '12-31',
-#'
 #'       dd_development_base = 5,
 #'       dd_total_dev_lower = 625,
 #'       dd_total_dev_upper = 750,
@@ -32,6 +30,8 @@ NULL
 #'       dev_end = 1,
 #'       dev_mortal_min = NULL,
 #'       dev_mortal_max = NULL,
+#'
+#'       model_end_date = '12-31',
 #'
 #'       # ==== diapause ====
 #'
@@ -47,15 +47,14 @@ NULL
 #'
 #' @param tfly Minimum temperature that beetles need to fly.
 #'
-#' @param model_end_date Date when the model ends.
-#'
 #' @param dd_development_base Base temperature to calculate degree days for development.
 #' @param dd_total_dev_lower,dd_total_dev_upper Lower/upper limit of degree days
 #' that are required for a generation to fully develop
 #' @param dev_start,dev_end `r .doc_dev_start_end()`
-#' @param dev_mortal_min,dev_mortal_max Minimum/maximum share in the total
-#' development of white stages (egg, larva, pupa). During these stages, the
-#' beetles could die caused by a mortality event.
+#' @param dev_mortal_min,dev_mortal_max `r .doc_param_dev_mortal()`
+#'
+#' @param model_end_date Date when the model ends (no further development will
+#' be modeled).
 #'
 #' @param daylength_dia,tdia_min When the daylength falls below `daylength_dia`
 #' and the average daily temperature falls below `tdia_min`, diapause

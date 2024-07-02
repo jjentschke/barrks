@@ -19,12 +19,13 @@ NULL
 #'
 #'       dd_onset_start_date = '03-01',
 #'       dd_onset_base = 12,
-#'       onset_func = function(tmax, dd_tmax) 0.564071 * tmax + 0.006434 * dd_tmax - 12.37046 > 0,
+#'       onset_func = function(tmax, dd_tmax) {
+#'         0.564071 * tmax + 0.006434 * dd_tmax - 12.37046 > 0
+#'       },
 #'       onset_add_dd = c('0.1' = 0, '0.5' = 90, '0.9' = 190),
 #'
 #'       # ==== development ====
 #'
-#'       model_end_date = '12-31',
 #'       tfly = 16.5,
 #'
 #'       dd_total_dev = 557,
@@ -40,16 +41,28 @@ NULL
 #'
 #'       topt = 30.4,
 #'
-#'       func_btmean = function(tmean, rad) { -0.173 + 0.0008518 * rad + 1.054 * tmean},
-#'       func_btmax = function(tmax, rad) { 1.656 + 0.002955 * rad + 0.534 * tmax + 0.01884 * tmax ^ 2 },
-#'       func_btdiff = function(tmax) { (-310.667 + 9.603 * tmax) / 24 },
+#'       func_btmean = function(tmean, rad) {
+#'         -0.173 + 0.0008518 * rad + 1.054 * tmean
+#'       },
+#'       func_btmax = function(tmax, rad) {
+#'         1.656 + 0.002955 * rad + 0.534 * tmax + 0.01884 * tmax ^ 2
+#'       },
+#'       func_btdiff = function(tmax) {
+#'         (-310.667 + 9.603 * tmax) / 24
+#'       },
 #'
-#'       dev_rates = phenips_clim_get_dev_rates(),
+#'       # dev_rates too large to show here, type `params('phenips-clim')$dev_rates`
+#'       # to get the dev_rates that are used by default
+#'       # dev_rates = matrix(...),
+#'
+#'       model_end_date = '12-31',
 #'
 #'       # ==== diapause ====
 #'
 #'       first_diapause_date = '08-12',
-#'       diapause_thermal_func = function(daylength, tmax) 0.8619156 * daylength + 0.5081128 * tmax - 23.63691 > 0,
+#'       diapause_thermal_func = function(daylength, tmax) {
+#'         0.8619156 * daylength + 0.5081128 * tmax - 23.63691 > 0
+#'       },
 #'       daylength_dia = 14.5,
 #'
 #'       # ==== mortality ====
@@ -85,9 +98,7 @@ NULL
 #' @param dev_sister_brood Share in the total development, when a sister brood
 #' will be established.
 #'
-#' @param dev_mortal_min,dev_mortal_max Minimum/maximum share in the total
-#' development of white stages (egg, larva, pupa). During these stages, the
-#' beetles could die caused by a mortality event.
+#' @param dev_mortal_min,dev_mortal_max `r .doc_param_dev_mortal()`
 #'
 #' @param topt Temperature for optimal development.
 #'
@@ -105,6 +116,9 @@ NULL
 #' mean temperatures and row names the temperature amplitudes both with one
 #' decimal place.
 #' base onset (see `onset_func`) to trigger the actual onset.
+#'
+#' @param model_end_date Date when the model ends (no further development will
+#' be modeled).
 #'
 #' @param first_diapause_date Date before which an initiation of the diapause is
 #' impossible ('MM-DD').
@@ -327,7 +341,8 @@ phenips_clim_calc_onset <- function(.params,
     # calculate the effective max temperature sum from the base onset
     lyr <- terra::which.lyr(out)
     lyr <- terra::ifel(is.na(lyr), terra::nlyr(dd_onset), lyr)
-    dd_tmax_diff <- dd_onset - terra::app(c(lyr, dd_onset), \(x) x[[x[[1]] + 1]])
+
+    dd_tmax_diff <- dd_onset - terra::rapp(dd_onset, lyr, lyr, \(x) x)
 
     # wait for an additional tmaxsum according to `onset_mode`
     out <- (dd_tmax_diff >= add_dd)
@@ -446,18 +461,7 @@ phenips_clim_calc_development <- function(.params,
 
 
 
-
-#' Get development rates for PHENIPS-Clim
-#'
-#' @returns Returns a matrix that determines the development in relation to the
-#' mean temperature and the temmperature amplitude. Col names indicate the mean
-#' temperature and row names the temperature amplitude in °C * 10.
-#'
-#' @export
-
-# TODO: good solution?
-
-phenips_clim_get_dev_rates <- function() {
+.phenips_clim_get_dev_rates <- function() {
 
   df <- readr::read_csv(system.file('extdata/dev-rates-phenips-clim.csv', package = 'barrks'),
                          show_col_types = FALSE)
@@ -499,7 +503,7 @@ phenips_clim_get_dev_rates <- function() {
                   func_btmax = function(tmax, rad) { 1.656 + 0.002955 * rad + 0.534 * tmax + 0.01884 * tmax ^ 2 },
                   func_btdiff = function(tmax) { (-310.667 + 9.603 * tmax) / 24 },
 
-                  dev_rates = phenips_clim_get_dev_rates(),
+                  dev_rates = .phenips_clim_get_dev_rates(),
 
                   first_diapause_date = '08-12',
                   diapause_thermal_func = \(daylength, tmax) 0.8619156 * daylength + 0.5081128 * tmax - 23.63691 > 0,

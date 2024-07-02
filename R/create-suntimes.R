@@ -16,10 +16,19 @@
 #' @param tz Timezone of the results.
 #' @param .quiet `r .doc_quiet()`
 #'
-#' @return Returns a list with the elements `sunrise` and `sunset` which are
+#' @returns A list with the elements `sunrise` and `sunset` which are
 #' both multi-layer SpatRasters. The values indicate the respective time in
 #' minutes. Each layer represents one date.
 #'
+#' @examplesIf rlang::is_installed("suncalc")
+#' \donttest{
+#' # calculate suntimes, use barrks_data()$tmin as template
+#' st <- create_suntimes_rsts(barrks_data()[[1]])
+#'
+#' # plot results on May 1st, 2015
+#' terra::plot(st$sunrise[[terra::time(st$sunrise) == '2015-05-01']])
+#' terra::plot(st$sunset[[terra::time(st$sunset) == '2015-05-01']])
+#' }
 #' @seealso [create_suntimes_df()]
 #'
 #' @export
@@ -81,10 +90,21 @@ create_suntimes_rsts <- function(template,
 #' @param tz Timezone of the results.
 #' @param .quiet `r .doc_quiet()`
 #'
-#' @return A data frame with the columns `date`, `station` and `sunrise` and
+#' @returns A data frame with the columns `date`, `station` and `sunrise` and
 #' `sunset`. The values of sunrise and sunset indicate the respective time in
 #' minutes.
 #'
+#' @examplesIf rlang::is_installed("suncalc")
+#' \donttest{
+#' date_start <- as.Date('2020-01-01')
+#' date_end <- as.Date('2020-12-31')
+#'
+#' st <- create_suntimes_df(barrks_data('station_coords'),
+#'                          seq(date_start, date_end, by = 'day'))
+#'
+#' # print results of station 'Freiburg'
+#' head(st[st$station == 'Freiburg',], 10)
+#' }
 #' @seealso [create_suntimes_rsts()]
 #'
 #' @export

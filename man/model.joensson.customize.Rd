@@ -14,8 +14,6 @@ infestation. Additionally, the maximum temperature must exceed \code{tfly}.}
 
 \item{tfly}{Minimum temperature that beetles need to fly.}
 
-\item{model_end_date}{Date when the model ends.}
-
 \item{dd_development_base}{Base temperature to calculate degree days for development.}
 
 \item{dd_total_dev_lower, dd_total_dev_upper}{Lower/upper limit of degree days
@@ -25,9 +23,14 @@ that are required for a generation to fully develop}
 juvenile beetle's development ends respectively. Usable if the development
 below/above these thresholds should account for mating, oviposition etc.}
 
-\item{dev_mortal_min, dev_mortal_max}{Minimum/maximum share in the total
-development of white stages (egg, larva, pupa). During these stages, the
-beetles could die caused by a mortality event.}
+\item{dev_mortal_min, dev_mortal_max}{The beetles are considered to be in
+white stages (egg, larva, pupa) if their development exceeds \code{dev_mortal_min}
+and subceeds \code{dev_mortal_max}. During these stages, the beetles could die
+caused by a mortality event. \code{NULL} means that no lower/upper threshold is
+defined.}
+
+\item{model_end_date}{Date when the model ends (no further development will
+be modeled).}
 
 \item{daylength_dia, tdia_min}{When the daylength falls below \code{daylength_dia}
 and the average daily temperature falls below \code{tdia_min}, diapause
@@ -61,8 +64,6 @@ default values.
 
       # ==== development ====
 
-      model_end_date = '12-31',
-
       dd_development_base = 5,
       dd_total_dev_lower = 625,
       dd_total_dev_upper = 750,
@@ -70,6 +71,8 @@ default values.
       dev_end = 1,
       dev_mortal_min = NULL,
       dev_mortal_max = NULL,
+
+      model_end_date = '12-31',
 
       # ==== diapause ====
 

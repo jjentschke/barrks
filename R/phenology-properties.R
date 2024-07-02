@@ -34,8 +34,16 @@
 #' ## get the stations assigned to the phenology
 #' prop_stations(pheno)
 #'
+#' @returns The requested property.
 #'
+#' @examples
+#' \donttest{
+#' # calculate phenology
+#' p <- phenology('phenips-clim', barrks_data(), .quiet = TRUE)
 #'
+#' # print all generations that were hatched
+#' prop_hatched_generations(p)
+#' }
 #' @name properties
 #' @aliases prop_year prop_dates prop_first_date prop_last_date prop_hatched_generations prop_filial_generations prop_sister_broods prop_stations
 NULL

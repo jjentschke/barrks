@@ -7,6 +7,13 @@
 #' for particular purposes. Allowed values are `'raster'`, `'diagram_lines'`,
 #' `'diagram_fill'`, `'bso_flight'` and `'bso_stages'`.
 #'
+#' @returns A character vector of hex colors.
+#'
+#' @examples
+#' colors <- barrks_colors()
+#'
+#' # use the colors of 'barrks' for your individual plot...
+#' @seealso [barrks_labels()]
 #' @export
 
 barrks_colors <- function(type = 'raster') {
@@ -26,6 +33,14 @@ barrks_colors <- function(type = 'raster') {
 #' @param type Select the desired legend labels. There are different variants
 #' for particular purposes. Allowed values are `'raster'`, `'diagram'`,
 #' `'bso_flight'` and `'bso_stages'`.
+#'
+#' @returns A character vector of labels.
+#'
+#' @examples
+#' labels <- barrks_labels()
+#'
+#' # use the labels of 'barrks' for your individual plot...
+#' @seealso [barrks_colors()]
 #'
 #' @export
 

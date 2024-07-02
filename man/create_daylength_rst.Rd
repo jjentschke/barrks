@@ -2,7 +2,7 @@
 % Please edit documentation in R/create-daylengths.R
 \name{create_daylength_rst}
 \alias{create_daylength_rst}
-\title{Create daylength rasters}
+\title{Create day length rasters}
 \usage{
 create_daylength_rst(
   template,
@@ -25,11 +25,22 @@ latitude.}
 \item{.quiet}{If \code{TRUE}, messages are suppressed.}
 }
 \value{
-Returns a multi-layer SpatRaster. Each layer represents one date.
+A multi-layer SpatRaster. Each layer represents one date.
 }
 \description{
-Generate a multi-layer SpatRaster of daylengths for a given template.
+Generate a multi-layer SpatRaster of day lengths for a given template.
 The package \code{geosphere} is required to use this function.
+}
+\examples{
+\dontshow{if (rlang::is_installed("geosphere")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\donttest{
+# calculate day length, use barrks_data()$tmin as template
+dl <- create_daylength_rst(barrks_data()$tmin)
+
+# plot day length on May 1st, 2015
+terra::plot(dl[[terra::time(dl) == '2015-05-01']])
+}
+\dontshow{\}) # examplesIf}
 }
 \seealso{
 \code{\link[=create_daylength_df]{create_daylength_df()}}

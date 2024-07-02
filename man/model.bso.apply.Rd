@@ -5,7 +5,7 @@
 \alias{model.bso.apply}
 \title{Use the BSO model}
 \arguments{
-\item{...}{See \code{\link[=bso_phenology]{bso_phenology()}} for a detailled description of the function.}
+\item{...}{See \code{\link[=phenology]{phenology()}} for a detailled description of the function.}
 
 \item{tmin, tmax}{Daily minimum/maximum air temperatures in °C.}
 
@@ -17,7 +17,8 @@ be created with \code{\link[=create_suntimes_rsts]{create_suntimes_rsts()}} or \
 \item{max_generations}{maximum number of generations to calculate.}
 }
 \value{
-The function returns a BSO phenology. Look \link[=analyse.phenology.bso]{here} to find out how it can be analysed.
+The function returns a BSO phenology. Look
+\link[=analyse.phenology.bso]{here} to find out how it can be analysed.
 }
 \description{
 This page describes the usage of the BSO model with \code{\link[=phenology]{phenology()}}.

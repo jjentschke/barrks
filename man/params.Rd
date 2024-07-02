@@ -14,3 +14,7 @@ params(m, ...)
 \description{
 Get model parameters
 }
+\examples{
+# print the first parameters of `phenips-clim`
+head(params('phenips-clim'))
+}

@@ -47,13 +47,15 @@ NULL
 #'       beta = 3.5922336,
 #'       gamma = 1.24657367,
 #'
+#'       model_end_date = '10-31',
+#'
 #'       # ==== diapause ====
 #'
 #'       daylength_dia = 14.5,
 #'
 #'       # ==== mortality ====
 #'
-#'       model_end_date = '10-31'
+#'       mortality_date = '10-31'
 #' )
 #' ```
 #'
@@ -70,9 +72,7 @@ NULL
 #' @param dev_start,dev_end `r .doc_dev_start_end()`
 #' @param dev_sister_brood Share in the total development, when a sister brood
 #' will be established.
-#' @param dev_mortal_min,dev_mortal_max Minimum/maximum share in the total
-#' development of white stages (egg, larva, pupa). During these stages, the
-#' beetles could die caused by a mortality event.
+#' @param dev_mortal_min,dev_mortal_max `r .doc_param_dev_mortal()`
 #'
 #' @param func_ftmean,func_ftmax,func_atdiff Functions to caclulate the
 #' air temperature in forest stands (see \insertCite{Ogris2019;nobrackets}{barrks},
@@ -94,10 +94,13 @@ NULL
 #' the effective bark temperature (see \insertCite{Ogris2019;nobrackets}{barrks},
 #' equations 7 - 9).
 #'
+#' @param model_end_date Date when the model ends (no further development will
+#' be modeled).
+#'
 #' @param daylength_dia When the daylength falls below this threshold, diapause
 #' will be initiated.
 #'
-#' @param model_end_date Date when the model ends and all white stages (egg, larva, pupa) die.
+#' @param mortality_date Date when all white stages (egg, larva, pupa) die.
 #'
 #' @references
 #' \insertAllCited{}
@@ -242,7 +245,8 @@ rity_calc_teff <- function(.params,
                gamma = 1.24657367,
 
                daylength_dia = 14.5,
-               model_end_date = '10-31'
+               model_end_date = '10-31',
+               mortality_date = '10-31'
              ),
 
                   onset = model('phenips')$onset,

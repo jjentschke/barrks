@@ -38,9 +38,17 @@ NULL
 #'       tlow = 8.3,
 #'       tup = 38.9,
 #'
-#'       func_btmean = function(tmean, rad) { -0.173 + 0.0008518 * rad + 1.054 * tmean},
-#'       func_btmax = function(tmax, rad) { 1.656 + 0.002955 * rad + 0.534 * tmax + 0.01884 * tmax ^ 2 },
-#'       func_btdiff = function(btmax) { (-310.667 + 9.603 * btmax) / 24 },
+#'       func_btmean = function(tmean, rad) {
+#'         -0.173 + 0.0008518 * rad + 1.054 * tmean
+#'       },
+#'       func_btmax = function(tmax, rad) {
+#'         1.656 + 0.002955 * rad + 0.534 * tmax + 0.01884 * tmax ^ 2
+#'       },
+#'       func_btdiff = function(btmax) {
+#'         (-310.667 + 9.603 * btmax) / 24
+#'       },
+#'
+#'       model_end_date = '10-31',
 #'
 #'       # ==== diapause ====
 #'
@@ -48,7 +56,7 @@ NULL
 #'
 #'       # ==== mortality ====
 #'
-#'       model_end_date = '10-31'
+#'       mortality_date = '10-31'
 #' )
 #' ```
 #'
@@ -66,9 +74,7 @@ NULL
 #' @param dev_start,dev_end `r .doc_dev_start_end()`
 #' @param dev_sister_brood Share in the total development when a sister brood
 #' will be established.
-#' @param dev_mortal_min,dev_mortal_max Minimum/maximum share in the total
-#' development of white stages (egg, larva, pupa). During these stages, the
-#' beetles could die caused by a mortality event.
+#' @param dev_mortal_min,dev_mortal_max `r .doc_param_dev_mortal()`
 #'
 #' @param topt Temperature for optimal development.
 #' @param tlow,tup Temperature below/above which no development happens.
@@ -81,11 +87,14 @@ NULL
 #' - `rad`: radiation
 #' - `btmax`: maximum bark temperature
 #'
+#' @param model_end_date Date when the model ends (no further development will
+#' be modeled).
+#'
 #'
 #' @param daylength_dia When the daylength falls below this threshold, diapause
 #' will be initiated.
 #'
-#' @param model_end_date Date when the model ends and all white stages (egg, larva, pupa) die.
+#' @param mortality_date Date when all white stages (egg, larva, pupa) die.
 #'
 #' @references
 #' \insertAllCited{}
@@ -271,7 +280,7 @@ phenips_calc_mortality <- function(.params,
 
   rst <- rsts[[which(keys)[1]]]
 
-  return(.fixed_day_mortality(rst, .params$model_end_date))
+  return(.fixed_day_mortality(rst, .params$mortality_date))
 }
 
 
@@ -339,11 +348,7 @@ phenips_develop_generation <- function(.params,
       dev <- terra::ifel((!new_period) & trigger_kill, NA, dev)
       dev <- dev + cumsum(new_period * teff / .params$dd_total_dev)
 
-      kill <- terra::app(c(lyr, kill), \(x) {
-        if(is.na(x[[1]])) return(rep(NA, length(x) - 1))
-        x[x[[1]] + 1] <- FALSE
-        return(x[2:length(x)])
-      })
+      kill <- kill & .trigger_rst(c(0 * kill[[1]], kill)[[1:terra::nlyr(kill)]])
     }
   }
 
@@ -472,7 +477,8 @@ phenips_calc_development <- function(.params,
                  tup = 38.9,
 
                  daylength_dia = 14.5,
-                 model_end_date = '10-31'
+                 model_end_date = '10-31',
+                 mortality_date = '10-31'
                ),
 
                onset = list(

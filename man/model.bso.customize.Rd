@@ -28,12 +28,13 @@ transition probabilities for the preflight stage.}
 \item{num_slots}{Named vector that defines the number of slots for each stage.
 The development stage is subdivided into the stages \code{egg}, \code{larva} and \code{pupa}.}
 
-\item{model_end_date}{Date when the model ends.}
-
 \item{psis}{Probability that a sister brood will be established.}
 
 \item{slot_sis}{Maturation feeding slot where the individuals start regeneration feeding before
 they establish a sister brood.}
+
+\item{model_end_date}{Date when the model ends (no further development will
+be modeled).}
 
 \item{diapause_first}{The day of year when the diapause could start at the
 earliest.}
@@ -87,10 +88,10 @@ model("bso",
 
       # ==== development ====
 
-      model_end_date = '12-30',
-
       psis = 2.994450e-01,
       slot_sis = 4,
+
+      model_end_date = '12-30',
 
       # ==== diapause ====
 

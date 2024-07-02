@@ -27,9 +27,11 @@ below/above these thresholds should account for mating, oviposition etc.}
 \item{dev_sister_brood}{Share in the total development when a sister brood
 will be established.}
 
-\item{dev_mortal_min, dev_mortal_max}{Minimum/maximum share in the total
-development of white stages (egg, larva, pupa). During these stages, the
-beetles could die caused by a mortality event.}
+\item{dev_mortal_min, dev_mortal_max}{The beetles are considered to be in
+white stages (egg, larva, pupa) if their development exceeds \code{dev_mortal_min}
+and subceeds \code{dev_mortal_max}. During these stages, the beetles could die
+caused by a mortality event. \code{NULL} means that no lower/upper threshold is
+defined.}
 
 \item{topt}{Temperature for optimal development.}
 
@@ -45,10 +47,13 @@ equations A.3 to A5). Each parameter will be passed as SpatRaster:
 \item \code{btmax}: maximum bark temperature
 }}
 
+\item{model_end_date}{Date when the model ends (no further development will
+be modeled).}
+
 \item{daylength_dia}{When the daylength falls below this threshold, diapause
 will be initiated.}
 
-\item{model_end_date}{Date when the model ends and all white stages (egg, larva, pupa) die.}
+\item{mortality_date}{Date when all white stages (egg, larva, pupa) die.}
 }
 \description{
 This page describes the parameters
@@ -88,9 +93,17 @@ model("phenips",
       tlow = 8.3,
       tup = 38.9,
 
-      func_btmean = function(tmean, rad) \{ -0.173 + 0.0008518 * rad + 1.054 * tmean\},
-      func_btmax = function(tmax, rad) \{ 1.656 + 0.002955 * rad + 0.534 * tmax + 0.01884 * tmax ^ 2 \},
-      func_btdiff = function(btmax) \{ (-310.667 + 9.603 * btmax) / 24 \},
+      func_btmean = function(tmean, rad) \{
+        -0.173 + 0.0008518 * rad + 1.054 * tmean
+      \},
+      func_btmax = function(tmax, rad) \{
+        1.656 + 0.002955 * rad + 0.534 * tmax + 0.01884 * tmax ^ 2
+      \},
+      func_btdiff = function(btmax) \{
+        (-310.667 + 9.603 * btmax) / 24
+      \},
+
+      model_end_date = '10-31',
 
       # ==== diapause ====
 
@@ -98,7 +111,7 @@ model("phenips",
 
       # ==== mortality ====
 
-      model_end_date = '10-31'
+      mortality_date = '10-31'
 )
 }\if{html}{\out{</div>}}
 }
