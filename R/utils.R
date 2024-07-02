@@ -140,24 +140,7 @@ env_barrks <- new.env(parent = emptyenv())
 
 .trigger_rst <- function(rst) {
 
-  inf <- terra::nlyr(rst) + 1
-
-  # terra::app is working different for one layer?!
-  pos <- terra::app(c(rst, as.logical(rst[[1]] * 0)), function (x) {
-    if(all(is.na(x))) return(NA)
-
-    y <- match(TRUE, x)
-    if(is.na(y)) return(Inf)
-    return(y)
-  })
-
-  out <- terra::rast(
-    purrr::map(1:terra::nlyr(rst), function(i) { pos <= i })
-  )
-
-  terra::time(out) <- terra::time(rst)
-
-  return(out)
+  return(cumsum(rst) > 0)
 }
 
 
