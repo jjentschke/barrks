@@ -1,7 +1,7 @@
 Package: barrks
 Type: Package
 Title: Calculate Bark Beetle Phenology Using Different Models
-Version: 0.9.0.5
+Version: 0.9.0.6
 Description: Calculate the bark beetle phenology based on raster data or
     point-related data. There are models implemented for the bark beetle species
     Ips typographus and Pityogenes chalcographus. The models can be customized
