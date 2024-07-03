@@ -13,6 +13,7 @@ reference:
     - bso_translate_phenology
     - save_phenology
     - load_phenology
+    - stations
   - title: Plots
     contents:
     - starts_with('plot_')
@@ -26,16 +27,14 @@ reference:
   - title: Create data
     contents:
     - starts_with('create_')
-  - title: Stations handling
-    contents:
-    - starts_with('stations_')
   - title: Data
     contents:
     - barrks_data
     - barrks_colors
     - barrks_labels
-    - phenips_clim_get_dev_rates
   - title: internal
     contents:
     - starts_with('model.')
     - starts_with('analyse.')
+figures:
+  fig.height: 6
