@@ -198,7 +198,7 @@ NULL
 #' path <- file.path(tempdir(), 'pheno')
 #'
 #' # save phenology
-#' save_phenology(p, path)
+#' save_phenology(p, path, .overwrite = TRUE, .quiet = TRUE)
 #'
 #'
 #' ###

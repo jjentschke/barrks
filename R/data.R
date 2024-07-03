@@ -27,6 +27,7 @@
 #' `dataset = 'raster'`) or a data frame.
 #'
 #' @examples
+#' \donttest{
 #' # plot first layer of the minimum temperature of the sample raster data
 #' terra::plot(barrks_data()$tmin[[1]])
 #'
@@ -35,6 +36,7 @@
 #'
 #' # print the coordinates of the sample stations
 #' barrks_data('station_coords')
+#' }
 #' @export
 
 barrks_data <- function(dataset = 'raster') {

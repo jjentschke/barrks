@@ -41,7 +41,7 @@ The package \code{suncalc} is required to use this function.
 \dontshow{if (rlang::is_installed("suncalc")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 \donttest{
 # calculate suntimes, use barrks_data()$tmin as template
-st <- create_suntimes_rsts(barrks_data()[[1]])
+st <- create_suntimes_rsts(barrks_data()[[1]], .quiet = TRUE)
 
 # plot results on May 1st, 2015
 terra::plot(st$sunrise[[terra::time(st$sunrise) == '2015-05-01']])

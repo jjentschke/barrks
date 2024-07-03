@@ -55,6 +55,6 @@ Get the number of individuals of a generation that are in a specific development
 p <- bso_phenology('bso', barrks_data('stations'), .quiet = TRUE)
 
 # get the number of individuals of the hibernating generation that are waiting to fly
-bso_get_individuals_df(p, 0, stage = 'preflight')
+bso_get_individuals_df(p, 0, 'Freiburg', stage = 'preflight')
 }
 }

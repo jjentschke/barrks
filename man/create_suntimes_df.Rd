@@ -33,7 +33,8 @@ date_start <- as.Date('2020-01-01')
 date_end <- as.Date('2020-12-31')
 
 st <- create_suntimes_df(barrks_data('station_coords'),
-                         seq(date_start, date_end, by = 'day'))
+                         seq(date_start, date_end, by = 'day'),
+                         .quiet = TRUE)
 
 # print results of station 'Freiburg'
 head(st[st$station == 'Freiburg',], 10)

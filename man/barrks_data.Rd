@@ -37,6 +37,7 @@ The data was taken from Deutscher Wetterdienst (DWD).
 }
 }
 \examples{
+\donttest{
 # plot first layer of the minimum temperature of the sample raster data
 terra::plot(barrks_data()$tmin[[1]])
 
@@ -45,4 +46,5 @@ head(barrks_data('stations'), 10)
 
 # print the coordinates of the sample stations
 barrks_data('station_coords')
+}
 }

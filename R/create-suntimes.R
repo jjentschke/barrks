@@ -23,7 +23,7 @@
 #' @examplesIf rlang::is_installed("suncalc")
 #' \donttest{
 #' # calculate suntimes, use barrks_data()$tmin as template
-#' st <- create_suntimes_rsts(barrks_data()[[1]])
+#' st <- create_suntimes_rsts(barrks_data()[[1]], .quiet = TRUE)
 #'
 #' # plot results on May 1st, 2015
 #' terra::plot(st$sunrise[[terra::time(st$sunrise) == '2015-05-01']])
@@ -100,7 +100,8 @@ create_suntimes_rsts <- function(template,
 #' date_end <- as.Date('2020-12-31')
 #'
 #' st <- create_suntimes_df(barrks_data('station_coords'),
-#'                          seq(date_start, date_end, by = 'day'))
+#'                          seq(date_start, date_end, by = 'day'),
+#'                          .quiet = TRUE)
 #'
 #' # print results of station 'Freiburg'
 #' head(st[st$station == 'Freiburg',], 10)

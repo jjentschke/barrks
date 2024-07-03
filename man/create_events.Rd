@@ -70,21 +70,18 @@ with observed or arbitrary inputs.
 \examples{
 \donttest{
 # load sample data
-d <- barrks_data()
-# use d$tmin as template
-tmp <- d$tmin
+d <- barrks_data('stations')
 
 # create onset, diapause, mortality
-on <- create_onset(tmp, lubridate::yday('2015-04-15'))
-dia <- create_diapause(tmp, lubridate::yday('2015-08-15'))
-mort <- create_mortality(tmp, lubridate::yday('2015-11-15'))
+on <- create_onset(d, lubridate::yday('2015-04-15'))
+dia <- create_diapause(d, lubridate::yday('2015-08-15'))
+mort <- create_mortality(d, lubridate::yday('2015-11-15'))
 
 # claculate phenologe
 p <- phenology('phenips-clim', d, .quiet = TRUE,
                .onset = on, .diapause = dia, .mortality = mort)
 
-# plot generations
-gens <- get_generations_rst(p)
-terra::plot(gens)
+# plot development
+plot_development_diagram(p, .lwd = 4)
 }
 }

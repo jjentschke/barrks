@@ -31,7 +31,7 @@
 #' p <- bso_phenology('bso', barrks_data('stations'), .quiet = TRUE)
 #'
 #' # get the number of individuals of the hibernating generation that are waiting to fly
-#' bso_get_individuals_df(p, 0, stage = 'preflight')
+#' bso_get_individuals_df(p, 0, 'Freiburg', stage = 'preflight')
 #' }
 #' @name bso_get_individuals
 NULL
@@ -121,7 +121,7 @@ bso_get_individuals_df <- function(pheno,
 #' p <- bso_phenology('bso', barrks_data('stations'), .quiet = TRUE)
 #'
 #' # get the number of individuals of the hibernating generation on their first flight
-#' bso_get_flight_df(p, 0, flight = 1)
+#' bso_get_flight_df(p, 0, 'Freiburg', flight = 1)
 #' }
 #' @name bso_get_flight
 NULL
@@ -153,6 +153,8 @@ bso_get_flight_df <- function(pheno,
                               stations = prop_stations(pheno),
                               flight = 1,
                               dates = prop_dates(pheno)) {
+
+  if(is.character(stations)) stations <- prop_stations(pheno)[stations]
 
   rst <- bso_get_flight_rst(pheno, generation, flight, dates)
 

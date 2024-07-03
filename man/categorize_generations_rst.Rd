@@ -41,9 +41,9 @@ gens_max <- max(gens1, gens2)
 # categorize the results
 gens_max_cat <- categorize_generations_rst(gens_max)
 
-# plot the uncategorized raster
-terra::plot(gens_max)
 # plot the categorized raster
 terra::plot(gens_max_cat)
+# plot the uncategorized raster
+terra::plot(gens_max)
 }
 }

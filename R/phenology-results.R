@@ -32,10 +32,10 @@
 #' # categorize the results
 #' gens_max_cat <- categorize_generations_rst(gens_max)
 #'
-#' # plot the uncategorized raster
-#' terra::plot(gens_max)
 #' # plot the categorized raster
 #' terra::plot(gens_max_cat)
+#' # plot the uncategorized raster
+#' terra::plot(gens_max)
 #' }
 #' @export
 
@@ -235,9 +235,10 @@ get_hibernating_generations_df <- function(pheno,
 #' # calculate station-based phenology
 #' p <- phenology('phenips-clim', barrks_data('stations'), .quiet = TRUE)
 #'
-#' # print the first rows of the development data frame
-#' df <- get_development_df(p)
-#' head(df, 10)
+#' # print the last rows of the development data frame for Freiburg
+#' df <- get_development_df(p, 'Freiburg')
+#' df[,4:ncol(df)] <- round(df[,4:ncol(df)], 3) # round results
+#' tail(df, 10)
 #' }
 #' @name get_development
 NULL

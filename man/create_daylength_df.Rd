@@ -30,7 +30,8 @@ date_end <- as.Date('2020-12-31')
 
 # calculate day length
 dl <- create_daylength_df(barrks_data('station_coords'),
-                          seq(date_start, date_end, by = 'day'))
+                          seq(date_start, date_end, by = 'day'),
+                          .quiet = TRUE)
 
 # print day lengths of station 'Freiburg'
 head(dl[dl$station == 'Freiburg',], 10)

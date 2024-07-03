@@ -35,7 +35,7 @@ The package \code{geosphere} is required to use this function.
 \dontshow{if (rlang::is_installed("geosphere")) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
 \donttest{
 # calculate day length, use barrks_data()$tmin as template
-dl <- create_daylength_rst(barrks_data()$tmin)
+dl <- create_daylength_rst(barrks_data()$tmin, .quiet = TRUE)
 
 # plot day length on May 1st, 2015
 terra::plot(dl[[terra::time(dl) == '2015-05-01']])

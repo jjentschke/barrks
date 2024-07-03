@@ -32,7 +32,8 @@ returned by \code{\link[=phenology]{phenology()}}, the BSO generated phenology s
 p <- bso_phenology('bso', barrks_data('stations'), .quiet = TRUE)
 pt <- bso_translate_phenology(p, .quiet = TRUE)
 
-# get the resulting generations
-get_generations_df(pt)
+# print the last rows of the generations data frame for Freiburg
+df <- get_generations_df(pt, 'Freiburg')
+tail(df, 10)
 }
 }

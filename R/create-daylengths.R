@@ -18,7 +18,7 @@
 #' @examplesIf rlang::is_installed("geosphere")
 #' \donttest{
 #' # calculate day length, use barrks_data()$tmin as template
-#' dl <- create_daylength_rst(barrks_data()$tmin)
+#' dl <- create_daylength_rst(barrks_data()$tmin, .quiet = TRUE)
 #'
 #' # plot day length on May 1st, 2015
 #' terra::plot(dl[[terra::time(dl) == '2015-05-01']])
@@ -81,7 +81,8 @@ create_daylength_rst <- function(template,
 #'
 #' # calculate day length
 #' dl <- create_daylength_df(barrks_data('station_coords'),
-#'                           seq(date_start, date_end, by = 'day'))
+#'                           seq(date_start, date_end, by = 'day'),
+#'                           .quiet = TRUE)
 #'
 #' # print day lengths of station 'Freiburg'
 #' head(dl[dl$station == 'Freiburg',], 10)

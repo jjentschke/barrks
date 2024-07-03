@@ -46,6 +46,6 @@ Get the number of individuals that are flying.
 p <- bso_phenology('bso', barrks_data('stations'), .quiet = TRUE)
 
 # get the number of individuals of the hibernating generation on their first flight
-bso_get_flight_df(p, 0, flight = 1)
+bso_get_flight_df(p, 0, 'Freiburg', flight = 1)
 }
 }

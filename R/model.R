@@ -31,7 +31,7 @@ env_barrks$models <- list()
 #' m <- model('phenips-clim', tfly = 16)
 #'
 #' # calculate phenology
-#' phenology(m, barrks_data(), .quiet = TRUE)
+#' p <- phenology(m, barrks_data(), .quiet = TRUE)
 #'
 #' # plot generations
 #' gens <- get_generations_rst(p)
