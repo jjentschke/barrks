@@ -12,7 +12,7 @@ threshold)."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
     
     <a class="navbar-brand me-2" href="../index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.6</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,10 +33,19 @@ threshold)."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
     <a class="dropdown-item" href="../articles/storage.html">Use a storage</a>
   </div>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
-      <ul class="navbar-nav"></ul></div>
+      <ul class="navbar-nav"><li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/jjentschke/barrks/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul></div>
 
     
   </div>
@@ -44,7 +53,7 @@ threshold)."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Get generations</h1>
-      
+      <small class="dont-index">Source: <a href="https://github.com/jjentschke/barrks/blob/HEAD/R/phenology-results.R" class="external-link"><code>R/phenology-results.R</code></a></small>
       <div class="d-none name"><code>get_generations.Rd</code></div>
     </div>
 
@@ -69,7 +78,8 @@ threshold).</p>
 <span>  <span class="va">pheno</span>,</span>
 <span>  stations <span class="op">=</span> <span class="fu"><a href="properties.html">prop_stations</a></span><span class="op">(</span><span class="va">pheno</span><span class="op">)</span>,</span>
 <span>  dates <span class="op">=</span> <span class="fu"><a href="properties.html">prop_dates</a></span><span class="op">(</span><span class="va">pheno</span><span class="op">)</span>,</span>
-<span>  threshold <span class="op">=</span> <span class="fl">0</span></span>
+<span>  threshold <span class="op">=</span> <span class="fl">0</span>,</span>
+<span>  generations <span class="op">=</span> <span class="fu"><a href="properties.html">prop_hatched_generations</a></span><span class="op">(</span><span class="va">pheno</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>
 <span></span>
 <span><span class="fu">get_hibernating_generations_rst</span><span class="op">(</span></span>
@@ -113,26 +123,42 @@ consecutively by elements for the respective generations (including sister brood
 
 <dt>stations</dt>
 <dd><p>Pass a character vector to choose stations assigned to <code>pheno</code> by
-their names, or pass different stations. See <code><a href="stations_create.html">stations_create()</a></code> for details.</p></dd>
+their names, or pass different stations. See <code><a href="stations.html">stations_create()</a></code> for details.</p></dd>
 
 </dl></div>
     <div class="section level2">
-    <h2 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a></h2>
+    <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
-<ul><li><p><code>get_generations_rst()</code>: Returns a multi-layer SpatRaster of generations.</p></li>
-<li><p><code>get_generations_df()</code>: Returns a data frame of generations.</p></li>
-<li><p><code>get_hibernating_generations_rst()</code>: Returns a SpatRaster of the generations that are
-able to hibernate (only available if the model's end date has been reached).</p></li>
-<li><p><code>get_hibernating_generations_df()</code>: Returns a data frame of the generations that are
-able to hibernate (only available if the model's end date has been reached).</p></li>
+
+<ul><li><p><code>get_generations_rst()</code>: A multi-layer SpatRaster.</p></li>
+<li><p><code>get_hibernating_generations_rst()</code>: A SpatRaster. Only available
+if the model's end date has been reached. Otherwise all values will be <code>NA</code>.</p></li>
+<li><p><code>get_generations_df()</code>: A data frame.</p></li>
+<li><p><code>get_hibernating_generations_df()</code>: A data frame. Only available if the
+model's end date has been reached. Otherwise all values will be <code>NA</code>.</p></li>
 </ul></div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="co"># calculate phenology</span></span></span>
+<span class="r-in"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="phenology.html">phenology</a></span><span class="op">(</span><span class="st">'phenips-clim'</span>, <span class="fu"><a href="barrks_data.html">barrks_data</a></span><span class="op">(</span><span class="op">)</span>, .quiet <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># get the generations raster</span></span></span>
+<span class="r-in"><span><span class="va">gens</span> <span class="op">&lt;-</span> <span class="fu">get_generations_rst</span><span class="op">(</span><span class="va">p</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># plot the generations raster</span></span></span>
+<span class="r-in"><span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">gens</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="get_generations-1.png" alt="" width="700" height="576"></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Jakob Jentschke.</p>
+  <p>Developed by Jakob Jentschke, FVA BW, Abt. Waldschutz.</p>
 </div>
 
 <div class="pkgdown-footer-right">

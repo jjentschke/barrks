@@ -14,7 +14,7 @@ The package suncalc is required to use this function."><!-- mathjax --><script s
     
     <a class="navbar-brand me-2" href="../index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.6</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -35,10 +35,19 @@ The package suncalc is required to use this function."><!-- mathjax --><script s
     <a class="dropdown-item" href="../articles/storage.html">Use a storage</a>
   </div>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
-      <ul class="navbar-nav"></ul></div>
+      <ul class="navbar-nav"><li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/jjentschke/barrks/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul></div>
 
     
   </div>
@@ -46,14 +55,14 @@ The package suncalc is required to use this function."><!-- mathjax --><script s
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Create a data frame of sunrises and sunsets</h1>
-      
+      <small class="dont-index">Source: <a href="https://github.com/jjentschke/barrks/blob/HEAD/R/create-suntimes.R" class="external-link"><code>R/create-suntimes.R</code></a></small>
       <div class="d-none name"><code>create_suntimes_df.Rd</code></div>
     </div>
 
     <div class="ref-description section level2">
     <p>Generate a data frame that specifies sunrises and sunsets for different
 coordinates and dates.
-The package suncalc is required to use this function.</p>
+The package <code>suncalc</code> is required to use this function.</p>
     </div>
 
     <div class="section level2">
@@ -93,12 +102,279 @@ minutes.</p>
     <div class="dont-index"><p><code><a href="create_suntimes_rsts.html">create_suntimes_rsts()</a></code></p></div>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="va">date_start</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">'2020-01-01'</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">date_end</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="st">'2020-12-31'</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="va">st</span> <span class="op">&lt;-</span> <span class="fu">create_suntimes_df</span><span class="op">(</span><span class="fu"><a href="barrks_data.html">barrks_data</a></span><span class="op">(</span><span class="st">'station_coords'</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>                         <span class="fu"><a href="https://rdrr.io/r/base/seq.html" class="external-link">seq</a></span><span class="op">(</span><span class="va">date_start</span>, <span class="va">date_end</span>, by <span class="op">=</span> <span class="st">'day'</span><span class="op">)</span>,</span></span>
+<span class="r-in"><span>                         .quiet <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># print results of station 'Freiburg'</span></span></span>
+<span class="r-in"><span><span class="va">st</span><span class="op">[</span><span class="va">st</span><span class="op">$</span><span class="va">station</span> <span class="op">==</span> <span class="st">'Freiburg'</span>,<span class="op">]</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>           date  station sunrise sunset</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   2020-01-01 Freiburg     499   1006</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   2020-01-02 Freiburg     499   1007</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9   2020-01-03 Freiburg     499   1008</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13  2020-01-04 Freiburg     499   1009</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17  2020-01-05 Freiburg     499   1010</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21  2020-01-06 Freiburg     499   1011</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25  2020-01-07 Freiburg     499   1012</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29  2020-01-08 Freiburg     498   1013</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33  2020-01-09 Freiburg     498   1014</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37  2020-01-10 Freiburg     498   1015</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41  2020-01-11 Freiburg     497   1017</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45  2020-01-12 Freiburg     497   1018</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49  2020-01-13 Freiburg     496   1019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53  2020-01-14 Freiburg     495   1021</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57  2020-01-15 Freiburg     495   1022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61  2020-01-16 Freiburg     494   1023</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65  2020-01-17 Freiburg     494   1025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69  2020-01-18 Freiburg     493   1026</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73  2020-01-19 Freiburg     492   1028</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77  2020-01-20 Freiburg     491   1029</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81  2020-01-21 Freiburg     490   1031</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85  2020-01-22 Freiburg     489   1032</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 89  2020-01-23 Freiburg     488   1034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 93  2020-01-24 Freiburg     487   1035</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 97  2020-01-25 Freiburg     486   1037</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 101 2020-01-26 Freiburg     485   1038</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 105 2020-01-27 Freiburg     484   1040</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 109 2020-01-28 Freiburg     483   1041</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 113 2020-01-29 Freiburg     482   1043</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 117 2020-01-30 Freiburg     481   1044</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 121 2020-01-31 Freiburg     480   1046</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 125 2020-02-01 Freiburg     478   1048</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 129 2020-02-02 Freiburg     477   1049</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 133 2020-02-03 Freiburg     476   1051</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 137 2020-02-04 Freiburg     474   1052</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 141 2020-02-05 Freiburg     473   1054</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 145 2020-02-06 Freiburg     471   1056</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 149 2020-02-07 Freiburg     470   1057</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 153 2020-02-08 Freiburg     468   1059</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 157 2020-02-09 Freiburg     467   1060</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 161 2020-02-10 Freiburg     465   1062</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 165 2020-02-11 Freiburg     464   1064</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 169 2020-02-12 Freiburg     462   1065</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 173 2020-02-13 Freiburg     461   1067</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 177 2020-02-14 Freiburg     459   1068</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 181 2020-02-15 Freiburg     457   1070</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 185 2020-02-16 Freiburg     456   1072</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 189 2020-02-17 Freiburg     454   1073</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 193 2020-02-18 Freiburg     452   1075</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 197 2020-02-19 Freiburg     451   1076</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 201 2020-02-20 Freiburg     449   1078</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 205 2020-02-21 Freiburg     447   1080</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 209 2020-02-22 Freiburg     445   1081</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 213 2020-02-23 Freiburg     443   1083</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 217 2020-02-24 Freiburg     442   1084</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 221 2020-02-25 Freiburg     440   1086</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 225 2020-02-26 Freiburg     438   1087</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 229 2020-02-27 Freiburg     436   1089</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 233 2020-02-28 Freiburg     434   1091</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 237 2020-02-29 Freiburg     432   1092</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 241 2020-03-01 Freiburg     430   1094</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 245 2020-03-02 Freiburg     428   1095</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 249 2020-03-03 Freiburg     426   1097</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 253 2020-03-04 Freiburg     424   1098</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 257 2020-03-05 Freiburg     422   1100</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 261 2020-03-06 Freiburg     420   1101</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 265 2020-03-07 Freiburg     418   1103</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 269 2020-03-08 Freiburg     416   1104</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 273 2020-03-09 Freiburg     414   1106</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 277 2020-03-10 Freiburg     412   1107</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 281 2020-03-11 Freiburg     410   1109</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 285 2020-03-12 Freiburg     408   1110</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 289 2020-03-13 Freiburg     406   1112</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 293 2020-03-14 Freiburg     404   1113</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 297 2020-03-15 Freiburg     402   1115</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 301 2020-03-16 Freiburg     400   1116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 305 2020-03-17 Freiburg     398   1117</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 309 2020-03-18 Freiburg     396   1119</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 313 2020-03-19 Freiburg     394   1120</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 317 2020-03-20 Freiburg     392   1122</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 321 2020-03-21 Freiburg     390   1123</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 325 2020-03-22 Freiburg     388   1125</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 329 2020-03-23 Freiburg     386   1126</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 333 2020-03-24 Freiburg     384   1128</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 337 2020-03-25 Freiburg     382   1129</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 341 2020-03-26 Freiburg     379   1130</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 345 2020-03-27 Freiburg     377   1132</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 349 2020-03-28 Freiburg     375   1133</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 353 2020-03-29 Freiburg     433   1195</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 357 2020-03-30 Freiburg     431   1196</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 361 2020-03-31 Freiburg     429   1198</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 365 2020-04-01 Freiburg     427   1199</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 369 2020-04-02 Freiburg     425   1200</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 373 2020-04-03 Freiburg     423   1202</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 377 2020-04-04 Freiburg     421   1203</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 381 2020-04-05 Freiburg     419   1205</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 385 2020-04-06 Freiburg     417   1206</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 389 2020-04-07 Freiburg     415   1208</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 393 2020-04-08 Freiburg     413   1209</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 397 2020-04-09 Freiburg     411   1211</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 401 2020-04-10 Freiburg     409   1212</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 405 2020-04-11 Freiburg     407   1213</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 409 2020-04-12 Freiburg     405   1215</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 413 2020-04-13 Freiburg     403   1216</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 417 2020-04-14 Freiburg     401   1218</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 421 2020-04-15 Freiburg     399   1219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 425 2020-04-16 Freiburg     397   1221</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 429 2020-04-17 Freiburg     395   1222</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 433 2020-04-18 Freiburg     394   1223</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 437 2020-04-19 Freiburg     392   1225</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 441 2020-04-20 Freiburg     390   1226</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 445 2020-04-21 Freiburg     388   1228</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 449 2020-04-22 Freiburg     386   1229</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 453 2020-04-23 Freiburg     384   1231</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 457 2020-04-24 Freiburg     383   1232</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 461 2020-04-25 Freiburg     381   1234</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 465 2020-04-26 Freiburg     379   1235</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 469 2020-04-27 Freiburg     377   1236</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 473 2020-04-28 Freiburg     376   1238</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 477 2020-04-29 Freiburg     374   1239</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 481 2020-04-30 Freiburg     372   1241</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 485 2020-05-01 Freiburg     371   1242</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 489 2020-05-02 Freiburg     369   1244</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 493 2020-05-03 Freiburg     368   1245</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 497 2020-05-04 Freiburg     366   1246</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 501 2020-05-05 Freiburg     364   1248</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 505 2020-05-06 Freiburg     363   1249</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 509 2020-05-07 Freiburg     361   1251</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 513 2020-05-08 Freiburg     360   1252</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 517 2020-05-09 Freiburg     358   1253</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 521 2020-05-10 Freiburg     357   1255</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 525 2020-05-11 Freiburg     356   1256</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 529 2020-05-12 Freiburg     354   1257</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 533 2020-05-13 Freiburg     353   1259</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 537 2020-05-14 Freiburg     352   1260</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 541 2020-05-15 Freiburg     350   1261</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 545 2020-05-16 Freiburg     349   1263</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 549 2020-05-17 Freiburg     348   1264</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 553 2020-05-18 Freiburg     347   1265</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 557 2020-05-19 Freiburg     346   1267</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 561 2020-05-20 Freiburg     345   1268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 565 2020-05-21 Freiburg     343   1269</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 569 2020-05-22 Freiburg     342   1270</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 573 2020-05-23 Freiburg     341   1271</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 577 2020-05-24 Freiburg     340   1273</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 581 2020-05-25 Freiburg     340   1274</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 585 2020-05-26 Freiburg     339   1275</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 589 2020-05-27 Freiburg     338   1276</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 593 2020-05-28 Freiburg     337   1277</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 597 2020-05-29 Freiburg     336   1278</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 601 2020-05-30 Freiburg     335   1279</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 605 2020-05-31 Freiburg     335   1280</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 609 2020-06-01 Freiburg     334   1281</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 613 2020-06-02 Freiburg     333   1282</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 617 2020-06-03 Freiburg     333   1283</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 621 2020-06-04 Freiburg     332   1284</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 625 2020-06-05 Freiburg     332   1284</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 629 2020-06-06 Freiburg     331   1285</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 633 2020-06-07 Freiburg     331   1286</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 637 2020-06-08 Freiburg     331   1287</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 641 2020-06-09 Freiburg     330   1287</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 645 2020-06-10 Freiburg     330   1288</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 649 2020-06-11 Freiburg     330   1289</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 653 2020-06-12 Freiburg     330   1289</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 657 2020-06-13 Freiburg     329   1290</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 661 2020-06-14 Freiburg     329   1290</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 665 2020-06-15 Freiburg     329   1291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 669 2020-06-16 Freiburg     329   1291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 673 2020-06-17 Freiburg     329   1292</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 677 2020-06-18 Freiburg     329   1292</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 681 2020-06-19 Freiburg     329   1292</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 685 2020-06-20 Freiburg     330   1293</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 689 2020-06-21 Freiburg     330   1293</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 693 2020-06-22 Freiburg     330   1293</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 697 2020-06-23 Freiburg     330   1293</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 701 2020-06-24 Freiburg     331   1293</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 705 2020-06-25 Freiburg     331   1293</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 709 2020-06-26 Freiburg     331   1293</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 713 2020-06-27 Freiburg     332   1293</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 717 2020-06-28 Freiburg     332   1293</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 721 2020-06-29 Freiburg     333   1293</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 725 2020-06-30 Freiburg     333   1293</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 729 2020-07-01 Freiburg     334   1293</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 733 2020-07-02 Freiburg     335   1292</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 737 2020-07-03 Freiburg     335   1292</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 741 2020-07-04 Freiburg     336   1292</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 745 2020-07-05 Freiburg     337   1291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 749 2020-07-06 Freiburg     337   1291</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 753 2020-07-07 Freiburg     338   1290</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 757 2020-07-08 Freiburg     339   1290</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 761 2020-07-09 Freiburg     340   1289</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 765 2020-07-10 Freiburg     341   1289</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 769 2020-07-11 Freiburg     342   1288</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 773 2020-07-12 Freiburg     343   1287</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 777 2020-07-13 Freiburg     344   1286</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 781 2020-07-14 Freiburg     345   1286</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 785 2020-07-15 Freiburg     346   1285</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 789 2020-07-16 Freiburg     347   1284</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 793 2020-07-17 Freiburg     348   1283</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 797 2020-07-18 Freiburg     349   1282</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 801 2020-07-19 Freiburg     350   1281</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 805 2020-07-20 Freiburg     351   1280</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 809 2020-07-21 Freiburg     352   1279</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 813 2020-07-22 Freiburg     353   1278</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 817 2020-07-23 Freiburg     355   1277</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 821 2020-07-24 Freiburg     356   1276</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 825 2020-07-25 Freiburg     357   1275</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 829 2020-07-26 Freiburg     358   1274</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 833 2020-07-27 Freiburg     359   1272</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 837 2020-07-28 Freiburg     361   1271</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 841 2020-07-29 Freiburg     362   1270</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 845 2020-07-30 Freiburg     363   1268</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 849 2020-07-31 Freiburg     365   1267</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 853 2020-08-01 Freiburg     366   1266</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 857 2020-08-02 Freiburg     367   1264</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 861 2020-08-03 Freiburg     368   1263</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 865 2020-08-04 Freiburg     370   1261</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 869 2020-08-05 Freiburg     371   1260</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 873 2020-08-06 Freiburg     372   1258</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 877 2020-08-07 Freiburg     374   1257</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 881 2020-08-08 Freiburg     375   1255</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 885 2020-08-09 Freiburg     376   1253</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 889 2020-08-10 Freiburg     378   1252</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 893 2020-08-11 Freiburg     379   1250</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 897 2020-08-12 Freiburg     381   1249</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 901 2020-08-13 Freiburg     382   1247</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 905 2020-08-14 Freiburg     383   1245</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 909 2020-08-15 Freiburg     385   1243</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 913 2020-08-16 Freiburg     386   1242</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 917 2020-08-17 Freiburg     387   1240</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 921 2020-08-18 Freiburg     389   1238</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 925 2020-08-19 Freiburg     390   1236</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 929 2020-08-20 Freiburg     391   1234</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 933 2020-08-21 Freiburg     393   1233</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 937 2020-08-22 Freiburg     394   1231</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 941 2020-08-23 Freiburg     396   1229</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 945 2020-08-24 Freiburg     397   1227</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 949 2020-08-25 Freiburg     398   1225</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 953 2020-08-26 Freiburg     400   1223</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 957 2020-08-27 Freiburg     401   1221</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 961 2020-08-28 Freiburg     402   1219</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 965 2020-08-29 Freiburg     404   1217</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 969 2020-08-30 Freiburg     405   1215</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 973 2020-08-31 Freiburg     407   1213</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 977 2020-09-01 Freiburg     408   1211</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 981 2020-09-02 Freiburg     409   1209</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 985 2020-09-03 Freiburg     411   1207</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 989 2020-09-04 Freiburg     412   1205</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 993 2020-09-05 Freiburg     413   1203</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 997 2020-09-06 Freiburg     415   1201</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [ reached 'max' / getOption("max.print") -- omitted 116 rows ]</span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Jakob Jentschke.</p>
+  <p>Developed by Jakob Jentschke, FVA BW, Abt. Waldschutz.</p>
 </div>
 
 <div class="pkgdown-footer-right">

@@ -27,7 +27,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.6</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,12 +49,22 @@
     <a class="dropdown-item" href="../articles/storage.html">Use a storage</a>
   </div>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
 </form>
 
-      <ul class="navbar-nav"></ul>
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/jjentschke/barrks/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 
     
@@ -69,7 +79,7 @@
       <img src="" class="logo" alt=""><h1>Station data</h1>
             
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/jjentschke/barrks/blob/HEAD/vignettes/stations.Rmd" class="external-link"><code>vignettes/stations.Rmd</code></a></small>
       <div class="d-none name"><code>stations.Rmd</code></div>
     </div>
 
@@ -77,7 +87,7 @@
     
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">barrks</span><span class="op">)</span></span></code></pre></div>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://jjentschke.github.io/barrks/" class="external-link">barrks</a></span><span class="op">)</span></span></code></pre></div>
 <p>To calculate the phenology based on station data,
 <code><a href="../reference/phenology.html">phenology()</a></code> should be called with a data frame as input. It
 should have a <code>date</code> column whose values need to be
@@ -123,7 +133,7 @@ if the respective generation appears in all phenology objects.</p>
 <span>                         xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'2011-03-15'</span>, <span class="st">'2011-12-31'</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>                         .lty <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
 <div class="figure">
-<img src="figure/stations-diagram-1.png" alt="Development diagram with different variants of PHENIPS-Clim" width="100%"><p class="caption">
+<img src="figures/stations-diagram-1.png" alt="Development diagram with different variants of PHENIPS-Clim" width="100%"><p class="caption">
 Development diagram with different variants of PHENIPS-Clim
 </p>
 </div>
@@ -133,7 +143,7 @@ Development diagram with different variants of PHENIPS-Clim
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Jakob Jentschke.</p>
+  <p>Developed by Jakob Jentschke, FVA BW, Abt. Waldschutz.</p>
 </div>
 
 <div class="pkgdown-footer-right">

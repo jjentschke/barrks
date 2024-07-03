@@ -12,7 +12,7 @@ a bso_phenology() call."><!-- mathjax --><script src="https://cdnjs.cloudflare.c
     
     <a class="navbar-brand me-2" href="../index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.6</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,10 +33,19 @@ a bso_phenology() call."><!-- mathjax --><script src="https://cdnjs.cloudflare.c
     <a class="dropdown-item" href="../articles/storage.html">Use a storage</a>
   </div>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
-      <ul class="navbar-nav"></ul></div>
+      <ul class="navbar-nav"><li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/jjentschke/barrks/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul></div>
 
     
   </div>
@@ -44,13 +53,13 @@ a bso_phenology() call."><!-- mathjax --><script src="https://cdnjs.cloudflare.c
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Analyse a BSO generated phenology</h1>
-      
+      <small class="dont-index">Source: <a href="https://github.com/jjentschke/barrks/blob/HEAD/R/bso-phenology.R" class="external-link"><code>R/bso-phenology.R</code></a></small>
       <div class="d-none name"><code>analyse.phenology.bso.Rd</code></div>
     </div>
 
     <div class="ref-description section level2">
     <p>Here, all functions are listed that are available to analyse the results of
-a <code><a href="bso_phenology.html">bso_phenology()</a></code> call.</p>
+a <code><a href="phenology.html">bso_phenology()</a></code> call.</p>
     </div>
 
 
@@ -64,19 +73,24 @@ a <code><a href="bso_phenology.html">bso_phenology()</a></code> call.</p>
 <li><p><code><a href="properties.html">prop_sister_broods()</a></code></p></li>
 <li><p><code><a href="properties.html">prop_stations()</a></code></p></li>
 <li><p><code><a href="properties.html">prop_year()</a></code></p></li>
-</ul><p>Get BSO phenology results:</p><ul><li><p><code><a href="bso_get_flight.html">bso_get_flight_df()</a></code></p></li>
-<li><p><code><a href="bso_get_flight.html">bso_get_flight_rst()</a></code></p></li>
-<li><p><code><a href="bso_get_individuals.html">bso_get_individuals_df()</a></code></p></li>
+</ul><p>Get BSO phenology results (raster-based):</p><ul><li><p><code><a href="bso_get_flight.html">bso_get_flight_rst()</a></code></p></li>
 <li><p><code><a href="bso_get_individuals.html">bso_get_individuals_rst()</a></code></p></li>
-</ul><p>Plot BSO phenology results:</p><ul><li><p><code><a href="bso_plot_flight_diagram.html">bso_plot_flight_diagram()</a></code></p></li>
+</ul><p>Get BSO phenology results (station-based):</p><ul><li><p><code><a href="bso_get_flight.html">bso_get_flight_df()</a></code></p></li>
+<li><p><code><a href="bso_get_individuals.html">bso_get_individuals_df()</a></code></p></li>
+</ul><p>Plot BSO phenology results (station-based):</p><ul><li><p><code><a href="bso_plot_flight_diagram.html">bso_plot_flight_diagram()</a></code></p></li>
 <li><p><code><a href="bso_plot_stage_diagram.html">bso_plot_stage_diagram()</a></code></p></li>
 </ul></div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p><a href="analyse.phenology.html">analyse.phenology</a></p></div>
+    </div>
 
-  </main></div>
+  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+    </nav></aside></div>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Jakob Jentschke.</p>
+  <p>Developed by Jakob Jentschke, FVA BW, Abt. Waldschutz.</p>
 </div>
 
 <div class="pkgdown-footer-right">

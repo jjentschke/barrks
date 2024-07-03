@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.6</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,10 +31,19 @@
     <a class="dropdown-item" href="../articles/storage.html">Use a storage</a>
   </div>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
-      <ul class="navbar-nav"></ul></div>
+      <ul class="navbar-nav"><li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/jjentschke/barrks/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul></div>
 
     
   </div>
@@ -42,7 +51,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Combine different (sub-)models</h1>
-      
+      <small class="dont-index">Source: <a href="https://github.com/jjentschke/barrks/blob/HEAD/R/model-combine.R" class="external-link"><code>R/model-combine.R</code></a></small>
       <div class="d-none name"><code>model_combine.Rd</code></div>
     </div>
 
@@ -66,6 +75,12 @@ overwrites all others.</p></dd>
 
 </dl></div>
     <div class="section level2">
+    <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
+    
+
+<p>A phenology model. Can be passed to <code><a href="phenology.html">phenology()</a></code>.</p>
+    </div>
+    <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index">
 <ul><li><p><code><a href="model.html">model()</a></code>, <code><a href="phenology.html">phenology()</a></code></p></li>
@@ -74,12 +89,31 @@ overwrites all others.</p></dd>
 </ul></div>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="co"># combine PHENIPS with the diapause submodel of PHENIPS-Clim</span></span></span>
+<span class="r-in"><span><span class="va">m</span> <span class="op">&lt;-</span> <span class="fu">model_combine</span><span class="op">(</span><span class="st">'phenips'</span>,</span></span>
+<span class="r-in"><span>                   <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>model <span class="op">=</span> <span class="st">'phenips-clim'</span>, submodels <span class="op">=</span> <span class="st">'diapause'</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># calculate phenology</span></span></span>
+<span class="r-in"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="phenology.html">phenology</a></span><span class="op">(</span><span class="va">m</span>, <span class="fu"><a href="barrks_data.html">barrks_data</a></span><span class="op">(</span><span class="op">)</span>, .quiet <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># plot calculated generations</span></span></span>
+<span class="r-in"><span><span class="va">gens</span> <span class="op">&lt;-</span> <span class="fu"><a href="get_generations.html">get_generations_rst</a></span><span class="op">(</span><span class="va">p</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">gens</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="model_combine-1.png" alt="" width="700" height="576"></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span></span></span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Jakob Jentschke.</p>
+  <p>Developed by Jakob Jentschke, FVA BW, Abt. Waldschutz.</p>
 </div>
 
 <div class="pkgdown-footer-right">

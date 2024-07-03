@@ -31,10 +31,16 @@
     <loc>/LICENSE.html</loc>
   </url>
   <url>
+    <loc>/news/index.html</loc>
+  </url>
+  <url>
     <loc>/reference/analyse.phenology.bso.html</loc>
   </url>
   <url>
     <loc>/reference/analyse.phenology.html</loc>
+  </url>
+  <url>
+    <loc>/reference/barrks-package.html</loc>
   </url>
   <url>
     <loc>/reference/barrks_colors.html</loc>
@@ -50,9 +56,6 @@
   </url>
   <url>
     <loc>/reference/bso_get_individuals.html</loc>
-  </url>
-  <url>
-    <loc>/reference/bso_phenology.html</loc>
   </url>
   <url>
     <loc>/reference/bso_plot_flight_diagram.html</loc>
@@ -98,9 +101,6 @@
   </url>
   <url>
     <loc>/reference/list_models.html</loc>
-  </url>
-  <url>
-    <loc>/reference/load_phenology.html</loc>
   </url>
   <url>
     <loc>/reference/model.bso.apply.html</loc>
@@ -154,9 +154,6 @@
     <loc>/reference/params.html</loc>
   </url>
   <url>
-    <loc>/reference/phenips_clim_get_dev_rates.html</loc>
-  </url>
-  <url>
     <loc>/reference/phenology.html</loc>
   </url>
   <url>
@@ -166,19 +163,10 @@
     <loc>/reference/properties.html</loc>
   </url>
   <url>
-    <loc>/reference/save_phenology.html</loc>
+    <loc>/reference/save_load_phenology.html</loc>
   </url>
   <url>
-    <loc>/reference/stations_assign.html</loc>
-  </url>
-  <url>
-    <loc>/reference/stations_cells.html</loc>
-  </url>
-  <url>
-    <loc>/reference/stations_create.html</loc>
-  </url>
-  <url>
-    <loc>/reference/stations_names.html</loc>
+    <loc>/reference/stations.html</loc>
   </url>
   <url>
     <loc>/TODO.html</loc>

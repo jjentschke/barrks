@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.6</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,10 +31,19 @@
     <a class="dropdown-item" href="articles/storage.html">Use a storage</a>
   </div>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="news/index.html">Changelog</a>
+</li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
-      <ul class="navbar-nav"></ul></div>
+      <ul class="navbar-nav"><li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/jjentschke/barrks/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul></div>
 
     
   </div>
@@ -42,7 +51,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>TODO</h1>
-      
+      <small class="dont-index">Source: <a href="https://github.com/jjentschke/barrks/blob/HEAD/TODO.md" class="external-link"><code>TODO.md</code></a></small>
     </div>
 
 <div id="todo" class="section level1">
@@ -50,13 +59,13 @@
 <div class="section level2">
 <h2 id="general">General<a class="anchor" aria-label="anchor" href="#general"></a></h2>
 <ul class="task-list"><li>
-<input type="checkbox">Unify status messages (print temporary only?)</li>
-<li>
 <input type="checkbox">Implement argument checks</li>
 <li>
 <input type="checkbox">Add examples to function documentations (e.g. for <code><a href="reference/model_combine.html">model_combine()</a></code>)</li>
 <li>
 <input type="checkbox"><code>create_daylength_...()</code>: switch from suncalc to geosphere (less dependencies…)</li>
+<li>
+<input type="checkbox">Make output of <code>create_suntimes_...()</code> and <code>create_daylength_...()</code> consistent (minutes OR hours)</li>
 <li>
 <input type="checkbox">Define a <code>BarrksPheno</code> (or similar) class</li>
 <li>
@@ -67,10 +76,18 @@
 <li>
 <input type="checkbox">Further customization options for <code><a href="reference/plot_development_diagram.html">plot_development_diagram()</a></code>:
 <ul class="task-list"><li>
-<input type="checkbox">fill incomplete generations: yes/no</li>
-<li>
-<input type="checkbox">customize fill after .split_date</li>
+<input type="checkbox">Fill incomplete generations: yes/no</li>
 </ul></li>
+<li>
+<input type="checkbox"><code><a href="reference/plot_development_diagram.html">plot_development_diagram()</a></code>: Adjust legend if <code>.minmax_only == TRUE</code>
+</li>
+<li>
+<input type="checkbox">Unify status messages (print temporary only?)</li>
+<li>
+<input type="checkbox">Make storage messages optional</li>
+<li>
+<input type="checkbox">Improve performance of <code><a href="reference/create_suntimes_df.html">create_suntimes_df()</a></code>
+</li>
 </ul></div>
 <div class="section level2">
 <h2 id="models">Models<a class="anchor" aria-label="anchor" href="#models"></a></h2>
@@ -110,7 +127,7 @@
 <ul class="task-list"><li>
 <input type="checkbox">BSO: storage, sister breeders</li>
 <li>
-<input type="checkbox"><code><a href="reference/load_phenology.html">load_phenology()</a></code>/<code>save_phenology</code>
+<input type="checkbox"><code><a href="reference/save_load_phenology.html">load_phenology()</a></code>/<code>save_phenology</code>
 </li>
 </ul></div>
 <div class="section level2">
@@ -129,7 +146,7 @@
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Jakob Jentschke.</p>
+  <p>Developed by Jakob Jentschke, FVA BW, Abt. Waldschutz.</p>
 </div>
 
 <div class="pkgdown-footer-right">

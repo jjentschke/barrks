@@ -27,7 +27,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.6</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,12 +49,22 @@
     <a class="dropdown-item" href="../articles/storage.html">Use a storage</a>
   </div>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
 </form>
 
-      <ul class="navbar-nav"></ul>
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/jjentschke/barrks/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 
     
@@ -69,7 +79,7 @@
       <img src="" class="logo" alt=""><h1>The BSO model</h1>
             
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/jjentschke/barrks/blob/HEAD/vignettes/bso.Rmd" class="external-link"><code>vignettes/bso.Rmd</code></a></small>
       <div class="d-none name"><code>bso.Rmd</code></div>
     </div>
 
@@ -79,13 +89,13 @@
 this package. It stochastically simulates a multitude of individuals
 instead of only returning a result for one representative beetle.
 Additionally, it requires an hourly onset to function. This is why the
-BSO-specific phenology function <code><a href="../reference/bso_phenology.html">bso_phenology()</a></code> exists.
+BSO-specific phenology function <code><a href="../reference/phenology.html">bso_phenology()</a></code> exists.
 While it is still possible to combine the diapause and the mortality
 submodels with other models, this is not the case for the onset and
 development submodels.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">barrks</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://jjentschke.github.io/barrks/" class="external-link">barrks</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/" class="external-link">terra</a></span><span class="op">)</span></span>
 <span></span>
@@ -98,18 +108,18 @@ development submodels.</p>
 <span><span class="op">}</span></span>
 <span></span>
 <span></span>
-<span><span class="va">pheno_bso</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/bso_phenology.html">bso_phenology</a></span><span class="op">(</span><span class="st">'bso'</span>, <span class="fu"><a href="../reference/barrks_data.html">barrks_data</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span><span class="va">pheno_bso</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/phenology.html">bso_phenology</a></span><span class="op">(</span><span class="st">'bso'</span>, <span class="fu"><a href="../reference/barrks_data.html">barrks_data</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="section level2">
 <h2 id="bso-specific-plots">BSO-specific plots<a class="anchor" aria-label="anchor" href="#bso-specific-plots"></a>
 </h2>
-<p>As <code><a href="../reference/bso_phenology.html">bso_phenology()</a></code> returns a more detailed result than
+<p>As <code><a href="../reference/phenology.html">bso_phenology()</a></code> returns a more detailed result than
 <code><a href="../reference/phenology.html">phenology()</a></code>, a few more functions are available for
 illustration. The stage diagram illustrates the share of the total
 individuals at a specific developmental stage.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/bso_plot_stage_diagram.html">bso_plot_stage_diagram</a></span><span class="op">(</span><span class="va">pheno_bso</span>, <span class="fl">234</span><span class="op">)</span></span></code></pre></div>
 <div class="figure">
-<img src="figure/bso-stage-diagram-1.png" alt="BSO stage diagram (generation '0' represents the hibernating beetles)" width="100%"><p class="caption">
+<img src="figures/bso-stage-diagram-1.png" alt="BSO stage diagram (generation '0' represents the hibernating beetles)" width="100%"><p class="caption">
 BSO stage diagram (generation ‘0’ represents the hibernating beetles)
 </p>
 </div>
@@ -118,7 +128,7 @@ date.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/bso_plot_flight_diagram.html">bso_plot_flight_diagram</a></span><span class="op">(</span><span class="va">pheno_bso</span>, <span class="fl">234</span><span class="op">)</span></span></code></pre></div>
 <div class="figure">
-<img src="figure/bso-flight-diagram-1.png" alt="BSO flight diagram (the colors describe which generation flies to establish a new filial generation or a sister brood respectively)" width="100%"><p class="caption">
+<img src="figures/bso-flight-diagram-1.png" alt="BSO flight diagram (the colors describe which generation flies to establish a new filial generation or a sister brood respectively)" width="100%"><p class="caption">
 BSO flight diagram (the colors describe which generation flies to
 establish a new filial generation or a sister brood respectively)
 </p>
@@ -138,8 +148,8 @@ functions that are available to analyse phenology objects.</p>
 <span><span class="va">dates</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'2015-04-15'</span>, <span class="st">'2015-06-15'</span>, <span class="st">'2015-08-15'</span>, <span class="st">'2015-10-15'</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/get_generations.html">get_generations_rst</a></span><span class="op">(</span><span class="va">pheno_translated</span>, <span class="va">dates</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">my_rst_plot</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="figure">
-<img src="figure/bso-gens-1.png" alt="Generations calculated by the BSO model'" width="100%"><p class="caption">
-Generations calculated by the BSO model’
+<img src="figures/bso-gens-1.png" alt="Generations calculated by the BSO model" width="100%"><p class="caption">
+Generations calculated by the BSO model
 </p>
 </div>
 </div>
@@ -150,7 +160,7 @@ Generations calculated by the BSO model’
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Jakob Jentschke.</p>
+  <p>Developed by Jakob Jentschke, FVA BW, Abt. Waldschutz.</p>
 </div>
 
 <div class="pkgdown-footer-right">

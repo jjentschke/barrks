@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.6</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,10 +31,19 @@
     <a class="dropdown-item" href="../articles/storage.html">Use a storage</a>
   </div>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
-      <ul class="navbar-nav"></ul></div>
+      <ul class="navbar-nav"><li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/jjentschke/barrks/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul></div>
 
     
   </div>
@@ -42,7 +51,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Get flight of individuals (BSO only)</h1>
-      
+      <small class="dont-index">Source: <a href="https://github.com/jjentschke/barrks/blob/HEAD/R/bso-phenology-results.R" class="external-link"><code>R/bso-phenology-results.R</code></a></small>
       <div class="d-none name"><code>bso_get_flight.Rd</code></div>
     </div>
 
@@ -66,11 +75,16 @@
     <div class="section level2">
     <h2 id="arguments">Arguments<a class="anchor" aria-label="anchor" href="#arguments"></a></h2>
     <dl><dt>pheno</dt>
-<dd><p>A BSO phenology (see <code><a href="bso_phenology.html">bso_phenology()</a></code>)</p></dd>
+<dd><p>A BSO phenology (see <code><a href="phenology.html">bso_phenology()</a></code>)</p></dd>
 
 
 <dt>generation</dt>
 <dd><p>Generation of interest. For sister broods, 0.5 should be added.</p></dd>
+
+
+<dt>flight</dt>
+<dd><p>Specifies which flight of the respective generation should be
+returned. Can be <code>1</code> (first flight) or <code>2</code> (second flight).</p></dd>
 
 
 <dt>dates</dt>
@@ -79,22 +93,288 @@
 
 <dt>stations</dt>
 <dd><p>Pass a character vector to choose stations assigned to <code>pheno</code> by
-their names, or pass different stations. See <code><a href="stations_create.html">stations_create()</a></code> for details.</p></dd>
+their names, or pass different stations. See <code><a href="stations.html">stations_create()</a></code> for details.</p></dd>
 
 </dl></div>
     <div class="section level2">
-    <h2 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a></h2>
+    <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
-<ul><li><p><code>bso_get_flight_rst()</code>: Returns a multi-layer SpatRaster.</p></li>
-<li><p><code>bso_get_flight_df()</code>: Returns a data frame.</p></li>
+
+<ul><li><p><code>bso_get_flight_rst</code>: a multi-layer SpatRaster.</p></li>
+<li><p><code>bso_get_flight_df</code>: a data frame.</p></li>
 </ul></div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="co"># This may take a few minutes...</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># calculate phenology</span></span></span>
+<span class="r-in"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="phenology.html">bso_phenology</a></span><span class="op">(</span><span class="st">'bso'</span>, <span class="fu"><a href="barrks_data.html">barrks_data</a></span><span class="op">(</span><span class="st">'stations'</span><span class="op">)</span>, .quiet <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># get the number of individuals of the hibernating generation on their first flight</span></span></span>
+<span class="r-in"><span><span class="fu">bso_get_flight_df</span><span class="op">(</span><span class="va">p</span>, <span class="fl">0</span>, <span class="st">'Freiburg'</span>, flight <span class="op">=</span> <span class="fl">1</span><span class="op">)</span></span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>      station       date doy   flight</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1   Freiburg 2011-01-01   1        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2   Freiburg 2011-01-02   2        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3   Freiburg 2011-01-03   3        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4   Freiburg 2011-01-04   4        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5   Freiburg 2011-01-05   5        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 6   Freiburg 2011-01-06   6        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 7   Freiburg 2011-01-07   7        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 8   Freiburg 2011-01-08   8        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 9   Freiburg 2011-01-09   9        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 10  Freiburg 2011-01-10  10        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 11  Freiburg 2011-01-11  11        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 12  Freiburg 2011-01-12  12        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 13  Freiburg 2011-01-13  13        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 14  Freiburg 2011-01-14  14        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 15  Freiburg 2011-01-15  15        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 16  Freiburg 2011-01-16  16        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 17  Freiburg 2011-01-17  17        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 18  Freiburg 2011-01-18  18        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 19  Freiburg 2011-01-19  19        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 20  Freiburg 2011-01-20  20        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 21  Freiburg 2011-01-21  21        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 22  Freiburg 2011-01-22  22        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 23  Freiburg 2011-01-23  23        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 24  Freiburg 2011-01-24  24        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 25  Freiburg 2011-01-25  25        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 26  Freiburg 2011-01-26  26        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 27  Freiburg 2011-01-27  27        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 28  Freiburg 2011-01-28  28        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 29  Freiburg 2011-01-29  29        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 30  Freiburg 2011-01-30  30        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 31  Freiburg 2011-01-31  31        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 32  Freiburg 2011-02-01  32        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 33  Freiburg 2011-02-02  33        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 34  Freiburg 2011-02-03  34        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 35  Freiburg 2011-02-04  35        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 36  Freiburg 2011-02-05  36        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 37  Freiburg 2011-02-06  37        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 38  Freiburg 2011-02-07  38        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 39  Freiburg 2011-02-08  39        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 40  Freiburg 2011-02-09  40        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 41  Freiburg 2011-02-10  41        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 42  Freiburg 2011-02-11  42        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 43  Freiburg 2011-02-12  43        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 44  Freiburg 2011-02-13  44        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 45  Freiburg 2011-02-14  45        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 46  Freiburg 2011-02-15  46        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 47  Freiburg 2011-02-16  47        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 48  Freiburg 2011-02-17  48        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 49  Freiburg 2011-02-18  49        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 50  Freiburg 2011-02-19  50        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 51  Freiburg 2011-02-20  51        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 52  Freiburg 2011-02-21  52        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 53  Freiburg 2011-02-22  53        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 54  Freiburg 2011-02-23  54        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 55  Freiburg 2011-02-24  55        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 56  Freiburg 2011-02-25  56        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 57  Freiburg 2011-02-26  57        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 58  Freiburg 2011-02-27  58        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 59  Freiburg 2011-02-28  59        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 60  Freiburg 2011-03-01  60        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 61  Freiburg 2011-03-02  61        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 62  Freiburg 2011-03-03  62        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 63  Freiburg 2011-03-04  63        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 64  Freiburg 2011-03-05  64        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 65  Freiburg 2011-03-06  65        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 66  Freiburg 2011-03-07  66        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 67  Freiburg 2011-03-08  67        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 68  Freiburg 2011-03-09  68        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 69  Freiburg 2011-03-10  69        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 70  Freiburg 2011-03-11  70        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 71  Freiburg 2011-03-12  71        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 72  Freiburg 2011-03-13  72        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 73  Freiburg 2011-03-14  73        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 74  Freiburg 2011-03-15  74   243890</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 75  Freiburg 2011-03-16  75  1435894</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 76  Freiburg 2011-03-17  76        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 77  Freiburg 2011-03-18  77        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 78  Freiburg 2011-03-19  78        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 79  Freiburg 2011-03-20  79        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 80  Freiburg 2011-03-21  80        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 81  Freiburg 2011-03-22  81        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 82  Freiburg 2011-03-23  82        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 83  Freiburg 2011-03-24  83  4598833</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 84  Freiburg 2011-03-25  84  7554480</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 85  Freiburg 2011-03-26  85 17234414</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 86  Freiburg 2011-03-27  86  2679499</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 87  Freiburg 2011-03-28  87        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 88  Freiburg 2011-03-29  88        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 89  Freiburg 2011-03-30  89 10012380</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 90  Freiburg 2011-03-31  90        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 91  Freiburg 2011-04-01  91        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 92  Freiburg 2011-04-02  92 27778474</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 93  Freiburg 2011-04-03  93 52206087</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 94  Freiburg 2011-04-04  94 44261028</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 95  Freiburg 2011-04-05  95        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 96  Freiburg 2011-04-06  96 15750998</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 97  Freiburg 2011-04-07  97 44214397</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 98  Freiburg 2011-04-08  98 56413085</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 99  Freiburg 2011-04-09  99 30647044</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 100 Freiburg 2011-04-10 100 29912804</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 101 Freiburg 2011-04-11 101 32790743</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 102 Freiburg 2011-04-12 102 40066879</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 103 Freiburg 2011-04-13 103        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 104 Freiburg 2011-04-14 104        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 105 Freiburg 2011-04-15 105        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 106 Freiburg 2011-04-16 106        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 107 Freiburg 2011-04-17 107  1468471</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 108 Freiburg 2011-04-18 108 10506187</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 109 Freiburg 2011-04-19 109 26328501</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 110 Freiburg 2011-04-20 110 30251230</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 111 Freiburg 2011-04-21 111 33405532</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 112 Freiburg 2011-04-22 112 34479096</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 113 Freiburg 2011-04-23 113 33091243</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 114 Freiburg 2011-04-24 114 33237896</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 115 Freiburg 2011-04-25 115 23966054</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 116 Freiburg 2011-04-26 116 24569835</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 117 Freiburg 2011-04-27 117 13316430</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 118 Freiburg 2011-04-28 118  6156406</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 119 Freiburg 2011-04-29 119  8863069</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 120 Freiburg 2011-04-30 120        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 121 Freiburg 2011-05-01 121  6191441</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 122 Freiburg 2011-05-02 122 16819751</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 123 Freiburg 2011-05-03 123  9641741</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 124 Freiburg 2011-05-04 124        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 125 Freiburg 2011-05-05 125    76185</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 126 Freiburg 2011-05-06 126  9703019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 127 Freiburg 2011-05-07 127 20330908</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 128 Freiburg 2011-05-08 128 21929250</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 129 Freiburg 2011-05-09 129 20006666</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 130 Freiburg 2011-05-10 130 18630387</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 131 Freiburg 2011-05-11 131 18295767</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 132 Freiburg 2011-05-12 132 14957915</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 133 Freiburg 2011-05-13 133  8093248</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 134 Freiburg 2011-05-14 134  8000151</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 135 Freiburg 2011-05-15 135  6184208</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 136 Freiburg 2011-05-16 136        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 137 Freiburg 2011-05-17 137  1141854</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 138 Freiburg 2011-05-18 138  7107456</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 139 Freiburg 2011-05-19 139 10787559</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 140 Freiburg 2011-05-20 140 10384892</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 141 Freiburg 2011-05-21 141  8783232</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 142 Freiburg 2011-05-22 142  7899722</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 143 Freiburg 2011-05-23 143  7675668</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 144 Freiburg 2011-05-24 144  6123346</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 145 Freiburg 2011-05-25 145  5771209</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 146 Freiburg 2011-05-26 146  5180935</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 147 Freiburg 2011-05-27 147  5505961</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 148 Freiburg 2011-05-28 148  1308215</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 149 Freiburg 2011-05-29 149  2288602</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 150 Freiburg 2011-05-30 150  3982116</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 151 Freiburg 2011-05-31 151  4336519</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 152 Freiburg 2011-06-01 152  2686723</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 153 Freiburg 2011-06-02 153        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 154 Freiburg 2011-06-03 154  2746378</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 155 Freiburg 2011-06-04 155  3295125</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 156 Freiburg 2011-06-05 156  2702340</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 157 Freiburg 2011-06-06 157  2678522</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 158 Freiburg 2011-06-07 158  1909427</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 159 Freiburg 2011-06-08 159  1965342</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 160 Freiburg 2011-06-09 160        0</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 161 Freiburg 2011-06-10 161   538488</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 162 Freiburg 2011-06-11 162  1052945</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 163 Freiburg 2011-06-12 163   753127</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 164 Freiburg 2011-06-13 164  1228570</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 165 Freiburg 2011-06-14 165  1067004</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 166 Freiburg 2011-06-15 166  1223776</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 167 Freiburg 2011-06-16 167  1231388</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 168 Freiburg 2011-06-17 168  1142171</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 169 Freiburg 2011-06-18 169   838856</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 170 Freiburg 2011-06-19 170   372756</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 171 Freiburg 2011-06-20 171   394747</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 172 Freiburg 2011-06-21 172   662316</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 173 Freiburg 2011-06-22 173   866034</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 174 Freiburg 2011-06-23 174   671016</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 175 Freiburg 2011-06-24 175   415990</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 176 Freiburg 2011-06-25 176   276052</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 177 Freiburg 2011-06-26 177   357459</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 178 Freiburg 2011-06-27 178   481570</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 179 Freiburg 2011-06-28 179   341792</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 180 Freiburg 2011-06-29 180   292649</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 181 Freiburg 2011-06-30 181   297250</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 182 Freiburg 2011-07-01 182   185462</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 183 Freiburg 2011-07-02 183   108387</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 184 Freiburg 2011-07-03 184   117418</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 185 Freiburg 2011-07-04 185   176587</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 186 Freiburg 2011-07-05 186   225093</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 187 Freiburg 2011-07-06 187   232441</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 188 Freiburg 2011-07-07 188   212804</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 189 Freiburg 2011-07-08 189   164730</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 190 Freiburg 2011-07-09 190   137748</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 191 Freiburg 2011-07-10 191   149356</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 192 Freiburg 2011-07-11 192   101680</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 193 Freiburg 2011-07-12 193   116777</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 194 Freiburg 2011-07-13 194   120463</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 195 Freiburg 2011-07-14 195    76982</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 196 Freiburg 2011-07-15 196    39064</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 197 Freiburg 2011-07-16 197    47145</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 198 Freiburg 2011-07-17 198    71333</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 199 Freiburg 2011-07-18 199    58022</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 200 Freiburg 2011-07-19 200    33377</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 201 Freiburg 2011-07-20 201    33493</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 202 Freiburg 2011-07-21 202    29626</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 203 Freiburg 2011-07-22 203    33031</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 204 Freiburg 2011-07-23 204    34149</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 205 Freiburg 2011-07-24 205    21709</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 206 Freiburg 2011-07-25 206      793</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 207 Freiburg 2011-07-26 207    29153</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 208 Freiburg 2011-07-27 208    32138</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 209 Freiburg 2011-07-28 209    30434</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 210 Freiburg 2011-07-29 210    24923</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 211 Freiburg 2011-07-30 211    24040</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 212 Freiburg 2011-07-31 212    16713</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 213 Freiburg 2011-08-01 213    12613</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 214 Freiburg 2011-08-02 214    19528</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 215 Freiburg 2011-08-03 215    23983</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 216 Freiburg 2011-08-04 216    23057</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 217 Freiburg 2011-08-05 217    19738</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 218 Freiburg 2011-08-06 218    15477</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 219 Freiburg 2011-08-07 219    13579</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 220 Freiburg 2011-08-08 220     9146</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 221 Freiburg 2011-08-09 221     6761</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 222 Freiburg 2011-08-10 222     4890</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 223 Freiburg 2011-08-11 223     4051</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 224 Freiburg 2011-08-12 224     8655</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 225 Freiburg 2011-08-13 225     8788</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 226 Freiburg 2011-08-14 226     7612</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 227 Freiburg 2011-08-15 227     7711</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 228 Freiburg 2011-08-16 228     4979</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 229 Freiburg 2011-08-17 229     5037</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 230 Freiburg 2011-08-18 230     5946</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 231 Freiburg 2011-08-19 231     5436</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 232 Freiburg 2011-08-20 232     4414</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 233 Freiburg 2011-08-21 233     4236</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 234 Freiburg 2011-08-22 234     3461</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 235 Freiburg 2011-08-23 235     1623</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 236 Freiburg 2011-08-24 236     2019</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 237 Freiburg 2011-08-25 237     2798</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 238 Freiburg 2011-08-26 238     2217</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 239 Freiburg 2011-08-27 239     1904</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 240 Freiburg 2011-08-28 240      364</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 241 Freiburg 2011-08-29 241     1223</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 242 Freiburg 2011-08-30 242      975</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 243 Freiburg 2011-08-31 243      804</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 244 Freiburg 2011-09-01 244     1082</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 245 Freiburg 2011-09-02 245     1303</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 246 Freiburg 2011-09-03 246     1165</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 247 Freiburg 2011-09-04 247     1134</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 248 Freiburg 2011-09-05 248      766</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 249 Freiburg 2011-09-06 249      518</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 250 Freiburg 2011-09-07 250      594</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>  [ reached 'max' / getOption("max.print") -- omitted 115 rows ]</span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Jakob Jentschke.</p>
+  <p>Developed by Jakob Jentschke, FVA BW, Abt. Waldschutz.</p>
 </div>
 
 <div class="pkgdown-footer-right">

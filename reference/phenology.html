@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.6</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,10 +31,19 @@
     <a class="dropdown-item" href="../articles/storage.html">Use a storage</a>
   </div>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
-      <ul class="navbar-nav"></ul></div>
+      <ul class="navbar-nav"><li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/jjentschke/barrks/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul></div>
 
     
   </div>
@@ -42,7 +51,7 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Central function to calculate a phenology</h1>
-      
+      <small class="dont-index">Source: <a href="https://github.com/jjentschke/barrks/blob/HEAD/R/phenology.R" class="external-link"><code>R/phenology.R</code></a>, <a href="https://github.com/jjentschke/barrks/blob/HEAD/R/bso-phenology.R" class="external-link"><code>R/bso-phenology.R</code></a></small>
       <div class="d-none name"><code>phenology.Rd</code></div>
     </div>
 
@@ -54,6 +63,23 @@
     <h2 id="ref-usage">Usage<a class="anchor" aria-label="anchor" href="#ref-usage"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">phenology</span><span class="op">(</span></span>
 <span>  <span class="va">.model</span>,</span>
+<span>  .data <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  .dates <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  .win <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  .ext <span class="op">=</span> <span class="st">"tif"</span>,</span>
+<span>  .onset <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  .diapause <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  .mortality <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  .submodels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"onset"</span>, <span class="st">"diapause"</span>, <span class="st">"mortality"</span>, <span class="st">"development"</span><span class="op">)</span>,</span>
+<span>  .setup_only <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  .stations <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  .storage <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  .quiet <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu">bso_phenology</span><span class="op">(</span></span>
+<span>  .model <span class="op">=</span> <span class="st">"bso"</span>,</span>
 <span>  .data <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  .dates <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  .win <span class="op">=</span> <span class="cn">NULL</span>,</span>
@@ -126,7 +152,7 @@ other <code>phenology()</code> calls and can be accessed via <code><a href="get_
 
 
 <dt>.stations</dt>
-<dd><p>Assign stations to the phenology. See <code><a href="stations_create.html">stations_create()</a></code> for details.</p></dd>
+<dd><p>Assign stations to the phenology. See <code><a href="stations.html">stations_create()</a></code> for details.</p></dd>
 
 
 <dt>.storage</dt>
@@ -153,20 +179,68 @@ to the model inputs. See <code>.data</code> for alternative ways to pass data to
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
     
 
-<p>Returns a phenology as a list. Look <a href="analyse.phenology.html">here</a> to find out how
+<p>A phenology as a list. Look <a href="analyse.phenology.html">here</a> to find out how
 a phenology can be analysed. It is not recommended to access the list elements directly.</p>
     </div>
+    <div class="section level2">
+    <h2 id="functions">Functions<a class="anchor" aria-label="anchor" href="#functions"></a></h2>
+    
+<ul><li><p><code>bso_phenology()</code>: As the BSO model works a bit different than the other models, a seperate
+phenology function is implemented for this model. Note that while the
+onset and the development submodels are needed to be taken from the BSO model,
+the diapause and the mortality submodels are compatible with other models.</p>
+<p>The function returns a BSO phenology as a list. Look <a href="analyse.phenology.bso.html">here</a> to find out how
+a BSO phenology can be analysed. It is not recommended to access the list elements directly.
+To be able to use the functions that are
+available for phenology objects returned by <code>phenology()</code>, call <code><a href="bso_translate_phenology.html">bso_translate_phenology()</a></code>.</p></li>
+</ul></div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
     <div class="dont-index"><p><code><a href="model.bso.apply.html">model.bso.apply</a></code>, <code><a href="model.phenips.apply.html">model.phenips.apply</a></code>, <code><a href="model.rity.apply.html">model.rity.apply</a></code>, <code><a href="model.chapy.apply.html">model.chapy.apply</a></code>, <code><a href="model.joensson.apply.html">model.joensson.apply</a></code>, <code><a href="model.lange.apply.html">model.lange.apply</a></code>, <code><a href="model.phenips_clim.apply.html">model.phenips_clim.apply</a></code></p></div>
     </div>
 
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="co"># calculate phenology</span></span></span>
+<span class="r-in"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu">phenology</span><span class="op">(</span><span class="st">'phenips-clim'</span>, <span class="fu"><a href="barrks_data.html">barrks_data</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> === <span style="font-weight: bold;">calculate phenology with model `phenips-clim`</span> ===</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> -- <span style="font-weight: bold;">setup</span> --</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> parameter dd_onset</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> parameter btmean</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> parameter btmax</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> parameter teff</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; <span style="font-style: italic;">calculate amplitude</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; <span style="font-style: italic;">get effective temperature from temperature/amplitude</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> parameter fly</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> -- <span style="font-weight: bold;">onset</span> --</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; <span style="font-style: italic;">calculate the base onset</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; <span style="font-style: italic;">add 0 degree days to get the onset of the first 10 % beetles</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> -- <span style="font-weight: bold;">diapause</span> --</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> -- <span style="font-weight: bold;">mortality</span> --</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> </span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> -- <span style="font-weight: bold;">development</span> --</span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; <span style="font-style: italic;">generation 1</span></span>
+<span class="r-msg co"><span class="r-pr">#&gt;</span> &gt; <span style="font-style: italic;">generation 2</span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># plot calculated generations</span></span></span>
+<span class="r-in"><span><span class="va">gens</span> <span class="op">&lt;-</span> <span class="fu"><a href="get_generations.html">get_generations_rst</a></span><span class="op">(</span><span class="va">p</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="fu">terra</span><span class="fu">::</span><span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span><span class="va">gens</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="phenology-1.png" alt="" width="700" height="576"></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Jakob Jentschke.</p>
+  <p>Developed by Jakob Jentschke, FVA BW, Abt. Waldschutz.</p>
 </div>
 
 <div class="pkgdown-footer-right">

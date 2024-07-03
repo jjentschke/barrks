@@ -12,7 +12,7 @@ generations within a year."><!-- mathjax --><script src="https://cdnjs.cloudflar
     
     <a class="navbar-brand me-2" href="../index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.6</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -33,10 +33,19 @@ generations within a year."><!-- mathjax --><script src="https://cdnjs.cloudflar
     <a class="dropdown-item" href="../articles/storage.html">Use a storage</a>
   </div>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
       </ul><form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off"></form>
 
-      <ul class="navbar-nav"></ul></div>
+      <ul class="navbar-nav"><li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/jjentschke/barrks/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul></div>
 
     
   </div>
@@ -44,7 +53,7 @@ generations within a year."><!-- mathjax --><script src="https://cdnjs.cloudflar
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="" class="logo" alt=""><h1>Plot a development diagram</h1>
-      
+      <small class="dont-index">Source: <a href="https://github.com/jjentschke/barrks/blob/HEAD/R/plot-development-diagram.R" class="external-link"><code>R/plot-development-diagram.R</code></a></small>
       <div class="d-none name"><code>plot_development_diagram.Rd</code></div>
     </div>
 
@@ -69,8 +78,11 @@ generations within a year.</p>
 <span>  .fun_bg <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  .lty <span class="op">=</span> <span class="st">"solid"</span>,</span>
 <span>  .lwd <span class="op">=</span> <span class="fl">2</span>,</span>
-<span>  .split_date <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  .date_split <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  .date_stop <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  .lty2 <span class="op">=</span> <span class="st">"dotted"</span>,</span>
+<span>  .lwd2 <span class="op">=</span> <span class="fl">2</span>,</span>
+<span>  .fill2 <span class="op">=</span> <span class="cn">NA</span>,</span>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -83,7 +95,7 @@ plotted (see <code><a href="phenology.html">phenology()</a></code>).</p></dd>
 
 
 <dt>.station</dt>
-<dd><p>Pass a character vector to choose a station assigned to <code>pheno</code> by its name, or pass a different station. See <code><a href="stations_create.html">stations_create()</a></code> for details.</p></dd>
+<dd><p>Pass a character vector to choose a station assigned to <code>pheno</code> by its name, or pass a different station. See <code><a href="stations.html">stations_create()</a></code> for details.</p></dd>
 
 
 <dt>.generations</dt>
@@ -96,7 +108,7 @@ or labels of the generations starting from the first generation followed
 consecutively by elements for the other generations (including sister broods).</p></dd>
 
 
-<dt>.legend_col, legend_lty</dt>
+<dt>.legend_col, .legend_lty</dt>
 <dd><p>Manipulate the appearance of the legends for
 colors and line types. Pass <code>TRUE</code>/<code>FALSE</code> to enable/disable the respective legend.
 For the customization of the respective legend, a list of parameters for
@@ -124,22 +136,49 @@ Vectors of the same length as <code>.phenos</code> will assign the values to the
 respective phenology.</p></dd>
 
 
-<dt>.split_date, lty2</dt>
-<dd><p>When <code>.split_date</code> is reached, the line type will
-change to <code>lty2</code> and the area between the lines will not be filled anymore.</p></dd>
+<dt>.date_split, .lty2, .lwd2, .fill2</dt>
+<dd><p>When <code>.date_split</code> is reached, the
+appearance of the plot will change according to the respective values.</p></dd>
+
+
+<dt>.date_stop</dt>
+<dd><p>If specified, no data will be plotted after the respective
+date.</p></dd>
 
 
 <dt>...</dt>
 <dd><p>Parameters passed to <code><a href="https://rdrr.io/r/base/plot.html" class="external-link">base::plot()</a></code>.</p></dd>
 
 </dl></div>
+    <div class="section level2">
+    <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
+    
 
+<p>None</p>
+    </div>
+    <div class="section level2">
+    <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>
+    <div class="dont-index"><p><a href="stations.html">stations</a></p></div>
+    </div>
+
+    <div class="section level2">
+    <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="co"># calculate phenology</span></span></span>
+<span class="r-in"><span><span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="phenology.html">phenology</a></span><span class="op">(</span><span class="st">'phenips-clim'</span>, <span class="fu"><a href="barrks_data.html">barrks_data</a></span><span class="op">(</span><span class="st">'stations'</span><span class="op">)</span>, .quiet <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></span>
+<span class="r-in"><span></span></span>
+<span class="r-in"><span><span class="co"># plot development diagram of the station 'Mannheim'</span></span></span>
+<span class="r-in"><span><span class="fu">plot_development_diagram</span><span class="op">(</span><span class="va">p</span>, <span class="st">'Mannheim'</span>, .lwd <span class="op">=</span> <span class="fl">4</span><span class="op">)</span></span></span>
+<span class="r-plt img"><img src="plot_development_diagram-1.png" alt="" width="700" height="576"></span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
+</code></pre></div>
+    </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside></div>
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Jakob Jentschke.</p>
+  <p>Developed by Jakob Jentschke, FVA BW, Abt. Waldschutz.</p>
 </div>
 
 <div class="pkgdown-footer-right">

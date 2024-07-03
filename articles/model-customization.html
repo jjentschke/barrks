@@ -27,7 +27,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.6</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -49,12 +49,22 @@
     <a class="dropdown-item" href="../articles/storage.html">Use a storage</a>
   </div>
 </li>
+<li class="nav-item">
+  <a class="nav-link" href="../news/index.html">Changelog</a>
+</li>
       </ul>
 <form class="form-inline my-2 my-lg-0" role="search">
         <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="../search.json" id="search-input" placeholder="Search for" autocomplete="off">
 </form>
 
-      <ul class="navbar-nav"></ul>
+      <ul class="navbar-nav">
+<li class="nav-item">
+  <a class="external-link nav-link" href="https://github.com/jjentschke/barrks/" aria-label="github">
+    <span class="fab fa fab fa-github fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
 </div>
 
     
@@ -69,7 +79,7 @@
       <img src="" class="logo" alt=""><h1>Model customization</h1>
             
       
-      
+      <small class="dont-index">Source: <a href="https://github.com/jjentschke/barrks/blob/HEAD/vignettes/model-customization.Rmd" class="external-link"><code>vignettes/model-customization.Rmd</code></a></small>
       <div class="d-none name"><code>model-customization.Rmd</code></div>
     </div>
 
@@ -84,7 +94,7 @@ the corresponding procedures and compares the respective outputs with an
 unmodified model.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va">barrks</span><span class="op">)</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://jjentschke.github.io/barrks/" class="external-link">barrks</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rspatial.org/" class="external-link">terra</a></span><span class="op">)</span></span>
 <span></span>
@@ -135,17 +145,17 @@ calculated models are plotted on four different dates.</p>
 <span><span class="fu"><a href="../reference/get_generations.html">get_generations_rst</a></span><span class="op">(</span><span class="va">pheno_custom</span>, <span class="va">dates</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">my_rst_plot</span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/get_generations.html">get_generations_rst</a></span><span class="op">(</span><span class="va">pheno_combined</span>, <span class="va">dates</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">my_rst_plot</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="figure">
-<img src="figure/model-customization-gens-std-1.png" alt="Generations calculated by PHENIPS without modifications" width="100%"><p class="caption">
+<img src="figures/model-customization-gens-std-1.png" alt="Generations calculated by PHENIPS without modifications" width="100%"><p class="caption">
 Generations calculated by PHENIPS without modifications
 </p>
 </div>
 <div class="figure">
-<img src="figure/model-customization-gens-custom-1.png" alt="Generations calculated by customized PHENIPS" width="100%"><p class="caption">
+<img src="figures/model-customization-gens-custom-1.png" alt="Generations calculated by customized PHENIPS" width="100%"><p class="caption">
 Generations calculated by customized PHENIPS
 </p>
 </div>
 <div class="figure">
-<img src="figure/model-customization-gens-combined-1.png" alt="Generations calculated by PHENIPS combined with diapause submodel of PHENIPS-Clim" width="100%"><p class="caption">
+<img src="figures/model-customization-gens-combined-1.png" alt="Generations calculated by PHENIPS combined with diapause submodel of PHENIPS-Clim" width="100%"><p class="caption">
 Generations calculated by PHENIPS combined with diapause submodel of
 PHENIPS-Clim
 </p>
@@ -182,7 +192,7 @@ simple.</p>
 <span>                         .legend_lty <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>lwd <span class="op">=</span> <span class="fl">2</span><span class="op">)</span>,</span>
 <span>                         .group <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <div class="figure">
-<img src="figure/model-customization-events-1.png" alt="Development diagram of PHENIPS with and manually created onset" width="100%"><p class="caption">
+<img src="figures/model-customization-events-1.png" alt="Development diagram of PHENIPS with and manually created onset" width="100%"><p class="caption">
 Development diagram of PHENIPS with and manually created onset
 </p>
 </div>
@@ -194,7 +204,7 @@ Development diagram of PHENIPS with and manually created onset
 
 
     <footer><div class="pkgdown-footer-left">
-  <p>Developed by Jakob Jentschke.</p>
+  <p>Developed by Jakob Jentschke, FVA BW, Abt. Waldschutz.</p>
 </div>
 
 <div class="pkgdown-footer-right">
