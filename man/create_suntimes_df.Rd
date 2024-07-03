@@ -37,7 +37,7 @@ st <- create_suntimes_df(barrks_data('station_coords'),
                          .quiet = TRUE)
 
 # print results of station 'Freiburg'
-head(st[st$station == 'Freiburg',], 10)
+st[st$station == 'Freiburg',]
 }
 \dontshow{\}) # examplesIf}
 }

@@ -141,9 +141,9 @@ NULL
 #' p <- bso_phenology('bso', barrks_data('stations'), .quiet = TRUE)
 #' pt <- bso_translate_phenology(p, .quiet = TRUE)
 #'
-#' # print the last rows of the generations data frame for Freiburg
+#' # print the generations data frame of station 'Freiburg'
 #' df <- get_generations_df(pt, 'Freiburg')
-#' tail(df, 10)
+#' df
 #' }
 #' @export
 

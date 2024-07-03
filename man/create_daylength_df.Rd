@@ -34,7 +34,7 @@ dl <- create_daylength_df(barrks_data('station_coords'),
                           .quiet = TRUE)
 
 # print day lengths of station 'Freiburg'
-head(dl[dl$station == 'Freiburg',], 10)
+dl[dl$station == 'Freiburg',]
 \dontshow{\}) # examplesIf}
 }
 \seealso{

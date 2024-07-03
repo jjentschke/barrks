@@ -104,7 +104,7 @@ create_suntimes_rsts <- function(template,
 #'                          .quiet = TRUE)
 #'
 #' # print results of station 'Freiburg'
-#' head(st[st$station == 'Freiburg',], 10)
+#' st[st$station == 'Freiburg',]
 #' }
 #' @seealso [create_suntimes_rsts()]
 #'

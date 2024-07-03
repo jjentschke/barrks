@@ -67,7 +67,7 @@ save_phenology(p, path, .overwrite = TRUE, .quiet = TRUE)
 ###
 
 # load phenology from path
-p2 <- load_phenology(path)
+p2 <- load_phenology(path, .quiet = TRUE)
 
 # plot generations
 gens <- get_generations_rst(p2)

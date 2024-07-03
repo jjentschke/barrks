@@ -85,7 +85,7 @@ create_daylength_rst <- function(template,
 #'                           .quiet = TRUE)
 #'
 #' # print day lengths of station 'Freiburg'
-#' head(dl[dl$station == 'Freiburg',], 10)
+#' dl[dl$station == 'Freiburg',]
 #' @seealso [create_daylength_rst()]
 #'
 #' @export

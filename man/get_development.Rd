@@ -42,9 +42,9 @@ implies that the generation is not present yet.
 # calculate station-based phenology
 p <- phenology('phenips-clim', barrks_data('stations'), .quiet = TRUE)
 
-# print the last rows of the development data frame for Freiburg
+# print the development data frame of station 'Freiburg'
 df <- get_development_df(p, 'Freiburg')
 df[,4:ncol(df)] <- round(df[,4:ncol(df)], 3) # round results
-tail(df, 10)
+df
 }
 }

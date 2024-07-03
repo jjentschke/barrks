@@ -77,7 +77,7 @@ generations within a year.
 p <- phenology('phenips-clim', barrks_data('stations'), .quiet = TRUE)
 
 # plot development diagram of the station 'Mannheim'
-plot_development_diagram(p, 'Mannheim')
+plot_development_diagram(p, 'Mannheim', .lwd = 4)
 }
 }
 \seealso{
