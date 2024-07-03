@@ -48,7 +48,6 @@ at a specific developmental stage.
 
 ``` r
 bso_plot_stage_diagram(pheno_bso, 234)
-#> Error in (function (x, y = NULL, legend, fill = NULL, col = par("col"), : argument "legend" is missing, with no default
 ```
 
 <div class="figure">
