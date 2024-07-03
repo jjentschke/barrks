@@ -1,12 +1,28 @@
 Package: barrks
 Type: Package
-Title: Calculate Bark Beetle Phenology
-Version: 0.9.0.2
-Author: Jakob Jentschke
-Maintainer: Jakob Jentschke <jakob.jentschke@forst.bwl.de>
-Description: The package provides several models (e.g. PHENIPS-Clim, PHENIPS, RITY...) to
-    calculate the bark beetle phenology based on raster data. It is possible to
-    customize and combine the models.
+Title: Calculate Bark Beetle Phenology Using Different Models
+Version: 0.9.0.5
+Description: Calculate the bark beetle phenology based on raster data or
+    point-related data. There are models implemented for the bark beetle species
+    Ips typographus and Pityogenes chalcographus. The models can be customized
+    and their submodels (onset of infestation, beetle development, diapause
+    initiation, mortality) can be combined. The following models are available
+    in the package:
+    PHENIPS-Clim (first-time release in this package),
+    PHENIPS (Baier et al. 2007) <doi:10.1016/j.foreco.2007.05.020>,
+    RITY (Ogris et al. 2019) <doi:10.1016/j.ecolmodel.2019.108775>,
+    CHAPY (Ogris et al. 2020) <doi:10.1016/j.ecolmodel.2020.109137>,
+    BSO (Jakoby et al. 2019) <doi:10.1111/gcb.14766>,
+    Lange et al. (2006) <https://www.researchgate.net/publication/228511956_Thresholds_in_the_life_cycle_of_the_spruce_bark_beetle_under_climate_change>,
+    Jönsson et al. (2011) <doi:10.1007/s10584-011-0038-4>.
+Authors@R: c(
+    person("Jakob", "Jentschke", email = "jakob.jentschke@forst.bwl.de",
+           role = c("aut", "cre")),
+    person("FVA BW, Abt. Waldschutz", email = "waldschutz.fva-bw@forst.bwl.de",
+           role = c("cph", "fnd"))
+  )
+URL: https://jjentschke.github.io/barrks/, https://github.com/jjentschke/barrks
+BugReports: https://github.com/jjentschke/barrks/issues
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true
@@ -24,7 +40,7 @@ Imports:
     stringr
 Collate: 
     'appearance.R'
-    'barrks.R'
+    'barrks-package.R'
     'bso-phenology-results.R'
     'bso-phenology.R'
     'utils.R'
@@ -61,6 +77,7 @@ Suggests:
     knitr,
     mnormt,
     ncdf4,
+    rlang,
     rmarkdown,
     suncalc,
     tidyverse,
