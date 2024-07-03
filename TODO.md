@@ -11,10 +11,11 @@
 - [ ] Make order of input raster layers irrelevant (use the date)
 - [ ] `phenology()`: All rasters from `.storage` are used even though `.dates` are not `NULL`
 - [ ] Further customization options for `plot_development_diagram()`:
-  - [ ] fill incomplete generations: yes/no
-  - [x] customize fill after .split_date
+  - [ ] Fill incomplete generations: yes/no
+- [ ] `plot_development_diagram()`: Adjust legend if `.minmax_only == TRUE`
 - [ ] Unify status messages (print temporary only?)
 - [ ] Make storage messages optional 
+- [ ] Improve performance of `create_suntimes_df()`
 
 
 ## Models
