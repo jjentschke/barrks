@@ -7,3 +7,4 @@
 ^data-raw$
 ^LICENSE\.md$
 ^TODO.md
+^cran-comments\.md$
