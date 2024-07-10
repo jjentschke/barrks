@@ -27,7 +27,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.6</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.8</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -94,7 +94,8 @@ should have a <code>date</code> column whose values need to be
 interpretable by <code><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date()</a></code>, and a <code>station</code>
 column that specifies the name of the respective station. Additional
 columns provide the actual parameters used by the model. This vignette
-uses the station data provided by barrks as sample data.</p>
+uses the station data provided by <code>barrks</code> as sample
+data.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">station_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/barrks_data.html">barrks_data</a></span><span class="op">(</span><span class="st">'stations'</span><span class="op">)</span></span>
@@ -125,18 +126,16 @@ if the respective generation appears in all phenology objects.</p>
 <span><span class="va">pheno_shaded</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/phenology.html">phenology</a></span><span class="op">(</span><span class="st">'phenips-clim'</span>, <span class="va">station_data</span>, exposure <span class="op">=</span> <span class="st">'shaded'</span><span class="op">)</span></span>
 <span><span class="va">pheno_last</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/phenology.html">phenology</a></span><span class="op">(</span><span class="st">'phenips-clim'</span>, <span class="va">station_data</span>, exposure <span class="op">=</span> <span class="st">'shaded'</span>,</span>
 <span>                        onset_mode <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span></span>
-<span></span>
+<span><span class="co">#&gt; Error in (function (classes, fdef, mtable) : kann keine vererbte Methode finden für Funktion 'nlyr&lt;-' für Signatur '"SpatRaster", "NULL"'</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span></span>
 <span><span class="co"># plot development diagram</span></span>
 <span><span class="fu"><a href="../reference/plot_development_diagram.html">plot_development_diagram</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="st">'sunny'</span> <span class="op">=</span> <span class="va">pheno_sunny</span>,</span>
 <span>                              <span class="st">'shaded'</span> <span class="op">=</span> <span class="va">pheno_shaded</span>,</span>
 <span>                              <span class="st">'shaded + late onset'</span> <span class="op">=</span> <span class="va">pheno_last</span><span class="op">)</span>,</span>
 <span>                         xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'2011-03-15'</span>, <span class="st">'2011-12-31'</span><span class="op">)</span><span class="op">)</span>,</span>
-<span>                         .lty <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span></span></code></pre></div>
-<div class="figure">
-<img src="figures/stations-diagram-1.png" alt="Development diagram with different variants of PHENIPS-Clim" width="100%"><p class="caption">
-Development diagram with different variants of PHENIPS-Clim
-</p>
-</div>
+<span>                         .lty <span class="op">=</span> <span class="fl">1</span><span class="op">:</span><span class="fl">3</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Error in eval(expr, envir, enclos): object 'pheno_last' not found</span></span></code></pre></div>
   </main>
 </div>
 

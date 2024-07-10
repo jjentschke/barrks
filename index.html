@@ -5,7 +5,7 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Calculate the bark beetle phenology based on raster data or point-related data. There are models implemented for the bark beetle species Ips typographus and Pityogenes chalcographus. The models can be customized and their submodels (onset of infestation, beetle development, diapause initiation, mortality) can be combined. The following models are available in the package: PHENIPS-Clim (first-time release in this package), PHENIPS (Baier et al. 2007) &lt;doi:10.1016/j.foreco.2007.05.020&gt;, RITY (Ogris et al. 2019) &lt;doi:10.1016/j.ecolmodel.2019.108775&gt;, CHAPY (Ogris et al. 2020) &lt;doi:10.1016/j.ecolmodel.2020.109137&gt;, BSO (Jakoby et al. 2019) &lt;doi:10.1111/gcb.14766&gt;, Lange et al. (2006) &lt;https://www.researchgate.net/publication/228511956_Thresholds_in_the_life_cycle_of_the_spruce_bark_beetle_under_climate_change&gt;, Jönsson et al. (2011) &lt;doi:10.1007/s10584-011-0038-4&gt;.">
+<meta name="description" content="Calculate the bark beetle phenology based on raster data or point-related data. There are multiple models implemented for two bark beetle species. The models can be customized and their submodels (onset of infestation, beetle development, diapause initiation, mortality) can be combined. The following models are available in the package: PHENIPS-Clim (first-time release in this package), PHENIPS (Baier et al. 2007) &lt;doi:10.1016/j.foreco.2007.05.020&gt;, RITY (Ogris et al. 2019) &lt;doi:10.1016/j.ecolmodel.2019.108775&gt;, CHAPY (Ogris et al. 2020) &lt;doi:10.1016/j.ecolmodel.2020.109137&gt;, BSO (Jakoby et al. 2019) &lt;doi:10.1111/gcb.14766&gt;, Lange et al. (2008) &lt;doi:10.1007/978-3-540-85081-6_32&gt;, Jönsson et al. (2011) &lt;doi:10.1007/s10584-011-0038-4&gt;. The package may be expanded by models for other bark beetle species in the future.">
 <title>Calculate Bark Beetle Phenology Using Different Models • barrks</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.11/clipboard.min.js" integrity="sha512-7O5pXpc0oCRrxk8RUfDYFgn0nO1t+jLuIOQdOMRp4APB7uZ4vSjspzp5y6YDtDs4VzUSTbWzBFZ/LKJhnyFOKw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><link href="extra.css" rel="stylesheet">
 <meta property="og:title" content="Calculate Bark Beetle Phenology Using Different Models">
-<meta property="og:description" content="Calculate the bark beetle phenology based on raster data or point-related data. There are models implemented for the bark beetle species Ips typographus and Pityogenes chalcographus. The models can be customized and their submodels (onset of infestation, beetle development, diapause initiation, mortality) can be combined. The following models are available in the package: PHENIPS-Clim (first-time release in this package), PHENIPS (Baier et al. 2007) &lt;doi:10.1016/j.foreco.2007.05.020&gt;, RITY (Ogris et al. 2019) &lt;doi:10.1016/j.ecolmodel.2019.108775&gt;, CHAPY (Ogris et al. 2020) &lt;doi:10.1016/j.ecolmodel.2020.109137&gt;, BSO (Jakoby et al. 2019) &lt;doi:10.1111/gcb.14766&gt;, Lange et al. (2006) &lt;https://www.researchgate.net/publication/228511956_Thresholds_in_the_life_cycle_of_the_spruce_bark_beetle_under_climate_change&gt;, Jönsson et al. (2011) &lt;doi:10.1007/s10584-011-0038-4&gt;.">
+<meta property="og:description" content="Calculate the bark beetle phenology based on raster data or point-related data. There are multiple models implemented for two bark beetle species. The models can be customized and their submodels (onset of infestation, beetle development, diapause initiation, mortality) can be combined. The following models are available in the package: PHENIPS-Clim (first-time release in this package), PHENIPS (Baier et al. 2007) &lt;doi:10.1016/j.foreco.2007.05.020&gt;, RITY (Ogris et al. 2019) &lt;doi:10.1016/j.ecolmodel.2019.108775&gt;, CHAPY (Ogris et al. 2020) &lt;doi:10.1016/j.ecolmodel.2020.109137&gt;, BSO (Jakoby et al. 2019) &lt;doi:10.1111/gcb.14766&gt;, Lange et al. (2008) &lt;doi:10.1007/978-3-540-85081-6_32&gt;, Jönsson et al. (2011) &lt;doi:10.1007/s10584-011-0038-4&gt;. The package may be expanded by models for other bark beetle species in the future.">
 <!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
@@ -27,7 +27,7 @@
     
     <a class="navbar-brand me-2" href="index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.6</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.8</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -102,7 +102,7 @@
 </tr>
 <tr class="even">
 <td>Lange</td>
-<td>Lange, Oekland, and Krokene (2006)</td>
+<td>Lange, Økland, and Krokene (2008)</td>
 <td><em>I. typographus</em></td>
 <td>
 <code><a href="reference/model.lange.apply.html">?model.lange.apply</a></code> <br><code><a href="reference/model.lange.customize.html">?model.lange.customize</a></code>
@@ -184,18 +184,18 @@ install.packages('barrks')
 <span>                                           axes <span class="op">=</span> <span class="cn">FALSE</span>, box <span class="op">=</span> <span class="cn">TRUE</span>, nr <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>                                           cex.main <span class="op">=</span> <span class="fl">1.9</span>, plg <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>cex <span class="op">=</span> <span class="fl">1.8</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="figure">
-<img src="reference/figures/README-generations-plot-1.png" alt="Generations plot" width="100%"><p class="caption">
-Generations plot
+<img src="reference/figures/README-generations-plot-1.png" alt='Generations plot ("1" means that the first generation hatched, "1s" means that the first generations sister brood hatched)' width="100%"><p class="caption">
+Generations plot (“1” means that the first generation hatched, “1s” means that the first generations sister brood hatched)
 </p>
 </div>
-<p><code>barrks</code> makes it easy to plot the development of the individual generations. To illustrate that, a “shaded” variant of the phenology above is calculated and the development diagram for a specific cell (called “station” in <code>barrks</code>) is plotted for bith phenology variants.</p>
+<p><code>barrks</code> makes it easy to plot the development of the individual generations. To illustrate that, a “shaded” variant of the phenology above is calculated and the development diagram for a specific cell (called “station” in <code>barrks</code>) is plotted for both phenology variants.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">pheno_shaded</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/phenology.html">phenology</a></span><span class="op">(</span><span class="st">'phenips-clim'</span>, <span class="fu"><a href="reference/barrks_data.html">barrks_data</a></span><span class="op">(</span><span class="op">)</span>, exposure <span class="op">=</span> <span class="st">'shaded'</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="reference/plot_development_diagram.html">plot_development_diagram</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span><span class="va">pheno</span>, <span class="va">pheno_shaded</span><span class="op">)</span>,</span>
+<span><span class="fu"><a href="reference/plot_development_diagram.html">plot_development_diagram</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>sunny <span class="op">=</span> <span class="va">pheno</span>, shaded <span class="op">=</span> <span class="va">pheno_shaded</span><span class="op">)</span>,</span>
 <span>                         <span class="fu"><a href="reference/stations.html">stations_create</a></span><span class="op">(</span><span class="st">'Example'</span>, <span class="fl">234</span><span class="op">)</span>,</span>
-<span>                         .legend_lty <span class="op">=</span> <span class="cn">FALSE</span>,</span>
+<span>                         .lty <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">1</span>, <span class="fl">2</span><span class="op">)</span>,</span>
 <span>                         xlim <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'2015-04-01'</span>, <span class="st">'2015-12-31'</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="figure">
 <img src="reference/figures/README-development-diagram-1.png" alt="Development diagram" width="100%"><p class="caption">
@@ -209,22 +209,22 @@ Development diagram
 </h1>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-Baier2007" class="csl-entry">
-Baier, Peter, Josef Pennerstorfer, and Axel Schopf. 2007. “<span class="nocase">PHENIPS—A comprehensive phenology model of <em>Ips typographus</em> (L.)(Col., Scolytinae) as a tool for hazard rating of bark beetle infestation</span>.” <em>Forest Ecology and Management</em> 249 (3): 171–86. <a href="https://doi.org/" class="external-link uri">https://doi.org/</a><a href="https://doi.org/10.1016/j.foreco.2007.05.020" class="external-link uri">https://doi.org/10.1016/j.foreco.2007.05.020</a>.
+Baier, Peter, Josef Pennerstorfer, and Axel Schopf. 2007. “<span class="nocase">PHENIPS—A comprehensive phenology model of <em>Ips typographus</em> (L.)(Col., Scolytinae) as a tool for hazard rating of bark beetle infestation</span>.” <em>Forest Ecology and Management</em> 249 (3): 171–86. <a href="https://doi.org/10.1016/j.foreco.2007.05.020" class="external-link uri">https://doi.org/10.1016/j.foreco.2007.05.020</a>.
 </div>
 <div id="ref-Jakoby2019" class="csl-entry">
-Jakoby, Oliver, Heike Lischke, and Beat Wermelinger. 2019. “<span class="nocase">Climate change alters elevational phenology patterns of the European spruce bark beetle (<em>Ips typographus</em>)</span>.” <em>Global Change Biology</em> 25 (12): 4048–63. <a href="https://doi.org/" class="external-link uri">https://doi.org/</a><a href="https://doi.org/10.1111/gcb.14766" class="external-link uri">https://doi.org/10.1111/gcb.14766</a>.
+Jakoby, Oliver, Heike Lischke, and Beat Wermelinger. 2019. “<span class="nocase">Climate change alters elevational phenology patterns of the European spruce bark beetle (<em>Ips typographus</em>)</span>.” <em>Global Change Biology</em> 25 (12): 4048–63. <a href="https://doi.org/10.1111/gcb.14766" class="external-link uri">https://doi.org/10.1111/gcb.14766</a>.
 </div>
 <div id="ref-Jonsson2011" class="csl-entry">
-Jönsson, Anna Maria, Susanne Harding, Paal Krokene, Holger Lange, Ake Lindeloew, Bjoern Oekland, Hans Peter Ravn, and Leif Martin Schroeder. 2011. “<span class="nocase">Modelling the potential impact of global warming on <em>Ips typographus</em> voltinism and reproductive diapause</span>.” <em>Climatic Change</em> 109: 695–718. <a href="https://doi.org/" class="external-link uri">https://doi.org/</a><a href="https://doi.org/10.1007/s10584-011-0038-4" class="external-link uri">https://doi.org/10.1007/s10584-011-0038-4</a>.
+Jönsson, Anna Maria, Susanne Harding, Paal Krokene, Holger Lange, Ake Åke Lindelöw, Bjørn Økland, Hans Peter Ravn, and Leif Martin Schroeder. 2011. “<span class="nocase">Modelling the potential impact of global warming on <em>Ips typographus</em> voltinism and reproductive diapause</span>.” <em>Climatic Change</em> 109: 695–718. <a href="https://doi.org/10.1007/s10584-011-0038-4" class="external-link uri">https://doi.org/10.1007/s10584-011-0038-4</a>.
 </div>
-<div id="ref-Lange2006" class="csl-entry">
-Lange, Holger, Bjoern Oekland, and Paal Krokene. 2006. “<span class="nocase">Thresholds in the life cycle of the spruce bark beetle under climate change</span>.” <em>Interjournal Complex Syst.</em> 1648 (January).
+<div id="ref-Lange2008" class="csl-entry">
+Lange, Holger, Bjørn Økland, and Paal Krokene. 2008. “To Be or Twice to Be? The Life Cycle Development of the Spruce Bark Beetle Under Climate Change.” In <em>Unifying Themes in Complex Systems: Proceedings of the Sixth International Conference on Complex Systems</em>, 251–58. Springer. <a href="https://doi.org/10.1007/978-3-540-85081-6_32" class="external-link uri">https://doi.org/10.1007/978-3-540-85081-6_32</a>.
 </div>
 <div id="ref-Ogris2019" class="csl-entry">
-Ogris, Nikica, Mitja Ferlan, Tine Hauptman, Roman Pavlin, Andreja Kavčič, Maja Jurc, and Maarten De Groot. 2019. “<span class="nocase">RITY–A phenology model of Ips typographus as a tool for optimization of its monitoring</span>.” <em>Ecological Modelling</em> 410: 108775. <a href="https://doi.org/" class="external-link uri">https://doi.org/</a><a href="https://doi.org/10.1016/j.ecolmodel.2019.108775" class="external-link uri">https://doi.org/10.1016/j.ecolmodel.2019.108775</a>.
+Ogris, Nikica, Mitja Ferlan, Tine Hauptman, Roman Pavlin, Andreja Kavčič, Maja Jurc, and Maarten De Groot. 2019. “<span class="nocase">RITY–A phenology model of Ips typographus as a tool for optimization of its monitoring</span>.” <em>Ecological Modelling</em> 410: 108775. <a href="https://doi.org/10.1016/j.ecolmodel.2019.108775" class="external-link uri">https://doi.org/10.1016/j.ecolmodel.2019.108775</a>.
 </div>
 <div id="ref-Ogris2020" class="csl-entry">
-Ogris, Nikica, Mitja Ferlan, Tine Hauptman, Roman Pavlin, Andreja Kavčič, Maja Jurc, and Maarten de Groot. 2020. “<span class="nocase">Sensitivity analysis, calibration and validation of a phenology model for <em>Pityogenes chalcographus</em> (CHAPY)</span>.” <em>Ecological Modelling</em> 430: 109137. <a href="https://doi.org/" class="external-link uri">https://doi.org/</a><a href="https://doi.org/10.1016/j.ecolmodel.2020.109137" class="external-link uri">https://doi.org/10.1016/j.ecolmodel.2020.109137</a>.
+Ogris, Nikica, Mitja Ferlan, Tine Hauptman, Roman Pavlin, Andreja Kavčič, Maja Jurc, and Maarten de Groot. 2020. “<span class="nocase">Sensitivity analysis, calibration and validation of a phenology model for <em>Pityogenes chalcographus</em> (CHAPY)</span>.” <em>Ecological Modelling</em> 430: 109137. <a href="https://doi.org/10.1016/j.ecolmodel.2020.109137" class="external-link uri">https://doi.org/10.1016/j.ecolmodel.2020.109137</a>.
 </div>
 </div>
 </div>
@@ -233,7 +233,7 @@ Ogris, Nikica, Mitja Ferlan, Tine Hauptman, Roman Pavlin, Andreja Kavčič, Maja
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
 <li><a href="https://github.com/jjentschke/barrks/" class="external-link">Browse source code</a></li>
-<li><a href="https://github.com/jjentschke/barrks/issues" class="external-link">Report a bug</a></li>
+<li><a href="https://github.com/jjentschke/barrks/issues/" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 

@@ -27,7 +27,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.6</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.8</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -85,14 +85,14 @@
 
     
     
-<p>The BSO model works structurally differently than the other models in
-this package. It stochastically simulates a multitude of individuals
-instead of only returning a result for one representative beetle.
-Additionally, it requires an hourly onset to function. This is why the
-BSO-specific phenology function <code><a href="../reference/phenology.html">bso_phenology()</a></code> exists.
-While it is still possible to combine the diapause and the mortality
-submodels with other models, this is not the case for the onset and
-development submodels.</p>
+<p>BSO works structurally differently than the other models in this
+package. It stochastically simulates a multitude of individuals instead
+of only returning a result for one representative beetle. Additionally,
+it requires an hourly onset to function. This is why the BSO-specific
+phenology function <code><a href="../reference/phenology.html">bso_phenology()</a></code> exists. While it is
+still possible to combine the diapause and the mortality submodels with
+other models, this is not the case for the onset and development
+submodels.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://jjentschke.github.io/barrks/" class="external-link">barrks</a></span><span class="op">)</span></span>
@@ -117,16 +117,20 @@ development submodels.</p>
 illustration. The stage diagram illustrates the share of the total
 individuals at a specific developmental stage.</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/bso_plot_stage_diagram.html">bso_plot_stage_diagram</a></span><span class="op">(</span><span class="va">pheno_bso</span>, <span class="fl">234</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span></span>
+<span><span class="va">station</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/stations.html">stations_create</a></span><span class="op">(</span><span class="st">'station 1'</span>, <span class="fl">234</span><span class="op">)</span></span>
+<span></span>
+<span><span class="fu"><a href="../reference/bso_plot_stage_diagram.html">bso_plot_stage_diagram</a></span><span class="op">(</span><span class="va">pheno_bso</span>, <span class="va">station</span><span class="op">)</span></span></code></pre></div>
 <div class="figure">
-<img src="figures/bso-stage-diagram-1.png" alt="BSO stage diagram (generation '0' represents the hibernating beetles)" width="100%"><p class="caption">
-BSO stage diagram (generation ‘0’ represents the hibernating beetles)
+<img src="figures/bso-stage-diagram-1.png" alt="BSO stage diagram (the different colors represent the respective generation, generation '0' stands for the hibernating beetles)" width="100%"><p class="caption">
+BSO stage diagram (the different colors represent the respective
+generation, generation ‘0’ stands for the hibernating beetles)
 </p>
 </div>
 <p>The flight diagram shows the relative flight activity at a specific
 date.</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/bso_plot_flight_diagram.html">bso_plot_flight_diagram</a></span><span class="op">(</span><span class="va">pheno_bso</span>, <span class="fl">234</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/bso_plot_flight_diagram.html">bso_plot_flight_diagram</a></span><span class="op">(</span><span class="va">pheno_bso</span>, <span class="va">station</span><span class="op">)</span></span></code></pre></div>
 <div class="figure">
 <img src="figures/bso-flight-diagram-1.png" alt="BSO flight diagram (the colors describe which generation flies to establish a new filial generation or a sister brood respectively)" width="100%"><p class="caption">
 BSO flight diagram (the colors describe which generation flies to
@@ -148,8 +152,8 @@ functions that are available to analyse phenology objects.</p>
 <span><span class="va">dates</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'2015-04-15'</span>, <span class="st">'2015-06-15'</span>, <span class="st">'2015-08-15'</span>, <span class="st">'2015-10-15'</span><span class="op">)</span></span>
 <span><span class="fu"><a href="../reference/get_generations.html">get_generations_rst</a></span><span class="op">(</span><span class="va">pheno_translated</span>, <span class="va">dates</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">my_rst_plot</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="figure">
-<img src="figures/bso-gens-1.png" alt="Generations calculated by the BSO model" width="100%"><p class="caption">
-Generations calculated by the BSO model
+<img src="figures/bso-gens-1.png" alt="Generations calculated by BSO" width="100%"><p class="caption">
+Generations calculated by BSO
 </p>
 </div>
 </div>
