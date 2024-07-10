@@ -8,8 +8,8 @@ NULL
 
 #' Plot a stage diagram (BSO only)
 #'
-#' A stage diagram illustrates the share of individuals are in a specific
-#' developmental stage over time.
+#' A stage diagram illustrates the share of individuals that are in a specific
+#' developmental stage of a particular generation over time.
 #'
 #' @param .pheno `r .doc_pheno('BSO', 'bso_phenology')`
 #' @param .station `r .doc_station('.pheno')`
@@ -54,7 +54,8 @@ bso_plot_stage_diagram <- function(.pheno,
   dates <- prop_dates(.pheno)
   keys_available <- c()
 
-  fun_args <- list(type = 'n', xlab = 'date', ylab = 'dev', xaxs = 'i', yaxs = 'i', xaxt = 'n')
+  fun_args <- list(type = 'n', xlab = NA, ylab = 'share of individuals', xaxs = 'i', yaxs = 'i', xaxt = 'n',
+                   main = paste(names(.station), year))
   args <- list(...)
 
   purrr::walk(names(args), \(key) fun_args[[key]] <<- args[[key]])

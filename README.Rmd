@@ -39,7 +39,7 @@ The following table lists the models that are implemented in the package.
 | Model | Publication | Species | Help |
 | ----- | ----------- | ------- | ---- |
 | BSO | @Jakoby2019 | *I.&nbsp;typographus* | `?model.bso.apply` <br/> `?model.bso.customize` |
-| Lange | @Lange2006 | *I.&nbsp;typographus* | `?model.lange.apply` <br/> `?model.lange.customize` |
+| Lange | @Lange2008 | *I.&nbsp;typographus* | `?model.lange.apply` <br/> `?model.lange.customize` |
 | Jönsson | @Jonsson2011 | *I.&nbsp;typographus* | `?model.joensson.apply` <br/> `?model.joensson.customize` |
 | PHENIPS | @Baier2007 | *I.&nbsp;typographus* | `?model.phenips.apply` <br/> `?model.phenips.customize` |
 | PHENIPS&#x2011;Clim | - | *I.&nbsp;typographus* | `?model.phenips_clim.apply` <br/> `?model.phenips_clim.customize` |
@@ -72,7 +72,7 @@ with `get_generations_rst()`. `terra::plot()` can be used to visualize these ras
 
 
 
-```{r generations-plot, message=FALSE, warning = FALSE, out.width = "100%", fig.dim=c(7,2), out.width = "100%", fig.cap = "Generations plot"}
+```{r generations-plot, message=FALSE, warning = FALSE, out.width = "100%", fig.dim=c(7,2), out.width = "100%", fig.cap = "Generations plot (\"1\" means that the first generation hatched, \"1s\" means that the first generations sister brood hatched)"}
 
 library(barrks)
 library(tidyverse)
@@ -94,15 +94,15 @@ get_generations_rst(pheno, dates) %>% plot(mar = c(0.2, 0.1, 2, 5),
 `barrks` makes it easy to plot the development of the individual generations.
 To illustrate that, a "shaded" variant of the phenology above is calculated and
 the development diagram for a specific cell (called "station" in `barrks`) is
-plotted for bith phenology variants.
+plotted for both phenology variants.
 
 ```{r development-diagram, message=FALSE, out.width = "100%", fig.dim=c(7,4), fig.cap = "Development diagram"}
 
 pheno_shaded <- phenology('phenips-clim', barrks_data(), exposure = 'shaded')
 
-plot_development_diagram(list(pheno, pheno_shaded),
+plot_development_diagram(list(sunny = pheno, shaded = pheno_shaded),
                          stations_create('Example', 234),
-                         .legend_lty = FALSE,
+                         .lty = c(1, 2),
                          xlim = as.Date(c('2015-04-01', '2015-12-31')))
 
 ```

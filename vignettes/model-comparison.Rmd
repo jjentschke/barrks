@@ -31,7 +31,8 @@ my_rst_plot <- function(rst, ...) {
 
 In this vignette, the sample data delivered with `barrks` is used to calculate the
 phenology with all models available in the package. Note that the daylength threshold
-for diapause initiation of the Jönsson model is adapted to Central Europe from @Baier2007.
+for diapause initiation of the Jönsson model is adapted to Central Europe according
+to @Baier2007.
 
 
 ``` r
@@ -65,7 +66,7 @@ are described as the corresponding day of year. That data can be attained via
 As some models have not all submodels implemented and `terra::panel()` does not
 allow adding empty rasters, a workaround-function is defined to plot the
 the respective submodel outputs.
-Additionally it draws the borders of the area of interest.
+Additionally, it draws the borders of the area of interest.
 
 
 ``` r
@@ -81,8 +82,8 @@ plot_doy_panel <- function(x) {
     else polys(aoi, lwd = 2)
   }
 
-  # Replace NULL by a raster with values in the overall range to not affect the legend.
-  # The raster will be overplotted by `draw_aoi_borders()`
+  # replace NULL by a raster with values in the overall range to not affect the legend
+  # the raster will be overplotted by `draw_aoi_borders()`
   rst_tmp <- data[[1]][[1]] * 0 + min(minmax(rast(discard(x, is.null)))[1,])
   empty <- map_lgl(x, \(y) is.null(y))
   walk(which(empty), \(i) x[[i]] <<- rst_tmp)
@@ -113,8 +114,8 @@ plot_doy_panel(map(phenos, \(p) get_mortality_rst(p)[[1]]))
 <p class="caption">Day of year when the diapause begins (in white cells no diapause was induced)</p>
 </div>
 <div class="figure">
-<img src="figures/model-comparison-mortality-1.png" alt="Day of year of the first frost-induced mortality event in autumn (in white cells no mortality happened)" width="100%" />
-<p class="caption">Day of year of the first frost-induced mortality event in autumn (in white cells no mortality happened)</p>
+<img src="figures/model-comparison-mortality-1.png" alt="Day of year of the first frost-induced mortality event in autumn/winter (in white cells no mortality occured)" width="100%" />
+<p class="caption">Day of year of the first frost-induced mortality event in autumn/winter (in white cells no mortality occured)</p>
 </div>
 
 
@@ -142,8 +143,8 @@ walk(names(phenos), \(key) {
 ```
 
 <div class="figure">
-<img src="figures/model-comparison-gens-phenips-clim-1.png" alt="Generations calculated by PHENIPS-CLIM" width="100%" />
-<p class="caption">Generations calculated by PHENIPS-CLIM</p>
+<img src="figures/model-comparison-gens-phenips-clim-1.png" alt="Generations calculated by PHENIPS-Clim" width="100%" />
+<p class="caption">Generations calculated by PHENIPS-Clim</p>
 </div>
 <div class="figure">
 <img src="figures/model-comparison-gens-phenips-1.png" alt="Generations calculated by PHENIPS" width="100%" />
@@ -162,8 +163,8 @@ walk(names(phenos), \(key) {
 <p class="caption">Generations calculated by the Jönsson model</p>
 </div>
 <div class="figure">
-<img src="figures/model-comparison-gens-bso-1.png" alt="Generations calculated by the BSO model" width="100%" />
-<p class="caption">Generations calculated by the BSO model</p>
+<img src="figures/model-comparison-gens-bso-1.png" alt="Generations calculated by BSO" width="100%" />
+<p class="caption">Generations calculated by BSO</p>
 </div>
 <div class="figure">
 <img src="figures/model-comparison-gens-chapy-1.png" alt="Generations calculated by CHAPY" width="100%" />
@@ -184,8 +185,8 @@ To get the stations' coordinates, `terra::xyFromCell` can be used.
 # plot the locations of the stations
 
 rst_aoi <- data[[1]][[1]] * 0
-stations <- c(Station_1 = 234, Station_2 = 345)
-station_coords <- vect(xyFromCell(rst_aoi, stations))
+stations <- stations_create(c('station 1', 'station 2'), c(234 345))
+station_coords <- vect(xyFromCell(rst_aoi, stations_cells(stations)))
 
 plot(rst_aoi,  col = '#AAAAAA', legend = FALSE, axes = FALSE, box = TRUE)
 plot(station_coords, col = 'red', pch = 4, add = TRUE)
@@ -212,6 +213,7 @@ walk(1:length(stations), \(i) {
   plot_development_diagram(phenos[models],
                            stations[i],
                            .lty = 1:length(models),
+                           .group = FALSE,
                            xlim = limits)
 })
 

@@ -101,7 +101,7 @@ NULL
 #'
 #' @name model.phenips.customize
 #' @seealso [model()], [phenology()], [`model.phenips.apply`]
-#' @family {model customizations}
+#' @family model customizations
 #'
 #' @encoding UTF-8
 NULL
@@ -166,7 +166,7 @@ NULL
 #'
 #' @name model.phenips.apply
 #' @seealso [model()], [phenology()], [`model.phenips.customize`]
-#' @family {phenology applications}
+#' @family phenology applications
 #'
 #' @encoding UTF-8
 NULL

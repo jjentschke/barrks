@@ -3,7 +3,7 @@
 \encoding{UTF-8}
 \name{model.bso.customize}
 \alias{model.bso.customize}
-\title{Customize the BSO model}
+\title{Customize BSO}
 \arguments{
 \item{dd_onset_start_date}{The date, when the degree days start to sum up ('MM-DD').}
 
@@ -47,13 +47,13 @@ temperature falls below that value.}
 }
 \description{
 This page describes the parameters
-that can be used to customize the BSO model. The model was developed by
+that can be used to customize BSO. The model was developed by
 \insertCite{Jakoby2019;textual}{barrks}. Look \link[=model.bso.customize]{here} to find
 out how to apply the model.
 }
 \details{
 In \code{barrks}, \code{\link[=model]{model()}} is used to customize a model. The following code
-illustrates which parameters are available for the BSO model and specifies their
+illustrates which parameters are available for BSO and specifies their
 default values.
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{
@@ -107,7 +107,7 @@ model("bso",
 \seealso{
 \code{\link[=model]{model()}}, \code{\link[=phenology]{phenology()}}, \code{\link{model.bso.apply}}
 
-Other {model customizations}: 
+Other model customizations: 
 \code{\link{model.chapy.customize}},
 \code{\link{model.joensson.customize}},
 \code{\link{model.lange.customize}},
@@ -115,4 +115,4 @@ Other {model customizations}:
 \code{\link{model.phenips_clim.customize}},
 \code{\link{model.rity.customize}}
 }
-\concept{{model customizations}}
+\concept{model customizations}

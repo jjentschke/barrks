@@ -43,8 +43,8 @@ For the customization of the respective legend, a list of parameters for
 None
 }
 \description{
-A stage diagram illustrates the share of individuals are in a specific
-developmental stage over time.
+A stage diagram illustrates the share of individuals that are in a specific
+developmental stage of a particular generation over time.
 }
 \examples{
 \donttest{

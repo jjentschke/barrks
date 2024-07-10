@@ -87,7 +87,7 @@ default values.
 \seealso{
 \code{\link[=model]{model()}}, \code{\link[=phenology]{phenology()}}, \code{\link{model.joensson.apply}}
 
-Other {model customizations}: 
+Other model customizations: 
 \code{\link{model.bso.customize}},
 \code{\link{model.chapy.customize}},
 \code{\link{model.lange.customize}},
@@ -95,4 +95,4 @@ Other {model customizations}:
 \code{\link{model.phenips_clim.customize}},
 \code{\link{model.rity.customize}}
 }
-\concept{{model customizations}}
+\concept{model customizations}

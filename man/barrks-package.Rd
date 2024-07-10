@@ -6,14 +6,14 @@
 \alias{barrks-package}
 \title{barrks: Calculate Bark Beetle Phenology Using Different Models}
 \description{
-Calculate the bark beetle phenology based on raster data or point-related data. There are models implemented for the bark beetle species Ips typographus and Pityogenes chalcographus. The models can be customized and their submodels (onset of infestation, beetle development, diapause initiation, mortality) can be combined. The following models are available in the package: PHENIPS-Clim (first-time release in this package), PHENIPS (Baier et al. 2007) \doi{10.1016/j.foreco.2007.05.020}, RITY (Ogris et al. 2019) \doi{10.1016/j.ecolmodel.2019.108775}, CHAPY (Ogris et al. 2020) \doi{10.1016/j.ecolmodel.2020.109137}, BSO (Jakoby et al. 2019) \doi{10.1111/gcb.14766}, Lange et al. (2006) \url{https://www.researchgate.net/publication/228511956_Thresholds_in_the_life_cycle_of_the_spruce_bark_beetle_under_climate_change}, Jönsson et al. (2011) \doi{10.1007/s10584-011-0038-4}.
+Calculate the bark beetle phenology based on raster data or point-related data. There are multiple models implemented for two bark beetle species. The models can be customized and their submodels (onset of infestation, beetle development, diapause initiation, mortality) can be combined. The following models are available in the package: PHENIPS-Clim (first-time release in this package), PHENIPS (Baier et al. 2007) \doi{10.1016/j.foreco.2007.05.020}, RITY (Ogris et al. 2019) \doi{10.1016/j.ecolmodel.2019.108775}, CHAPY (Ogris et al. 2020) \doi{10.1016/j.ecolmodel.2020.109137}, BSO (Jakoby et al. 2019) \doi{10.1111/gcb.14766}, Lange et al. (2008) \doi{10.1007/978-3-540-85081-6_32}, Jönsson et al. (2011) \doi{10.1007/s10584-011-0038-4}. The package may be expanded by models for other bark beetle species in the future.
 }
 \seealso{
 Useful links:
 \itemize{
   \item \url{https://jjentschke.github.io/barrks/}
-  \item \url{https://github.com/jjentschke/barrks}
-  \item Report bugs at \url{https://github.com/jjentschke/barrks/issues}
+  \item \url{https://github.com/jjentschke/barrks/}
+  \item Report bugs at \url{https://github.com/jjentschke/barrks/issues/}
 }
 
 }

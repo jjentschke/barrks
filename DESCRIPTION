@@ -1,28 +1,29 @@
 Package: barrks
 Type: Package
 Title: Calculate Bark Beetle Phenology Using Different Models
-Version: 0.9.0.6
+Version: 0.9.0.8
 Description: Calculate the bark beetle phenology based on raster data or
-    point-related data. There are models implemented for the bark beetle species
-    Ips typographus and Pityogenes chalcographus. The models can be customized
-    and their submodels (onset of infestation, beetle development, diapause
-    initiation, mortality) can be combined. The following models are available
-    in the package:
+    point-related data. There are multiple models implemented for two bark
+    beetle species. The models can be customized and their submodels (onset of
+    infestation, beetle development, diapause initiation, mortality) can be
+    combined. The following models are available in the package:
     PHENIPS-Clim (first-time release in this package),
     PHENIPS (Baier et al. 2007) <doi:10.1016/j.foreco.2007.05.020>,
     RITY (Ogris et al. 2019) <doi:10.1016/j.ecolmodel.2019.108775>,
     CHAPY (Ogris et al. 2020) <doi:10.1016/j.ecolmodel.2020.109137>,
     BSO (Jakoby et al. 2019) <doi:10.1111/gcb.14766>,
-    Lange et al. (2006) <https://www.researchgate.net/publication/228511956_Thresholds_in_the_life_cycle_of_the_spruce_bark_beetle_under_climate_change>,
+    Lange et al. (2008) <doi:10.1007/978-3-540-85081-6_32>,
     Jönsson et al. (2011) <doi:10.1007/s10584-011-0038-4>.
+    The package may be expanded by models for other bark beetle species in the
+    future.
 Authors@R: c(
     person("Jakob", "Jentschke", email = "jakob.jentschke@forst.bwl.de",
            role = c("aut", "cre")),
     person("FVA BW, Abt. Waldschutz", email = "waldschutz.fva-bw@forst.bwl.de",
            role = c("cph", "fnd"))
   )
-URL: https://jjentschke.github.io/barrks/, https://github.com/jjentschke/barrks
-BugReports: https://github.com/jjentschke/barrks/issues
+URL: https://jjentschke.github.io/barrks/, https://github.com/jjentschke/barrks/
+BugReports: https://github.com/jjentschke/barrks/issues/
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true

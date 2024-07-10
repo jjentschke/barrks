@@ -215,7 +215,7 @@ get_hibernating_generations_df <- function(pheno,
 
 #' Get the beetles development
 #'
-#' Get the beetles development of specific generations.A value of -1
+#' Get the beetles development of specific generations. A value of -1
 #' implies that the generation is not present yet.
 #'
 #' @param pheno `r .doc_pheno()`

@@ -2,7 +2,7 @@
 % Please edit documentation in R/appearance.R
 \name{barrks_colors}
 \alias{barrks_colors}
-\title{Get barrks default color palettes}
+\title{Get \code{barrks} default color palettes}
 \usage{
 barrks_colors(type = "raster")
 }
@@ -15,7 +15,7 @@ for particular purposes. Allowed values are \code{'raster'}, \code{'diagram_line
 A character vector of hex colors.
 }
 \description{
-Get barrks default color palettes
+Get \code{barrks} default color palettes.
 }
 \examples{
 colors <- barrks_colors()

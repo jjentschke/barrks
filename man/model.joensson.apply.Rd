@@ -71,7 +71,7 @@ Look \link[=model.joensson.customize]{here} to find out how the model parameters
 \seealso{
 \code{\link[=model]{model()}}, \code{\link[=phenology]{phenology()}}, \code{\link{model.joensson.customize}}
 
-Other {phenology applications}: 
+Other phenology applications: 
 \code{\link{model.bso.apply}},
 \code{\link{model.chapy.apply}},
 \code{\link{model.lange.apply}},
@@ -79,4 +79,4 @@ Other {phenology applications}:
 \code{\link{model.phenips_clim.apply}},
 \code{\link{model.rity.apply}}
 }
-\concept{{phenology applications}}
+\concept{phenology applications}

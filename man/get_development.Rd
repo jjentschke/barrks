@@ -34,7 +34,7 @@ each generation  (\code{gen_1}, \code{gen_1.5}, \code{gen_2}, \code{gen_2.5}, ..
 }
 }
 \description{
-Get the beetles development of specific generations.A value of -1
+Get the beetles development of specific generations. A value of -1
 implies that the generation is not present yet.
 }
 \examples{

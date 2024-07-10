@@ -19,7 +19,7 @@ Sys.setlocale("LC_ALL", "English")
 ```
 
 
-The BSO model works structurally differently than the other models in this package. It
+BSO works structurally differently than the other models in this package. It
 stochastically simulates a multitude of individuals instead of only returning a result for
 one representative beetle. Additionally, it requires an hourly onset to function. This is why
 the BSO-specific phenology function `bso_phenology()` exists. While it is still
@@ -54,14 +54,17 @@ The stage diagram illustrates the share of the total individuals
 at a specific developmental stage.
 
 
-```{r bso-stage-diagram, message = FALSE, out.width = "100%", fig.dim=c(12,6), fig.cap = "BSO stage diagram (generation '0' represents the hibernating beetles)"}
-bso_plot_stage_diagram(pheno_bso, 234)
+```{r bso-stage-diagram, message = FALSE, out.width = "100%", fig.dim=c(12,6), fig.cap = "BSO stage diagram (the different colors represent the respective generation, generation '0' stands for the hibernating beetles)"}
+
+station <- stations_create('station 1', 234)
+
+bso_plot_stage_diagram(pheno_bso, station)
 ```
 
 The flight diagram shows the relative flight activity at a specific date.
 
 ```{r bso-flight-diagram, message = FALSE, out.width = "100%", fig.dim=c(12,6), fig.cap = "BSO flight diagram (the colors describe which generation flies to establish a new filial generation or a sister brood respectively)"}
-bso_plot_flight_diagram(pheno_bso, 234)
+bso_plot_flight_diagram(pheno_bso, station)
 ```
 
 
@@ -73,7 +76,7 @@ phenology to a form that corresponds to the output of `phenology()`.
 This makes it possible to use functions that are available to analyse phenology
 objects.
 
-```{r bso-gens, message=FALSE, warning=FALSE, out.width = "100%", fig.dim=c(14, 3), fig.cap = "Generations calculated by the BSO model"}
+```{r bso-gens, message=FALSE, warning=FALSE, out.width = "100%", fig.dim=c(14, 3), fig.cap = "Generations calculated by BSO"}
 
 pheno_translated <- bso_translate_phenology(pheno_bso)
 

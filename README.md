@@ -24,7 +24,7 @@ package.
 | Model        | Publication                             | Species            | Help                                                              |
 |--------------|-----------------------------------------|--------------------|-------------------------------------------------------------------|
 | BSO          | Jakoby, Lischke, and Wermelinger (2019) | *I. typographus*   | `?model.bso.apply` <br/> `?model.bso.customize`                   |
-| Lange        | Lange, Oekland, and Krokene (2006)      | *I. typographus*   | `?model.lange.apply` <br/> `?model.lange.customize`               |
+| Lange        | Lange, Økland, and Krokene (2008)       | *I. typographus*   | `?model.lange.apply` <br/> `?model.lange.customize`               |
 | Jönsson      | Jönsson et al. (2011)                   | *I. typographus*   | `?model.joensson.apply` <br/> `?model.joensson.customize`         |
 | PHENIPS      | Baier, Pennerstorfer, and Schopf (2007) | *I. typographus*   | `?model.phenips.apply` <br/> `?model.phenips.customize`           |
 | PHENIPS‑Clim | \-                                      | *I. typographus*   | `?model.phenips_clim.apply` <br/> `?model.phenips_clim.customize` |
@@ -76,9 +76,10 @@ get_generations_rst(pheno, dates) %>% plot(mar = c(0.2, 0.1, 2, 5),
 
 <div class="figure">
 
-<img src="man/figures/README-generations-plot-1.png" alt="Generations plot" width="100%" />
+<img src="man/figures/README-generations-plot-1.png" alt="Generations plot (&quot;1&quot; means that the first generation hatched, &quot;1s&quot; means that the first generations sister brood hatched)" width="100%" />
 <p class="caption">
-Generations plot
+Generations plot (“1” means that the first generation hatched, “1s”
+means that the first generations sister brood hatched)
 </p>
 
 </div>
@@ -86,15 +87,15 @@ Generations plot
 `barrks` makes it easy to plot the development of the individual
 generations. To illustrate that, a “shaded” variant of the phenology
 above is calculated and the development diagram for a specific cell
-(called “station” in `barrks`) is plotted for bith phenology variants.
+(called “station” in `barrks`) is plotted for both phenology variants.
 
 ``` r
 
 pheno_shaded <- phenology('phenips-clim', barrks_data(), exposure = 'shaded')
 
-plot_development_diagram(list(pheno, pheno_shaded),
+plot_development_diagram(list(sunny = pheno, shaded = pheno_shaded),
                          stations_create('Example', 234),
-                         .legend_lty = FALSE,
+                         .lty = c(1, 2),
                          xlim = as.Date(c('2015-04-01', '2015-12-31')))
 ```
 
@@ -117,7 +118,7 @@ Baier, Peter, Josef Pennerstorfer, and Axel Schopf. 2007.
 “<span class="nocase">PHENIPS—A comprehensive phenology model of *Ips
 typographus* (L.)(Col., Scolytinae) as a tool for hazard rating of bark
 beetle infestation</span>.” *Forest Ecology and Management* 249 (3):
-171–86. https://doi.org/<https://doi.org/10.1016/j.foreco.2007.05.020>.
+171–86. <https://doi.org/10.1016/j.foreco.2007.05.020>.
 
 </div>
 
@@ -127,27 +128,28 @@ Jakoby, Oliver, Heike Lischke, and Beat Wermelinger. 2019.
 “<span class="nocase">Climate change alters elevational phenology
 patterns of the European spruce bark beetle (*Ips typographus*)</span>.”
 *Global Change Biology* 25 (12): 4048–63.
-https://doi.org/<https://doi.org/10.1111/gcb.14766>.
+<https://doi.org/10.1111/gcb.14766>.
 
 </div>
 
 <div id="ref-Jonsson2011" class="csl-entry">
 
 Jönsson, Anna Maria, Susanne Harding, Paal Krokene, Holger Lange, Ake
-Lindeloew, Bjoern Oekland, Hans Peter Ravn, and Leif Martin Schroeder.
+Åke Lindelöw, Bjørn Økland, Hans Peter Ravn, and Leif Martin Schroeder.
 2011. “<span class="nocase">Modelling the potential impact of global
 warming on *Ips typographus* voltinism and reproductive
 diapause</span>.” *Climatic Change* 109: 695–718.
-https://doi.org/<https://doi.org/10.1007/s10584-011-0038-4>.
+<https://doi.org/10.1007/s10584-011-0038-4>.
 
 </div>
 
-<div id="ref-Lange2006" class="csl-entry">
+<div id="ref-Lange2008" class="csl-entry">
 
-Lange, Holger, Bjoern Oekland, and Paal Krokene. 2006.
-“<span class="nocase">Thresholds in the life cycle of the spruce bark
-beetle under climate change</span>.” *Interjournal Complex Syst.* 1648
-(January).
+Lange, Holger, Bjørn Økland, and Paal Krokene. 2008. “To Be or Twice to
+Be? The Life Cycle Development of the Spruce Bark Beetle Under Climate
+Change.” In *Unifying Themes in Complex Systems: Proceedings of the
+Sixth International Conference on Complex Systems*, 251–58. Springer.
+<https://doi.org/10.1007/978-3-540-85081-6_32>.
 
 </div>
 
@@ -157,8 +159,7 @@ Ogris, Nikica, Mitja Ferlan, Tine Hauptman, Roman Pavlin, Andreja
 Kavčič, Maja Jurc, and Maarten De Groot. 2019.
 “<span class="nocase">RITY–A phenology model of Ips typographus as a
 tool for optimization of its monitoring</span>.” *Ecological Modelling*
-410: 108775.
-https://doi.org/<https://doi.org/10.1016/j.ecolmodel.2019.108775>.
+410: 108775. <https://doi.org/10.1016/j.ecolmodel.2019.108775>.
 
 </div>
 
@@ -169,7 +170,7 @@ Kavčič, Maja Jurc, and Maarten de Groot. 2020.
 “<span class="nocase">Sensitivity analysis, calibration and validation
 of a phenology model for *Pityogenes chalcographus* (CHAPY)</span>.”
 *Ecological Modelling* 430: 109137.
-https://doi.org/<https://doi.org/10.1016/j.ecolmodel.2020.109137>.
+<https://doi.org/10.1016/j.ecolmodel.2020.109137>.
 
 </div>
 

@@ -15,7 +15,7 @@ The function returns a phenology. Look \link[=analyse.phenology]{here} to find o
 \description{
 This page describes the usage of the the Lange model with \code{\link[=phenology]{phenology()}}.
 The model specific inputs are listed and its basic functionality is explained.
-The model was published by \insertCite{Lange2006;textual}{barrks} for
+The model was published by \insertCite{Lange2008;textual}{barrks} for
 \emph{Ips typographus}.
 }
 \details{
@@ -59,7 +59,7 @@ Look \link[=model.lange.customize]{here} to find out how the model parameters af
 \seealso{
 \code{\link[=model]{model()}}, \code{\link[=phenology]{phenology()}}, \code{\link{model.lange.customize}}
 
-Other {phenology applications}: 
+Other phenology applications: 
 \code{\link{model.bso.apply}},
 \code{\link{model.chapy.apply}},
 \code{\link{model.joensson.apply}},
@@ -67,4 +67,4 @@ Other {phenology applications}:
 \code{\link{model.phenips_clim.apply}},
 \code{\link{model.rity.apply}}
 }
-\concept{{phenology applications}}
+\concept{phenology applications}

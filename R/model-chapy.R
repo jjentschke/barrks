@@ -110,7 +110,7 @@ NULL
 #'
 #' @name model.chapy.customize
 #' @seealso [model()], [phenology()], [`model.chapy.apply`]
-#' @family {model customizations}
+#' @family model customizations
 #'
 #' @encoding UTF-8
 NULL
@@ -160,7 +160,7 @@ NULL
 #'
 #' @name model.chapy.apply
 #' @seealso [model()], [phenology()], [`model.chapy.customize`]
-#' @family {phenology applications}
+#' @family phenology applications
 #'
 #' @encoding UTF-8
 NULL

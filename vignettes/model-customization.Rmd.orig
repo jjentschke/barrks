@@ -18,7 +18,7 @@ Sys.setlocale("LC_ALL", "English")
 
 ```
 
-`barrks` offers two ways of model customization. The parameters of a model can
+`barrks` offers multiple ways of model customization. The parameters of a model can
 be modified and individual submodels can be combined to create a new model.
 Furthermore, it is possible to create phenological events (such as onset,
 diapause and mortality) manually to apply a model with observed or
@@ -47,18 +47,18 @@ pheno_std <- phenology('phenips', data)
 
 ```
 
-# Customize and combine models
+# Modify and combine models
 
 To modify parameters of individual models the new values should be passed to
-`model()`. In this sample PHENIPS is customized by
-setting the daylength threshold for the diapause submodel to 14 hours. The
+`model()`. In this example PHENIPS is customized by setting the daylength
+threshold for the diapause submodel to 14 hours (default are 14.5 hours). The
 parameters available for customization are found on the model customization manuals
 which are listed at the `model()` manual.
 
 To combine individual submodels, `model_combine()` is used. As parameters, the
 individual models are listed. To combine a model with a specific submodel, pass a list
 with the keys `model` and `submodels`.
-In the sample PHENIPS is combined with the
+In the example PHENIPS is combined with the
 diapause submodel of PHENIPS-Clim.
 
 To compare the model outputs, the prevailing generations for all calculated
@@ -67,7 +67,7 @@ models are plotted on four different dates.
 ```{r eval = FALSE}
 
 # calculate phenology with a customized model
-model_custom <- model('phenips', daylength_dia = 14)
+model_custom <- model('phenips', daylength_dia = 14) # `daylength_dia` is 14.5 by default
 pheno_custom <- phenology(model_custom, data)
 
 # calculate phenology with a combined model
@@ -120,7 +120,7 @@ As an example, PHENIPS-Clim is applied on the station data delivered with `barrk
 the onset is set to May 1st. The results are plotted in a development diagram
 without sister broods to keep it simple.
 
-```{r model-customization-events, warning=FALSE, message=FALSE, out.width = "100%", fig.dim=c(12,6), fig.cap = "Development diagram of PHENIPS with and manually created onset"}
+```{r model-customization-events, warning=FALSE, message=FALSE, out.width = "100%", fig.dim=c(12,6), fig.cap = "Development diagram of PHENIPS-Clim with and without a manually created onset"}
 
 # calculate phenology without modification for comparison
 pheno_std <- phenology('phenips-clim', barrks_data('stations'))

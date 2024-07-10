@@ -69,7 +69,7 @@ NULL
 #'
 #' @name model.joensson.customize
 #' @seealso [model()], [phenology()], [`model.joensson.apply`]
-#' @family {model customizations}
+#' @family model customizations
 #'
 #' @encoding UTF-8
 NULL
@@ -136,7 +136,7 @@ NULL
 #'
 #' @name model.joensson.apply
 #' @seealso [model()], [phenology()], [`model.joensson.customize`]
-#' @family {phenology applications}
+#' @family phenology applications
 #'
 #' @encoding UTF-8
 NULL

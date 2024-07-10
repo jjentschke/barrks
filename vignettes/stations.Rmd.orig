@@ -30,7 +30,7 @@ with a data frame as input. It should have a `date` column whose values need
 to be interpretable by `as.Date()`, and a `station` column that specifies the
 name of the respective station. Additional columns provide the actual
 parameters used by the model. This vignette uses the station data provided by
-barrks as sample data.
+`barrks` as sample data.
 
 ```{r message=FALSE}
 

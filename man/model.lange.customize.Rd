@@ -30,7 +30,7 @@ be modeled).}
 \description{
 This page describes the parameters
 that can be used to customize Lange. The model was developed by
-\insertCite{Lange2006;textual}{barrks}. Look \link[=model.lange.customize]{here} to find
+\insertCite{Lange2008;textual}{barrks}. Look \link[=model.lange.customize]{here} to find
 out how to apply the model.
 }
 \details{
@@ -70,7 +70,7 @@ default values.
 \seealso{
 \code{\link[=model]{model()}}, \code{\link[=phenology]{phenology()}}, \code{\link{model.lange.apply}}
 
-Other {model customizations}: 
+Other model customizations: 
 \code{\link{model.bso.customize}},
 \code{\link{model.chapy.customize}},
 \code{\link{model.joensson.customize}},
@@ -78,4 +78,4 @@ Other {model customizations}:
 \code{\link{model.phenips_clim.customize}},
 \code{\link{model.rity.customize}}
 }
-\concept{{model customizations}}
+\concept{model customizations}

@@ -107,7 +107,7 @@ NULL
 #'
 #' @name model.rity.customize
 #' @seealso [model()], [phenology()], [`model.rity.apply`]
-#' @family {model customizations}
+#' @family model customizations
 #'
 #' @encoding UTF-8
 NULL
@@ -169,7 +169,7 @@ NULL
 #'
 #' @name model.rity.apply
 #' @seealso [model()], [phenology()], [`model.rity.customize`]
-#' @family {phenology applications}
+#' @family phenology applications
 #'
 #' @encoding UTF-8
 NULL

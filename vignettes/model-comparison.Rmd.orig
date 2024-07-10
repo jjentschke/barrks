@@ -40,7 +40,8 @@ my_rst_plot <- function(rst, ...) {
 
 In this vignette, the sample data delivered with `barrks` is used to calculate the
 phenology with all models available in the package. Note that the daylength threshold
-for diapause initiation of the Jönsson model is adapted to Central Europe from @Baier2007.
+for diapause initiation of the Jönsson model is adapted to Central Europe according
+to @Baier2007.
 
 ```{r warning = FALSE, message = FALSE}
 
@@ -74,7 +75,7 @@ are described as the corresponding day of year. That data can be attained via
 As some models have not all submodels implemented and `terra::panel()` does not
 allow adding empty rasters, a workaround-function is defined to plot the
 the respective submodel outputs.
-Additionally it draws the borders of the area of interest.
+Additionally, it draws the borders of the area of interest.
 
 ```{r eval = FALSE}
 
@@ -89,8 +90,8 @@ plot_doy_panel <- function(x) {
     else polys(aoi, lwd = 2)
   }
 
-  # Replace NULL by a raster with values in the overall range to not affect the legend.
-  # The raster will be overplotted by `draw_aoi_borders()`
+  # replace NULL by a raster with values in the overall range to not affect the legend
+  # the raster will be overplotted by `draw_aoi_borders()`
   rst_tmp <- data[[1]][[1]] * 0 + min(minmax(rast(discard(x, is.null)))[1,])
   empty <- map_lgl(x, \(y) is.null(y))
   walk(which(empty), \(i) x[[i]] <<- rst_tmp)
@@ -146,7 +147,7 @@ plot_doy_panel(map(phenos, \(p) get_onset_rst(p)))
 ```{r model-comparison-diapause, echo = FALSE, out.width = "100%", fig.dim=c(14, 9), fig.cap = "Day of year when the diapause begins (in white cells no diapause was induced)"}
 plot_doy_panel(map(phenos, \(p) get_diapause_rst(p)))
 ```
-```{r model-comparison-mortality, echo = FALSE, out.width = "100%", fig.dim=c(14, 9), fig.cap = "Day of year of the first frost-induced mortality event in autumn (in white cells no mortality happened)"}
+```{r model-comparison-mortality, echo = FALSE, out.width = "100%", fig.dim=c(14, 9), fig.cap = "Day of year of the first frost-induced mortality event in autumn/winter (in white cells no mortality occured)"}
 autumn <- seq(as.Date('2015-09-01'), as.Date('2015-12-31'), by = 'day')
 plot_doy_panel(map(phenos, \(p) get_mortality_rst(p, dates = autumn)[[1]]))
 ```
@@ -174,7 +175,7 @@ walk(names(phenos), \(key) {
 
 ```
 
-```{r model-comparison-gens-phenips-clim, echo = FALSE, out.width = "100%", fig.dim=c(14, 3), fig.cap = "Generations calculated by PHENIPS-CLIM"}
+```{r model-comparison-gens-phenips-clim, echo = FALSE, out.width = "100%", fig.dim=c(14, 3), fig.cap = "Generations calculated by PHENIPS-Clim"}
 
 dates <- c('2015-04-15', '2015-06-15', '2015-08-15', '2015-10-15')
 get_generations_rst(phenos[['phenips-clim']], dates) %>% my_rst_plot(main = paste0('phenips-clim-', dates))
@@ -191,7 +192,7 @@ get_generations_rst(phenos[['lange']], dates) %>% my_rst_plot(main = paste0('lan
 ```{r model-comparison-gens-joensson, echo = FALSE, out.width = "100%", fig.dim=c(14, 3), fig.cap = "Generations calculated by the Jönsson model"}
 get_generations_rst(phenos[['joensson']], dates) %>% my_rst_plot(main = paste0('joensson-', dates))
 ```
-```{r model-comparison-gens-bso, echo = FALSE, out.width = "100%", fig.dim=c(14, 3), fig.cap = "Generations calculated by the BSO model"}
+```{r model-comparison-gens-bso, echo = FALSE, out.width = "100%", fig.dim=c(14, 3), fig.cap = "Generations calculated by BSO"}
 get_generations_rst(phenos[['bso']], dates) %>% my_rst_plot(main = paste0('bso-', dates))
 ```
 ```{r model-comparison-gens-chapy, echo = FALSE, out.width = "100%", fig.dim=c(14, 3), fig.cap = "Generations calculated by CHAPY"}
@@ -211,8 +212,8 @@ To get the stations' coordinates, `terra::xyFromCell` can be used.
 # plot the locations of the stations
 
 rst_aoi <- data[[1]][[1]] * 0
-stations <- c(Station_1 = 234, Station_2 = 345)
-station_coords <- vect(xyFromCell(rst_aoi, stations))
+stations <- stations_create(c('station 1', 'station 2'), c(234 345))
+station_coords <- vect(xyFromCell(rst_aoi, stations_cells(stations)))
 
 plot(rst_aoi,  col = '#AAAAAA', legend = FALSE, axes = FALSE, box = TRUE)
 plot(station_coords, col = 'red', pch = 4, add = TRUE)
@@ -246,6 +247,7 @@ walk(1:length(stations), \(i) {
   plot_development_diagram(phenos[models],
                            stations[i],
                            .lty = 1:length(models),
+                           .group = FALSE,
                            xlim = limits)
 })
 
@@ -257,9 +259,9 @@ limits <- as.Date(c('2015-04-01', '2015-12-31'))
 
 models <- c('phenips-clim', 'phenips')
 
-plot_development_diagram(phenos[models], stations[1], .lty = 1:length(models), xlim = limits)
+plot_development_diagram(phenos[models], stations[1], .lty = 1:length(models), .group = FALSE, xlim = limits)
 ```
 ```{r model-comparison-dev-s2, echo = FALSE, out.width = "100%", fig.dim=c(12,6), fig.cap = "Development diagram for station 2"}
-plot_development_diagram(phenos[models], stations[2], .lty = 1:length(models), xlim = limits)
+plot_development_diagram(phenos[models], stations[2], .lty = 1:length(models), .group = FALSE, xlim = limits)
 ```
 

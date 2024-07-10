@@ -3,7 +3,7 @@
 \encoding{UTF-8}
 \name{model.bso.apply}
 \alias{model.bso.apply}
-\title{Use the BSO model}
+\title{Use BSO}
 \arguments{
 \item{...}{See \code{\link[=phenology]{phenology()}} for a detailled description of the function.}
 
@@ -21,16 +21,16 @@ The function returns a BSO phenology. Look
 \link[=analyse.phenology.bso]{here} to find out how it can be analysed.
 }
 \description{
-This page describes the usage of the BSO model with \code{\link[=phenology]{phenology()}}.
+This page describes the usage of BSO with \code{\link[=phenology]{phenology()}}.
 The model-specific inputs are listed and its basic functionality is explained.
-The BSO model was published by \insertCite{Jakoby2019;textual}{barrks} and
+BSO was published by \insertCite{Jakoby2019;textual}{barrks} and
 parametrized for \emph{Ips typographus} in Switzerland. Note that the onset and
 the development submodel do not support the usage of a storage (except for
 some precalculations).
 }
 \details{
 In \code{barrks}, \code{\link[=phenology]{phenology()}} is used to apply a model. The following code
-illustrates which inputs are required to apply the BSO model and which additional
+illustrates which inputs are required to apply BSO and which additional
 parameters are available.
 
 \if{html}{\out{<div class="sourceCode r">}}\preformatted{bso_phenology("bso", ..., tmin, tmax, sunrise, sunset,
@@ -49,7 +49,7 @@ bso_phenology("bso", ..., .submodels = 'development',
 \section{Functioning of the BSO}{
 
 
-In the following, the basic functioning of the BSO model is explained.
+In the following, the basic functioning of BSO is explained.
 \itemize{
 \item \strong{Onset}: The onset of swarming will start when the degree days of the mean temperature reach
 a specific threshold and regeneration feeding of the individuals has finished (Look at
@@ -64,7 +64,7 @@ Newton's Law of Cooling (see \insertCite{Tran2007;nobrackets}{barrks}).
 \item \strong{Diapause}: Specific photoperiod-related dates define when the diapause is initiated
 at the earliest and at the latest. In between these dates, the diapause is
 initiated when the mean temperature falls below a specific threshold.
-\item \strong{Mortality}: The BSO model does not have a mortality submodel implemented.
+\item \strong{Mortality}: BSO does not have a mortality submodel implemented.
 }
 
 Look \link[=model.bso.customize]{here} to find out how the model parameters affect the actual calculations and which values are used by default.
@@ -76,7 +76,7 @@ Look \link[=model.bso.customize]{here} to find out how the model parameters affe
 \seealso{
 \code{\link[=model]{model()}}, \code{\link[=bso_phenology]{bso_phenology()}}, \code{\link{model.bso.customize}}
 
-Other {phenology applications}: 
+Other phenology applications: 
 \code{\link{model.chapy.apply}},
 \code{\link{model.joensson.apply}},
 \code{\link{model.lange.apply}},
@@ -84,4 +84,4 @@ Other {phenology applications}:
 \code{\link{model.phenips_clim.apply}},
 \code{\link{model.rity.apply}}
 }
-\concept{{phenology applications}}
+\concept{phenology applications}

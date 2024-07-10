@@ -21,7 +21,7 @@ with a data frame as input. It should have a `date` column whose values need
 to be interpretable by `as.Date()`, and a `station` column that specifies the
 name of the respective station. Additional columns provide the actual
 parameters used by the model. This vignette uses the station data provided by
-barrks as sample data.
+`barrks` as sample data.
 
 
 ``` r
@@ -58,6 +58,10 @@ pheno_sunny <- phenology('phenips-clim', station_data, exposure = 'sunny')
 pheno_shaded <- phenology('phenips-clim', station_data, exposure = 'shaded')
 pheno_last <- phenology('phenips-clim', station_data, exposure = 'shaded',
                         onset_mode = 0.9)
+#> Error in (function (classes, fdef, mtable) : kann keine vererbte Methode finden für Funktion 'nlyr<-' für Signatur '"SpatRaster", "NULL"'
+```
+
+``` r
 
 # plot development diagram
 plot_development_diagram(list('sunny' = pheno_sunny,
@@ -65,12 +69,8 @@ plot_development_diagram(list('sunny' = pheno_sunny,
                               'shaded + late onset' = pheno_last),
                          xlim = as.Date(c('2011-03-15', '2011-12-31')),
                          .lty = 1:3)
+#> Error in eval(expr, envir, enclos): object 'pheno_last' not found
 ```
-
-<div class="figure">
-<img src="figures/stations-diagram-1.png" alt="Development diagram with different variants of PHENIPS-Clim" width="100%" />
-<p class="caption">Development diagram with different variants of PHENIPS-Clim</p>
-</div>
 
 
 

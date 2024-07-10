@@ -33,7 +33,7 @@ A phenology can be recovered from a storage by
 calling `phenology` with `.storage` parameter and without model inputs.
 
 Note that the use of a storage is neither available for station data nor for the `onset`
-and the `development` submodels of the BSO model. As saving and loading from
+and the `development` submodels of BSO. As saving and loading from
 the storage takes time as well, the calculation of a phenology might occasionally be slower,
 especially for small rasters.
 

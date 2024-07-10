@@ -4,7 +4,7 @@ NULL
 
 #' Customize PHENIPS-Clim
 #'
-#' In barrks, [model()] is used to customize a model. Here, the parameters are
+#' In `barrks`, [model()] is used to customize a model. Here, the parameters are
 #' described that can be used to customize PHENIPS-Clim. The model
 #' is currently unpublished. This manual will be updated as soon as a
 #' publication is available. Look [here][model.phenips_clim.customize] to find
@@ -138,7 +138,7 @@ NULL
 #'
 #' @name model.phenips_clim.customize
 #' @seealso [model()], [phenology()], [`model.phenips_clim.apply`]
-#' @family {model customizations}
+#' @family model customizations
 #'
 #' @encoding UTF-8
 NULL
@@ -238,7 +238,7 @@ NULL
 #'
 #' @name model.phenips_clim.apply
 #' @seealso [model()], [phenology()], [`model.phenips_clim.customize`]
-#' @family {phenology applications}
+#' @family phenology applications
 #'
 #' @encoding UTF-8
 NULL

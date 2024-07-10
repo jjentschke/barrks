@@ -4,7 +4,7 @@ NULL
 
 #' Customize the Lange model
 #'
-#' `r .doc_customize_description('Lange', 'lange', 'Lange2006')`
+#' `r .doc_customize_description('Lange', 'lange', 'Lange2008')`
 #'
 #' `r .doc_customize_call('the Lange model', 'lange')`
 #'
@@ -57,7 +57,7 @@ NULL
 #'
 #' @name model.lange.customize
 #' @seealso [model()], [phenology()], [`model.lange.apply`]
-#' @family {model customizations}
+#' @family model customizations
 #'
 #' @encoding UTF-8
 NULL
@@ -67,7 +67,7 @@ NULL
 #'
 #' This page describes the usage of the the Lange model with [phenology()].
 #' The model specific inputs are listed and its basic functionality is explained.
-#' The model was published by \insertCite{Lange2006;textual}{barrks} for
+#' The model was published by \insertCite{Lange2008;textual}{barrks} for
 #' *Ips typographus*.
 #'
 #' In `barrks`, [phenology()] is used to apply a model. The following code
@@ -114,7 +114,7 @@ NULL
 #'
 #' @name model.lange.apply
 #' @seealso [model()], [phenology()], [`model.lange.customize`]
-#' @family {phenology applications}
+#' @family phenology applications
 #'
 #' @encoding UTF-8
 NULL

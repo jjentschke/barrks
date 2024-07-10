@@ -69,7 +69,7 @@ Look \link[=model.rity.customize]{here} to find out how the model parameters aff
 \seealso{
 \code{\link[=model]{model()}}, \code{\link[=phenology]{phenology()}}, \code{\link{model.rity.customize}}
 
-Other {phenology applications}: 
+Other phenology applications: 
 \code{\link{model.bso.apply}},
 \code{\link{model.chapy.apply}},
 \code{\link{model.joensson.apply}},
@@ -77,4 +77,4 @@ Other {phenology applications}:
 \code{\link{model.phenips.apply}},
 \code{\link{model.phenips_clim.apply}}
 }
-\concept{{phenology applications}}
+\concept{phenology applications}

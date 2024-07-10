@@ -6,8 +6,8 @@
 \source{
 \itemize{
 \item \href{https://opendata.dwd.de/climate_environment/CDC/grids_germany/daily/hyras_de/}{https://opendata.dwd.de/climate_environment/CDC/grids_germany/daily/hyras_de/}
-\item \href{https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/kl/historical}{https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/kl/historical}
-\item \href{https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/solar}{https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/solar}
+\item \href{https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/kl/historical}{https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/kl/historical/}
+\item \href{https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/solar}{https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/solar/}
 }
 }
 \usage{

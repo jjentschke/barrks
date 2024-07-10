@@ -63,6 +63,6 @@ stations <- stations_create(c('station a', 'station b'),
 p <- stations_assign(p, stations)
 
 # plot the development of 'station b'
-plot_development_diagram(p, 'station b', .lwd = 4)
+plot_development_diagram(p, 'station b', .lwd = 4, .legend_lty = FALSE)
 }
 }

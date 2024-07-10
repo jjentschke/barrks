@@ -1,8 +1,8 @@
 
 
-#' @describeIn phenology As the BSO model works a bit different than the other models, a seperate
+#' @describeIn phenology As BSO works a bit different than the other models, a seperate
 #' phenology function is implemented for this model. Note that while the
-#' onset and the development submodels are needed to be taken from the BSO model,
+#' onset and the development submodels are needed to be taken from BSO,
 #' the diapause and the mortality submodels are compatible with other models.
 #'
 #' The function returns a BSO phenology as a list. Look [here][analyse.phenology.bso] to find out how

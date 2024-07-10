@@ -2,7 +2,7 @@
 % Please edit documentation in R/appearance.R
 \name{barrks_labels}
 \alias{barrks_labels}
-\title{Get barrks default legend labels}
+\title{Get \code{barrks} default legend labels}
 \usage{
 barrks_labels(type = "raster")
 }
@@ -15,7 +15,7 @@ for particular purposes. Allowed values are \code{'raster'}, \code{'diagram'},
 A character vector of labels.
 }
 \description{
-Get barrks default legend labels
+Get \code{barrks} default legend labels.
 }
 \examples{
 labels <- barrks_labels()

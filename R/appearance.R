@@ -1,7 +1,9 @@
 
 
 
-#' Get barrks default color palettes
+#' Get `barrks` default color palettes
+#'
+#' Get `barrks` default color palettes.
 #'
 #' @param type Select the desired color palette. There are different variants
 #' for particular purposes. Allowed values are `'raster'`, `'diagram_lines'`,
@@ -28,7 +30,9 @@ barrks_colors <- function(type = 'raster') {
 
 
 
-#' Get barrks default legend labels
+#' Get `barrks` default legend labels
+#'
+#' Get `barrks` default legend labels.
 #'
 #' @param type Select the desired legend labels. There are different variants
 #' for particular purposes. Allowed values are `'raster'`, `'diagram'`,

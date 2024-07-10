@@ -2,11 +2,11 @@
 NULL
 
 
-#' Customize the BSO model
+#' Customize BSO
 #'
-#' `r .doc_customize_description('the BSO model', 'bso', 'Jakoby2019')`
+#' `r .doc_customize_description('BSO', 'bso', 'Jakoby2019')`
 #'
-#' `r .doc_customize_call('the BSO model', 'bso')`
+#' `r .doc_customize_call('BSO', 'bso')`
 #'
 #' ```{r, eval = FALSE}
 #'
@@ -89,23 +89,23 @@ NULL
 #'
 #' @name model.bso.customize
 #' @seealso [model()], [phenology()], [`model.bso.apply`]
-#' @family {model customizations}
+#' @family model customizations
 #'
 #' @encoding UTF-8
 NULL
 
 
-#' Use the BSO model
+#' Use BSO
 #'
-#' This page describes the usage of the BSO model with [phenology()].
+#' This page describes the usage of BSO with [phenology()].
 #' The model-specific inputs are listed and its basic functionality is explained.
-#' The BSO model was published by \insertCite{Jakoby2019;textual}{barrks} and
+#' BSO was published by \insertCite{Jakoby2019;textual}{barrks} and
 #' parametrized for *Ips typographus* in Switzerland. Note that the onset and
 #' the development submodel do not support the usage of a storage (except for
 #' some precalculations).
 #'
 #' In `barrks`, [phenology()] is used to apply a model. The following code
-#' illustrates which inputs are required to apply the BSO model and which additional
+#' illustrates which inputs are required to apply BSO and which additional
 #' parameters are available.
 #'
 #' ```{r, eval = FALSE}
@@ -124,7 +124,7 @@ NULL
 #'
 #' @section Functioning of the BSO:
 #'
-#' `r .doc_functioning_pre('bso', 'the BSO model')`
+#' `r .doc_functioning_pre('bso', 'BSO')`
 #'
 #' - **Onset**: The onset of swarming will start when the degree days of the mean temperature reach
 #' a specific threshold and regeneration feeding of the individuals has finished (Look at
@@ -139,7 +139,7 @@ NULL
 #' - **Diapause**: Specific photoperiod-related dates define when the diapause is initiated
 #' at the earliest and at the latest. In between these dates, the diapause is
 #' initiated when the mean temperature falls below a specific threshold.
-#' - **Mortality**: The BSO model does not have a mortality submodel implemented.
+#' - **Mortality**: BSO does not have a mortality submodel implemented.
 #'
 #' `r .doc_functioning_post('bso')`
 #'
@@ -159,7 +159,7 @@ NULL
 #'
 #' @name model.bso.apply
 #' @seealso [model()], [bso_phenology()], [`model.bso.customize`]
-#' @family {phenology applications}
+#' @family phenology applications
 #'
 #' @encoding UTF-8
 NULL

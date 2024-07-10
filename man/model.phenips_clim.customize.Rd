@@ -80,7 +80,7 @@ will be initiated if the model was applied using
 \item{tlethal}{Temperature threshold below which white stages will die.}
 }
 \description{
-In barrks, \code{\link[=model]{model()}} is used to customize a model. Here, the parameters are
+In \code{barrks}, \code{\link[=model]{model()}} is used to customize a model. Here, the parameters are
 described that can be used to customize PHENIPS-Clim. The model
 is currently unpublished. This manual will be updated as soon as a
 publication is available. Look \link[=model.phenips_clim.customize]{here} to find
@@ -155,7 +155,7 @@ default values.
 \seealso{
 \code{\link[=model]{model()}}, \code{\link[=phenology]{phenology()}}, \code{\link{model.phenips_clim.apply}}
 
-Other {model customizations}: 
+Other model customizations: 
 \code{\link{model.bso.customize}},
 \code{\link{model.chapy.customize}},
 \code{\link{model.joensson.customize}},
@@ -163,4 +163,4 @@ Other {model customizations}:
 \code{\link{model.phenips.customize}},
 \code{\link{model.rity.customize}}
 }
-\concept{{model customizations}}
+\concept{model customizations}
