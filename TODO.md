@@ -3,11 +3,10 @@
 
 ## Before next CRAN-submission
 
-- [ ] `get_mortality_df()`: Returns NAs for `barrks_data('stations')`
-- [ ] `get_..._df()`: Rename result columns for `as_doy = FALSE` (`..._doy` -> `...`)
+- [x] `get_mortality_df()`: Returns NAs for `barrks_data('stations')`
+- [x] `get_..._df()`: Rename result columns for `as_doy = FALSE` (`..._doy` -> `...`)
 - [ ] Test mortality in spring
 - [ ] Test `.trigger_rst` with NAs
-- [x] Rebuild documentation
 
 
 ## General

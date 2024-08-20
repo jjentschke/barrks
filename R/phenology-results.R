@@ -342,8 +342,12 @@ get_onset_df <- function(pheno,
 
   if(is.character(stations)) stations <- prop_stations(pheno)[stations]
 
-  out <- .rsts2df(list(onset_doy = get_onset_rst(pheno, as_doy, dates)), stations)
-  if(as_doy) out$onset_date <- .doy2date(out$onset, prop_year(pheno))
+  out <- .rsts2df(list(onset = get_onset_rst(pheno, as_doy, dates)), stations)
+  if(as_doy) {
+    out$onset_date <- .doy2date(out$onset, prop_year(pheno))
+    out$onset_doy <- out$onset
+    out$onset <- NULL
+  }
 
   return(out)
 }
@@ -377,8 +381,12 @@ get_diapause_df <- function(pheno,
 
   if(is.character(stations)) stations <- prop_stations(pheno)[stations]
 
-  out <- .rsts2df(list(diapause_doy = get_diapause_rst(pheno, as_doy, dates)), stations)
-  if(as_doy) out$diapause_date <- .doy2date(out$diapause, prop_year(pheno))
+  out <- .rsts2df(list(diapause = get_diapause_rst(pheno, as_doy, dates)), stations)
+  if(as_doy) {
+    out$diapause_date <- .doy2date(out$diapause, prop_year(pheno))
+    out$diapause_doy <- out$diapause
+    out$diapause <- NULL
+  }
 
   return(out)
 }
@@ -413,8 +421,14 @@ get_mortality_df <- function(pheno,
 
   if(is.character(stations)) stations <- prop_stations(pheno)[stations]
 
-  out <- .rsts2df(list(mortality_doy = get_mortality_rst(pheno, as_doy, dates)), stations)
-  if(as_doy) out$mortality_date <- .doy2date(out$mortality, prop_year(pheno))
+  out <- .rsts2df(list(mortality = get_mortality_rst(pheno, as_doy, dates)), stations)
+  if(as_doy) {
+    out$mortality_date <- .doy2date(out$mortality, prop_year(pheno))
+    out$mortality_doy <- out$mortality
+    out$mortality <- NULL
+
+    out <- out[!is.na(out$mortality_doy),]
+  }
 
   return(out)
 }
