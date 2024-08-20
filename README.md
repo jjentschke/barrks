@@ -16,7 +16,7 @@ phenology of *Ips typographus*, the package is not limited to particular
 bark beetle species. For instance, CHAPY models the phenology of
 *Pityogenes chalcographus* and the package may be extended by models for
 additional bark beetle species. The full documentation of `barrks` can
-be found [here](https://jjentschke.github.io/barrks).
+be found [here](https://jjentschke.github.io/barrks/).
 
 The following table lists the models that are implemented in the
 package.
@@ -33,12 +33,12 @@ package.
 
 ## Installation
 
-<!--You can install the latest released version of `barrks` from CRAN from within R:
-&#10;
+The latest released version of `barrks` can be installed from CRAN from
+within R:
+
 ``` r
 install.packages('barrks')
 ```
--->
 
 The development version of `barrks` can be installed from
 [GitHub](https://github.com/):
@@ -46,8 +46,6 @@ The development version of `barrks` can be installed from
 ``` r
 devtools::install_github("jjentschke/barrks")
 ```
-
-`barrks` will be published on CRAN soon.
 
 ## Basic Example
 

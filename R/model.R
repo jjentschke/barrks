@@ -57,8 +57,12 @@ model <- function(m, ...) {
 
 #' Get model parameters
 #'
+#' Get the parameters of a model.
+#'
 #' @param m Name of the model or the return value of another `model()`-call.
 #' @param ... List of parameters to customize the model.
+#'
+#' @returns A list.
 #'
 #' @examples
 #' # print the first parameters of `phenips-clim`
@@ -75,9 +79,12 @@ params <- function(m, ...) {
 #'
 #' Get the names of all available models.
 #'
+#' @returns A character vector.
+#'
 #' @examples
 #' # print all available models
 #' list_models()
+#'
 #' @export
 
 list_models <- function() {

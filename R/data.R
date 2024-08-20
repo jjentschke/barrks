@@ -18,8 +18,8 @@
 #' @source
 #'
 #' * \href{https://opendata.dwd.de/climate_environment/CDC/grids_germany/daily/hyras_de/}{https://opendata.dwd.de/climate_environment/CDC/grids_germany/daily/hyras_de/}
-#' * \href{https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/kl/historical}{https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/kl/historical/}
-#' * \href{https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/solar}{https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/solar/}
+#' * \href{https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/kl/historical/}{https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/kl/historical/}
+#' * \href{https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/solar/}{https://opendata.dwd.de/climate_environment/CDC/observations_germany/climate/daily/solar/}
 #'
 #' @param dataset Choose the data set that should be returned.
 #'

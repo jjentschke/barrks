@@ -6,10 +6,14 @@
 \usage{
 list_models()
 }
+\value{
+A character vector.
+}
 \description{
 Get the names of all available models.
 }
 \examples{
 # print all available models
 list_models()
+
 }

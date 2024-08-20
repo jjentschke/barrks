@@ -11,8 +11,11 @@ params(m, ...)
 
 \item{...}{List of parameters to customize the model.}
 }
+\value{
+A list.
+}
 \description{
-Get model parameters
+Get the parameters of a model.
 }
 \examples{
 # print the first parameters of `phenips-clim`

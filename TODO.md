@@ -1,6 +1,15 @@
 
 # TODO
 
+## Before next CRAN-submission
+
+- [ ] `get_mortality_df()`: Returns NAs for `barrks_data('stations')`
+- [ ] `get_..._df()`: Rename result columns for `as_doy = FALSE` (`..._doy` -> `...`)
+- [ ] Test mortality in spring
+- [ ] Test `.trigger_rst` with NAs
+- [x] Rebuild documentation
+
+
 ## General
 
 - [ ] Implement argument checks
@@ -21,6 +30,7 @@
 ## Models
 
 - [ ] BSO
+  - [ ] get_onset_rst is not working for BSO
   - [ ] Implement original daylength function?
   - [ ] Define functions `bso_save_phenology()` and `bso_load_phenology()`
   - [ ] Enable application of mortality
