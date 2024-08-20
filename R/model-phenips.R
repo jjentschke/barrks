@@ -336,10 +336,8 @@ phenips_develop_generation <- function(.params,
 
       if(sum(terra::values(kill_), na.rm = TRUE) == 0) break
 
-      lyr <- terra::which.lyr(kill_)
 
       trigger_kill <- .trigger_rst(kill_)
-
 
 
       dev <- terra::ifel(trigger_kill, 0, dev)
@@ -348,7 +346,7 @@ phenips_develop_generation <- function(.params,
       dev <- terra::ifel((!new_period) & trigger_kill, NA, dev)
       dev <- dev + cumsum(new_period * teff / .params$dd_total_dev)
 
-      kill <- kill & .trigger_rst(c(0 * kill[[1]], kill)[[1:terra::nlyr(kill)]])
+      kill <- kill & new_period
     }
   }
 

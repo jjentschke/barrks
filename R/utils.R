@@ -140,6 +140,7 @@ env_barrks <- new.env(parent = emptyenv())
 
 .trigger_rst <- function(rst) {
 
+  rst <- terra::ifel(is.na(rst), 0, rst)
   return(cumsum(rst) > 0)
 }
 
