@@ -1,12 +1,6 @@
 
 # TODO
 
-## Before next CRAN-submission
-
-- [x] Test mortality in spring
-- [x] Test `.trigger_rst` with NAs
-
-
 ## General
 
 - [ ] Implement argument checks
