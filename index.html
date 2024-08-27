@@ -27,7 +27,7 @@
     
     <a class="navbar-brand me-2" href="index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.9.0.8</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -76,7 +76,7 @@
 </h1></div>
 <!-- badges: start -->
 <!-- badges: end -->
-<p>The goal of <code>barrks</code> (<strong>bar</strong>k beetle <strong>r</strong>aster <strong>k</strong>it for <strong>s</strong>easonal development) is to calculate the phenological development of bark beetles. Rather than implementing one specific model, the package provides a collection of different models that can be chosen. Additionally, the models can be customized and combined to create an individual model. The calculations can be done spatially explicit by using raster inputs, or based on station inputs that are available as data frames. Even though most of the implemented models describe the phenology of <em>Ips typographus</em>, the package is not limited to particular bark beetle species. For instance, CHAPY models the phenology of <em>Pityogenes chalcographus</em> and the package may be extended by models for additional bark beetle species. The full documentation of <code>barrks</code> can be found <a href="https://jjentschke.github.io/barrks" class="external-link">here</a>.</p>
+<p>The goal of <code>barrks</code> (<strong>bar</strong>k beetle <strong>r</strong>aster <strong>k</strong>it for <strong>s</strong>easonal development) is to calculate the phenological development of bark beetles. Rather than implementing one specific model, the package provides a collection of different models that can be chosen. Additionally, the models can be customized and combined to create an individual model. The calculations can be done spatially explicit by using raster inputs, or based on station inputs that are available as data frames. Even though most of the implemented models describe the phenology of <em>Ips typographus</em>, the package is not limited to particular bark beetle species. For instance, CHAPY models the phenology of <em>Pityogenes chalcographus</em> and the package may be extended by models for additional bark beetle species. The full documentation of <code>barrks</code> can be found <a href="https://jjentschke.github.io/barrks/" class="external-link">here</a>.</p>
 <p>The following table lists the models that are implemented in the package.</p>
 <table class="table">
 <colgroup>
@@ -153,22 +153,18 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<!--You can install the latest released version of `barrks` from CRAN from within R:
-&#10;
-``` r
-install.packages('barrks')
-```
--->
-<p>The development version of <code>barrks</code> can be installed from <a href="https://github.com/" class="external-link">GitHub</a>:</p>
+<p>The latest released version of <code>barrks</code> can be installed from CRAN from within R:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'barrks'</span><span class="op">)</span></span></code></pre></div>
+<p>The development version of <code>barrks</code> can be installed from <a href="https://github.com/" class="external-link">GitHub</a>:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu"><a href="https://remotes.r-lib.org/reference/install_github.html" class="external-link">install_github</a></span><span class="op">(</span><span class="st">"jjentschke/barrks"</span><span class="op">)</span></span></code></pre></div>
-<p><code>barrks</code> will be published on CRAN soon.</p>
 </div>
 <div class="section level2">
 <h2 id="basic-example">Basic Example<a class="anchor" aria-label="anchor" href="#basic-example"></a>
 </h2>
 <p><code>barrks</code> comes with sample data that will be used below. The phenology is calculated with <code><a href="reference/phenology.html">phenology()</a></code> which takes all necessary inputs as arguments. Subsequently, the rasters of emerged generations by date can be retrieved with <code><a href="reference/get_generations.html">get_generations_rst()</a></code>. <code><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">terra::plot()</a></code> can be used to visualize these rasters.</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://jjentschke.github.io/barrks/" class="external-link">barrks</a></span><span class="op">)</span></span>
 <span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org" class="external-link">tidyverse</a></span><span class="op">)</span></span>
@@ -189,7 +185,7 @@ Generations plot (“1” means that the first generation hatched, “1s” mean
 </p>
 </div>
 <p><code>barrks</code> makes it easy to plot the development of the individual generations. To illustrate that, a “shaded” variant of the phenology above is calculated and the development diagram for a specific cell (called “station” in <code>barrks</code>) is plotted for both phenology variants.</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span></span>
 <span><span class="va">pheno_shaded</span> <span class="op">&lt;-</span> <span class="fu"><a href="reference/phenology.html">phenology</a></span><span class="op">(</span><span class="st">'phenips-clim'</span>, <span class="fu"><a href="reference/barrks_data.html">barrks_data</a></span><span class="op">(</span><span class="op">)</span>, exposure <span class="op">=</span> <span class="st">'shaded'</span><span class="op">)</span></span>
 <span></span>
