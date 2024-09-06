@@ -16,6 +16,9 @@
 - [ ] Unify status messages (print temporary only?)
 - [ ] Make storage messages optional 
 - [ ] Improve performance of `create_suntimes_df()`
+- [ ] `save_phenology`, `load_phenology()`
+  - [ ] Include input data
+  - [ ] Use meta data file to allow custom storage structures
 
 
 ## Models
