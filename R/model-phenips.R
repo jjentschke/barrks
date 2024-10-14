@@ -78,7 +78,7 @@ NULL
 #'
 #' @param topt Temperature for optimal development.
 #' @param tlow,tup Temperature below/above which no development happens.
-#' @param func_btmean,func_btmax,func_btdiff Functions to caclulate the
+#' @param func_btmean,func_btmax,func_btdiff Functions to calculate the
 #' effective bark temperature (see \insertCite{Baier2007;nobrackets}{barrks},
 #' equations A.3 to A5). Each parameter will be passed as SpatRaster:
 #'
