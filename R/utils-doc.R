@@ -31,7 +31,7 @@
   return('The beetles are considered to be in
 white stages (egg, larva, pupa) if their development exceeds `dev_mortal_min`
 and subceeds `dev_mortal_max`. During these stages, the beetles could die
-caused by a mortality event. `NULL` means that no lower/upper threshold is
+due to a mortality event. `NULL` means that no lower/upper threshold is
 defined.')
 }
 
