@@ -154,7 +154,7 @@ NULL
 #' @param tmean,tmax Daily mean/maximum temperatures in °C.
 #' @param rad Daily radiation in W * h / m^2.
 #' @param daylength Length of the day in hours. Can be created with
-#' [create_daylength_rst()] or [create_daylength_rst()].
+#' [create_daylength_rst()] or [create_daylength_df()].
 #' @param exposure Specifies the sun exposure. Can be `'sunny'` (default) or `'shaded'`.
 #' @param sister_broods Set `FALSE` if sister broods should not be calculated.
 #'
