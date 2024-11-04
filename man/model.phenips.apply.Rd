@@ -12,7 +12,7 @@
 \item{rad}{Daily radiation in W * h / m^2.}
 
 \item{daylength}{Length of the day in hours. Can be created with
-\code{\link[=create_daylength_rst]{create_daylength_rst()}} or \code{\link[=create_daylength_rst]{create_daylength_rst()}}.}
+\code{\link[=create_daylength_rst]{create_daylength_rst()}} or \code{\link[=create_daylength_df]{create_daylength_df()}}.}
 
 \item{exposure}{Specifies the sun exposure. Can be \code{'sunny'} (default) or \code{'shaded'}.}
 

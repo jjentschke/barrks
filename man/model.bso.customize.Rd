@@ -48,7 +48,7 @@ temperature falls below that value.}
 \description{
 This page describes the parameters
 that can be used to customize BSO. The model was developed by
-\insertCite{Jakoby2019;textual}{barrks}. Look \link[=model.bso.customize]{here} to find
+\insertCite{Jakoby2019;textual}{barrks}. Look \link[=model.bso.apply]{here} to find
 out how to apply the model.
 }
 \details{

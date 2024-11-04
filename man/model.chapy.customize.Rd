@@ -29,7 +29,7 @@ will be established.}
 \item{dev_mortal_min, dev_mortal_max}{The beetles are considered to be in
 white stages (egg, larva, pupa) if their development exceeds \code{dev_mortal_min}
 and subceeds \code{dev_mortal_max}. During these stages, the beetles could die
-caused by a mortality event. \code{NULL} means that no lower/upper threshold is
+due to a mortality event. \code{NULL} means that no lower/upper threshold is
 defined.}
 
 \item{func_ftmin, func_ftmean, func_ftmax}{Functions to caclulate the
@@ -65,7 +65,7 @@ will be initiated.}
 \description{
 This page describes the parameters
 that can be used to customize CHAPY. The model was developed by
-\insertCite{Ogris2020;textual}{barrks}. Look \link[=model.chapy.customize]{here} to find
+\insertCite{Ogris2020;textual}{barrks}. Look \link[=model.chapy.apply]{here} to find
 out how to apply the model.
 }
 \details{
