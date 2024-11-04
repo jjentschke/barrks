@@ -18,7 +18,7 @@ out how to apply the model."><!-- mathjax --><script src="https://cdnjs.cloudfla
     
     <a class="navbar-brand me-2" href="../index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.0</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -67,7 +67,7 @@ out how to apply the model."><!-- mathjax --><script src="https://cdnjs.cloudfla
     <p>This page describes the parameters
 that can be used to customize PHENIPS. The model was developed by
 Baier et al. (2007)
-. Look here to find
+. Look <a href="model.phenips.apply.html">here</a> to find
 out how to apply the model.</p>
     </div>
 
@@ -116,7 +116,7 @@ will be established.</p></dd>
 <dd><p>The beetles are considered to be in
 white stages (egg, larva, pupa) if their development exceeds <code>dev_mortal_min</code>
 and subceeds <code>dev_mortal_max</code>. During these stages, the beetles could die
-caused by a mortality event. <code>NULL</code> means that no lower/upper threshold is
+due to a mortality event. <code>NULL</code> means that no lower/upper threshold is
 defined.</p></dd>
 
 
@@ -129,7 +129,7 @@ defined.</p></dd>
 
 
 <dt>func_btmean, func_btmax, func_btdiff</dt>
-<dd><p>Functions to caclulate the
+<dd><p>Functions to calculate the
 effective bark temperature (see Baier et al. 2007
 ,
 equations A.3 to A5). Each parameter will be passed as SpatRaster:</p><ul><li><p><code>tmean</code>: mean air temperature</p></li>
