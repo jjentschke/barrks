@@ -30,14 +30,14 @@ will be established.}
 \item{dev_mortal_min, dev_mortal_max}{The beetles are considered to be in
 white stages (egg, larva, pupa) if their development exceeds \code{dev_mortal_min}
 and subceeds \code{dev_mortal_max}. During these stages, the beetles could die
-caused by a mortality event. \code{NULL} means that no lower/upper threshold is
+due to a mortality event. \code{NULL} means that no lower/upper threshold is
 defined.}
 
 \item{topt}{Temperature for optimal development.}
 
 \item{tlow, tup}{Temperature below/above which no development happens.}
 
-\item{func_btmean, func_btmax, func_btdiff}{Functions to caclulate the
+\item{func_btmean, func_btmax, func_btdiff}{Functions to calculate the
 effective bark temperature (see \insertCite{Baier2007;nobrackets}{barrks},
 equations A.3 to A5). Each parameter will be passed as SpatRaster:
 \itemize{
@@ -58,7 +58,7 @@ will be initiated.}
 \description{
 This page describes the parameters
 that can be used to customize PHENIPS. The model was developed by
-\insertCite{Baier2007;textual}{barrks}. Look \link[=model.phenips.customize]{here} to find
+\insertCite{Baier2007;textual}{barrks}. Look \link[=model.phenips.apply]{here} to find
 out how to apply the model.
 }
 \details{

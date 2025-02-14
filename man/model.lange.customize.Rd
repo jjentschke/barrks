@@ -30,7 +30,7 @@ be modeled).}
 \description{
 This page describes the parameters
 that can be used to customize Lange. The model was developed by
-\insertCite{Lange2008;textual}{barrks}. Look \link[=model.lange.customize]{here} to find
+\insertCite{Lange2008;textual}{barrks}. Look \link[=model.lange.apply]{here} to find
 out how to apply the model.
 }
 \details{

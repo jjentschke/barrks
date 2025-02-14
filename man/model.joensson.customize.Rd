@@ -26,7 +26,7 @@ below/above these thresholds should account for mating, oviposition etc.}
 \item{dev_mortal_min, dev_mortal_max}{The beetles are considered to be in
 white stages (egg, larva, pupa) if their development exceeds \code{dev_mortal_min}
 and subceeds \code{dev_mortal_max}. During these stages, the beetles could die
-caused by a mortality event. \code{NULL} means that no lower/upper threshold is
+due to a mortality event. \code{NULL} means that no lower/upper threshold is
 defined.}
 
 \item{model_end_date}{Date when the model ends (no further development will
@@ -42,7 +42,7 @@ for other regions, this value should be adjusted.}
 \description{
 This page describes the parameters
 that can be used to customize the Jönsson model. The model was developed by
-\insertCite{Jonsson2011;textual}{barrks}. Look \link[=model.joensson.customize]{here} to find
+\insertCite{Jonsson2011;textual}{barrks}. Look \link[=model.joensson.apply]{here} to find
 out how to apply the model.
 }
 \details{
