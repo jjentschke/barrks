@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -55,10 +55,35 @@
     </div>
 
     <div class="section level2">
-<h2 class="pkg-version" data-toc-text="1.0.0" id="barrks-100">barrks 1.0.0<a class="anchor" aria-label="anchor" href="#barrks-100"></a></h2>
+<h2 class="pkg-version" data-toc-text="1.1.0" id="barrks-110">barrks 1.1.0<a class="anchor" aria-label="anchor" href="#barrks-110"></a></h2>
+<div class="section level3">
+<h3 id="bug-fixes-1-1-0">Bug fixes<a class="anchor" aria-label="anchor" href="#bug-fixes-1-1-0"></a></h3>
+<ul><li>Calculation of thermal diapause in PHENIPS-Clim was not correct (difference of one day in comparison to the previous version)</li>
+<li>The thermal diapause in PHENIPS-Clim was not triggered if last <code>TRUE</code> was returned before <code>first_diapause_date</code>
+</li>
+<li>The hibernating generations were determined when a mortality event occured before the diapause has started</li>
+<li>Stepwise calculations that use a storage could result in additional NAs before</li>
+<li>
+<code><a href="../reference/save_load_phenology.html">load_phenology()</a></code> was not working when hibernating generations were not present</li>
+<li>Changing the value of <code>onset_mode</code> in PHENIPS-Clim resulted in an error for station data (<a href="https://github.com/jjentschke/barrks/issues/3" class="external-link">#3</a>)</li>
+<li>
+<code><a href="../reference/plot_development_diagram.html">plot_development_diagram()</a></code> generated incorrect plots if a generation was not present in all passed phenology objects on a day when a mortality event occured</li>
+</ul></div>
+<div class="section level3">
+<h3 id="new-features-1-1-0">New features<a class="anchor" aria-label="anchor" href="#new-features-1-1-0"></a></h3>
+<ul><li>PHENIPS-Clim provides the facility to specify an alternative onset calculation. By default, it is used to trigger the onset depending on the cumulative maximum temperature if the standard onset calculation fails.</li>
+</ul></div>
+</div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.0.1" id="barrks-101">barrks 1.0.1<a class="anchor" aria-label="anchor" href="#barrks-101"></a></h2><p class="text-muted">CRAN release: 2024-11-04</p>
+<ul><li>Minor changes in the documentation (typos, english correction, wrong links)</li>
+</ul></div>
+    <div class="section level2">
+<h2 class="pkg-version" data-toc-text="1.0.0" id="barrks-100">barrks 1.0.0<a class="anchor" aria-label="anchor" href="#barrks-100"></a></h2><p class="text-muted">CRAN release: 2024-08-26</p>
 <ul><li>Initial CRAN submission.</li>
 </ul></div>
-  </main></div>
+  </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
+    </nav></aside></div>
 
 
     <footer><div class="pkgdown-footer-left">

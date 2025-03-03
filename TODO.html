@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -57,89 +57,71 @@
 <div id="todo" class="section level1">
 
 <div class="section level2">
-<h2 id="general">General<a class="anchor" aria-label="anchor" href="#general"></a></h2>
-<ul class="task-list"><li>
-<input type="checkbox">Implement argument checks</li>
+<h2 id="additional-features">Additional features<a class="anchor" aria-label="anchor" href="#additional-features"></a></h2>
+<ul class="task-list"><li><label><input type="checkbox">Provide functions to fetch start and end of each generation</label></li>
 <li>
-<input type="checkbox">Add examples to function documentations (e.g. for <code><a href="reference/model_combine.html">model_combine()</a></code>)</li>
-<li>
-<input type="checkbox"><code>create_daylength_...()</code>: switch from suncalc to geosphere (less dependencies…)</li>
-<li>
-<input type="checkbox">Make output of <code>create_suntimes_...()</code> and <code>create_daylength_...()</code> consistent (minutes OR hours)</li>
-<li>
-<input type="checkbox">Define a <code>BarrksPheno</code> (or similar) class</li>
-<li>
-<input type="checkbox">Make order of input raster layers irrelevant (use the date)</li>
-<li>
-<input type="checkbox"><code><a href="reference/phenology.html">phenology()</a></code>: All rasters from <code>.storage</code> are used even though <code>.dates</code> are not <code>NULL</code>
-</li>
-<li>
-<input type="checkbox">Further customization options for <code><a href="reference/plot_development_diagram.html">plot_development_diagram()</a></code>:
-<ul class="task-list"><li>
-<input type="checkbox">Fill incomplete generations: yes/no</li>
+<label><input type="checkbox">Further customization options for <code><a href="reference/plot_development_diagram.html">plot_development_diagram()</a></code>:</label>
+<ul class="task-list"><li><label><input type="checkbox">Fill incomplete generations: yes/no</label></li>
 </ul></li>
 <li>
-<input type="checkbox"><code><a href="reference/plot_development_diagram.html">plot_development_diagram()</a></code>: Adjust legend if <code>.minmax_only == TRUE</code>
-</li>
-<li>
-<input type="checkbox">Unify status messages (print temporary only?)</li>
-<li>
-<input type="checkbox">Make storage messages optional</li>
-<li>
-<input type="checkbox">Improve performance of <code><a href="reference/create_suntimes_df.html">create_suntimes_df()</a></code>
-</li>
+<label><input type="checkbox"><code>save_phenology</code>, <code><a href="reference/save_load_phenology.html">load_phenology()</a></code></label>
+<ul class="task-list"><li><label><input type="checkbox">Include input data</label></li>
+<li><label><input type="checkbox">Use metadata file to allow custom storage structures</label></li>
+</ul></li>
+</ul></div>
+<div class="section level2">
+<h2 id="general">General<a class="anchor" aria-label="anchor" href="#general"></a></h2>
+<ul class="task-list"><li><label><input type="checkbox"><code>create_daylength_...()</code>: switch from suncalc to geosphere (less dependencies…)</label></li>
+<li><label><input type="checkbox">Make output of <code>create_suntimes_...()</code> and <code>create_daylength_...()</code> consistent (minutes OR hours)</label></li>
+<li><label><input type="checkbox">Define a <code>BarrksPheno</code> (or similar) class</label></li>
+<li><label><input type="checkbox">Make order of input raster layers irrelevant (use the date)</label></li>
+<li><label><input type="checkbox"><code><a href="reference/phenology.html">phenology()</a></code>: All rasters from <code>.storage</code> are used even though <code>.dates</code> are not <code>NULL</code></label></li>
+<li><label><input type="checkbox"><code><a href="reference/plot_development_diagram.html">plot_development_diagram()</a></code>: Adjust legend if <code>.minmax_only == TRUE</code></label></li>
+<li><label><input type="checkbox">Improve performance of <code><a href="reference/create_suntimes_df.html">create_suntimes_df()</a></code></label></li>
+<li><label><input type="checkbox">Improve performance of <code><a href="reference/get_events.html">get_mortality_rst()</a></code></label></li>
 </ul></div>
 <div class="section level2">
 <h2 id="models">Models<a class="anchor" aria-label="anchor" href="#models"></a></h2>
 <ul class="task-list"><li>
-<input type="checkbox">BSO
-<ul class="task-list"><li>
-<input type="checkbox">get_onset_rst is not working for BSO</li>
-<li>
-<input type="checkbox">Implement original daylength function?</li>
-<li>
-<input type="checkbox">Define functions <code>bso_save_phenology()</code> and <code>bso_load_phenology()</code>
-</li>
-<li>
-<input type="checkbox">Enable application of mortality</li>
-<li>
-<input type="checkbox"><code><a href="reference/bso_plot_flight_diagram.html">bso_plot_flight_diagram()</a></code>/<code><a href="reference/bso_plot_stage_diagram.html">bso_plot_stage_diagram()</a></code>: make x-axis optional</li>
-<li>
-<input type="checkbox">Improve performance of <code><a href="reference/bso_plot_stage_diagram.html">bso_plot_stage_diagram()</a></code>
-</li>
-<li>
-<input type="checkbox">Define functions to get the share of individuals flying / in a specific stage / …</li>
-<li>
-<input type="checkbox">Improve performace of <code>bso_calc_tphloem()</code>
-</li>
+<label><input type="checkbox">BSO</label>
+<ul class="task-list"><li><label><input type="checkbox"><code><a href="reference/get_events.html">get_onset_rst()</a></code> is not working for BSO</label></li>
+<li><label><input type="checkbox">Implement original daylength function?</label></li>
+<li><label><input type="checkbox">Define functions <code>bso_save_phenology()</code> and <code>bso_load_phenology()</code></label></li>
+<li><label><input type="checkbox">Enable application of mortality</label></li>
+<li><label><input type="checkbox"><code><a href="reference/bso_plot_flight_diagram.html">bso_plot_flight_diagram()</a></code>/<code><a href="reference/bso_plot_stage_diagram.html">bso_plot_stage_diagram()</a></code>: make x-axis optional</label></li>
+<li><label><input type="checkbox">Improve performance of <code><a href="reference/bso_plot_stage_diagram.html">bso_plot_stage_diagram()</a></code></label></li>
+<li><label><input type="checkbox">Define functions to get the share of individuals flying / in a specific stage / …</label></li>
+<li><label><input type="checkbox">Improve performace of <code>bso_calc_tphloem()</code></label></li>
 </ul></li>
+<li><label><input type="checkbox">Lange: Improve performance</label></li>
 <li>
-<input type="checkbox">Lange: Improve performance</li>
-<li>
-<input type="checkbox">PHENIPS-Clim
-<ul class="task-list"><li>
-<input type="checkbox">Improve performance of the calculation of development rates</li>
-<li>
-<input type="checkbox">Allow custom intervals or function for <code>dev_rates</code>
-</li>
+<label><input type="checkbox">PHENIPS-Clim</label>
+<ul class="task-list"><li><label><input type="checkbox">Improve performance of the calculation of development rates</label></li>
+<li><label><input type="checkbox">Allow custom intervals or function for <code>dev_rates</code></label></li>
+<li><label><input type="checkbox">Determine <code>first_diapause_date</code> dependent on the day length</label></li>
 </ul></li>
+</ul></div>
+<div class="section level2">
+<h2 id="documentation-and-notifications">Documentation and notifications<a class="anchor" aria-label="anchor" href="#documentation-and-notifications"></a></h2>
+<ul class="task-list"><li><label><input type="checkbox">Implement argument checks</label></li>
+<li><label><input type="checkbox"><code>get_hibernating_generations_...()</code>: warn if NAs are produced</label></li>
+<li><label><input type="checkbox">Add examples to function documentations (e.g. for <code><a href="reference/model_combine.html">model_combine()</a></code>)</label></li>
+<li><label><input type="checkbox">Unify status messages (print temporary only?)</label></li>
+<li><label><input type="checkbox">Make storage messages optional</label></li>
 </ul></div>
 <div class="section level2">
 <h2 id="formal-testing">Formal testing<a class="anchor" aria-label="anchor" href="#formal-testing"></a></h2>
-<ul class="task-list"><li>
-<input type="checkbox">BSO: storage, sister breeders</li>
-<li>
-<input type="checkbox"><code><a href="reference/save_load_phenology.html">load_phenology()</a></code>/<code>save_phenology</code>
-</li>
+<ul class="task-list"><li><label><input type="checkbox">BSO: storage, sister breeders</label></li>
+<li><label><input type="checkbox">Test <code><a href="reference/save_load_phenology.html">load_phenology()</a></code>, <code>save_phenology</code></label></li>
+<li><label><input type="checkbox">Test NAs for stepwise calculation</label></li>
+<li><label><input type="checkbox">Test if all model parameters are documented</label></li>
+<li><label><input type="checkbox">Implement optical tests for <code><a href="reference/plot_development_diagram.html">plot_development_diagram()</a></code></label></li>
 </ul></div>
 <div class="section level2">
-<h2 id="design">Design<a class="anchor" aria-label="anchor" href="#design"></a></h2>
-<ul class="task-list"><li>
-<input type="checkbox">Package logo</li>
-<li>
-<input type="checkbox">Use DTM in vignette ‘model-comparison’</li>
-<li>
-<input type="checkbox"><code>barrks_colors('bso_flight')</code> appropriate?</li>
+<h2 id="appearance">Appearance<a class="anchor" aria-label="anchor" href="#appearance"></a></h2>
+<ul class="task-list"><li><label><input type="checkbox">Package logo</label></li>
+<li><label><input type="checkbox">Use DTM in vignette ‘model-comparison’</label></li>
+<li><label><input type="checkbox"><code>barrks_colors('bso_flight')</code> appropriate?</label></li>
 </ul></div>
 </div>
 

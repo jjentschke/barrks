@@ -12,7 +12,7 @@ threshold)."><!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs
     
     <a class="navbar-brand me-2" href="../index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -131,11 +131,13 @@ their names, or pass different stations. See <code><a href="stations.html">stati
     
 
 <ul><li><p><code>get_generations_rst()</code>: A multi-layer SpatRaster.</p></li>
-<li><p><code>get_hibernating_generations_rst()</code>: A SpatRaster. Only available
-if the model's end date has been reached. Otherwise all values will be <code>NA</code>.</p></li>
+<li><p><code>get_hibernating_generations_rst()</code>: A SpatRaster. Only available if a
+mortality event has occured since the diapause started or the model's end
+date has been reached. Otherwise, the values will be <code>NA</code>.</p></li>
 <li><p><code>get_generations_df()</code>: A data frame.</p></li>
-<li><p><code>get_hibernating_generations_df()</code>: A data frame. Only available if the
-model's end date has been reached. Otherwise all values will be <code>NA</code>.</p></li>
+<li><p><code>get_hibernating_generations_df()</code>: A data frame. Only available if a
+mortality event has occured since the diapause started or the model's end
+date has been reached. Otherwise, the values will be <code>NA</code>.</p></li>
 </ul></div>
 
     <div class="section level2">

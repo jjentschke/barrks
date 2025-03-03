@@ -18,7 +18,7 @@ out how to apply the model."><!-- mathjax --><script src="https://cdnjs.cloudfla
     
     <a class="navbar-brand me-2" href="../index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.0.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.0</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -87,6 +87,13 @@ out how to apply the model.</p>
 and <code>dd_tmax</code> (degree days of maximum temperature) as parameters.
 The function should return <code>TRUE</code> when the base onset is
 triggered. See <code>onset_add_dd</code> for the actual onset of infestation.</p></dd>
+
+
+<dt>dd_onset_alt_start_date, dd_onset_alt_base, onset_alt_func</dt>
+<dd><p>Alternative
+way to calculate the diapause (see <code>dd_onset_start_date</code>, <code>dd_onset_base</code> and
+<code>onset_func</code>). The first of both onset variants will be used. Set
+<code>onset_alt_func = NULL</code> to disable the alternative onset calculation.</p></dd>
 
 
 <dt>onset_add_dd</dt>
@@ -194,9 +201,14 @@ default values.</p>
 <span></span>
 <span>      dd_onset_start_date <span class="op">=</span> <span class="st">'03-01'</span>,</span>
 <span>      dd_onset_base <span class="op">=</span> <span class="fl">12</span>,</span>
-<span>      onset_func <span class="op">=</span> <span class="kw">function</span><span class="op">(</span><span class="va">tmax</span>, <span class="va">dd_tmax</span><span class="op">)</span> <span class="op">{</span></span>
+<span>      onset_func <span class="op">=</span> \<span class="op">(</span><span class="va">tmax</span>, <span class="va">dd_tmax</span><span class="op">)</span> <span class="op">{</span></span>
 <span>        <span class="fl">0.564071</span> <span class="op">*</span> <span class="va">tmax</span> <span class="op">+</span> <span class="fl">0.006434</span> <span class="op">*</span> <span class="va">dd_tmax</span> <span class="op">-</span> <span class="fl">12.37046</span> <span class="op">&gt;</span> <span class="fl">0</span></span>
 <span>      <span class="op">}</span>,</span>
+<span></span>
+<span>      dd_onset_alt_start_date <span class="op">=</span> <span class="st">'04-01'</span>,</span>
+<span>      dd_onset_alt_base <span class="op">=</span> <span class="fl">8.3</span>,</span>
+<span>      onset_alt_func <span class="op">=</span> \<span class="op">(</span><span class="va">tmax</span>, <span class="va">dd_tmax</span><span class="op">)</span> <span class="va">dd_tmax</span> <span class="op">&gt;=</span> <span class="fl">140</span>,</span>
+<span></span>
 <span>      onset_add_dd <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'0.1'</span> <span class="op">=</span> <span class="fl">0</span>, <span class="st">'0.5'</span> <span class="op">=</span> <span class="fl">90</span>, <span class="st">'0.9'</span> <span class="op">=</span> <span class="fl">190</span><span class="op">)</span>,</span>
 <span></span>
 <span>      <span class="co"># ==== development ====</span></span>
