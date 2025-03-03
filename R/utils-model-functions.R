@@ -40,72 +40,104 @@
 }
 
 
-.calc_dd_onset <- function(.params,
-                           .quiet = FALSE,
-                           .last = NULL,
-                           t) {
+.calc_dd_onset_func <- function(param_start_date = 'dd_onset_start_date',
+                                param_base = 'dd_onset_base') {
 
-  # find start date of the current year
-  dates <- terra::time(t)
-  year <- format(dates[[1]], '%Y')
-  start_date <- as.Date(paste0(year, '-', .params$dd_onset_start_date))
+  function(.params,
+           .storage = NULL,
+           .quiet = FALSE,
+           .last = NULL,
+           t) {
 
-  # calculate temperature above .params$dd_onset_base
-  t <- t - .params$dd_onset_base
-  t <- terra::ifel(t > 0, t, 0)
+    if(is.character(.storage)) return(.use_storage())
 
-  # ignore dates before the start date
-  first <- which(dates < start_date)
-  second <- which(dates >= start_date)
+    # find start date of the current year
+    dates <- terra::time(t)
+    year <- format(dates[[1]], '%Y')
+    start_date <- as.Date(paste0(year, '-', .params[[param_start_date]]))
 
-  if(length(first) > 0) {
-    if(length(second) > 0) t <- c(t[[first]] * 0, t[[second]])
-    else t <- t[[first]] * 0
+    # calculate temperature above .params[[param_base]]
+    t <- t - .params[[param_base]]
+    t <- terra::ifel(t > 0, t, 0)
+
+    # ignore dates before the start date
+    first <- which(dates < start_date)
+    second <- which(dates >= start_date)
+
+    if(length(first) > 0) {
+      if(length(second) > 0) t <- c(t[[first]] * 0, t[[second]])
+      else t <- t[[first]] * 0
+    }
+
+    # if a backup was recovered, add its temperature sum to the first new result
+    if(!is.null(.last)) t[[1]] <- t[[1]] + .last
+
+    # build cumulative sum
+    return(cumsum(t))
   }
-
-  # if a backup was recovered, add its temperature sum to the first new result
-  if(!is.null(.last)) t[[1]] <- t[[1]] + .last
-
-  # build cumulative sum
-  return(cumsum(t))
 }
 
-.calc_dd_onset_tmax <- function(.params, .storage = NULL, .quiet = FALSE, .last = NULL, tmax) {
+.calc_dd_onset_func.tmax <- function(param_start_date = 'dd_onset_start_date',
+                                     param_base = 'dd_onset_base') {
 
-  # use storage if requested
-  if(is.character(.storage)) return(.use_storage())
+  function(.params,
+           .storage = NULL,
+           .quiet = FALSE,
+           .last = NULL,
+           tmax) {
 
-  .calc_dd_onset(.params, .quiet, .last, tmax)
+    if(is.character(.storage)) return(.use_storage())
+
+    f <- .calc_dd_onset_func(param_start_date, param_base)
+    f(.params,
+      .storage = NULL,
+      .quiet = FALSE,
+      .last = NULL,
+      tmax)
+  }
 }
 
-.calc_dd_onset_tmean <- function(.params, .storage = NULL, .quiet = FALSE, .last = NULL, tmean) {
+.calc_dd_onset_func.tmean <- function(param_start_date = 'dd_onset_start_date',
+                                      param_base = 'dd_onset_base') {
 
-  # use storage if requested
-  if(is.character(.storage)) return(.use_storage())
+  function(.params,
+           .storage = NULL,
+           .quiet = FALSE,
+           .last = NULL,
+           tmean) {
 
-  .calc_dd_onset(.params, .quiet, .last, tmean)
+    if(is.character(.storage)) return(.use_storage())
+
+    f <- .calc_dd_onset_func(param_start_date, param_base)
+    f(.params,
+      .storage = NULL,
+      .quiet = FALSE,
+      .last = NULL,
+      tmean)
+  }
 }
 
 
+.calc_onset_fly_dd_func <- function(param_dd_threshold = 'dd_onset_threshold') {
 
-.calc_onset_fly_dd <- function(.params,
-                               .storage = NULL,
-                               .quiet = FALSE,
-                               .last = NULL,
-                               fly,
-                               dd_onset) {
+  function(.params,
+           .storage = NULL,
+           .quiet = FALSE,
+           .last = NULL,
+           fly,
+           dd_onset) {
 
-  # use storage if requested
-  if(is.character(.storage)) return(.use_storage())
+    # use storage if requested
+    if(is.character(.storage)) return(.use_storage())
 
-  # check onset condition to trigger the onset
-  out <- .trigger_rst(dd_onset >= .params$dd_onset_threshold & fly)
-  # an onset in a backup will trigger the onset too
-  if(!is.null(.last)) out <- out | .last
+    # check onset condition to trigger the onset
+    out <- .trigger_rst(dd_onset >= .params[[param_dd_threshold]] & fly)
+    # an onset in a backup will trigger the onset too
+    if(!is.null(.last)) out <- out | .last
 
-  return(out)
+    return(out)
+  }
 }
-
 
 
 .calc_fly <- function(.params,

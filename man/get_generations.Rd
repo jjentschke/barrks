@@ -57,11 +57,13 @@ their names, or pass different stations. See \code{\link[=stations_create]{stati
 \value{
 \itemize{
 \item \code{get_generations_rst()}: A multi-layer SpatRaster.
-\item \code{get_hibernating_generations_rst()}: A SpatRaster. Only available
-if the model's end date has been reached. Otherwise all values will be \code{NA}.
+\item \code{get_hibernating_generations_rst()}: A SpatRaster. Only available if a
+mortality event has occured since the diapause started or the model's end
+date has been reached. Otherwise, the values will be \code{NA}.
 \item \code{get_generations_df()}: A data frame.
-\item \code{get_hibernating_generations_df()}: A data frame. Only available if the
-model's end date has been reached. Otherwise all values will be \code{NA}.
+\item \code{get_hibernating_generations_df()}: A data frame. Only available if a
+mortality event has occured since the diapause started or the model's end
+date has been reached. Otherwise, the values will be \code{NA}.
 }
 }
 \description{

@@ -152,15 +152,22 @@ plot_development_diagram <- function(.phenos,
 
     df <- get_development_df(pheno, stat, dates = dates)
 
+    # df_mortality <- get_mortality_df(pheno, stat, FALSE, dates)
+    # if(!is.null(df_mortality)) df <- dplyr::left_join(df, df_mortality,
+    #                                                   by = c('station', 'doy'))
+    # else df$mortality <- 0
+
     cols <- colnames(df)
     cols <- cols[stringr::str_detect(cols, '^gen_')]
 
-    #return(df)
     purrr::walk(cols, \(col) {
+
+      #df[[col]] <<- ifelse(df[[col]] == -2, NA, df[[col]])
 
       vec <- df[[col]]
 
       x <- purrr::map_lgl(1:(length(vec) - 1), \(i) {
+        #if(is.na(vec[i]) & vec[i + 1] > 0) return(TRUE)
         if(is.na(vec[i]) | is.na(vec[i + 1])) return(FALSE)
         if(vec[i] < 0 & vec[i + 1] >= 0) return(TRUE)
         return(FALSE)
@@ -173,7 +180,7 @@ plot_development_diagram <- function(.phenos,
       })
 
       df[x, col] <<- 0
-      df[y, col] <<- NA
+      #df[y, col] <<- NA
     })
 
     return(df)
@@ -184,6 +191,20 @@ plot_development_diagram <- function(.phenos,
   if(!is.null(.generations)) generations <- generations[generations %in% .generations]
 
   generations <- generations[generations >= 1]
+
+
+  split_lines <- function(x) {
+
+    breaks <- which(purrr::map_lgl(1:(length(x) - 1), \(i) {
+
+      if(x[i] > x[i + 1]) return(TRUE)
+      return(FALSE)
+    }))
+
+    purrr::map2(c(1, breaks + 1), c(breaks, length(x)), \(from, to) {
+      c(rep(NA, from - 1), x[from:to], rep(NA, length(x) - to))
+    })
+  }
 
 
   plot_content <- function(generation,
@@ -215,6 +236,7 @@ plot_development_diagram <- function(.phenos,
         min(purrr::map_dbl(gen_devs[names(gen_devs) %in% .group], \(gen_dev) gen_dev[i]), na.rm = FALSE)
       })
       dev_min_group1 <- ifelse(has_gen_date_group, dev_min_group, NA)
+      dev_min_group1 <- ifelse(dev_min_group1 == -2, NA, dev_min_group1)
 
       dev_max_group <- purrr::map_dbl(1:length(gen_devs[[1]]), \(i) {
 
@@ -224,6 +246,7 @@ plot_development_diagram <- function(.phenos,
         max(x, na.rm = TRUE)
       })
       dev_max_group1 <- ifelse(has_gen_date_group, dev_max_group, NA)
+      dev_max_group1 <- ifelse(dev_max_group1 == -2, NA, dev_max_group1)
 
       if(all(has_gen) & !is.na(.fill)) {
 
@@ -239,17 +262,24 @@ plot_development_diagram <- function(.phenos,
 
     if(.minmax_only) {
 
-      graphics::lines(dates,
-                      ifelse(dev_min_group < 0, NA, dev_min_group),
-                      col = .colors[[paste0('gen_', generation)]],
-                      lwd = .lwd,
-                      lty = .lty)
+      purrr::walk(split_lines(dev_min_group), \(l) {
+        l <- ifelse(l == -2, NA, l)
+        graphics::lines(dates,
+                        ifelse(l < 0, NA, l),
+                        col = .colors[[paste0('gen_', generation)]],
+                        lwd = .lwd,
+                        lty = .lty)
+      })
 
-      graphics::lines(dates,
-                      ifelse(dev_max_group < 0, NA, dev_max_group),
-                      col = .colors[[paste0('gen_', generation)]],
-                      lwd = .lwd,
-                      lty = .lty)
+      purrr::walk(split_lines(dev_max_group), \(l) {
+        l <- ifelse(l == -2, NA, l)
+        graphics::lines(dates,
+                        ifelse(l < 0, NA, l),
+                        col = .colors[[paste0('gen_', generation)]],
+                        lwd = .lwd,
+                        lty = .lty)
+      })
+
     } else  {
 
       purrr::walk(names(gen_devs), \(name_pheno) {
@@ -262,11 +292,14 @@ plot_development_diagram <- function(.phenos,
         if(length(.lwd) == 1) lwd_i <- .lwd
         else lwd_i <- .lwd[[name_pheno]]
 
-        graphics::lines(dates,
-                        gen_dev,
-                        col = .colors[[gen_key]],
-                        lwd = lwd_i,
-                        lty = lty_i)
+        purrr::walk(split_lines(gen_dev), \(l) {
+          l <- ifelse(l == -2, NA, l)
+          graphics::lines(dates,
+                          l,
+                          col = .colors[[gen_key]],
+                          lwd = lwd_i,
+                          lty = lty_i)
+        })
       })
     }
   }

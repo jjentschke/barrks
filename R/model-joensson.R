@@ -28,8 +28,8 @@ NULL
 #'       dd_total_dev_upper = 750,
 #'       dev_start = 0,
 #'       dev_end = 1,
-#'       dev_mortal_min = NULL,
-#'       dev_mortal_max = NULL,
+#'       dev_mortal_min = 0,
+#'       dev_mortal_max = 1,
 #'
 #'       model_end_date = '12-31',
 #'
@@ -305,15 +305,15 @@ joensson_calc_development <- function(.params,
                   dd_total_dev_upper = 750,
                   dev_start = 0,
                   dev_end = 1,
-                  dev_mortal_min = NULL,
-                  dev_mortal_max = NULL,
+                  dev_mortal_min = 0,
+                  dev_mortal_max = 1,
 
                   daylength_dia = 19.3,
                   tdia_min = 15
                 ),
 
                 onset = list(
-                  setup = list(dd_onset = .calc_dd_onset_tmax,
+                  setup = list(dd_onset = .calc_dd_onset_func.tmax(),
                                fly = .calc_fly),
                   compute = joensson_calc_onset
                 ),

@@ -215,7 +215,7 @@ NULL
 
   if(!is.null(.mortality)) {
     kill <- .trigger_rst(.mortality & dev < limits[3] / total_dev & period)
-    dev <- terra::ifel(kill, NA, dev)
+    dev <- terra::ifel(kill, -2, dev)
   }
 
   terra::time(dev) <- terra::time(teff_egg)
@@ -301,9 +301,9 @@ NULL
                ),
 
                onset = list(
-                 setup = list(dd_onset = .calc_dd_onset_tmean,
+                 setup = list(dd_onset = .calc_dd_onset_func.tmean(),
                               fly = .calc_fly),
-                 compute = .calc_onset_fly_dd
+                 compute = .calc_onset_fly_dd_func()
                ),
 
                development = list(

@@ -14,6 +14,11 @@ and \code{dd_tmax} (degree days of maximum temperature) as parameters.
 The function should return \code{TRUE} when the base onset is
 triggered. See \code{onset_add_dd} for the actual onset of infestation.}
 
+\item{dd_onset_alt_start_date, dd_onset_alt_base, onset_alt_func}{Alternative
+way to calculate the diapause (see \code{dd_onset_start_date}, \code{dd_onset_base} and
+\code{onset_func}). The first of both onset variants will be used. Set
+\code{onset_alt_func = NULL} to disable the alternative onset calculation.}
+
 \item{onset_add_dd}{Vector of options to calculate the actual onset of
 infestation. The vector should be named after the share of beetles that
 already started breeding when the onset is triggered (choose an option via
@@ -97,9 +102,14 @@ default values.
 
       dd_onset_start_date = '03-01',
       dd_onset_base = 12,
-      onset_func = function(tmax, dd_tmax) \{
+      onset_func = \\(tmax, dd_tmax) \{
         0.564071 * tmax + 0.006434 * dd_tmax - 12.37046 > 0
       \},
+
+      dd_onset_alt_start_date = '04-01',
+      dd_onset_alt_base = 8.3,
+      onset_alt_func = \\(tmax, dd_tmax) dd_tmax >= 140,
+
       onset_add_dd = c('0.1' = 0, '0.5' = 90, '0.9' = 190),
 
       # ==== development ====

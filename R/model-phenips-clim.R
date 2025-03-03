@@ -19,9 +19,14 @@ NULL
 #'
 #'       dd_onset_start_date = '03-01',
 #'       dd_onset_base = 12,
-#'       onset_func = function(tmax, dd_tmax) {
+#'       onset_func = \(tmax, dd_tmax) {
 #'         0.564071 * tmax + 0.006434 * dd_tmax - 12.37046 > 0
 #'       },
+#'
+#'       dd_onset_alt_start_date = '04-01',
+#'       dd_onset_alt_base = 8.3,
+#'       onset_alt_func = \(tmax, dd_tmax) dd_tmax >= 140,
+#'
 #'       onset_add_dd = c('0.1' = 0, '0.5' = 90, '0.9' = 190),
 #'
 #'       # ==== development ====
@@ -77,6 +82,10 @@ NULL
 #' and `dd_tmax` (degree days of maximum temperature) as parameters.
 #' The function should return `TRUE` when the base onset is
 #' triggered. See `onset_add_dd` for the actual onset of infestation.
+#' @param dd_onset_alt_start_date,dd_onset_alt_base,onset_alt_func Alternative
+#' way to calculate the diapause (see `dd_onset_start_date`, `dd_onset_base` and
+#' `onset_func`). The first of both onset variants will be used. Set
+#' `onset_alt_func = NULL` to disable the alternative onset calculation.
 #' @param onset_add_dd Vector of options to calculate the actual onset of
 #' infestation. The vector should be named after the share of beetles that
 #' already started breeding when the onset is triggered (choose an option via
@@ -313,6 +322,8 @@ phenips_clim_calc_onset <- function(.params,
                                     .last = NULL,
                                     tmax,
                                     dd_onset,
+                                    dd_onset_alt,
+                                    fly,
                                     scenario = 'max',
                                     onset_mode = NULL) {
 
@@ -331,7 +342,11 @@ phenips_clim_calc_onset <- function(.params,
 
   # calculate the base onset
   .msg(4, .quiet, 'calculate the base onset')
-  out <- .params$onset_func(tmax, dd_onset)
+  onset <- .params$onset_func(tmax, dd_onset)
+  if(!is.null(.params$onset_alt_func)) {
+    onset_alt <- .params$onset_alt_func(tmax, dd_onset_alt)
+    out <- onset | onset_alt
+  } else out <- onset
 
   add_dd <- .params$onset_add_dd[[as.character(onset_mode)]]
   .msg(4, .quiet, 'add ', add_dd, ' degree days to get the onset of the first ', onset_mode * 100, ' % beetles')
@@ -342,16 +357,18 @@ phenips_clim_calc_onset <- function(.params,
     lyr <- terra::which.lyr(out)
     lyr <- terra::ifel(is.na(lyr), terra::nlyr(dd_onset), lyr)
 
-    dd_tmax_diff <- dd_onset - terra::rapp(dd_onset, lyr, lyr, \(x) x)
+    dd_tmax_diff <- dd_onset - terra::selectRange(dd_onset, lyr)
 
     # wait for an additional tmaxsum according to `onset_mode`
     out <- (dd_tmax_diff >= add_dd)
   }
 
   # the maximum temperature must exceed the minimum flight temperature
-  out <- .trigger_rst(out & tmax > .params$tfly)
+  out <- (out & tmax > .params$tfly)
   # an onset in a backup will trigger the onset too
   if(!is.null(.last)) out <- out | .last
+
+  out <- .trigger_rst(out)
 
   # set dates
   terra::time(out) <- terra::time(tmax)
@@ -382,9 +399,9 @@ phenips_clim_calc_diapause <- function(.params,
     stop('`diapause_mode` must be one of: ', paste(valid_keys, collapse = ', '))
 
   if(diapause_mode == 'photoperiodic') return(phenips_calc_diapause(.params,
-                                                                     .storage,
-                                                                     .quiet,
-                                                                     daylength))
+                                                                    .storage,
+                                                                    .quiet,
+                                                                    daylength))
 
   # set earliest diapause date for current year
   first_diapause_lyr <- .lyr_from_date(tmax, .params$first_diapause_date)
@@ -394,8 +411,11 @@ phenips_clim_calc_diapause <- function(.params,
   else {
     nlyr <- terra::nlyr(daylength)
     diapause_cond <- .params$diapause_thermal_func(daylength, tmax)
-    diapause_start <- nlyr + 1 - terra::which.lyr(diapause_cond[[nlyr:1]])
-    diapause_start <- terra::ifel(diapause_start < first_diapause_lyr, NA, diapause_start)
+    keys <- 1:(first_diapause_lyr - 1)
+    keys2 <- first_diapause_lyr:terra::nlyr(diapause_cond)
+    #diapause_cond[[1:(first_diapause_lyr - 1)]] <- 0
+    diapause_cond <- c(terra::subst(diapause_cond[[keys]], 1, 0), diapause_cond[[keys2]])
+    diapause_start <- nlyr + 2 - terra::which.lyr(!diapause_cond[[nlyr:1]])
     diapause <- terra::rast( purrr::map(1:nlyr, \(l) terra::ifel(diapause_start <= l, 1, 0)) )
   }
 
@@ -473,6 +493,28 @@ phenips_clim_calc_development <- function(.params,
 }
 
 
+.calc_onset_fly_dd_func.alt <- function(param_dd_threshold = 'dd_onset_alt_threshold') {
+
+  function(.params,
+           .storage = NULL,
+           .quiet = FALSE,
+           .last = NULL,
+           fly,
+           dd_onset_alt) {
+
+    # use storage if requested
+    if(is.character(.storage)) return(.use_storage())
+
+    # check onset condition to trigger the onset
+    out <- .trigger_rst(dd_onset_alt >= .params[[param_dd_threshold]] & fly)
+    # an onset in a backup will trigger the onset too
+    if(!is.null(.last)) out <- out | .last
+
+    return(out)
+  }
+}
+
+
 # register model with default parameters
 .create_model('phenips-clim',
               list(
@@ -480,8 +522,12 @@ phenips_clim_calc_development <- function(.params,
 
                   dd_onset_start_date = '03-01',
                   dd_onset_base = 12,
-
                   onset_func = \(tmax, dd_tmax) 0.564071 * tmax + 0.006434 * dd_tmax - 12.37046 > 0,
+
+                  dd_onset_alt_start_date = '04-01',
+                  dd_onset_alt_base = 8.3,
+                  onset_alt_func = \(tmax, dd_tmax) dd_tmax >= 140,
+
                   onset_add_dd = c('0.1' = 0, '0.5' = 90, '0.9' = 190),
 
                   model_end_date = '12-31',
@@ -506,7 +552,7 @@ phenips_clim_calc_development <- function(.params,
                   dev_rates = .phenips_clim_get_dev_rates(),
 
                   first_diapause_date = '08-12',
-                  diapause_thermal_func = \(daylength, tmax) 0.8619156 * daylength + 0.5081128 * tmax - 23.63691 > 0,
+                  diapause_thermal_func = \(daylength, tmax) 0.8619156 * daylength + 0.5081128 * tmax - 23.63691 < 0,
                   daylength_dia = 14.5,
 
                   tlethal = -5
@@ -514,7 +560,10 @@ phenips_clim_calc_development <- function(.params,
 
 
                 onset = list(
-                  setup = list(dd_onset = .calc_dd_onset_tmax),
+                  setup = list(fly = .calc_fly,
+                               dd_onset = .calc_dd_onset_func.tmax(),
+                               dd_onset_alt = .calc_dd_onset_func.tmax(param_start_date = 'dd_onset_start_date',
+                                                                  param_base = 'dd_onset_base')),
                   compute = phenips_clim_calc_onset
                 ),
 

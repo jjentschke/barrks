@@ -1,5 +1,6 @@
 
 
+#load('inst/tinytest/data/test-data-spring-mortality.rda')
 load('data/test-data-spring-mortality.rda')
 
 data <- barrks_data('stations')
@@ -16,5 +17,5 @@ pheno <- phenology('phenips-clim', data,
 
 df <- get_development_df(pheno)
 
-expect_true(all(df == test_output_spring_mortality |
-                (is.na(df) & is.na(test_output_spring_mortality))))
+expect_true(all(df == test_output_spring_mortality, na.rm = TRUE))
+expect_true(all((is.na(df) == is.na(test_output_spring_mortality))))

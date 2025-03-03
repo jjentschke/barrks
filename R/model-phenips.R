@@ -318,15 +318,17 @@ phenips_develop_generation <- function(.params,
   teff <- teff * period
 
   # get last temperature sum from backup
-  if(!is.null(.last)) teff[[1]] <- teff[[1]] + terra::ifel(.last == -1, 0, .last) * .params$dd_total_dev
+  if(!is.null(.last)) teff[[1]] <- teff[[1]] + terra::ifel(.last == -1 | is.na(.last), 0, .last) * .params$dd_total_dev
 
 
   # calculate cumulative development
   dev <- cumsum(teff / .params$dd_total_dev)
+  dead_periods <- dev * 0
 
   if(!is.null(.mortality)) {
 
-    kill <- (.mortality & period)
+    #kill <- (.mortality & period)
+    kill <- .mortality
 
     while(TRUE) {
 
@@ -343,14 +345,17 @@ phenips_develop_generation <- function(.params,
       dev <- terra::ifel(trigger_kill, 0, dev)
 
       new_period <- .trigger_rst((!.diapause) & fly & c(trigger_kill[[1]] & FALSE, trigger_kill)[[1:terra::nlyr(trigger_kill)]])
-      dev <- terra::ifel((!new_period) & trigger_kill, NA, dev)
+      dead_periods <- dead_periods | ((!new_period) & trigger_kill)
       dev <- dev + cumsum(new_period * teff / .params$dd_total_dev)
 
       kill <- kill & new_period
     }
   }
 
-  return(terra::ifel(dev == 0, -1, dev))
+  out <- terra::ifel(dev == 0, -1, dev)
+  out <- terra::ifel(as.logical(dead_periods), -2, out)
+
+  return(out)
 }
 
 
@@ -413,7 +418,7 @@ phenips_calc_development <- function(.params,
     })
     names(dev_sis) <- as.character(sister_broods)
 
-    dev <- terra::ifel(dev_raw == -1, -1,
+    dev <- terra::ifel(dev_raw < 0, dev_raw,
                        terra::clamp((dev_raw - .params$dev_start) / (.params$dev_end - .params$dev_start), 0))
     out[[paste0('gen_', generation)]] <- dev
     out[[paste0('gen_', generation, '_raw')]] <- dev_raw
@@ -425,7 +430,7 @@ phenips_calc_development <- function(.params,
 
       if(sum(vals[vals >= 0], na.rm = TRUE) > 0) {
 
-        out[[paste0('gen_', generation + 0.5)]] <<- terra::ifel(dev_sis[[as.character(sis)]] == -1, -1,
+        out[[paste0('gen_', generation + 0.5)]] <<- terra::ifel(dev_sis[[as.character(sis)]] < 0, dev_sis[[as.character(sis)]],
                                                                 terra::clamp((dev_sis[[as.character(sis)]] - .params$dev_start) / (.params$dev_end - .params$dev_start), 0))
         out[[paste0('gen_', generation + 0.5, '_raw')]] <<- dev_sis[[as.character(sis)]]
       }
@@ -480,9 +485,9 @@ phenips_calc_development <- function(.params,
                ),
 
                onset = list(
-                 setup = list(dd_onset = .calc_dd_onset_tmax,
+                 setup = list(dd_onset = .calc_dd_onset_func.tmax(),
                               fly = .calc_fly),
-                 compute = .calc_onset_fly_dd
+                 compute = .calc_onset_fly_dd_func()
                ),
 
                development = list(

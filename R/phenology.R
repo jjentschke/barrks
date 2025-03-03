@@ -323,7 +323,7 @@ load_phenology <- function(.storage,
   if('development' %in% .submodels) {
 
     f <- file.path(.storage, paste0('hibernating_generations', .ext))
-    out$hibernating_generations <- terra::rast(f)
+    if(file.exists(f)) out$hibernating_generations <- terra::rast(f)
   }
 
   out$dates <- dates
@@ -353,7 +353,8 @@ load_phenology <- function(.storage,
 
   if(!is.null(pheno$mortality)) {
 
-    lyr_mort <- terra::which.lyr(pheno$mortality)
+    if(is.null(pheno$diapause)) lyr_mort <- terra::which.lyr(pheno$mortality)
+    else lyr_mort <- terra::which.lyr(pheno$mortality & pheno$diapause)
     lyr <- terra::ifel(is.na(lyr_mort), lyr, lyr_mort)
   }
 

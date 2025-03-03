@@ -112,11 +112,13 @@ categorize_generations_rst <- function(rst,
 #' @returns
 #'
 #' * `get_generations_rst()`: A multi-layer SpatRaster.
-#' * `get_hibernating_generations_rst()`: A SpatRaster. Only available
-#'   if the model's end date has been reached. Otherwise all values will be `NA`.
+#' * `get_hibernating_generations_rst()`: A SpatRaster. Only available if a
+#'   mortality event has occured since the diapause started or the model's end
+#'   date has been reached. Otherwise, the values will be `NA`.
 #' * `get_generations_df()`: A data frame.
-#' * `get_hibernating_generations_df()`: A data frame. Only available if the
-#'   model's end date has been reached. Otherwise all values will be `NA`.
+#' * `get_hibernating_generations_df()`: A data frame. Only available if a
+#'   mortality event has occured since the diapause started or the model's end
+#'   date has been reached. Otherwise, the values will be `NA`.
 #'
 #' @examples
 #' \donttest{
@@ -147,7 +149,7 @@ get_generations_rst <- function(pheno,
   lyrs <- prop_dates(pheno) %in% as.Date(dates)
   out <- 0 * pheno$development$gen_1[[lyrs]]
 
-  purrr::walk(generations, \(generation) {
+  purrr::walk(sort(generations), \(generation) {
     if(!paste0('gen_', generation) %in% names(pheno$development)) return()
     out <<- terra::ifel(pheno$development[[paste0('gen_', generation)]][[lyrs]] >= threshold, generation, out)
   })

@@ -69,8 +69,8 @@ default values.
       dd_total_dev_upper = 750,
       dev_start = 0,
       dev_end = 1,
-      dev_mortal_min = NULL,
-      dev_mortal_max = NULL,
+      dev_mortal_min = 0,
+      dev_mortal_max = 1,
 
       model_end_date = '12-31',
 
