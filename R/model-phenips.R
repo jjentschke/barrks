@@ -395,7 +395,7 @@ phenips_calc_development <- function(.params,
 
     # storage path for current generation
     if(is.null(.storage)) storage_gen <- NULL
-    else storage_gen <- file.path(.storage, paste0('gen_', generation))
+    else storage_gen <- file.path(.storage, paste0('gen_', generation, '_raw'))
 
     # calculate development of current generation
     dev_raw <- phenips_develop_generation(.params, .onset, .diapause, .mortality, teff, fly, period_gen, NULL,
@@ -409,7 +409,7 @@ phenips_calc_development <- function(.params,
       terra::time(period_sis) <- dates
 
       if(is.null(.storage)) storage_sis <- NULL
-      else storage_sis <- file.path(.storage, paste0('gen_', generation + 0.5))
+      else storage_sis <- file.path(.storage, paste0('gen_', generation + 0.5, '_raw'))
 
       d <- phenips_develop_generation(.params, .onset, .diapause, .mortality, teff, fly, period_sis, NULL,
                                       .storage = storage_sis, .quiet = .quiet)
@@ -422,7 +422,12 @@ phenips_calc_development <- function(.params,
                        terra::clamp((dev_raw - .params$dev_start) / (.params$dev_end - .params$dev_start), 0))
     out[[paste0('gen_', generation)]] <- dev
     out[[paste0('gen_', generation, '_raw')]] <- dev_raw
-
+    if(!is.null(.storage)) {
+      path <- file.path(.storage, paste0('gen_', generation))
+      if(!dir.exists(path)) dir.create(path, recursive = TRUE)
+      .save_raster(dev, path, paste0('gen_', generation),
+                   .quiet = .quiet)
+    }
     # save sister broods
     purrr::walk(sister_broods, \(sis) {
 
@@ -433,6 +438,14 @@ phenips_calc_development <- function(.params,
         out[[paste0('gen_', generation + 0.5)]] <<- terra::ifel(dev_sis[[as.character(sis)]] < 0, dev_sis[[as.character(sis)]],
                                                                 terra::clamp((dev_sis[[as.character(sis)]] - .params$dev_start) / (.params$dev_end - .params$dev_start), 0))
         out[[paste0('gen_', generation + 0.5, '_raw')]] <<- dev_sis[[as.character(sis)]]
+        if(!is.null(.storage)) {
+          path <- file.path(.storage, paste0('gen_', generation + 0.5))
+          if(!dir.exists(path)) dir.create(path, recursive = TRUE)
+          .save_raster(out[[paste0('gen_', generation + 0.5)]],
+                       path,
+                       paste0('gen_', generation + 0.5),
+                       .quiet = .quiet)
+        }
       }
 
     })

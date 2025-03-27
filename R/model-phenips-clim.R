@@ -342,6 +342,20 @@ phenips_clim_calc_onset <- function(.params,
 
   # calculate the base onset
   .msg(4, .quiet, 'calculate the base onset')
+
+  first_lyr <- .lyr_from_date(tmax, .params$dd_onset_start_date)
+  if(length(first_lyr) == 0) {
+
+    first_date <- lubridate::year(terra::time(tmax)[1]) |>
+      paste0('-', .params$dd_onset_start_date) |>
+      as.Date()
+
+    if(terra::time(tmax)[1] > first_date) first_lyr <- 1
+    else first_lyr <- terra::nlyr(tmax) + 1
+  }
+
+  if(first_lyr > 1) tmax[[1:(first_lyr - 1)]] <- 0 * tmax[[1:(first_lyr - 1)]]
+
   onset <- .params$onset_func(tmax, dd_onset)
   if(!is.null(.params$onset_alt_func)) {
     onset_alt <- .params$onset_alt_func(tmax, dd_onset_alt)

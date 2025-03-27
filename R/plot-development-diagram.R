@@ -214,6 +214,8 @@ plot_development_diagram <- function(.phenos,
                            .lty,
                            .fill) {
 
+    if(length(dates) <= 1) return()
+
     gen_key <- paste0('gen_', generation)
 
     if(length(.fill) > 1) .fill <- .fill[[gen_key]]
@@ -320,12 +322,10 @@ plot_development_diagram <- function(.phenos,
     has_gen <- purrr::map_lgl(has_gen_date, \(x) any(x))
     #has_gen_date_group <- purrr::reduce(has_gen_date[names(has_gen_date) %in% .group], \(a, b) a & b)
 
-    if(!any(has_gen)) {
+    if(!any(has_gen, na.rm = TRUE)) {
       generations <<- generations[generations != generation]
       return()
     }
-
-    has_gen <- purrr::map_lgl(has_gen_date, \(x) any(x))
 
 
     if(!is.null(.date_split)) {
@@ -333,7 +333,7 @@ plot_development_diagram <- function(.phenos,
       plot_content(generation, gen_devs1, dates[dates <= .date_split], .lwd, .lty, .fill)
 
       has_gen2 <- purrr::map_lgl(has_gen_date, \(x) any(x[dates >= .date_split]))
-      if(any(has_gen2)) {
+      if(any(has_gen2, na.rm = TRUE)) {
         gen_devs2 <- purrr::map(gen_devs, \(x) x[dates >= .date_split])
         plot_content(generation, gen_devs2, dates[dates >= .date_split], .lwd2, .lty2, .fill2)
       }
