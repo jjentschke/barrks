@@ -1,174 +1,60 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>/404.html</loc>
-  </url>
-  <url>
-    <loc>/articles/bso.html</loc>
-  </url>
-  <url>
-    <loc>/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>/articles/model-comparison.html</loc>
-  </url>
-  <url>
-    <loc>/articles/model-customization.html</loc>
-  </url>
-  <url>
-    <loc>/articles/stations.html</loc>
-  </url>
-  <url>
-    <loc>/articles/storage.html</loc>
-  </url>
-  <url>
-    <loc>/authors.html</loc>
-  </url>
-  <url>
-    <loc>/index.html</loc>
-  </url>
-  <url>
-    <loc>/LICENSE.html</loc>
-  </url>
-  <url>
-    <loc>/news/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/analyse.phenology.bso.html</loc>
-  </url>
-  <url>
-    <loc>/reference/analyse.phenology.html</loc>
-  </url>
-  <url>
-    <loc>/reference/barrks-package.html</loc>
-  </url>
-  <url>
-    <loc>/reference/barrks_colors.html</loc>
-  </url>
-  <url>
-    <loc>/reference/barrks_data.html</loc>
-  </url>
-  <url>
-    <loc>/reference/barrks_labels.html</loc>
-  </url>
-  <url>
-    <loc>/reference/bso_get_flight.html</loc>
-  </url>
-  <url>
-    <loc>/reference/bso_get_individuals.html</loc>
-  </url>
-  <url>
-    <loc>/reference/bso_plot_flight_diagram.html</loc>
-  </url>
-  <url>
-    <loc>/reference/bso_plot_stage_diagram.html</loc>
-  </url>
-  <url>
-    <loc>/reference/bso_translate_phenology.html</loc>
-  </url>
-  <url>
-    <loc>/reference/categorize_generations_rst.html</loc>
-  </url>
-  <url>
-    <loc>/reference/create_daylength_df.html</loc>
-  </url>
-  <url>
-    <loc>/reference/create_daylength_rst.html</loc>
-  </url>
-  <url>
-    <loc>/reference/create_events.html</loc>
-  </url>
-  <url>
-    <loc>/reference/create_suntimes_df.html</loc>
-  </url>
-  <url>
-    <loc>/reference/create_suntimes_rsts.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_development.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_events.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_generations.html</loc>
-  </url>
-  <url>
-    <loc>/reference/get_input_data.html</loc>
-  </url>
-  <url>
-    <loc>/reference/index.html</loc>
-  </url>
-  <url>
-    <loc>/reference/list_models.html</loc>
-  </url>
-  <url>
-    <loc>/reference/model.bso.apply.html</loc>
-  </url>
-  <url>
-    <loc>/reference/model.bso.customize.html</loc>
-  </url>
-  <url>
-    <loc>/reference/model.chapy.apply.html</loc>
-  </url>
-  <url>
-    <loc>/reference/model.chapy.customize.html</loc>
-  </url>
-  <url>
-    <loc>/reference/model.html</loc>
-  </url>
-  <url>
-    <loc>/reference/model.joensson.apply.html</loc>
-  </url>
-  <url>
-    <loc>/reference/model.joensson.customize.html</loc>
-  </url>
-  <url>
-    <loc>/reference/model.lange.apply.html</loc>
-  </url>
-  <url>
-    <loc>/reference/model.lange.customize.html</loc>
-  </url>
-  <url>
-    <loc>/reference/model.phenips.apply.html</loc>
-  </url>
-  <url>
-    <loc>/reference/model.phenips.customize.html</loc>
-  </url>
-  <url>
-    <loc>/reference/model.phenips_clim.apply.html</loc>
-  </url>
-  <url>
-    <loc>/reference/model.phenips_clim.customize.html</loc>
-  </url>
-  <url>
-    <loc>/reference/model.rity.apply.html</loc>
-  </url>
-  <url>
-    <loc>/reference/model.rity.customize.html</loc>
-  </url>
-  <url>
-    <loc>/reference/model_combine.html</loc>
-  </url>
-  <url>
-    <loc>/reference/params.html</loc>
-  </url>
-  <url>
-    <loc>/reference/phenology.html</loc>
-  </url>
-  <url>
-    <loc>/reference/plot_development_diagram.html</loc>
-  </url>
-  <url>
-    <loc>/reference/properties.html</loc>
-  </url>
-  <url>
-    <loc>/reference/save_load_phenology.html</loc>
-  </url>
-  <url>
-    <loc>/reference/stations.html</loc>
-  </url>
-  <url>
-    <loc>/TODO.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://jjentschke.github.io/barrks/404.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/articles/bso.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/articles/index.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/articles/model-comparison.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/articles/model-customization.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/articles/stations.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/articles/storage.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/authors.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/index.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/LICENSE.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/news/index.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/analyse.phenology.bso.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/analyse.phenology.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/barrks-package.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/barrks_colors.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/barrks_data.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/barrks_labels.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/bso_get_flight.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/bso_get_individuals.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/bso_plot_flight_diagram.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/bso_plot_stage_diagram.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/bso_translate_phenology.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/categorize_generations_rst.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/create_daylength_df.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/create_daylength_rst.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/create_events.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/create_suntimes_df.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/create_suntimes_rsts.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/get_development.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/get_events.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/get_generations.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/get_input_data.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/index.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/list_models.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/model.bso.apply.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/model.bso.customize.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/model.chapy.apply.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/model.chapy.customize.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/model.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/model.joensson.apply.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/model.joensson.customize.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/model.lange.apply.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/model.lange.customize.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/model.phenips.apply.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/model.phenips.customize.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/model.phenips_clim.apply.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/model.phenips_clim.customize.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/model.rity.apply.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/model.rity.customize.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/model_combine.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/params.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/phenology.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/plot_development_diagram.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/properties.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/save_load_phenology.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/reference/stations.html</loc></url>
+<url><loc>https://jjentschke.github.io/barrks/TODO.html</loc></url>
 </urlset>
+
