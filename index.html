@@ -23,7 +23,7 @@
 
     <a class="navbar-brand me-2" href="index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,14 +71,14 @@
 <col width="14%">
 <col width="47%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Model</th>
 <th>Publication</th>
 <th>Species</th>
 <th>Help</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>BSO</td>
 <td>Jakoby, Lischke, and Wermelinger (2019)</td>
 <td><em>I. typographus</em></td>
@@ -86,7 +86,7 @@
 <code><a href="reference/model.bso.apply.html">?model.bso.apply</a></code> <br><code><a href="reference/model.bso.customize.html">?model.bso.customize</a></code>
 </td>
 </tr>
-<tr class="even">
+<tr>
 <td>Lange</td>
 <td>Lange, Økland, and Krokene (2008)</td>
 <td><em>I. typographus</em></td>
@@ -94,7 +94,7 @@
 <code><a href="reference/model.lange.apply.html">?model.lange.apply</a></code> <br><code><a href="reference/model.lange.customize.html">?model.lange.customize</a></code>
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Jönsson</td>
 <td>Jönsson et al. (2011)</td>
 <td><em>I. typographus</em></td>
@@ -102,7 +102,7 @@
 <code><a href="reference/model.joensson.apply.html">?model.joensson.apply</a></code> <br><code><a href="reference/model.joensson.customize.html">?model.joensson.customize</a></code>
 </td>
 </tr>
-<tr class="even">
+<tr>
 <td>PHENIPS</td>
 <td>Baier, Pennerstorfer, and Schopf (2007)</td>
 <td><em>I. typographus</em></td>
@@ -110,7 +110,7 @@
 <code><a href="reference/model.phenips.apply.html">?model.phenips.apply</a></code> <br><code><a href="reference/model.phenips.customize.html">?model.phenips.customize</a></code>
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td>PHENIPS‑Clim</td>
 <td>-</td>
 <td><em>I. typographus</em></td>
@@ -118,7 +118,7 @@
 <code><a href="reference/model.phenips_clim.apply.html">?model.phenips_clim.apply</a></code> <br><code><a href="reference/model.phenips_clim.customize.html">?model.phenips_clim.customize</a></code>
 </td>
 </tr>
-<tr class="even">
+<tr>
 <td>RITY</td>
 <td>Ogris et al. (2019)</td>
 <td><em>I. typographus</em></td>
@@ -126,7 +126,7 @@
 <code><a href="reference/model.rity.apply.html">?model.rity.apply</a></code> <br><code><a href="reference/model.rity.customize.html">?model.rity.customize</a></code>
 </td>
 </tr>
-<tr class="odd">
+<tr>
 <td>CHAPY</td>
 <td>Ogris et al. (2020)</td>
 <td><em>P. chalcographus</em></td>
@@ -162,7 +162,7 @@
 <span></span>
 <span><span class="co"># plot number of prevailing generations on 4 different dates</span></span>
 <span><span class="va">dates</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'2015-04-15'</span>, <span class="st">'2015-06-15'</span>, <span class="st">'2015-08-15'</span>, <span class="st">'2015-10-15'</span><span class="op">)</span></span>
-<span><span class="fu"><a href="reference/get_generations.html">get_generations_rst</a></span><span class="op">(</span><span class="va">pheno</span>, <span class="va">dates</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span>mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.2</span>, <span class="fl">0.1</span>, <span class="fl">2</span>, <span class="fl">5</span><span class="op">)</span>,</span>
+<span><span class="fu"><a href="reference/get_generations.html">get_generations_rst</a></span><span class="op">(</span><span class="va">pheno</span>, <span class="va">dates</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu"><a href="https://rspatial.github.io/terra/reference/plot.html" class="external-link">plot</a></span><span class="op">(</span>mar <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.2</span>, <span class="fl">0.1</span>, <span class="fl">2</span>, <span class="fl">5</span><span class="op">)</span>,</span>
 <span>                                           axes <span class="op">=</span> <span class="cn">FALSE</span>, box <span class="op">=</span> <span class="cn">TRUE</span>, nr <span class="op">=</span> <span class="fl">1</span>,</span>
 <span>                                           cex.main <span class="op">=</span> <span class="fl">1.9</span>, plg <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span>cex <span class="op">=</span> <span class="fl">1.8</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <div class="figure">
@@ -255,7 +255,7 @@ Ogris, Nikica, Mitja Ferlan, Tine Hauptman, Roman Pavlin, Andreja Kavčič, Maja
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
     </footer>

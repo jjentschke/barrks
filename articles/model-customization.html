@@ -21,7 +21,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">barrks</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">1.1.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -126,9 +126,9 @@ calculated models are plotted on four different dates.</p>
 <span></span>
 <span><span class="co"># plot generations</span></span>
 <span><span class="va">dates</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'2015-04-15'</span>, <span class="st">'2015-06-15'</span>, <span class="st">'2015-08-15'</span>, <span class="st">'2015-10-15'</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/get_generations.html">get_generations_rst</a></span><span class="op">(</span><span class="va">pheno_std</span>, <span class="va">dates</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">my_rst_plot</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/get_generations.html">get_generations_rst</a></span><span class="op">(</span><span class="va">pheno_custom</span>, <span class="va">dates</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">my_rst_plot</span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="fu"><a href="../reference/get_generations.html">get_generations_rst</a></span><span class="op">(</span><span class="va">pheno_combined</span>, <span class="va">dates</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu">my_rst_plot</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu"><a href="../reference/get_generations.html">get_generations_rst</a></span><span class="op">(</span><span class="va">pheno_std</span>, <span class="va">dates</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">my_rst_plot</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/get_generations.html">get_generations_rst</a></span><span class="op">(</span><span class="va">pheno_custom</span>, <span class="va">dates</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">my_rst_plot</span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/get_generations.html">get_generations_rst</a></span><span class="op">(</span><span class="va">pheno_combined</span>, <span class="va">dates</span><span class="op">)</span> <span class="op">%&gt;%</span> <span class="fu">my_rst_plot</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="figure">
 <img src="figures/model-customization-gens-std-1.png" alt="Generations calculated by PHENIPS without modifications" width="100%"><p class="caption">
 Generations calculated by PHENIPS without modifications
@@ -165,7 +165,7 @@ simple.</p>
 <span><span class="va">pheno_std</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/phenology.html">phenology</a></span><span class="op">(</span><span class="st">'phenips-clim'</span>, <span class="fu"><a href="../reference/barrks_data.html">barrks_data</a></span><span class="op">(</span><span class="st">'stations'</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># calculate phenology with a manually created onset</span></span>
-<span><span class="va">onset</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_events.html">create_onset</a></span><span class="op">(</span><span class="fu"><a href="../reference/barrks_data.html">barrks_data</a></span><span class="op">(</span><span class="st">'stations'</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>Freiburg <span class="op">=</span> <span class="fu"><a href="https://lubridate.tidyverse.org/reference/day.html" class="external-link">yday</a></span><span class="op">(</span><span class="st">'2011-05-01'</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="va">onset</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/create_events.html">create_onset</a></span><span class="op">(</span><span class="fu"><a href="../reference/barrks_data.html">barrks_data</a></span><span class="op">(</span><span class="st">'stations'</span><span class="op">)</span>, <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>Freiburg <span class="op">=</span> <span class="fu">yday</span><span class="op">(</span><span class="st">'2011-05-01'</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="va">pheno_manual</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/phenology.html">phenology</a></span><span class="op">(</span><span class="st">'phenips-clim'</span>, <span class="fu"><a href="../reference/barrks_data.html">barrks_data</a></span><span class="op">(</span><span class="st">'stations'</span><span class="op">)</span>, .onset <span class="op">=</span> <span class="va">onset</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># plot for comparison</span></span>
@@ -194,7 +194,7 @@ onset
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.3.</p>
 </div>
 
     </footer>
