@@ -41,7 +41,7 @@ NULL
 #'       dev_end = 1,
 #'       dev_sister_brood = 0.3,
 #'
-#'       dev_mortal_min = NULL,
+#'       dev_mortal_min = 0,
 #'       dev_mortal_max = 0.6,
 #'
 #'       topt = 30.4,
@@ -378,7 +378,7 @@ phenips_clim_calc_onset <- function(.params,
   }
 
   # the maximum temperature must exceed the minimum flight temperature
-  out <- (out & tmax > .params$tfly)
+  out <- (out & fly)
   # an onset in a backup will trigger the onset too
   if(!is.null(.last)) out <- out | .last
 
@@ -554,7 +554,7 @@ phenips_clim_calc_development <- function(.params,
                                       '0.9' = 0.26),
                   dev_end = 1,
                   dev_sister_brood = 0.3,
-                  dev_mortal_min = NULL,
+                  dev_mortal_min = 0,
                   dev_mortal_max = 0.6,
 
                   topt = 30.4,
@@ -576,8 +576,8 @@ phenips_clim_calc_development <- function(.params,
                 onset = list(
                   setup = list(fly = .calc_fly,
                                dd_onset = .calc_dd_onset_func.tmax(),
-                               dd_onset_alt = .calc_dd_onset_func.tmax(param_start_date = 'dd_onset_start_date',
-                                                                  param_base = 'dd_onset_base')),
+                               dd_onset_alt = .calc_dd_onset_func.tmax(param_start_date = 'dd_onset_alt_start_date',
+                                                                       param_base = 'dd_onset_alt_base')),
                   compute = phenips_clim_calc_onset
                 ),
 

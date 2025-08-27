@@ -9,6 +9,9 @@
 - [ ] `save_phenology`, `load_phenology()`
   - [ ] Include input data
   - [ ] Use metadata file to allow custom storage structures
+- [ ] Provide function die get generation name from decimal number (1.5 --> '1s')
+- [ ] Write barrks version in outputs
+- [ ] Provide function to get the overall development (not generation specific)
 
 
 ## General
@@ -40,6 +43,7 @@
   - [ ] Improve performance of the calculation of development rates
   - [ ] Allow custom intervals or function for `dev_rates`
   - [ ] Determine `first_diapause_date` dependent on the day length
+  - [ ] Provide scenario `min`?
 
 
 ## Documentation and notifications

@@ -91,8 +91,8 @@
     f <- .calc_dd_onset_func(param_start_date, param_base)
     f(.params,
       .storage = NULL,
-      .quiet = FALSE,
-      .last = NULL,
+      .quiet = .quiet,
+      .last = .last,
       tmax)
   }
 }

@@ -318,7 +318,11 @@ phenips_develop_generation <- function(.params,
   teff <- teff * period
 
   # get last temperature sum from backup
-  if(!is.null(.last)) teff[[1]] <- teff[[1]] + terra::ifel(.last == -1 | is.na(.last), 0, .last) * .params$dd_total_dev
+  if(!is.null(.last)) {
+
+    teff[[1]] <- teff[[1]] + terra::ifel(.last == -1 | is.na(.last), 0, .last) * .params$dd_total_dev
+    first_dead <- (.last == -2)
+  } else first_dead <- FALSE
 
 
   # calculate cumulative development
@@ -333,6 +337,7 @@ phenips_develop_generation <- function(.params,
     while(TRUE) {
 
       kill_ <- kill
+      kill_[[1]] <- kill_[[1]] | first_dead
       if(!is.null(.params$dev_mortal_min)) kill_ <- (kill_ & dev > .params$dev_mortal_min)
       if(!is.null(.params$dev_mortal_max)) kill_ <- (kill_ & dev < .params$dev_mortal_max)
 
@@ -344,11 +349,12 @@ phenips_develop_generation <- function(.params,
 
       dev <- terra::ifel(trigger_kill, 0, dev)
 
-      new_period <- .trigger_rst((!.diapause) & fly & c(trigger_kill[[1]] & FALSE, trigger_kill)[[1:terra::nlyr(trigger_kill)]])
+      new_period <- .trigger_rst((!.diapause) & fly & c((trigger_kill[[1]] & FALSE) | first_dead, trigger_kill)[[1:terra::nlyr(trigger_kill)]])
       dead_periods <- dead_periods | ((!new_period) & trigger_kill)
       dev <- dev + cumsum(new_period * teff / .params$dd_total_dev)
 
       kill <- kill & new_period
+      first_dead <- FALSE
     }
   }
 

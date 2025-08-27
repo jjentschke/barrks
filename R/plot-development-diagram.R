@@ -197,6 +197,7 @@ plot_development_diagram <- function(.phenos,
 
     breaks <- which(purrr::map_lgl(1:(length(x) - 1), \(i) {
 
+      if(is.na(x[i]) | is.na(x[i + 1])) return(FALSE)
       if(x[i] > x[i + 1]) return(TRUE)
       return(FALSE)
     }))

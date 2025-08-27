@@ -1,4 +1,17 @@
 
+# barrks 1.1.2
+
+## New features
+
+* PHENIPS-Clim inhibits mortality before eggs are layed by default
+
+## Bug fixes
+
+* Fixed stepwise calculation of the onset for the PHENIPS-Clim model
+* Fixed spring mortality for stepwise calculations with PHENIPS-Clim
+* Alternative onset was not activated for PHENIPS-Clim
+* `plot_development_diagram()` failed when generations where `NA` for some dates
+
 
 # barrks 1.1.1
 

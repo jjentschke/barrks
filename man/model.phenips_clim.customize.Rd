@@ -124,7 +124,7 @@ default values.
       dev_end = 1,
       dev_sister_brood = 0.3,
 
-      dev_mortal_min = NULL,
+      dev_mortal_min = 0,
       dev_mortal_max = 0.6,
 
       topt = 30.4,

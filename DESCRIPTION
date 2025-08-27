@@ -1,7 +1,8 @@
 Package: barrks
 Type: Package
 Title: Calculate Bark Beetle Phenology Using Different Models
-Version: 1.1.1
+Version: 1.1.2
+Date: 2025-08-27
 Description: Calculate the bark beetle phenology based on raster data or
     point-related data. There are multiple models implemented for two bark
     beetle species. The models can be customized and their submodels (onset of
