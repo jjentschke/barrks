@@ -1,6 +1,8 @@
 
 library(tidyverse)
-library(barrks)
+
+devtools::load_all()
+
 
 data <- read.csv('data-raw/test-data/PHENIPS_BW_31.10.2022.csv', TRUE, sep = ';', dec = ',')
 

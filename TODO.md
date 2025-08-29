@@ -1,6 +1,17 @@
 
 # TODO
 
+## General
+
+- [ ] Make output of `create_suntimes_...()` and `create_daylength_...()` consistent (minutes OR hours)
+- [ ] Define a `BarrksPheno` (or similar) class
+- [ ] Make order of input raster layers irrelevant (use the date)
+- [ ] `phenology()`: All rasters from `.storage` are used even though `.dates` are not `NULL`
+- [ ] `plot_development_diagram()`: Adjust legend if `.minmax_only == TRUE`
+- [ ] Improve performance of `create_suntimes_df()`
+- [ ] Improve performance of `get_mortality_rst()`
+
+
 ## Additional features
 
 - [ ] Provide functions to fetch start and end of each generation
@@ -12,18 +23,6 @@
 - [ ] Provide function die get generation name from decimal number (1.5 --> '1s')
 - [ ] Write barrks version in outputs
 - [ ] Provide function to get the overall development (not generation specific)
-
-
-## General
-
-- [ ] `create_daylength_...()`: switch from suncalc to geosphere (less dependencies...)
-- [ ] Make output of `create_suntimes_...()` and `create_daylength_...()` consistent (minutes OR hours)
-- [ ] Define a `BarrksPheno` (or similar) class
-- [ ] Make order of input raster layers irrelevant (use the date)
-- [ ] `phenology()`: All rasters from `.storage` are used even though `.dates` are not `NULL`
-- [ ] `plot_development_diagram()`: Adjust legend if `.minmax_only == TRUE`
-- [ ] Improve performance of `create_suntimes_df()`
-- [ ] Improve performance of `get_mortality_rst()`
 
 
 ## Models
@@ -62,6 +61,13 @@
 - [ ] Test NAs for stepwise calculation
 - [ ] Test if all model parameters are documented
 - [ ] Implement optical tests for `plot_development_diagram()`
+
+
+## Dependencies
+
+- [ ] use `pkgload::load_all()` instead of `devtools::load_all()`
+- [ ] `create_daylength_...()`: switch from suncalc to geosphere (less dependencies...)
+- [ ] specify particular packages instead of `tidyverse` in `Suggests`
 
 
 ## Appearance

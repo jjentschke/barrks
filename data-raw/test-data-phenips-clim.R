@@ -1,6 +1,6 @@
 
 
-library(barrks)
+devtools::load_all()
 
 
 pheno <- phenology('phenips-clim', barrks_data('stations'),

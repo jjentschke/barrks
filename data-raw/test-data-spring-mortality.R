@@ -1,6 +1,6 @@
 
 
-library(barrks)
+devtools::load_all()
 
 
 data <- barrks_data('stations')

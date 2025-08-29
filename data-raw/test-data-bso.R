@@ -1,7 +1,8 @@
 
 library(ncdf4)
 library(tidyverse)
-library(barrks)
+
+devtools::load_all()
 
 
 
