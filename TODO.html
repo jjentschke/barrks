@@ -43,6 +43,16 @@
 <div id="todo" class="section level1">
 
 <div class="section level2">
+<h2 id="general">General<a class="anchor" aria-label="anchor" href="#general"></a></h2>
+<ul class="task-list"><li><label><input type="checkbox">Make output of <code>create_suntimes_...()</code> and <code>create_daylength_...()</code> consistent (minutes OR hours)</label></li>
+<li><label><input type="checkbox">Define a <code>BarrksPheno</code> (or similar) class</label></li>
+<li><label><input type="checkbox">Make order of input raster layers irrelevant (use the date)</label></li>
+<li><label><input type="checkbox"><code><a href="reference/phenology.html">phenology()</a></code>: All rasters from <code>.storage</code> are used even though <code>.dates</code> are not <code>NULL</code></label></li>
+<li><label><input type="checkbox"><code><a href="reference/plot_development_diagram.html">plot_development_diagram()</a></code>: Adjust legend if <code>.minmax_only == TRUE</code></label></li>
+<li><label><input type="checkbox">Improve performance of <code><a href="reference/create_suntimes_df.html">create_suntimes_df()</a></code></label></li>
+<li><label><input type="checkbox">Improve performance of <code><a href="reference/get_events.html">get_mortality_rst()</a></code></label></li>
+</ul></div>
+<div class="section level2">
 <h2 id="additional-features">Additional features<a class="anchor" aria-label="anchor" href="#additional-features"></a></h2>
 <ul class="task-list"><li><label><input type="checkbox">Provide functions to fetch start and end of each generation</label></li>
 <li>
@@ -57,17 +67,6 @@
 <li><label><input type="checkbox">Provide function die get generation name from decimal number (1.5 –&gt; ‘1s’)</label></li>
 <li><label><input type="checkbox">Write barrks version in outputs</label></li>
 <li><label><input type="checkbox">Provide function to get the overall development (not generation specific)</label></li>
-</ul></div>
-<div class="section level2">
-<h2 id="general">General<a class="anchor" aria-label="anchor" href="#general"></a></h2>
-<ul class="task-list"><li><label><input type="checkbox"><code>create_daylength_...()</code>: switch from suncalc to geosphere (less dependencies…)</label></li>
-<li><label><input type="checkbox">Make output of <code>create_suntimes_...()</code> and <code>create_daylength_...()</code> consistent (minutes OR hours)</label></li>
-<li><label><input type="checkbox">Define a <code>BarrksPheno</code> (or similar) class</label></li>
-<li><label><input type="checkbox">Make order of input raster layers irrelevant (use the date)</label></li>
-<li><label><input type="checkbox"><code><a href="reference/phenology.html">phenology()</a></code>: All rasters from <code>.storage</code> are used even though <code>.dates</code> are not <code>NULL</code></label></li>
-<li><label><input type="checkbox"><code><a href="reference/plot_development_diagram.html">plot_development_diagram()</a></code>: Adjust legend if <code>.minmax_only == TRUE</code></label></li>
-<li><label><input type="checkbox">Improve performance of <code><a href="reference/create_suntimes_df.html">create_suntimes_df()</a></code></label></li>
-<li><label><input type="checkbox">Improve performance of <code><a href="reference/get_events.html">get_mortality_rst()</a></code></label></li>
 </ul></div>
 <div class="section level2">
 <h2 id="models">Models<a class="anchor" aria-label="anchor" href="#models"></a></h2>
@@ -106,6 +105,12 @@
 <li><label><input type="checkbox">Test NAs for stepwise calculation</label></li>
 <li><label><input type="checkbox">Test if all model parameters are documented</label></li>
 <li><label><input type="checkbox">Implement optical tests for <code><a href="reference/plot_development_diagram.html">plot_development_diagram()</a></code></label></li>
+</ul></div>
+<div class="section level2">
+<h2 id="dependencies">Dependencies<a class="anchor" aria-label="anchor" href="#dependencies"></a></h2>
+<ul class="task-list"><li><label><input type="checkbox">use <code><a href="https://pkgload.r-lib.org/reference/load_all.html" class="external-link">pkgload::load_all()</a></code> instead of <code><a href="https://devtools.r-lib.org/reference/load_all.html" class="external-link">devtools::load_all()</a></code></label></li>
+<li><label><input type="checkbox"><code>create_daylength_...()</code>: switch from suncalc to geosphere (less dependencies…)</label></li>
+<li><label><input type="checkbox">specify particular packages instead of <code>tidyverse</code> in <code>Suggests</code></label></li>
 </ul></div>
 <div class="section level2">
 <h2 id="appearance">Appearance<a class="anchor" aria-label="anchor" href="#appearance"></a></h2>
